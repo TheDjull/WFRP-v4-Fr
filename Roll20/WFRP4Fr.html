@@ -1,7 +1,7 @@
 <!-- Feuille de personnage Warhammer Fantasy RolePaly v4 en Francais pour Roll20.net -->
-<!-- Basé sur "Roll20-Warhammer-4e-Character-Sheet" by [vicberg]-->
+<!-- BasÃ© sur "Roll20-Warhammer-4e-Character-Sheet" by [vicberg]-->
 <!-- https://github.com/vicberg/Roll20-Warhammer-4e-Character-Sheet-->
-<!-- Modifié par [TheDjull] et optimisé pour Chrome-->
+<!-- ModifiÃ© par [TheDjull] et optimisÃ© pour Chrome-->
 
 <input type="hidden" name="attr_CurrentWounds" value="" />
 <input type="hidden" name="attr_CurrentWounds_max" value=""  />
@@ -753,7 +753,7 @@
         				</div>
         			</fieldset>	
         		</div>
-				<!-- Athlétisme Agi -->
+				<!-- AthlÃ©tisme Agi -->
 				<div class="sheet-row">
 					<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<input type="checkbox" name="attr_AthleticsCareer" value="1"/>
@@ -893,7 +893,7 @@
 						<button type="roll" class="sheet-roll" name="roll_Leadership" value="@{Whisper} &{template:WF4e} {{title=^{LEADERSHIP}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{target=[[@{LeadershipChar}+@{LeadershipAdv}+@{LeadershipMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}"></button>
 					</div>
 				</div>
-				<!-- Commérage Soc -->
+				<!-- CommÃ©rage Soc -->
 				<div class="sheet-row">
 					<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<input type="checkbox" name="attr_GossipCareer" value="1"/>
@@ -963,7 +963,7 @@
 						<button type="roll" class="sheet-roll" name="roll_Bribery" value="@{Whisper} &{template:WF4e} {{title=^{BRIBERY}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{target=[[@{BriberyChar}+@{BriberyAdv}+@{BriberyMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}"></button>
 					</div>
 				</div>
-				<!-- Discrétion Agi (++) -->
+				<!-- DiscrÃ©tion Agi (++) -->
 				<div class="sheet-skill-header">
     				<div class="sheet-row">
     					<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm sheet-vert-middle">
@@ -1538,17 +1538,17 @@
 						<button type="roll" class="sheet-roll" name="roll_Gamble" value="@{Whisper} &{template:WF4e} {{title=^{GAMBLE}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{target=[[@{GambleChar}+@{GambleAdv}+@{GambleMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}"></button>
 					</div>
 				</div>
-				<!-- Résistance End (++) -->
+				<!-- RÃ©sistance End (++) -->
 				<div class="sheet-skill-header">
     				<div class="sheet-row">
     					<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm sheet-vert-middle">
-    						<input type="checkbox" name="attr_RésistanceCareer" value="1"/>
+    						<input type="checkbox" name="attr_RÃ©sistanceCareer" value="1"/>
     					</div>				
     					<div class="sheet-col-4-9 sheet-pad-r-sm sheet-vert-middle">
-    						<span data-i18n="RESISTANCE" class="sheet-italic">Résistance</span>
+    						<span data-i18n="RESISTANCE" class="sheet-italic">RÃ©sistance</span>
     					</div>
 						<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm sheet-vert-middle">
-							<select class="sheet-select-no-arrow-center" name="attr_RésistanceChar">
+							<select class="sheet-select-no-arrow-center" name="attr_RÃ©sistanceChar">
 								<option value="(@{WeaponSkill})" data-i18n="ABBREVIATE-WEAPON-SKILL">WS</option>
 								<option value="(@{BallisticSkill})" data-i18n="ABBREVIATE-BALLISTIC-SKILL">BS</option>
 								<option value="(@{Strength})" data-i18n="ABBREVIATE-STRENGTH">S</option>
@@ -1562,29 +1562,29 @@
 							</select>
 						</div>
     					<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm sheet-vert-middle">
-    						<input class="sheet-center" type="number" name="attr_RésistanceAdv" value="0"/>
+    						<input class="sheet-center" type="number" name="attr_RÃ©sistanceAdv" value="0"/>
     					</div>
     					<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm sheet-vert-middle">
-    						<input class="sheet-center" type="number" name="attr_RésistanceMisc" value="0"/>
+    						<input class="sheet-center" type="number" name="attr_RÃ©sistanceMisc" value="0"/>
     					</div>
     					<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm sheet-vert-middle">
-    						<input class="sheet-center" type="number" name="attr_Résistance" value="@{RésistanceChar}+@{RésistanceAdv}+@{RésistanceMisc}" disabled="true"/>
+    						<input class="sheet-center" type="number" name="attr_RÃ©sistance" value="@{RÃ©sistanceChar}+@{RÃ©sistanceAdv}+@{RÃ©sistanceMisc}" disabled="true"/>
     					</div>	
     					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
-    						<button type="roll" class="sheet-roll" name="roll_Athletics" value="@{Whisper} &{template:WF4e} {{title=^{RESISTANCE}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{target=[[@{RésistanceChar}+@{RésistanceAdv}+@{RésistanceMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}"></button>
+    						<button type="roll" class="sheet-roll" name="roll_Athletics" value="@{Whisper} &{template:WF4e} {{title=^{RESISTANCE}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{target=[[@{RÃ©sistanceChar}+@{RÃ©sistanceAdv}+@{RÃ©sistanceMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}"></button>
     					</div>
     				</div>
         			<div class="sheet-row">
-            			<fieldset class="repeating_RésistanceSpecialization">
+            			<fieldset class="repeating_RÃ©sistanceSpecialization">
             				<div class="sheet-row">
             					<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm sheet-vert-middle">
-            						<input type="checkbox" name="attr_RésistanceSpecializationCareer" value="1"/>
+            						<input type="checkbox" name="attr_RÃ©sistanceSpecializationCareer" value="1"/>
             					</div>							
             					<div class="sheet-col-4-9 sheet-pad-r-sm sheet-vert-middle">
-            						<input class="sheet-center sheet-skillgrp" type="text" name="attr_RésistanceSpecializationName"/>
+            						<input class="sheet-center sheet-skillgrp" type="text" name="attr_RÃ©sistanceSpecializationName"/>
             					</div>					
 								<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm sheet-vert-middle">
-									<select class="sheet-select-no-arrow-center" name="attr_RésistanceSpecializationChar">
+									<select class="sheet-select-no-arrow-center" name="attr_RÃ©sistanceSpecializationChar">
 										<option value="(@{WeaponSkill})" data-i18n="ABBREVIATE-WEAPON-SKILL">WS</option>
 										<option value="(@{BallisticSkill})" data-i18n="ABBREVIATE-BALLISTIC-SKILL">BS</option>
 										<option value="(@{Strength})" data-i18n="ABBREVIATE-STRENGTH">S</option>
@@ -1598,16 +1598,16 @@
 									</select>
 								</div>
             					<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm sheet-vert-middle">
-            						<input class="sheet-center" type="number" name="attr_RésistanceSpecializationAdv" value="0"/>
+            						<input class="sheet-center" type="number" name="attr_RÃ©sistanceSpecializationAdv" value="0"/>
             					</div>	
             					<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm sheet-vert-middle">
-            						<input class="sheet-center" type="number" name="attr_RésistanceSpecializationMisc" value="0"/>
+            						<input class="sheet-center" type="number" name="attr_RÃ©sistanceSpecializationMisc" value="0"/>
             					</div>
             					<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm sheet-vert-middle">
-            						<input class="sheet-center" type="number" name="attr_RésistanceSpecialization" value="@{RésistanceSpecializationChar}+@{RésistanceSpecializationAdv}+@{RésistanceSpecializationMisc}" disabled="true"/>
+            						<input class="sheet-center" type="number" name="attr_RÃ©sistanceSpecialization" value="@{RÃ©sistanceSpecializationChar}+@{RÃ©sistanceSpecializationAdv}+@{RÃ©sistanceSpecializationMisc}" disabled="true"/>
             					</div>
             					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
-            						<button type="roll" class="sheet-roll" name="roll_RésistanceSpecialization" value="@{Whisper} &{template:WF4e} {{title=@{RésistanceSpecializationName}}} {{skill=^{RESISTANCE}}} {{character_name=@{character_name}}} {{target=[[@{RésistanceSpecializationChar}+@{RésistanceSpecializationAdv}+@{RésistanceSpecializationMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}"></button>
+            						<button type="roll" class="sheet-roll" name="roll_RÃ©sistanceSpecialization" value="@{Whisper} &{template:WF4e} {{title=@{RÃ©sistanceSpecializationName}}} {{skill=^{RESISTANCE}}} {{character_name=@{character_name}}} {{target=[[@{RÃ©sistanceSpecializationChar}+@{RÃ©sistanceSpecializationAdv}+@{RÃ©sistanceSpecializationMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}"></button>
             					</div>									
             				</div>
             			</fieldset>	
@@ -1648,7 +1648,7 @@
 						<button type="roll" class="sheet-roll" name="roll_Cool" value="@{Whisper} &{template:WF4e} {{title=^{COOL}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{target=[[@{CoolChar}+@{CoolAdv}+@{CoolMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}"></button>
 					</div>
 				</div>
-				<!-- Séduction Soc -->
+				<!-- SÃ©duction Soc -->
 				<div class="sheet-row">
 					<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<input type="checkbox" name="attr_CharmCareer" value="1"/>
@@ -1720,7 +1720,7 @@
 				</div>
 			</div>
 			<!-- END  Aptitudes de base -->
-			<!-- START Aptitudes avancées -->
+			<!-- START Aptitudes avancÃ©es -->
 		    <div class="sheet-col-1-2  sheet-pad-r-md sheet-vert-top">
 				<div class="sheet-row">
 					<div class="sheet-col-1">
@@ -2179,7 +2179,7 @@
 						</fieldset>	
 					</div>		
     			</div>
-				<!-- Piégeage Dex -->
+				<!-- PiÃ©geage Dex -->
 				<div class="sheet-row">
 					<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<input type="checkbox" name="attr_SetTrapCareer" value="1"/>
@@ -2255,7 +2255,7 @@
 						<input type="checkbox" name="attr_TrackTaken" value="1"/>
 					</div>
 				</div>
-				<!-- Prière Soc -->
+				<!-- PriÃ¨re Soc -->
 				<div class="sheet-row">
 					<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<input type="checkbox" name="attr_PrayCareer" value="1"/>
@@ -2293,7 +2293,7 @@
 						<input type="checkbox" name="attr_PrayTaken" value="1"/>
 					</div>
 				</div>
-				<!-- Recherche & Enquête Int -->
+				<!-- Recherche & EnquÃªte Int -->
 				<div class="sheet-row">
 					<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<input type="checkbox" name="attr_ResearchCareer" value="1"/>
@@ -2331,7 +2331,7 @@
 						<input type="checkbox" name="attr_ResearchTaken" value="1"/>
 					</div>
 				</div>
-				<!-- Représentations & Interprétations Agi (++) -->
+				<!-- ReprÃ©sentations & InterprÃ©tations Agi (++) -->
 				<div class="sheet-row sheet-skill-header">
 					<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm sheet-vert-middle"><span>&nbsp;</span></div>
     				<div class="sheet-col-3-8 sheet-vert-middle">
@@ -2475,7 +2475,7 @@
 						</fieldset>	
 					</div>	 
 				</div>
-				<!-- Soin & Guérison Int -->
+				<!-- Soin & GuÃ©rison Int -->
 				<div class="sheet-row">
 					<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<input type="checkbox" name="attr_HealCareer" value="1"/>
@@ -2552,7 +2552,7 @@
 					</div>
 				</div>
 			</div>
-			<!-- END Aptitudes avancées -->
+			<!-- END Aptitudes avancÃ©es -->
 		</div>
 	</div>
  	<!-- TALENTS TAB -->
@@ -2575,7 +2575,7 @@
 					<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="ABBREVIATE-MISCELLANEOUS">Misc</div>
 					<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="TOTAL">Total</div>
 					<div class="sheet-col-7-100 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="ROLL">Roll</div>
-					<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="MAITRISE">Maîtrisé</div>					
+					<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="MAITRISE">MaÃ®trisÃ©</div>					
 				</div>
 				<!-- Bagarre -->
 				<div class="sheet-row">
@@ -2805,7 +2805,7 @@
 						<input type="checkbox" name="attr_Melee6Taken" value="1"/>
 					</div>
 				</div>
-				<!-- Fléau -->
+				<!-- FlÃ©au -->
 				<div class="sheet-row">
 					<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<input type="checkbox" name="attr_Melee7Career" value="1"/>
@@ -2899,7 +2899,7 @@
 					<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="ABBREVIATE-MISCELLANEOUS">Misc</div>
 					<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="TOTAL">Total</div>
 					<div class="sheet-col-7-100 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="ROLL">Roll</div>
-					<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="MAITRISE">Maîtrisé</div>					
+					<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="MAITRISE">MaÃ®trisÃ©</div>					
 				</div>			
 				<!-- Lancer -->
 				<div class="sheet-row">
@@ -3015,7 +3015,7 @@
 						<input type="checkbox" name="attr_Dist3Taken" value="1"/>
 					</div>
 				</div>
-				<!-- Arbalète -->
+				<!-- ArbalÃ¨te -->
 				<div class="sheet-row">
 					<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<input type="checkbox" name="attr_Dist4Career" value="1"/>
@@ -3129,7 +3129,7 @@
 						<input type="checkbox" name="attr_Dist6Taken" value="1"/>
 					</div>
 				</div>
-				<!-- Ingénieurie -->
+				<!-- IngÃ©nieurie -->
 				<div class="sheet-row">
 					<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<input type="checkbox" name="attr_Dist7Career" value="1"/>
@@ -3480,7 +3480,7 @@
     			</div>	
     			<div class="sheet-col-1-7 sheet-center sheet-pad-r-md">
     				<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
-    					<button type="roll" class="sheet-roll" name="roll_CriticalRoll" value="@{Whisper} &{template:WF4e} {{title=Critical Roll}} {{character_name=@{character_name}}} {{attacktype=^{CRITICAL}}} {{critlocation=[[?{Localisation|Tête,1|Bras Droit,2|bras gauche,3|Corps,4|jambe Droite,5|Jambe Gauche,6}]]}} {{critroll=[[[[1d100]]+?{@{translation_modifier}|0}]]}}">
+    					<button type="roll" class="sheet-roll" name="roll_CriticalRoll" value="@{Whisper} &{template:WF4e} {{title=Critical Roll}} {{character_name=@{character_name}}} {{attacktype=^{CRITICAL}}} {{critlocation=[[?{Localisation|TÃªte,1|Bras Droit,2|bras gauche,3|Corps,4|jambe Droite,5|Jambe Gauche,6}]]}} {{critroll=[[[[1d100]]+?{@{translation_modifier}|0}]]}}">
     						<span data-i18n="CRITICAL-HIT">Critical Hit</span>
     					</button>
     				</div>
@@ -3540,7 +3540,7 @@
     			</div> 				
     			<div class="sheet-col-1-3 sheet-pad-r-sm">
     				<h4 class="sheet-center">
-    					<span data-i18n="FATE-AND-RESOLVE">Destin & Résilience</span>
+    					<span data-i18n="FATE-AND-RESOLVE">Destin & RÃ©silience</span>
     				</h4>
     			</div> 	  
     		</div>
