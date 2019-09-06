@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name          WFRP v4 Fr
 // @namespace     
-// @description	  Un thème pour WFRP4 dans Roll20.net.
+// @description	  Un theme pour WFRP4 dans Roll20.net.
 // @author        TheDjull
-// @Base          Basé sur le thème Roll20_Dark by RedReign (https://openuserjs.org/scripts/RedReign/Roll20_Dark)
+// @Base          Modification importante du theme Roll20_Dark by RedReign (https://openuserjs.org/scripts/RedReign/Roll20_Dark)
 // @include       https://app.roll20.net/editor*
 // @include       https://app.roll20.net/campaigns/chatarchive*
 // @run-at        document-start
