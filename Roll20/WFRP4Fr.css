@@ -2,11 +2,13 @@
 *, .sheet-rolltemplate-WF4e * {
 	box-sizing: border-box;
 }
+
 .sheet-overall-wrapper {
 	min-width: 850px;
 	max-width: 850px;
 	max-height: 900px;
 }
+
 .charsheet {
 	padding: 0  0px 0px !important;
 	margin-top: 0px;
@@ -20,6 +22,10 @@
 .sheet-core-header {
     height: 90px !important;
     padding: 0px !important;
+}
+
+.sheet-spacer1 {
+    height: 54px;
 }
 
 .charsheet .sheet-section-spellbook .sheet-wrap-box {
