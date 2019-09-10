@@ -648,7 +648,9 @@
 						</div>
 					</div>
 				</div>
-				<span class="sheet-spacer sheet-spacer1"></span>
+				<div class="sheet-row">
+					<div class="sheet-img-spacer-blue"></div>		
+				</div>
 			    <div class="sheet-row">
             		<div class="sheet-col-1">
             			<h4 class="sheet-center">
@@ -5508,87 +5510,93 @@
 	<!-- INVENTORY TAB -->
 	<div class="sheet-section-inventory">
 		<div class="sheet-row">
-			<div class="sheet-col-1">
-				<h4 class="sheet-center">
-					<span data-i18n="COIN-CARRIED">Coin Carried</span>
-					<span class="sheet-pictos">h</span>
-				</h4>
+			<div class="sheet-col-1-4 sheet-pad-r-md">
+				<div class="sheet-img-inventory"></div>		
 			</div>
-		</div>
-		<div class="sheet-row sheet-sub-header">
-			<div class="sheet-col-1-7 sheet-center sheet-small-label sheet-pad-r-sm">
-				<span data-i18n="BRASS-PENNIES-BP">Brass Pennies (BP)</span>
-			</div>
-			<div class="sheet-col-1-7 sheet-center sheet-small-label sheet-pad-r-sm">
-				<span data-i18n="SILVER-SHILLINGS-SS">Silver Shillings (SS)</span>
-			</div>
-			<div class="sheet-col-1-7 sheet-center sheet-small-label sheet-pad-r-sm">
-				<span data-i18n="GOLD-CROWNS-GC">Gold Crowns (GC)</span>
-			</div>
-			<div class="sheet-col-1-7 sheet-center sheet-small-label sheet-pad-r-sm">
-				<span data-i18n="TOTAL-GC-VALUE">Total GC Value</span>
-			</div>
-			<div class="sheet-col-3-7 sheet-center sheet-small-label sheet-pad-r-sm">
-				<span data-i18n="EXCHANGE-RATE">Exchange Rate</span>
-			</div>
-		</div>
-		<div class="sheet-row sheet-mar-b-md">
-			<div class="sheet-col-1-7 sheet-pad-r-sm" title="Brass Pennies"><input id="sheet-bronze" type="number" name="attr_bp" value="0"/></div>
-			<div class="sheet-col-1-7 sheet-pad-r-sm" title="Silver Shillings"><input id="sheet-silver" type="number" name="attr_ss" value="0"/></div>
-			<div class="sheet-col-1-7 sheet-pad-r-sm" title="Gold Crowns"><input id="sheet-gold" type="number" name="attr_gc" value="0"/></div>
-			<div class="sheet-col-1-7 sheet-pad-r-lg" title="Total (in Gold Crowns)"><input type="number" name="attr_money_total_gc" value="round(((@{BP} / 240) + (@{SS} / 20) + @{GC})*1000)/1000" disabled="true"/></div>
-			<div class="sheet-col-3-7 sheet-center sheet-pad-t-sm sheet-pad-r-sm">
-				<span data-i18n="EXCHANGE-RATE-DESCRIPTION">240 brass pennies = 20 silver shilling = 1 gold crown</span>
-			</div>
-		</div>
-		<!-- ENCUMBRANCE -->
-		<div class="sheet-row">
-			<div class="sheet-col-1">
-				<h4 class="sheet-center">
-					<span data-i18n="ENCUMBRANCE">Encumbrance</span>
-					<span class="sheet-pictos">a</span>
-				</h4>
-			</div>
-		</div>
-		<div class="sheet-row sheet-sub-header sheet-relative">
-			<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-pad-r-sm"><span data-i18n="WEAPONS">Weapons</span></div>
-			<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-pad-r-sm"><span data-i18n="ARMOR">Armor</span></div>
-			<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-pad-r-sm"><span data-i18n="TRAPPINGS">Trappings</span></div>
-			<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-pad-r-sm"><span data-i18n="COIN">Coin</span></div>
-			<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-pad-r-sm"><span data-i18n="OTHER">Other</span></div>
-			<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-pad-r-lg"><span data-i18n="TOTAL">Total</span></div>
-			<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-pad-r-lg"><span data-i18n="STURDY">Sturdy</span></div>
-			<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-pad-r-sm"><span data-i18n="CARRYING-CAPACITY">Carrying Max</span></div>
-			<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-pad-r-sm"><span data-i18n="OVERBURDENED">Overburdened</span></div>
-
-		</div>
-		<div class="sheet-row sheet-mar-b-md">
-			<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm">
-				<input type="number" name="attr_EncWeapon"/>
-			</div>
-			<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm">
-				<input type="number" name="attr_EncArmor" value="@{armortotalenc}" disabled="true"/>
-			</div>
-			<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm">
-				<input type="number" name="attr_EncInventory" value="@{TotalInventoryEnc}" disabled="true"/>
-			</div>
-			<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm">
-				<input type="number" name="attr_EncCoin" value="floor(((@{BP} + @{SS} + @{GC}) / 200))" disabled="true"/>
-			</div>
-			<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm">
-				<input type="number" name="attr_EncOther" value="0"/>
-			</div>
-			<div class="sheet-col-1-10 sheet-center sheet-pad-r-lg">
-				<input type="number" name="attr_TotalEnc" value="[[@{EncWeapon} + @{EncArmor} + @{EncInventory} + @{EncCoin} + @{EncOther}]]" disabled="true"/>
-			</div>
-			<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm">
-				<input type="number" name="attr_SturdyLevel" value="0"/>
-			</div>			
-			<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm">
-				<input type="number" name="attr_MaxEnc" value="[[@{StrengthBonus}+@{ToughnessBonus}+(@{SturdyLevel}*2)]]" disabled="true"/>
-			</div>
-			<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm">
-				<input type="number" name="attr_OverEnc" value="0"/>
+			<div class="sheet-col-3-4 sheet-pad-r-md sheet-vert-top">
+				<div class="sheet-row">
+					<div class="sheet-col-1">
+						<h4 class="sheet-center">
+							<span data-i18n="COIN-CARRIED">Coin Carried</span>
+							<span class="sheet-pictos">h</span>
+						</h4>
+					</div>
+				</div>
+				<div class="sheet-row sheet-sub-header">
+					<div class="sheet-col-1-6 sheet-center sheet-small-label sheet-pad-r-sm">
+						<span data-i18n="BRASS-PENNIES-BP">Brass Pennies (BP)</span>
+					</div>
+					<div class="sheet-col-1-6 sheet-center sheet-small-label sheet-pad-r-sm">
+						<span data-i18n="SILVER-SHILLINGS-SS">Silver Shillings (SS)</span>
+					</div>
+					<div class="sheet-col-1-6 sheet-center sheet-small-label sheet-pad-r-sm">
+						<span data-i18n="GOLD-CROWNS-GC">Gold Crowns (GC)</span>
+					</div>
+					<div class="sheet-col-1-6 sheet-center sheet-small-label sheet-pad-r-sm">
+						<span data-i18n="TOTAL-GC-VALUE">Total GC Value</span>
+					</div>
+					<div class="sheet-col-1-3 sheet-center sheet-small-label sheet-pad-r-sm">
+						<span data-i18n="EXCHANGE-RATE">Exchange Rate</span>
+					</div>
+				</div>
+				<div class="sheet-row sheet-mar-b-md">
+					<div class="sheet-col-1-6 sheet-pad-r-sm" title="Brass Pennies"><input id="sheet-bronze" type="number" name="attr_bp" value="0"/></div>
+					<div class="sheet-col-1-6 sheet-pad-r-sm" title="Silver Shillings"><input id="sheet-silver" type="number" name="attr_ss" value="0"/></div>
+					<div class="sheet-col-1-6 sheet-pad-r-sm" title="Gold Crowns"><input id="sheet-gold" type="number" name="attr_gc" value="0"/></div>
+					<div class="sheet-col-1-6 sheet-pad-r-lg" title="Total (in Gold Crowns)"><input type="number" name="attr_money_total_gc" value="round(((@{BP} / 240) + (@{SS} / 20) + @{GC})*1000)/1000" disabled="true"/></div>
+					<div class="sheet-col-1-3 sheet-center sheet-pad-t-sm sheet-pad-r-sm">
+						<span data-i18n="EXCHANGE-RATE-DESCRIPTION">240 brass pennies = 20 silver shilling = 1 gold crown</span>
+					</div>
+				</div>
+				<!-- ENCUMBRANCE -->
+				<div class="sheet-row">
+					<div class="sheet-col-1">
+						<h4 class="sheet-center">
+							<span data-i18n="ENCUMBRANCE">Encumbrance</span>
+							<span class="sheet-pictos">a</span>
+						</h4>
+					</div>
+				</div>
+				<div class="sheet-row sheet-sub-header sheet-relative">
+					<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-pad-r-sm"><span data-i18n="WEAPONS">Weapons</span></div>
+					<div class="sheet-col-1-9 sheet-center sheet-small-label sheet-pad-r-sm"><span data-i18n="ARMOR">Armor</span></div>
+					<div class="sheet-col-1-9 sheet-center sheet-small-label sheet-pad-r-sm"><span data-i18n="TRAPPINGS">Trappings</span></div>
+					<div class="sheet-col-1-9 sheet-center sheet-small-label sheet-pad-r-sm"><span data-i18n="COIN">Coin</span></div>
+					<div class="sheet-col-1-9 sheet-center sheet-small-label sheet-pad-r-sm"><span data-i18n="OTHER">Other</span></div>
+					<div class="sheet-col-1-9 sheet-center sheet-small-label sheet-pad-r-lg"><span data-i18n="TOTAL">Total</span></div>
+					<div class="sheet-col-1-9 sheet-center sheet-small-label sheet-pad-r-lg"><span data-i18n="STURDY">Sturdy</span></div>
+					<div class="sheet-col-1-9 sheet-center sheet-small-label sheet-pad-r-sm"><span data-i18n="CARRYING-CAPACITY">Carrying Max</span></div>
+					<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-pad-r-sm"><span data-i18n="OVERBURDENED">Overburdened</span></div>			
+				</div>
+				<div class="sheet-row sheet-mar-b-md">
+					<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm">
+						<input type="number" name="attr_EncWeapon"/>
+					</div>
+					<div class="sheet-col-1-9 sheet-center sheet-pad-r-sm">
+						<input type="number" name="attr_EncArmor" value="@{armortotalenc}" disabled="true"/>
+					</div>
+					<div class="sheet-col-1-9 sheet-center sheet-pad-r-sm">
+						<input type="number" name="attr_EncInventory" value="@{TotalInventoryEnc}" disabled="true"/>
+					</div>
+					<div class="sheet-col-1-9 sheet-center sheet-pad-r-sm">
+						<input type="number" name="attr_EncCoin" value="floor(((@{BP} + @{SS} + @{GC}) / 200))" disabled="true"/>
+					</div>
+					<div class="sheet-col-1-9 sheet-center sheet-pad-r-sm">
+						<input type="number" name="attr_EncOther" value="0"/>
+					</div>
+					<div class="sheet-col-1-9 sheet-center sheet-pad-r-lg">
+						<input type="number" name="attr_TotalEnc" value="[[@{EncWeapon} + @{EncArmor} + @{EncInventory} + @{EncCoin} + @{EncOther}]]" disabled="true"/>
+					</div>
+					<div class="sheet-col-1-9 sheet-center sheet-pad-r-sm">
+						<input type="number" name="attr_SturdyLevel" value="0"/>
+					</div>			
+					<div class="sheet-col-1-9 sheet-center sheet-pad-r-sm">
+						<input type="number" name="attr_MaxEnc" value="[[@{StrengthBonus}+@{ToughnessBonus}+(@{SturdyLevel}*2)]]" disabled="true"/>
+					</div>
+					<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm">
+						<input type="number" name="attr_OverEnc" value="0"/>
+					</div>
+				</div>
 			</div>
 		</div>
 		<!-- TRAPPINGS -->

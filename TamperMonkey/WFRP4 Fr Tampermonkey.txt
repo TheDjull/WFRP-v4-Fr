@@ -20,6 +20,24 @@
     background-position-x: center;
 }
 
+.sheet-img-inventory {
+    height: 120px;
+    background: url(https://i.imgur.com/of913Ey.png);
+    background-size: 75%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+.sheet-img-spacer-blue {
+    height: 59px;
+    background: url(https://i.imgur.com/WKzn0y2.png);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
 .sheet-skillgrp {
     background: transparent !important;
     color: #666 !important;
