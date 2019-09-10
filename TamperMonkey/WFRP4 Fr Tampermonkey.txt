@@ -12,6 +12,14 @@
 // ==/UserScript==
 (function() {var css =`
 
+.sheet-img-armor {
+    height: 185px;
+    background: url(https://i.imgur.com/nONdg6C.png);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+
 .sheet-skillgrp {
     background: transparent !important;
     color: #666 !important;
@@ -479,6 +487,7 @@ cursor: url(https://i.screenshot.net/yy5kkiq) 10 6, auto;
 
 .ui-widget-content {
     background: transparent!important;
+    color: #666;
 }
 
 .ui-widget-content::-webkit-scrollbar {
