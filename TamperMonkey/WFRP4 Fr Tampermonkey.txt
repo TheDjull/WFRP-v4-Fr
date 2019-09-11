@@ -12,6 +12,41 @@
 // ==/UserScript==
 (function() {var css =`
 
+.sheet-img-dice {
+    background: url(https://i.imgur.com/eS0PNwN.png);
+    background-size: 100%;
+    height: 111px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+.sheet-img-armor {
+    height: 185px;
+    background: url(https://i.imgur.com/nONdg6C.png);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+
+.sheet-img-inventory {
+    height: 120px;
+    background: url(https://i.imgur.com/of913Ey.png);
+    background-size: 75%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+.sheet-img-spacer-atb {
+    height: 37px;
+    background: url(https://i.imgur.com/SN8tzhM.png);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
 .sheet-skillgrp {
     background: transparent !important;
     color: #666 !important;
@@ -479,6 +514,7 @@ cursor: url(https://i.screenshot.net/yy5kkiq) 10 6, auto;
 
 .ui-widget-content {
     background: transparent!important;
+    color: #666;
 }
 
 .ui-widget-content::-webkit-scrollbar {

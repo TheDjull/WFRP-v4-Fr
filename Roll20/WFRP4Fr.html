@@ -545,87 +545,71 @@
             </div>
 			<div class="sheet-col-1-2 sheet-vert-top">
 				<div class="sheet-row">
-					<div class="sheet-row"> 
-				    	<div class="sheet-col-1-2 sheet-pad-r-sm">
-				    		<h4 class="sheet-center">
-				    			<span data-i18n="LIFE">Vie</span>
-				    		</h4>
+					<div class="sheet-row">
+						<div class="sheet-row"> 
+				    		<div class="sheet-col-1-2 sheet-pad-r-sm">
+				    			<h4 class="sheet-center">
+				    				<span data-i18n="LIFE">Vie</span>
+				    			</h4>
+				    		</div>
+				    		<div class="sheet-col-1-2 sheet-pad-r-sm">
+				    			<h4 class="sheet-center">
+				    				<span data-i18n="PWOUNDS">Blessures</span>
+				    			</h4>
+				    		</div>	 	  
 				    	</div>
-				    	<div class="sheet-col-1-2 sheet-pad-r-sm">
-				    		<h4 class="sheet-center">
-				    			<span data-i18n="PWOUNDS">Blessures</span>
-				    		</h4>
-				    	</div>	 	  
-				    </div>
-					<div class="sheet-row"> 
-						<div class="sheet-col-1-2">
-				    		<div class="sheet-row sheet-sub-header">
-				    			<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="BASE-LIFE">Base</div>
-				    			<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="MOD-LIFE">Divers</div>
-				    			<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="CURRENT-LIFE">Restant</div>
-				    			<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="TOTAL-LIFE">Total</div>
-				    		</div>
-				    		<div class="sheet-row">
-				    			<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-				    				<input class="sheet-center" type="number" name="attr_Wounds" readonly="">
+						<div class="sheet-row"> 
+							<div class="sheet-col-1-2">
+				    			<div class="sheet-row sheet-sub-header">
+				    				<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="BASE-LIFE">Base</div>
+				    				<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="MOD-LIFE">Divers</div>
+				    				<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="CURRENT-LIFE">Restant</div>
+				    				<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="TOTAL-LIFE">Total</div>
 				    			</div>
-				    			<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-				    				<input class="sheet-center" type="number" name="attr_Modifiers" value="0">
-				    			</div>	
-				    			<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-				    				<input class="sheet-center" type="number" name="attr_Life" value="@{Life}" readonly="">
-				    			</div>
-				    			<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-				    				<input class="sheet-center" type="number" name="attr_TotalWounds" value="@{Wounds}+@{Modifiers}" readonly="">
+				    			<div class="sheet-row">
+				    				<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+				    					<input class="sheet-center" type="number" name="attr_Wounds" readonly="">
+				    				</div>
+				    				<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+				    					<input class="sheet-center" type="number" name="attr_Modifiers" value="0">
+				    				</div>	
+				    				<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+				    					<input class="sheet-center" type="number" name="attr_Life" value="@{Life}" readonly="">
+				    				</div>
+				    				<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+				    					<input class="sheet-center" type="number" name="attr_TotalWounds" value="@{Wounds}+@{Modifiers}" readonly="">
+				    				</div>
 				    			</div>
 				    		</div>
-				    	</div>
-				    	<div class="sheet-col-1-2">
-				    		<div class="sheet-row sheet-sub-header">
-				                <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="BASE-BLESS">Légères</div>
-				                <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="CRIT-BLESS">Graves</div>
-				                <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="TOTAL-BLESS">Total</div>
-				    		</div>
-							<div class="sheet-row">
-				    			<div class="sheet-col-1-3 sheet-center sheet-pad-r-sm">
-				    				<input class="sheet-center" type="number" name="attr_Damage" value="0">
+				    		<div class="sheet-col-1-2">
+				    			<div class="sheet-row sheet-sub-header">
+				    	            <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="BASE-BLESS">Légères</div>
+				    	            <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="CRIT-BLESS">Graves</div>
+				    	            <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="TOTAL-BLESS">Total</div>
 				    			</div>
-				    			<div class="sheet-col-1-3 sheet-center sheet-pad-r-sm">
-				    				<input class="sheet-center" type="number" name="attr_Impale" value="0">
-				    			</div>    
-				    			<div class="sheet-col-1-3 sheet-center sheet-pad-r-sm">
-				    				<input class="sheet-center" type="number" name="attr_TotalDamage" value="@{Damage}+@{Impale}" readonly="">
-				    			</div>        			
-					        </div>
-					    </div>
-					</div>			
+								<div class="sheet-row">
+				    				<div class="sheet-col-1-3 sheet-center sheet-pad-r-sm">
+				    					<input class="sheet-center" type="number" name="attr_Damage" value="0">
+				    				</div>
+				    				<div class="sheet-col-1-3 sheet-center sheet-pad-r-sm">
+				    					<input class="sheet-center" type="number" name="attr_Impale" value="0">
+				    				</div>    
+				    				<div class="sheet-col-1-3 sheet-center sheet-pad-r-sm">
+				    					<input class="sheet-center" type="number" name="attr_TotalDamage" value="@{Damage}+@{Impale}" readonly="">
+				    				</div>        			
+						        </div>
+						    </div>
+						</div>
+					</div>
 					<div class="sheet-row"> 
-		    			<div class="sheet-col-1-3 sheet-pad-r-sm">
-		    				<h4 class="sheet-center">
-		    					<span data-i18n="ADVANTAGE">Avantage</span>
-		    				</h4>
-		    			</div> 				
-		    			<div class="sheet-col-2-3 sheet-pad-r-sm">
-		    				<h4 class="sheet-center">
-		    					<span data-i18n="FATE-AND-RESOLVE">Destin &amp; Résilience</span>
-		    				</h4>
-		    			</div> 	  
-		    		</div>
-					<div class="sheet-row"> 
-				    	<div class="sheet-col-1-3">
-							<div class="sheet-row">
-		    	    	 		<div class="sheet-col-1 sheet-sub-header">
-		    	    				<div class="sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="ADVANTAGEB">en Combat</div>
-		    	    			</div>
-							</div>	
-							<div class="sheet-row">
-		    					<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
-		    						<input class="sheet-center" type="number" name="attr_Advantage" value="0">
-		    					</div> 
-							</div>	
-						</div>			
-		    	    	<div class="sheet-col-2-3">
-		    				<div class="sheet-row sheet-sub-header">
+						<div class="sheet-col-1-3 sheet-img-dice"></div>
+						<div class="sheet-col-2-3">
+		    				<div class="sheet-col-1 sheet-pad-r-sm">
+		    					<h4 class="sheet-center">
+		    						<span data-i18n="FATE-AND-RESOLVE">Destin &amp; Résilience</span>
+		    					</h4>
+		    				</div>
+							<div class="sheet-row sheet-sub-header">
 		    					<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="FATE">Destin</div>
 		    					<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="FORTUNE">Fortune</div>
 		    					<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="RESILIENCE">Résilience</div>   
@@ -645,84 +629,44 @@
 		    						<input class="sheet-center" type="number" name="attr_Resolve" value="0">
 		    					</div>     
 							</div>	
-						</div>
+							<div class="sheet-row">
+            					<div class="sheet-col-1">
+            						<h4 class="sheet-center">
+            							<span data-i18n="MOVEMENT">Mouvement</span>
+            						</h4>
+            					</div>	
+        		    			<div class="sheet-col-1">
+            						<div class="sheet-row">
+                    			 		<div class="sheet-row sheet-sub-header">
+                    						<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="STARTING">Base</div>
+                    						<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="MODIFIER">Divers</div>
+                    						<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="WALK">Marche</div>
+                    						<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="RUN">Course</div>        
+                    					</div>
+            						</div>	
+            						<div class="sheet-row">
+                						<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+                							<input class="sheet-center" type="number" name="attr_Movement" value="0">
+                						</div>
+                						<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+                							<input class="sheet-center" type="number" name="attr_MovementTalents" value="0">
+                						</div>        			
+                						<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+                							<input class="sheet-center" type="number" name="attr_Charge" value="(@{Movement}+@{MovementTalents})*2" disabled="true" data-formula="(@{Movement}+@{MovementTalents})*2">
+                						</div>
+                						<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+                							<input class="sheet-center" type="number" name="attr_Run" value="(@{Movement}+@{MovementTalents})*4" disabled="true" data-formula="(@{Movement}+@{MovementTalents})*4">
+                						</div>        				
+            						</div>	
+        						</div>   
+        		</div>
+			</div>
 					</div>
+				</div>			
+				<div class="sheet-row">
+					<div class="sheet-img-spacer-atb"></div>	
 				</div>
-			    <div>
-            		<div class="sheet-col-1">
-            			<h4 class="sheet-center">
-            				<span data-i18n="MOVEMENT">Movement</span>
-            			</h4>
-            		</div>	
-        		    <div class="sheet-col-1">
-            			<div class="sheet-row">
-                     		<div class="sheet-row sheet-sub-header">
-                    			<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="STARTING">Mouvement</div>
-                    			<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="MODIFIER">Talents</div>
-                    			<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="WALK">Walk</div>
-                    			<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="RUN">Run</div>        
-                    		</div>
-            			</div>	
-            			<div class="sheet-row">
-                			<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-                				<input class="sheet-center" type="number" name="attr_Movement" value="0"/>
-                			</div>
-                			<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-                				<input class="sheet-center" type="number" name="attr_MovementTalents" value="0"/>
-                			</div>        			
-                			<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-                				<input class="sheet-center" type="number" name="attr_Charge" value="(@{Movement}+@{MovementTalents})*2" disabled="true"/>
-                			</div>
-                			<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-                				<input class="sheet-center" type="number" name="attr_Run" value="(@{Movement}+@{MovementTalents})*4" disabled="true"/>
-                			</div>        				
-            			</div>	
-        			</div>   
-        		</div>	
-    			<span class="sheet-spacer"></span>	
-    			<div class="sheet-col-1">
-    				<h4 class="sheet-center">
-    					<span data-i18n="SIN-AND-CORRUPTION">Sin & Corruption</span>
-    				</h4>
-    			</div> 	
-    			<div class="sheet-row sheet-sub-header">
-        			<div class="sheet-col-1-2 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="SIN">Sin</div>
-        			<div class="sheet-col-1-2 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="CORRUPTION">Corruption</div>
-        		</div>	
-        		<div class="sheet-row">
-        			<div class="sheet-col-1-2 sheet-center sheet-pad-r-sm">
-        				<input class="sheet-center" type="number" name="attr_Sin" value="0"/>
-        			</div> 
-        			<div class="sheet-col-1-2 sheet-center sheet-pad-r-sm">
-        				<input class="sheet-center" type="number" name="attr_Corruption" value="0"/>
-        			</div>      
-        		</div>	
-    			<div class="sheet-row">
-    				<div class="sheet-col-1">
-    					<h4 class="sheet-center">
-    						<span data-i18n="CRITICALS">Criticals</span>
-    					</h4>
-    				</div>
-    			</div>  
-        		<div class="sheet-row sheet-sub-header">
-        			<div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="DESCRIPTION">Description</div>
-        			<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="WOUNDS">Wounds</div>
-        			<div class="sheet-col-4-7 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="EFFECTS">Additional Effects</div>
-        		</div>    			
-    			<fieldset class="repeating_ArtSpecializationr">
-    				<div class="sheet-row">
-    					<div class="sheet-col-1-3 sheet-pad-r-sm sheet-vert-middle">
-    						<input class="sheet-center" type="text" name="attr_CriticaDescription"/>
-    					</div>					
-     					<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm sheet-vert-middle">
-    						<input class="sheet-center" type="text" name="attr_CriticaWounds"/>
-    					</div>
-    					<div class="sheet-col-4-7 sheet-center sheet-pad-r-sm sheet-vert-middle">
-    						<textarea  class="sheet-xs-textarea" type="number" name="attr_CrticialEffects"></textarea>
-    					</div>	
-    				</div>
-    			</fieldset>	
-		    </div>
+			</div>
 		</div>
 		<div class="sheet-row">
 			<div class="sheet-row">
@@ -3507,6 +3451,33 @@
 				</div>			
 			</div>
 		</div>
+		<div class="sheet-row">
+			<div class="sheet-row">
+    			<div class="sheet-col-1">
+    				<h4 class="sheet-center">
+    					<span data-i18n="CRITICALS">Criticals</span>
+    				</h4>
+    			</div>
+    		</div>  
+        	<div class="sheet-row sheet-sub-header">
+        		<div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="DESCRIPTION">Description</div>
+        		<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="WOUNDS">Wounds</div>
+        		<div class="sheet-col-4-7 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="EFFECTS">Additional Effects</div>
+        	</div>    			
+    		<fieldset class="repeating_ArtSpecializationr">
+    			<div class="sheet-row">
+    				<div class="sheet-col-1-3 sheet-pad-r-sm sheet-vert-middle">
+    					<input class="sheet-center" type="text" name="attr_CriticaDescription"/>
+    				</div>					
+     				<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm sheet-vert-middle">
+    					<input class="sheet-center" type="text" name="attr_CriticaWounds"/>
+    				</div>
+    				<div class="sheet-col-4-7 sheet-center sheet-pad-r-sm sheet-vert-middle">
+    					<textarea  class="sheet-xs-textarea" type="number" name="attr_CrticialEffects"></textarea>
+    				</div>	
+    			</div>
+    		</fieldset>
+		</div>
 	</div>
 	<!-- BACKGROUND TAB -->
 	<div class="sheet-section-background">
@@ -4228,7 +4199,7 @@
 				</div>
 				<div class="sheet-row sheet-spell-header">
 					<div class="sheet-col-1 sheet-vert-bottom sheet-center sheet-small-label sheet-mar-t-md">
-						<san data-i18n="LEFT-ARM">Left Arm</span>
+						<span data-i18n="LEFT-ARM">Left Arm</span>
 					</div>
 				</div>
 				<div class="sheet-row sheet-sub-header sheet-relative">
@@ -4322,7 +4293,7 @@
 				</div>
 				<div class="sheet-row sheet-spell-header">
 					<div class="sheet-col-1 sheet-vert-bottom sheet-center sheet-small-label sheet-mar-t-md">
-						<san data-i18n="RIGHT-ARM">Right Arm</span>
+						<span data-i18n="RIGHT-ARM">Right Arm</span>
 					</div>
 				</div>
 				<div class="sheet-row sheet-sub-header sheet-relative">
@@ -4902,51 +4873,70 @@
 						<span data-i18n="ARMOR-PENALTIES">Armor Penalties</span>
 					</div>
 				</div>
+				<span class="sheet-spacer"></span>
 				<div class="sheet-row">
-					<div class="sheet-col-1-20 sheet-center sheet-vert-middle" style="height: 17px">
+					<div class="sheet-col-1-2 sheet-pad-r-md">
+						<div class="sheet-col-1-5 sheet-center sheet-vert-middle" style="height: 17px">
 						<input type="checkbox" name="attr_armormailpenalty" value="10"/>
 					</div>
-					<div class="sheet-col-19-20 sheet-vert-middle sheet-pad-r-sm">
+						<div class="sheet-col-18-20 sheet-vert-middle sheet-pad-r-sm">
 						<span data-i18n="ARMOR-MAIL-PENALTY">Wearing Mail Armor (-10 penalty to Stealth)</span>
-					</div>
-				</div>
-				<div class="sheet-row">
-					<div class="sheet-col-1-20 sheet-center sheet-vert-middle" style="height: 17px">
+						</div>
+						<div class="sheet-col-1-5 sheet-center sheet-vert-middle" style="height: 17px">
 						<input type="checkbox" name="attr_armorplatepenalty" value="10"/>
 					</div>
-					<div class="sheet-col-19-20 sheet-vert-middle sheet-pad-r-sm">
+						<div class="sheet-col-18-20 sheet-vert-middle sheet-pad-r-sm">
 						<span data-i18n="ARMOR-PLATE-PENALTY">Wearing Plate Armor (-10 penalty to Stealth)</span>
+						</div>
 					</div>
-				</div>
-				<div class="sheet-row">
-					<div class="sheet-col-1-20 sheet-center sheet-vert-middle" style="height: 17px">
+					<div class="sheet-col-1-2 sheet-pad-r-md sheet-vert-top">
+						<div class="sheet-col-1-5 sheet-center sheet-vert-middle" style="height: 17px">
 						<input type="checkbox" name="attr_armorcoifpenalty" value="10"/>
-					</div>
-					<div class="sheet-col-19-20 sheet-vert-middle sheet-pad-r-sm">
+						</div>
+						<div class="sheet-col-18-20 sheet-vert-middle sheet-pad-r-sm">
 						<span data-i18n="ARMOR-COIF-PENALTY">Wearing Mail Coif (-10 penalty to Perception)</span>
-					</div>
-				</div>	
-				<div class="sheet-row">
-					<div class="sheet-col-1-20 sheet-center sheet-vert-middle" style="height: 17px">
+						</div>
+						<div class="sheet-col-1-5 sheet-center sheet-vert-middle" style="height: 17px">
 						<input type="checkbox" name="attr_armoropenpenalty" value="10"/>
-					</div>
-					<div class="sheet-col-19-20 sheet-vert-middle sheet-pad-r-sm">
+						</div>
+						<div class="sheet-col-18-20 sheet-vert-middle sheet-pad-r-sm">
 						<span data-i18n="ARMOR-OPEN-PENALTY">Wearing Open Helm (-10 penalty to Perception)</span>
-					</div>
+						</div>
+						<div class="sheet-col-1-5 sheet-center sheet-vert-middle" style="height: 17px">
+						<input type="checkbox" name="attr_armorhelmpenalty" value="20"/>
+						</div>
+						<div class="sheet-col-18-20 sheet-vert-middle sheet-pad-r-sm">
+						<span data-i18n="ARMOR-HELM-PENALTY">Wearing Helm (-20 penalty to Perception)</span>
+						</div>
+					</div>	
 				</div>
 				<div class="sheet-row">
-					<div class="sheet-col-1-20 sheet-center sheet-vert-middle" style="height: 17px">
-						<input type="checkbox" name="attr_armorhelmpenalty" value="20"/>
-					</div>
-					<div class="sheet-col-19-20 sheet-vert-middle sheet-pad-r-sm">
-						<span data-i18n="ARMOR-HELM-PENALTY">Wearing Helm (-20 penalty to Perception)</span>
-					</div>
-				</div>	
+					<div class="sheet-img-armor"></div>
+				</div>
 			</div>				
 		</div>
 	</div>
 	<!-- SPELLBOOK TAB -->
 	<div class="sheet-section-spellbook">
+		<div class="sheet-row">
+			<div class="sheet-col-1">
+    			<h4 class="sheet-center">
+    				<span data-i18n="SIN-AND-CORRUPTION">Sin & Corruption</span>
+    			</h4>
+    		</div> 	
+    		<div class="sheet-row sheet-sub-header">
+        		<div class="sheet-col-1-2 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="SIN">Sin</div>
+        		<div class="sheet-col-1-2 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="CORRUPTION">Corruption</div>
+        	</div>
+			<div class="sheet-row">
+        		<div class="sheet-col-1-2 sheet-center sheet-pad-r-sm">
+        			<input class="sheet-center" type="number" name="attr_Sin" value="0"/>
+        		</div> 
+        		<div class="sheet-col-1-2 sheet-center sheet-pad-r-sm">
+        			<input class="sheet-center" type="number" name="attr_Corruption" value="0"/>
+        		</div>      
+        	</div>
+		</div>
 		<div class="sheet-row">
 			<div class="sheet-row"> 
 		    	<div class="sheet-col-1-4 sheet-pad-r-sm">
@@ -5504,87 +5494,93 @@
 	<!-- INVENTORY TAB -->
 	<div class="sheet-section-inventory">
 		<div class="sheet-row">
-			<div class="sheet-col-1">
-				<h4 class="sheet-center">
-					<span data-i18n="COIN-CARRIED">Coin Carried</span>
-					<span class="sheet-pictos">h</span>
-				</h4>
+			<div class="sheet-col-1-4 sheet-pad-r-md">
+				<div class="sheet-img-inventory"></div>		
 			</div>
-		</div>
-		<div class="sheet-row sheet-sub-header">
-			<div class="sheet-col-1-7 sheet-center sheet-small-label sheet-pad-r-sm">
-				<span data-i18n="BRASS-PENNIES-BP">Brass Pennies (BP)</span>
-			</div>
-			<div class="sheet-col-1-7 sheet-center sheet-small-label sheet-pad-r-sm">
-				<span data-i18n="SILVER-SHILLINGS-SS">Silver Shillings (SS)</span>
-			</div>
-			<div class="sheet-col-1-7 sheet-center sheet-small-label sheet-pad-r-sm">
-				<span data-i18n="GOLD-CROWNS-GC">Gold Crowns (GC)</span>
-			</div>
-			<div class="sheet-col-1-7 sheet-center sheet-small-label sheet-pad-r-sm">
-				<span data-i18n="TOTAL-GC-VALUE">Total GC Value</span>
-			</div>
-			<div class="sheet-col-3-7 sheet-center sheet-small-label sheet-pad-r-sm">
-				<span data-i18n="EXCHANGE-RATE">Exchange Rate</span>
-			</div>
-		</div>
-		<div class="sheet-row sheet-mar-b-md">
-			<div class="sheet-col-1-7 sheet-pad-r-sm" title="Brass Pennies"><input id="sheet-bronze" type="number" name="attr_bp" value="0"/></div>
-			<div class="sheet-col-1-7 sheet-pad-r-sm" title="Silver Shillings"><input id="sheet-silver" type="number" name="attr_ss" value="0"/></div>
-			<div class="sheet-col-1-7 sheet-pad-r-sm" title="Gold Crowns"><input id="sheet-gold" type="number" name="attr_gc" value="0"/></div>
-			<div class="sheet-col-1-7 sheet-pad-r-lg" title="Total (in Gold Crowns)"><input type="number" name="attr_money_total_gc" value="round(((@{BP} / 240) + (@{SS} / 20) + @{GC})*1000)/1000" disabled="true"/></div>
-			<div class="sheet-col-3-7 sheet-center sheet-pad-t-sm sheet-pad-r-sm">
-				<span data-i18n="EXCHANGE-RATE-DESCRIPTION">240 brass pennies = 20 silver shilling = 1 gold crown</span>
-			</div>
-		</div>
-		<!-- ENCUMBRANCE -->
-		<div class="sheet-row">
-			<div class="sheet-col-1">
-				<h4 class="sheet-center">
-					<span data-i18n="ENCUMBRANCE">Encumbrance</span>
-					<span class="sheet-pictos">a</span>
-				</h4>
-			</div>
-		</div>
-		<div class="sheet-row sheet-sub-header sheet-relative">
-			<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-pad-r-sm"><span data-i18n="WEAPONS">Weapons</span></div>
-			<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-pad-r-sm"><span data-i18n="ARMOR">Armor</span></div>
-			<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-pad-r-sm"><span data-i18n="TRAPPINGS">Trappings</span></div>
-			<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-pad-r-sm"><span data-i18n="COIN">Coin</span></div>
-			<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-pad-r-sm"><span data-i18n="OTHER">Other</span></div>
-			<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-pad-r-lg"><span data-i18n="TOTAL">Total</span></div>
-			<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-pad-r-lg"><span data-i18n="STURDY">Sturdy</span></div>
-			<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-pad-r-sm"><span data-i18n="CARRYING-CAPACITY">Carrying Max</span></div>
-			<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-pad-r-sm"><span data-i18n="OVERBURDENED">Overburdened</span></div>
-
-		</div>
-		<div class="sheet-row sheet-mar-b-md">
-			<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm">
-				<input type="number" name="attr_EncWeapon"/>
-			</div>
-			<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm">
-				<input type="number" name="attr_EncArmor" value="@{armortotalenc}" disabled="true"/>
-			</div>
-			<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm">
-				<input type="number" name="attr_EncInventory" value="@{TotalInventoryEnc}" disabled="true"/>
-			</div>
-			<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm">
-				<input type="number" name="attr_EncCoin" value="floor(((@{BP} + @{SS} + @{GC}) / 200))" disabled="true"/>
-			</div>
-			<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm">
-				<input type="number" name="attr_EncOther" value="0"/>
-			</div>
-			<div class="sheet-col-1-10 sheet-center sheet-pad-r-lg">
-				<input type="number" name="attr_TotalEnc" value="[[@{EncWeapon} + @{EncArmor} + @{EncInventory} + @{EncCoin} + @{EncOther}]]" disabled="true"/>
-			</div>
-			<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm">
-				<input type="number" name="attr_SturdyLevel" value="0"/>
-			</div>			
-			<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm">
-				<input type="number" name="attr_MaxEnc" value="[[@{StrengthBonus}+@{ToughnessBonus}+(@{SturdyLevel}*2)]]" disabled="true"/>
-			</div>
-			<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm">
-				<input type="number" name="attr_OverEnc" value="0"/>
+			<div class="sheet-col-3-4 sheet-pad-r-md sheet-vert-top">
+				<div class="sheet-row">
+					<div class="sheet-col-1">
+						<h4 class="sheet-center">
+							<span data-i18n="COIN-CARRIED">Coin Carried</span>
+							<span class="sheet-pictos">h</span>
+						</h4>
+					</div>
+				</div>
+				<div class="sheet-row sheet-sub-header">
+					<div class="sheet-col-1-6 sheet-center sheet-small-label sheet-pad-r-sm">
+						<span data-i18n="BRASS-PENNIES-BP">Brass Pennies (BP)</span>
+					</div>
+					<div class="sheet-col-1-6 sheet-center sheet-small-label sheet-pad-r-sm">
+						<span data-i18n="SILVER-SHILLINGS-SS">Silver Shillings (SS)</span>
+					</div>
+					<div class="sheet-col-1-6 sheet-center sheet-small-label sheet-pad-r-sm">
+						<span data-i18n="GOLD-CROWNS-GC">Gold Crowns (GC)</span>
+					</div>
+					<div class="sheet-col-1-6 sheet-center sheet-small-label sheet-pad-r-sm">
+						<span data-i18n="TOTAL-GC-VALUE">Total GC Value</span>
+					</div>
+					<div class="sheet-col-1-3 sheet-center sheet-small-label sheet-pad-r-sm">
+						<span data-i18n="EXCHANGE-RATE">Exchange Rate</span>
+					</div>
+				</div>
+				<div class="sheet-row sheet-mar-b-md">
+					<div class="sheet-col-1-6 sheet-pad-r-sm" title="Brass Pennies"><input id="sheet-bronze" type="number" name="attr_bp" value="0"/></div>
+					<div class="sheet-col-1-6 sheet-pad-r-sm" title="Silver Shillings"><input id="sheet-silver" type="number" name="attr_ss" value="0"/></div>
+					<div class="sheet-col-1-6 sheet-pad-r-sm" title="Gold Crowns"><input id="sheet-gold" type="number" name="attr_gc" value="0"/></div>
+					<div class="sheet-col-1-6 sheet-pad-r-lg" title="Total (in Gold Crowns)"><input type="number" name="attr_money_total_gc" value="round(((@{BP} / 240) + (@{SS} / 20) + @{GC})*1000)/1000" disabled="true"/></div>
+					<div class="sheet-col-1-3 sheet-center sheet-pad-t-sm sheet-pad-r-sm">
+						<span data-i18n="EXCHANGE-RATE-DESCRIPTION">240 brass pennies = 20 silver shilling = 1 gold crown</span>
+					</div>
+				</div>
+				<!-- ENCUMBRANCE -->
+				<div class="sheet-row">
+					<div class="sheet-col-1">
+						<h4 class="sheet-center">
+							<span data-i18n="ENCUMBRANCE">Encumbrance</span>
+							<span class="sheet-pictos">a</span>
+						</h4>
+					</div>
+				</div>
+				<div class="sheet-row sheet-sub-header sheet-relative">
+					<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-pad-r-sm"><span data-i18n="WEAPONS">Weapons</span></div>
+					<div class="sheet-col-1-9 sheet-center sheet-small-label sheet-pad-r-sm"><span data-i18n="ARMOR">Armor</span></div>
+					<div class="sheet-col-1-9 sheet-center sheet-small-label sheet-pad-r-sm"><span data-i18n="TRAPPINGS">Trappings</span></div>
+					<div class="sheet-col-1-9 sheet-center sheet-small-label sheet-pad-r-sm"><span data-i18n="COIN">Coin</span></div>
+					<div class="sheet-col-1-9 sheet-center sheet-small-label sheet-pad-r-sm"><span data-i18n="OTHER">Other</span></div>
+					<div class="sheet-col-1-9 sheet-center sheet-small-label sheet-pad-r-lg"><span data-i18n="TOTAL">Total</span></div>
+					<div class="sheet-col-1-9 sheet-center sheet-small-label sheet-pad-r-lg"><span data-i18n="STURDY">Sturdy</span></div>
+					<div class="sheet-col-1-9 sheet-center sheet-small-label sheet-pad-r-sm"><span data-i18n="CARRYING-CAPACITY">Carrying Max</span></div>
+					<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-pad-r-sm"><span data-i18n="OVERBURDENED">Overburdened</span></div>			
+				</div>
+				<div class="sheet-row sheet-mar-b-md">
+					<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm">
+						<input type="number" name="attr_EncWeapon"/>
+					</div>
+					<div class="sheet-col-1-9 sheet-center sheet-pad-r-sm">
+						<input type="number" name="attr_EncArmor" value="@{armortotalenc}" disabled="true"/>
+					</div>
+					<div class="sheet-col-1-9 sheet-center sheet-pad-r-sm">
+						<input type="number" name="attr_EncInventory" value="@{TotalInventoryEnc}" disabled="true"/>
+					</div>
+					<div class="sheet-col-1-9 sheet-center sheet-pad-r-sm">
+						<input type="number" name="attr_EncCoin" value="floor(((@{BP} + @{SS} + @{GC}) / 200))" disabled="true"/>
+					</div>
+					<div class="sheet-col-1-9 sheet-center sheet-pad-r-sm">
+						<input type="number" name="attr_EncOther" value="0"/>
+					</div>
+					<div class="sheet-col-1-9 sheet-center sheet-pad-r-lg">
+						<input type="number" name="attr_TotalEnc" value="[[@{EncWeapon} + @{EncArmor} + @{EncInventory} + @{EncCoin} + @{EncOther}]]" disabled="true"/>
+					</div>
+					<div class="sheet-col-1-9 sheet-center sheet-pad-r-sm">
+						<input type="number" name="attr_SturdyLevel" value="0"/>
+					</div>			
+					<div class="sheet-col-1-9 sheet-center sheet-pad-r-sm">
+						<input type="number" name="attr_MaxEnc" value="[[@{StrengthBonus}+@{ToughnessBonus}+(@{SturdyLevel}*2)]]" disabled="true"/>
+					</div>
+					<div class="sheet-col-1-10 sheet-center sheet-pad-r-sm">
+						<input type="number" name="attr_OverEnc" value="0"/>
+					</div>
+				</div>
 			</div>
 		</div>
 		<!-- TRAPPINGS -->
