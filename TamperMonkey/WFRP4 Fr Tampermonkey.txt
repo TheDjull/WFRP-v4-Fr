@@ -12,6 +12,30 @@
 // ==/UserScript==
 (function() {var css =`
 
+.sheet-img-fight {
+    background: url(https://i.imgur.com/vLZUog5.png);
+    background-size: 80%;
+    height: 95px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: top;
+    top: 10px;
+    position: relative;
+}
+
+.sheet-row.sheet-spacebottom {
+    margin-bottom: 3px;
+}
+
+.sheet-img-death {
+    background: url(https://i.imgur.com/174IOA3.png);
+    background-size: 85%;
+    height: 111px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
 .sheet-img-dice {
     background: url(https://i.imgur.com/eS0PNwN.png);
     background-size: 100%;
@@ -38,10 +62,28 @@
     background-position-y: center;
 }
 
+.sheet-img-dice2 {
+    height: 70px;
+    background: url(https://i.imgur.com/YtScNzx.png);
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: bottom;
+}
+
 .sheet-img-spacer-atb {
     height: 37px;
     background: url(https://i.imgur.com/SN8tzhM.png);
     background-size: 50%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+.sheet-img-spacer-apt {
+    height: 30px;
+    background: url(https://i.imgur.com/SN8tzhM.png);
+    background-size: 30%;
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;

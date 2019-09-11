@@ -617,17 +617,17 @@
 		    				</div>
 							<div class="sheet-row">
 		    					<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-		    						<input class="sheet-center" type="number" name="attr_Fate" value="0">
-		    					</div>
-		    					<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-		    						<input class="sheet-center" type="number" name="attr_Fortune" value="0">
-		    					</div>
-		    					<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+		   							<input class="sheet-center" type="number" name="attr_Fate" value="0">
+		   						</div>
+		   						<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+		   							<input class="sheet-center" type="number" name="attr_Fortune" value="0">
+	    						</div>
+	    						<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
 		    						<input class="sheet-center" type="number" name="attr_Resilience" value="0">
 		    					</div>           			
-		    					<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-		    						<input class="sheet-center" type="number" name="attr_Resolve" value="0">
-		    					</div>     
+		   						<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+		   							<input class="sheet-center" type="number" name="attr_Resolve" value="0">
+		   						</div>     
 							</div>	
 							<div class="sheet-row">
             					<div class="sheet-col-1">
@@ -659,16 +659,16 @@
                 						</div>        				
             						</div>	
         						</div>   
-        		</div>
-			</div>
+        					</div>
+						</div>
 					</div>
-				</div>			
-				<div class="sheet-row">
-					<div class="sheet-img-spacer-atb"></div>	
 				</div>
 			</div>
 		</div>
 		<div class="sheet-row">
+			<div class="sheet-row">
+				<div class="sheet-img-spacer-apt"></div>	
+			</div>
 			<div class="sheet-row">
 				<div class="sheet-col-1">
 					<h4 class="sheet-center">
@@ -751,6 +751,7 @@
 	</div>
 	<!-- SKILL TAB -->
 	<div class="sheet-section-skills">
+		<!-- Aptitudes -->
 		<div class="sheet-row">
 			<!-- START Aptitudes de base -->
 		    <div class="sheet-col-1-2 sheet-pad-r-md">
@@ -1843,6 +1844,10 @@
 						<button type="roll" class="sheet-roll" name="roll_OurdoorSurvival" value="@{Whisper} &{template:WF4e} {{title=^{OUTDOOR-SURVIVAL}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{target=[[@{OutdoorSurvivalChar}+@{OurdoorSurvivalAdv}+@{OurdoorSurvivalMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}"></button>
 					</div>
 				</div>
+				<!-- Image Dés -->
+				<div class="sheet-row">
+					<div class="sheet-img-dice2"></div>	
+				</div>
 			</div>
 			<!-- END  Aptitudes de base -->
 			<!-- START Aptitudes avancées -->
@@ -2679,8 +2684,11 @@
 			</div>
 			<!-- END Aptitudes avancées -->
 		</div>
-		<span class="sheet-spacer">
-	</span>
+		<!-- Spacer -->
+		<div class="sheet-row">
+			<div class="sheet-img-spacer-apt"></div>	
+		</div>
+		<!-- Maitrises des armes -->
 		<div class="sheet-row">
 			<!-- Maitrise Melee -->
 		    <div class="sheet-col-1-2 sheet-pad-r-md">
@@ -3339,119 +3347,251 @@
     			<div class="sheet-row">
     				<div class="sheet-col-1">
     					<h4 class="sheet-center">
-    						<span data-i18n="COMBAT">Combat</span>
+    						<span data-i18n="CONDITIONS">None</span>
     					</h4>
     				</div>
     			</div>
+				<div class="sheet-row sheet-sub-header">
+				    <div class="sheet-col-1-12 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="NB">Nb</div>
+				    <div class="sheet-col-1-4 sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="NAME">Nom</div>
+				    <div class="sheet-col-1-12 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="NB">Nb</div>
+				    <div class="sheet-col-1-4 sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="NAME">Nom</div>
+				    <div class="sheet-col-1-12 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="NB">Nb</div>
+					<div class="sheet-col-1-4 sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="NAME">Nom</div>
+				</div>
+				<div class="sheet-row">
+					<div class="sheet-col-1-3">
+						<div class="sheet-row sheet-spacebottom">					
+							<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
+								<input class="sheet-center" type="number" name="attr_AssourdiAdv" value="0">
+							</div>
+							<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
+								<span data-i18n="ASSOURDI">Assourdi</span>
+							</div>
+						</div>
+						<div class="sheet-row sheet-spacebottom">					
+							<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
+								<input class="sheet-center" type="number" name="attr_HemorragieAdv" value="0">
+							</div>
+							<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
+								<span data-i18n="HEMORRAGIE">Hémorragie</span>
+							</div>
+						</div>
+						<div class="sheet-row sheet-spacebottom">					
+							<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
+								<input class="sheet-center" type="number" name="attr_ExtenueAdv" value="0">
+							</div>
+							<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
+								<span data-i18n="EXTENUE">Exténué</span>
+							</div>
+						</div>
+						<div class="sheet-row sheet-spacebottom">					
+							<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
+								<input type="checkbox" name="attr_SurprisAdv" value="1">
+							</div>
+							<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
+								<span data-i18n="SURPRIS">Surpris</span>
+							</div>
+						</div>
+					</div>
+					<div class="sheet-col-1-3">
+						<div class="sheet-row sheet-spacebottom">					
+							<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
+								<input class="sheet-center" type="number" name="attr_AveugleAdv" value="0">
+							</div>
+							<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
+								<span data-i18n="AVEUGLE">Aveuglé</span>
+							</div>
+						</div>
+						<div class="sheet-row sheet-spacebottom">					
+							<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
+								<input class="sheet-center" type="number" name="attr_EnflammeAdv" value="0">
+							</div>
+							<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
+								<span data-i18n="ENFLAMME">Enflammé</span>
+							</div>
+						</div>
+						<div class="sheet-row sheet-spacebottom">					
+							<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
+								<input class="sheet-center" type="number" name="attr_AssommeAdv" value="0">
+							</div>
+							<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
+								<span data-i18n="ASSOMME">Assommé</span>
+							</div>
+						</div>
+						<div class="sheet-row sheet-spacebottom">					
+							<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
+								<input type="checkbox" name="attr_ATerreAdv" value="1">
+							</div>
+							<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
+								<span data-i18n="ATERRE">À Terre</span>
+							</div>
+						</div>
+					</div>
+					<div class="sheet-col-1-3">
+						<div class="sheet-row sheet-spacebottom">					
+							<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
+								<input class="sheet-center" type="number" name="attr_EmpetreAdv" value="0">
+							</div>
+							<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
+								<span data-i18n="EMPETRE">Empêtré</span>
+							</div>
+						</div>
+						<div class="sheet-row sheet-spacebottom">					
+							<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
+								<input class="sheet-center" type="number" name="attr_EmpoissonneAdv" value="0">
+							</div>
+							<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
+								<span data-i18n="EMPOISSONNE">Empoissonné</span>
+							</div>
+						</div>
+						<div class="sheet-row sheet-spacebottom">					
+							<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
+								<input class="sheet-center" type="number" name="attr_BriseAdv" value="0">
+							</div>
+							<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
+								<span data-i18n="BRISE">Brisé</span>
+							</div>
+						</div>
+						<div class="sheet-row sheet-spacebottom">					
+							<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
+								<input type="checkbox" name="attr_InconscientAdv" value="1">
+							</div>
+							<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
+								<span data-i18n="INCONSCIENT">Inconscient</span>
+							</div>
+						</div>
+					</div>
+				</div>
     		</div>
 			<div class="sheet-col-1-2 sheet-vert-top">
 				<div class="sheet-row">
-					<div class="sheet-row"> 
-				    	<div class="sheet-col-1-2 sheet-pad-r-sm">
-				    		<h4 class="sheet-center">
-				    			<span data-i18n="LIFE">Vie</span>
-				    		</h4>
+				<div class="sheet-row">
+					<div class="sheet-row">
+						<div class="sheet-row"> 
+				    		<div class="sheet-col-1-2 sheet-pad-r-sm">
+				    			<h4 class="sheet-center">
+				    				<span data-i18n="LIFE">Vie</span>
+				    			</h4>
+				    		</div>
+				    		<div class="sheet-col-1-2 sheet-pad-r-sm">
+				    			<h4 class="sheet-center">
+				    				<span data-i18n="PWOUNDS">Blessures</span>
+				    			</h4>
+				    		</div>	 	  
 				    	</div>
-				    	<div class="sheet-col-1-2 sheet-pad-r-sm">
-				    		<h4 class="sheet-center">
-				    			<span data-i18n="PWOUNDS">Blessures</span>
-				    		</h4>
-				    	</div>	 	  
-				    </div>
-					<div class="sheet-row"> 
-						<div class="sheet-col-1-2">
-				    		<div class="sheet-row sheet-sub-header">
-				    			<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="BASE-LIFE">Base</div>
-				    			<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="MOD-LIFE">Divers</div>
-				    			<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="CURRENT-LIFE">Restant</div>
-				    			<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="TOTAL-LIFE">Total</div>
-				    		</div>
-				    		<div class="sheet-row">
-				    			<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-				    				<input class="sheet-center" type="number" name="attr_Wounds" readonly="">
+						<div class="sheet-row"> 
+							<div class="sheet-col-1-2">
+				    			<div class="sheet-row sheet-sub-header">
+				    				<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="BASE-LIFE">Base</div>
+				    				<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="MOD-LIFE">Divers</div>
+				    				<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="CURRENT-LIFE">Restant</div>
+				    				<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="TOTAL-LIFE">Total</div>
 				    			</div>
-				    			<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-				    				<input class="sheet-center" type="number" name="attr_Modifiers" value="0">
-				    			</div>	
-				    			<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-				    				<input class="sheet-center" type="number" name="attr_Life" value="@{Life}" readonly="">
-				    			</div>
-				    			<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-				    				<input class="sheet-center" type="number" name="attr_TotalWounds" value="@{Wounds}+@{Modifiers}" readonly="">
+				    			<div class="sheet-row">
+				    				<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+				    					<input class="sheet-center" type="number" name="attr_Wounds" readonly="">
+				    				</div>
+				    				<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+				    					<input class="sheet-center" type="number" name="attr_Modifiers" value="0">
+				    				</div>	
+				    				<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+				    					<input class="sheet-center" type="number" name="attr_Life" value="@{Life}" readonly="">
+				    				</div>
+				    				<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+				    					<input class="sheet-center" type="number" name="attr_TotalWounds" value="@{Wounds}+@{Modifiers}" readonly="">
+				    				</div>
 				    			</div>
 				    		</div>
-				    	</div>
-				    	<div class="sheet-col-1-2">
-				    		<div class="sheet-row sheet-sub-header">
-				                <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="BASE-BLESS">Légères</div>
-				                <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="CRIT-BLESS">Graves</div>
-				                <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="TOTAL-BLESS">Total</div>
-				    		</div>
-							<div class="sheet-row">
-				    			<div class="sheet-col-1-3 sheet-center sheet-pad-r-sm">
-				    				<input class="sheet-center" type="number" name="attr_Damage" value="0">
+				    		<div class="sheet-col-1-2">
+				    			<div class="sheet-row sheet-sub-header">
+				    	            <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="BASE-BLESS">Légères</div>
+				    	            <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="CRIT-BLESS">Graves</div>
+				    	            <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="TOTAL-BLESS">Total</div>
 				    			</div>
-				    			<div class="sheet-col-1-3 sheet-center sheet-pad-r-sm">
-				    				<input class="sheet-center" type="number" name="attr_Impale" value="0">
-				    			</div>    
-				    			<div class="sheet-col-1-3 sheet-center sheet-pad-r-sm">
-				    				<input class="sheet-center" type="number" name="attr_TotalDamage" value="@{Damage}+@{Impale}" readonly="">
-				    			</div>        			
-					        </div>
-					    </div>
-					</div>			
+								<div class="sheet-row">
+				    				<div class="sheet-col-1-3 sheet-center sheet-pad-r-sm">
+				    					<input class="sheet-center" type="number" name="attr_Damage" value="0">
+				    				</div>
+				    				<div class="sheet-col-1-3 sheet-center sheet-pad-r-sm">
+				    					<input class="sheet-center" type="number" name="attr_Impale" value="0">
+				    				</div>    
+				    				<div class="sheet-col-1-3 sheet-center sheet-pad-r-sm">
+				    					<input class="sheet-center" type="number" name="attr_TotalDamage" value="@{Damage}+@{Impale}" readonly="">
+				    				</div>        			
+						        </div>
+						    </div>
+						</div>
+					</div>
 					<div class="sheet-row"> 
-		    			<div class="sheet-col-1-3 sheet-pad-r-sm">
-		    				<h4 class="sheet-center">
-		    					<span data-i18n="ADVANTAGE">Avantage</span>
-		    				</h4>
-		    			</div> 				
-		    			<div class="sheet-col-2-3 sheet-pad-r-sm">
-		    				<h4 class="sheet-center">
-		    					<span data-i18n="FATE-AND-RESOLVE">Destin &amp; Résilience</span>
-		    				</h4>
-		    			</div> 	  
-		    		</div>
-					<div class="sheet-row"> 
-				    	<div class="sheet-col-1-3">
-							<div class="sheet-row">
-		    	    	 		<div class="sheet-col-1 sheet-sub-header">
-		    	    				<div class="sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="ADVANTAGEB">en Combat</div>
-		    	    			</div>
-							</div>	
-							<div class="sheet-row">
-		    					<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
-		    						<input class="sheet-center" type="number" name="attr_Advantage" value="0">
-		    					</div> 
-							</div>	
-						</div>			
-		    	    	<div class="sheet-col-2-3">
-		    				<div class="sheet-row sheet-sub-header">
-		    					<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="FATE">Destin</div>
-		    					<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="FORTUNE">Fortune</div>
-		    					<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="RESILIENCE">Résilience</div>   
-		    					<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="RESOLVE">Détermination</div>     
-		    				</div>
-							<div class="sheet-row">
-		    					<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-		    						<input class="sheet-center" type="number" name="attr_Fate" value="0">
+						<div class="sheet-col-1-3 sheet-img-death"></div>
+							<div class="sheet-col-2-3">
+		    					<div class="sheet-col-1 sheet-pad-r-sm">
+		    						<h4 class="sheet-center">
+		    							<span data-i18n="FATE-AND-RESOLVE">Destin &amp; Résilience</span>
+		    						</h4>
 		    					</div>
-		    					<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-		    						<input class="sheet-center" type="number" name="attr_Fortune" value="0">
+								<div class="sheet-row sheet-sub-header">
+		    						<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="FATE">Destin</div>
+		    						<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="FORTUNE">Fortune</div>
+		    						<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="RESILIENCE">Résilience</div>   
+		    						<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="RESOLVE">Détermination</div>     
 		    					</div>
-		    					<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-		    						<input class="sheet-center" type="number" name="attr_Resilience" value="0">
-		    					</div>           			
-		    					<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-		    						<input class="sheet-center" type="number" name="attr_Resolve" value="0">
-		    					</div>     
-							</div>	
+								<div class="sheet-row">
+		    						<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+		    							<input class="sheet-center" type="number" name="attr_Fate" value="0">
+		    						</div>
+		    						<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+		    							<input class="sheet-center" type="number" name="attr_Fortune" value="0">
+		    						</div>
+		    						<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+		    							<input class="sheet-center" type="number" name="attr_Resilience" value="0">
+		    						</div>           			
+		    						<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+		    							<input class="sheet-center" type="number" name="attr_Resolve" value="0">
+		    						</div>     
+								</div>	
+								<div class="sheet-row">
+            						<div class="sheet-col-1">
+            							<h4 class="sheet-center">
+            								<span data-i18n="MOVEMENT">Mouvement</span>
+            							</h4>
+            						</div>	
+        		    				<div class="sheet-col-1">
+            							<div class="sheet-row">
+                    				 		<div class="sheet-row sheet-sub-header">
+                    							<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="STARTING">Base</div>
+                    							<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="MODIFIER">Divers</div>
+                    							<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="WALK">Marche</div>
+                    							<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="RUN">Course</div>        
+                    						</div>
+            							</div>	
+            							<div class="sheet-row">
+                							<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+                								<input class="sheet-center" type="number" name="attr_Movement" value="0">
+                							</div>
+                							<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+                								<input class="sheet-center" type="number" name="attr_MovementTalents" value="0">
+                							</div>        			
+                							<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+                								<input class="sheet-center" type="number" name="attr_Charge" value="(@{Movement}+@{MovementTalents})*2" disabled="true" data-formula="(@{Movement}+@{MovementTalents})*2">
+                							</div>
+                							<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+                								<input class="sheet-center" type="number" name="attr_Run" value="(@{Movement}+@{MovementTalents})*4" disabled="true" data-formula="(@{Movement}+@{MovementTalents})*4">
+                							</div>        				
+            							</div>	
+        							</div>   
+        						</div>
+							</div>
 						</div>
 					</div>
 				</div>			
 			</div>
 		</div>
 		<div class="sheet-row">
+			<div class="sheet-row">
+				<div class="sheet-img-spacer-apt"></div>	
+			</div>
 			<div class="sheet-row">
     			<div class="sheet-col-1">
     				<h4 class="sheet-center">
@@ -3654,69 +3794,69 @@
 	<div class="sheet-section-weapons">
 	    <div class="sheet-row">					
 			<div class="sheet-col-1-2 sheet-pad-r-md">
-    			<div class="sheet-row">
-    				<div class="sheet-col-1">
-    					<h4 class="sheet-center">
-    						<span data-i18n="COMBAT">Combat</span>
-    					</h4>
-    				</div>
-    			</div>
-    			<span class="sheet-spacer"></span>	
-    			<div class="sheet-row">
-    				<div class="sheet-col-1-4 sheet-center">
-        		    	<div class="sheet-col-1 sheet-center sheet-pad-r-sm sheet-block-a">
-            				<button type="roll" class="sheet-roll btn ui-draggable" name="roll_Initiative" value="@{Whisper} &amp;{template:WF4e} {{title=^{INITIATIVE}}} {{character_name=@{character_name}}} {{inittest=[[1d10+(@{Initiative})&amp;{tracker}]]}}">
-            					<span data-i18n="INITIATIVE">Initiative</span>
-            				</button>
-            			</div>	    			
-    				</div>	
-    				<div class="sheet-col-1-4 sheet-center sheet-pad-r-md">
-    					<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
-    						<button type="roll" class="sheet-roll btn ui-draggable" name="roll_CriticalRoll" value="@{Whisper} &amp;{template:WF4e} {{title=Critical Roll}} {{character_name=@{character_name}}} {{attacktype=^{CRITICAL}}} {{critlocation=[[?{Localisation|Tête,1|Bras Droit,2|bras gauche,3|Corps,4|jambe Droite,5|Jambe Gauche,6}]]}} {{critroll=[[[[1d100]]+?{@{translation_modifier}|0}]]}}">
-    							<span data-i18n="CRITICAL-HIT">Coup Critique</span>
-    						</button>
-    					</div>
-    				</div>
-    				<div class="sheet-col-1-4 sheet-center">
-    					<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
-    						<button type="roll" class="sheet-roll btn ui-draggable" name="roll_FumbleTest" value="@{Whisper} &amp;{template:WF4e} {{title=^{FUMBLE}}} {{character_name=@{character_name}}} {{attacktype=^{CRITICAL}}} {{fumbleroll=[[1d100]]}}">
-    							<span data-i18n="OOPS">Oups</span>
-    						</button>
-    					</div>
-    				</div>
-    				<div class="sheet-col-1-4 sheet-center">
-    					<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
-    						<button type="roll" class="sheet-roll btn ui-draggable" name="roll_AmputationTest" value="@{Whisper} &amp;{template:WF4e} {{title=^{AMPUTATION}}} {{character_name=@{character_name}}} {{attacktype=^{CRITICAL}}} {{amputationroll=true}} {{test=[[1d100]]}} {{target=[[@{Endurance}+?{@{translation_modifier}|0}]]}}">
-    							<span data-i18n="AMPUTATION">Amputation</span>
-    						</button>
-    					</div>
-    				</div>
-    			</div>
-				<span class="sheet-spacer"></span>
 				<div class="sheet-row">
-    				<div class="sheet-col-1-3 sheet-center">
-    					<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
-    						<button type="roll" class="sheet-roll btn ui-draggable" name="roll_Dodge" value="@{Whisper} &amp;{template:WF4e} {{title=^{DODGE}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{target=[[@{DodgeChar}+@{DodgeAdv}+@{DodgeMisc}+(@{Advantage}*10)+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}">
-    							<span data-i18n="DODGE">Esquive</span>
-    						</button>
-    					</div>
-    				</div>	
-    				<div class="sheet-col-1-3 sheet-center">
-    					<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
-    						<button type="roll" class="sheet-roll btn ui-draggable" name="roll_Athletics" value="@{Whisper} &amp;{template:WF4e} {{title=^{ATHLETICS}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{target=[[@{AthleticsChar}+@{AthleticsAdv}+@{AthleticsMisc}+(@{Advantage}*10)+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}">
-    							<span data-i18n="ATHLETICS">Athlétisme</span>
-    						</button>
-    					</div>
-    				</div>	
-    				<div class="sheet-col-1-3 sheet-center">
-    					<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
-    						<button type="roll" class="sheet-roll btn ui-draggable" name="roll_Endurance" value="@{Whisper} &amp;{template:WF4e} {{title=^{ENDURANCE}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{target=[[@{EnduranceChar}+@{EnduranceAdv}+@{EnduranceMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}">
-    							<span data-i18n="ENDURANCE">Endurance</span>
-    						</button>
-    					</div>
-    				</div>				
-    			</div>	
-    			<span class="sheet-spacer"></span>	
+					<div class="sheet-col-1-3">
+						<div class="row">
+							<div class="sheet-col-1 sheet-right sheet-pad-r-sm sheet-block-a">
+				            	<button type="roll" class="sheet-roll sheet-btn sheet-ui-draggable btn ui-draggable" name="roll_Initiative" value="@{Whisper} &amp;{template:WF4e} {{title=^{INITIATIVE}}} {{character_name=@{character_name}}} {{inittest=[[1d10+(@{Initiative})&amp;{tracker}]]}}">
+				            		<span data-i18n="INITIATIVE">Initiative</span>
+				            	</button>
+				            </div>
+						</div>
+						<div class="row">
+				    		<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
+				    			<button type="roll" class="sheet-roll sheet-btn sheet-ui-draggable btn ui-draggable" name="roll_CriticalRoll" value="@{Whisper} &amp;{template:WF4e} {{title=Critical Roll}} {{character_name=@{character_name}}} {{attacktype=^{CRITICAL}}} {{critlocation=[[?{Localisation|Tête,1|Bras Droit,2|bras gauche,3|Corps,4|jambe Droite,5|Jambe Gauche,6}]]}} {{critroll=[[[[1d100]]+?{@{translation_modifier}|0}]]}}">
+				    				<span data-i18n="CRITICAL-HIT">Coup Critique</span>
+				    			</button>
+				    		</div>
+						</div>
+						<div class="row">
+				   			<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
+				   				<button type="roll" class="sheet-roll sheet-btn sheet-ui-draggable btn ui-draggable" name="roll_FumbleTest" value="@{Whisper} &amp;{template:WF4e} {{title=^{FUMBLE}}} {{character_name=@{character_name}}} {{attacktype=^{CRITICAL}}} {{fumbleroll=[[1d100]]}}">
+				    				<span data-i18n="OOPS">Maladresse</span>
+				    			</button>
+				    		</div>
+						</div>
+						<div class="row">
+				    		<div class="sheet-col-1 sheet-right sheet-pad-r-sm">
+				    			<button type="roll" class="sheet-roll sheet-btn sheet-ui-draggable btn ui-draggable" name="roll_AmputationTest" value="@{Whisper} &amp;{template:WF4e} {{title=^{AMPUTATION}}} {{character_name=@{character_name}}} {{attacktype=^{CRITICAL}}} {{amputationroll=true}} {{test=[[1d100]]}} {{target=[[@{Résistance}+?{@{translation_modifier}|0}]]}}">
+				    				<span data-i18n="AMPUTATION">Amputation</span>
+				    			</button>
+				    		</div>
+						</div>
+					</div>
+					<div class="sheet-col-1-3 sheet-img-fight"></div>
+					<div class="sheet-col-1-3">
+						<div class="row">
+				    		<div class="sheet-col-1 sheet-left sheet-pad-r-sm">
+				    			<button type="roll" class="sheet-roll sheet-btn sheet-ui-draggable btn ui-draggable" name="roll_Dodge" value="@{Whisper} &amp;{template:WF4e} {{title=^{DODGE}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{target=[[@{DodgeChar}+@{DodgeAdv}+@{DodgeMisc}+(@{Advantage}*10)+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}">
+				    				<span data-i18n="DODGE">Esquive</span>
+				    			</button>
+				    		</div>
+						</div>
+						<div class="row">
+				   			<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
+				   				<button type="roll" class="sheet-roll sheet-btn sheet-ui-draggable btn ui-draggable" name="roll_Acrobatie" value="@{Whisper} &amp;{template:WF4e} {{title=^{ACROBATIE}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{target=[[@{AcrobatieChar}+@{AcrobatieAdv}+@{AcrobatieMisc}+(@{Advantage}*10)+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}">
+				    				<span data-i18n="ACROBATIE">Acrobatie</span>
+				    			</button>
+				    		</div>
+						</div>
+						<div class="row">
+				    		<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
+				    			<button type="roll" class="sheet-roll sheet-btn sheet-ui-draggable btn ui-draggable" name="roll_Athletics" value="@{Whisper} &amp;{template:WF4e} {{title=^{ATHLETICS}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{target=[[@{AthleticsChar}+@{AthleticsAdv}+@{AthleticsMisc}+(@{Advantage}*10)+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}">
+				    				<span data-i18n="ATHLETICS">Athlétisme</span>
+				    			</button>
+				    		</div>
+						</div>
+						<div class="row">
+				    		<div class="sheet-col-1 sheet-left sheet-pad-r-sm">
+				    			<button type="roll" class="sheet-roll sheet-btn sheet-ui-draggable btn ui-draggable" name="roll_Résistance" value="@{Whisper} &amp;{template:WF4e} {{title=^{RESISTANCE}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{target=[[@{RésistanceChar}+@{RésistanceAdv}+@{RésistanceMisc}+(@{Advantage}*10)+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}">
+									<span data-i18n="RESISTANCE">Résistance</span>
+				    			</button>
+				    		</div>
+						</div>
+					</div>
+				</div>
     		</div>
 			<div class="sheet-col-1-2 sheet-vert-top">
 				<div class="sheet-row">
@@ -3825,9 +3965,11 @@
 				</div>			
 			</div>
 		</div>
-		<span class="sheet-spacer"></span>
 		<div class=" sheet-area-border">
-    		<div class="sheet-row">
+			<div class="sheet-row">
+				<div class="sheet-img-spacer-apt"></div>	
+			</div>
+			<div class="sheet-row">
     			<div class="sheet-col-1">
     				<h4 class="sheet-center">
     					<span data-i18n="MELEE-WEAPONS">Melee Weapons</span>
