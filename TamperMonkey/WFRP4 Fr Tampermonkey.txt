@@ -38,10 +38,28 @@
     background-position-y: center;
 }
 
+.sheet-img-dice {
+    height: 70px;
+    background: url(https://i.imgur.com/YtScNzx.png);
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: bottom;
+}
+
 .sheet-img-spacer-atb {
     height: 37px;
     background: url(https://i.imgur.com/SN8tzhM.png);
     background-size: 50%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+.sheet-img-spacer-apt {
+    height: 30px;
+    background: url(https://i.imgur.com/SN8tzhM.png);
+    background-size: 30%;
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;

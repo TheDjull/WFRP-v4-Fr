@@ -751,6 +751,7 @@
 	</div>
 	<!-- SKILL TAB -->
 	<div class="sheet-section-skills">
+		<!-- Aptitudes -->
 		<div class="sheet-row">
 			<!-- START Aptitudes de base -->
 		    <div class="sheet-col-1-2 sheet-pad-r-md">
@@ -1843,6 +1844,10 @@
 						<button type="roll" class="sheet-roll" name="roll_OurdoorSurvival" value="@{Whisper} &{template:WF4e} {{title=^{OUTDOOR-SURVIVAL}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{target=[[@{OutdoorSurvivalChar}+@{OurdoorSurvivalAdv}+@{OurdoorSurvivalMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}"></button>
 					</div>
 				</div>
+				<!-- Image Dés -->
+				<div class="sheet-row">
+					<div class="sheet-img-dice"></div>	
+				</div>
 			</div>
 			<!-- END  Aptitudes de base -->
 			<!-- START Aptitudes avancées -->
@@ -2679,8 +2684,11 @@
 			</div>
 			<!-- END Aptitudes avancées -->
 		</div>
-		<span class="sheet-spacer">
-	</span>
+		<!-- Spacer -->
+		<div class="sheet-row">
+			<div class="sheet-img-spacer-apt"></div>	
+		</div>
+		<!-- Maitrises des armes -->
 		<div class="sheet-row">
 			<!-- Maitrise Melee -->
 		    <div class="sheet-col-1-2 sheet-pad-r-md">
