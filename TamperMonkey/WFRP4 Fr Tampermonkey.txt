@@ -12,6 +12,15 @@
 // ==/UserScript==
 (function() {var css =`
 
+.sheet-img-grimoire {
+    background: url(https://i.imgur.com/J97T6dg.png);
+    background-size: 85%;
+    height: 111px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
 .sheet-img-fight {
     background: url(https://i.imgur.com/vLZUog5.png);
     background-size: 80%;

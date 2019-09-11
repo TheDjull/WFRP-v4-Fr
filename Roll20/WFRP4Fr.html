@@ -5061,150 +5061,149 @@
 	<!-- SPELLBOOK TAB -->
 	<div class="sheet-section-spellbook">
 		<div class="sheet-row">
-			<div class="sheet-col-1">
-    			<h4 class="sheet-center">
-    				<span data-i18n="SIN-AND-CORRUPTION">Sin & Corruption</span>
-    			</h4>
-    		</div> 	
-    		<div class="sheet-row sheet-sub-header">
-        		<div class="sheet-col-1-2 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="SIN">Sin</div>
-        		<div class="sheet-col-1-2 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="CORRUPTION">Corruption</div>
-        	</div>
-			<div class="sheet-row">
-        		<div class="sheet-col-1-2 sheet-center sheet-pad-r-sm">
-        			<input class="sheet-center" type="number" name="attr_Sin" value="0"/>
-        		</div> 
-        		<div class="sheet-col-1-2 sheet-center sheet-pad-r-sm">
-        			<input class="sheet-center" type="number" name="attr_Corruption" value="0"/>
-        		</div>      
-        	</div>
-		</div>
-		<div class="sheet-row">
-			<div class="sheet-row"> 
-		    	<div class="sheet-col-1-4 sheet-pad-r-sm">
-		    		<h4 class="sheet-center">
-		    			<span data-i18n="LIFE">Vie</span>
-		    		</h4>
-		    	</div>
-		    	<div class="sheet-col-1-4 sheet-pad-r-sm">
-		    		<h4 class="sheet-center">
-		    			<span data-i18n="PWOUNDS">Blessures</span>
-		    		</h4>
-		    	</div>
-		    	<div class="sheet-col-1-6 sheet-pad-r-sm">
-		    		<h4 class="sheet-center">
-		    			<span data-i18n="ADVANTAGE">Avantage</span>
-		    		</h4>
-		    	</div> 				
-		    	<div class="sheet-col-1-3 sheet-pad-r-sm">
-		    		<h4 class="sheet-center">
-		    			<span data-i18n="FATE-AND-RESOLVE">Destin &amp; Résilience</span>
-		    		</h4>
-		    	</div> 	  
-		    </div>
-			<div class="sheet-row"> 
-				<div class="sheet-col-1-4">
-		    		<div class="sheet-row sheet-sub-header">
-		    			<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="BASE-LIFE">Base</div>
-		    			<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="MOD-LIFE">Divers</div>
-		    			<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="CURRENT-LIFE">Restant</div>
-		    			<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="TOTAL-LIFE">Total</div>
-		    		</div>
-		    		<div class="sheet-row">
-		    			<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-		    				<input class="sheet-center" type="number" name="attr_Wounds" readonly="">
-		    			</div>
-		    			<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-		    				<input class="sheet-center" type="number" name="attr_Modifiers" value="0">
-		    			</div>	
-		    			<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-		    				<input class="sheet-center" type="number" name="attr_Life" value="@{Life}" readonly="">
-		    			</div>
-		    			<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-		    				<input class="sheet-center" type="number" name="attr_TotalWounds" value="@{Wounds}+@{Modifiers}" readonly="">
-		    			</div>
-		    		</div>
-		    	</div>
-		    	<div class="sheet-col-1-4">
-		    		<div class="sheet-row sheet-sub-header">
-		                <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="BASE-BLESS">Légères</div>
-		                <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="CRIT-BLESS">Graves</div>
-		                <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="TOTAL-BLESS">Total</div>
-		    		</div>
+			<div class="sheet-col-1-2 sheet-pad-r-md">
+				<div class="sheet-row">		
 					<div class="sheet-row">
-		    			<div class="sheet-col-1-3 sheet-center sheet-pad-r-sm">
-		    				<input class="sheet-center" type="number" name="attr_Damage" value="0">
-		    			</div>
-		    			<div class="sheet-col-1-3 sheet-center sheet-pad-r-sm">
-		    				<input class="sheet-center" type="number" name="attr_Impale" value="0">
-		    			</div>    
-		    			<div class="sheet-col-1-3 sheet-center sheet-pad-r-sm">
-		    				<input class="sheet-center" type="number" name="attr_TotalDamage" value="@{Damage}+@{Impale}" readonly="">
-		    			</div>        			
-			        </div>
-			    </div>
-			    <div class="sheet-col-1-6">
+						<div class="sheet-col-1">
+							<h4 class="sheet-center">
+								<span data-i18n="COMBAT">Combat</span>
+							</h4>
+						</div>
+					</div>
+					<span class="sheet-spacer"></span>
 					<div class="sheet-row">
-		         		<div class="sheet-col-1 sheet-sub-header">
-		        			<div class="sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="ADVANTAGEB">en Combat</div>
-		        		</div>
-					</div>	
-					<div class="sheet-row">
-		    			<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
-		    				<input class="sheet-center" type="number" name="attr_Advantage" value="0">
-		    			</div> 
-					</div>	
-				</div>			
-		        <div class="sheet-col-1-3">
-		    		<div class="sheet-row sheet-sub-header">
-		    			<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="FATE">Destin</div>
-		    			<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="FORTUNE">Fortune</div>
-		    			<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="RESILIENCE">Résilience</div>   
-		    			<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="RESOLVE">Détermination</div>     
-		    		</div>
-					<div class="sheet-row">
-		    			<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-		    				<input class="sheet-center" type="number" name="attr_Fate" value="0">
-		    			</div>
-		    			<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-		    				<input class="sheet-center" type="number" name="attr_Fortune" value="0">
-		    			</div>
-		    			<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-		    				<input class="sheet-center" type="number" name="attr_Resilience" value="0">
-		    			</div>           			
-		    			<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-		    				<input class="sheet-center" type="number" name="attr_Resolve" value="0">
-		    			</div>     
-					</div>	
+						<div class="sheet-col-1 sheet-center sheet-pad-b-md">
+							<button type="roll" class="sheet-roll" name="roll_Minor" value="@{Whisper} &{template:WF4e} {{title=^{MINOR-MISCAST}}} {{character_name=@{character_name}}} {{attacktype=^{CRITICAL}}} {{minorroll=[[1d100]]}}">
+								<span data-i18n="MINOR-MISCAST">Minor Miscast</span>
+							</button>
+						</div>	
+						<div class="sheet-col-1 sheet-center sheet-pad-b-md">
+							<button type="roll" class="sheet-roll" name="roll_Major" value="@{Whisper} &{template:WF4e} {{title=^{MAJOR-MISCAST}}} {{character_name=@{character_name}}} {{attacktype=^{CRITICAL}}} {{majorroll=[[1d100]]}}">
+								<span data-i18n="MAJOR-MISCAST">Major Miscast</span>
+							</button>
+						</div>				
+						<div class="sheet-col-1  sheet-center sheet-pad-b-md">	
+							<button type="roll" class="sheet-roll" name="roll_Wrath" value="@{Whisper} &{template:WF4e} {{title=^{WRATH-OF-THE-GODS}}} {{character_name=@{character_name}}} {{attacktype=^{CRITICAL}}} {{wrathroll=[[[[1d100]]+?{Sin|0}]]}}">
+								<span data-i18n="WRATH-OF-THE-GODS">Wrath of the Gods</span>
+							</button>
+						</div>
+					</div>
 				</div>
-			</div>			
-		</div>
-		<div class="sheet-row">
-			<div class="sheet-col-1">
-				<h4 class="sheet-center">
-					<span data-i18n="COMBAT">Combat</span>
-				</h4>
+			</div>
+			<div class="sheet-col-1-2 sheet-vert-top">
+				<div class="sheet-row">
+					<div class="sheet-row">
+						<div class="sheet-row"> 
+				    		<div class="sheet-col-1-2 sheet-pad-r-sm">
+				    			<h4 class="sheet-center">
+				    				<span data-i18n="LIFE">Vie</span>
+				    			</h4>
+				    		</div>
+				    		<div class="sheet-col-1-2 sheet-pad-r-sm">
+				    			<h4 class="sheet-center">
+				    				<span data-i18n="PWOUNDS">Blessures</span>
+				    			</h4>
+				    		</div>	 	  
+				    	</div>
+						<div class="sheet-row"> 
+							<div class="sheet-col-1-2">
+				    			<div class="sheet-row sheet-sub-header">
+				    				<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="BASE-LIFE">Base</div>
+				    				<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="MOD-LIFE">Divers</div>
+				    				<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="CURRENT-LIFE">Restant</div>
+				    				<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="TOTAL-LIFE">Total</div>
+				    			</div>
+				    			<div class="sheet-row">
+				    				<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+				    					<input class="sheet-center" type="number" name="attr_Wounds" readonly="">
+				    				</div>
+				    				<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+				    					<input class="sheet-center" type="number" name="attr_Modifiers" value="0">
+				    				</div>	
+				    				<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+				    					<input class="sheet-center" type="number" name="attr_Life" value="@{Life}" readonly="">
+				    				</div>
+				    				<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+				    					<input class="sheet-center" type="number" name="attr_TotalWounds" value="@{Wounds}+@{Modifiers}" readonly="">
+				    				</div>
+				    			</div>
+				    		</div>
+				    		<div class="sheet-col-1-2">
+				    			<div class="sheet-row sheet-sub-header">
+				    	            <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="BASE-BLESS">Légères</div>
+				    	            <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="CRIT-BLESS">Graves</div>
+				    	            <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="TOTAL-BLESS">Total</div>
+				    			</div>
+								<div class="sheet-row">
+				    				<div class="sheet-col-1-3 sheet-center sheet-pad-r-sm">
+				    					<input class="sheet-center" type="number" name="attr_Damage" value="0">
+				    				</div>
+				    				<div class="sheet-col-1-3 sheet-center sheet-pad-r-sm">
+				    					<input class="sheet-center" type="number" name="attr_Impale" value="0">
+				    				</div>    
+				    				<div class="sheet-col-1-3 sheet-center sheet-pad-r-sm">
+				    					<input class="sheet-center" type="number" name="attr_TotalDamage" value="@{Damage}+@{Impale}" readonly="">
+				    				</div>        			
+						        </div>
+						    </div>
+						</div>
+					</div>
+					<div class="sheet-row"> 
+						<div class="sheet-col-1-3 sheet-img-grimoire"></div>
+						<div class="sheet-col-2-3">
+		    				<div class="sheet-col-1 sheet-pad-r-sm">
+		    					<h4 class="sheet-center">
+		    						<span data-i18n="FATE-AND-RESOLVE">Destin &amp; Résilience</span>
+		    					</h4>
+		    				</div>
+							<div class="sheet-row sheet-sub-header">
+		    					<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="FATE">Destin</div>
+		    					<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="FORTUNE">Fortune</div>
+		    					<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="RESILIENCE">Résilience</div>   
+		    					<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="RESOLVE">Détermination</div>     
+		    				</div>
+							<div class="sheet-row">
+		    					<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+		   							<input class="sheet-center" type="number" name="attr_Fate" value="0">
+		   						</div>
+		   						<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+		   							<input class="sheet-center" type="number" name="attr_Fortune" value="0">
+	    						</div>
+	    						<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+		    						<input class="sheet-center" type="number" name="attr_Resilience" value="0">
+		    					</div>           			
+		   						<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+		   							<input class="sheet-center" type="number" name="attr_Resolve" value="0">
+		   						</div>     
+							</div>	
+							<div class="sheet-row">
+								<div class="sheet-col-1">
+    								<h4 class="sheet-center">
+    									<span data-i18n="SIN-AND-CORRUPTION">Sin & Corruption</span>
+    								</h4>
+    							</div> 	
+    							<div class="sheet-row sheet-sub-header">
+    					    		<div class="sheet-col-1-2 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="SIN">Sin</div>
+    					    		<div class="sheet-col-1-2 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="CORRUPTION">Corruption</div>
+    					    	</div>
+								<div class="sheet-row">
+    					    		<div class="sheet-col-1-2 sheet-center sheet-pad-r-sm">
+    					    			<input class="sheet-center" type="number" name="attr_Sin" value="0"/>
+    					    		</div> 
+    					    		<div class="sheet-col-1-2 sheet-center sheet-pad-r-sm">
+    					    			<input class="sheet-center" type="number" name="attr_Corruption" value="0"/>
+    					    		</div>      
+    					    	</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-		<span class="sheet-spacer"></span>
 		<div class="sheet-row">
-			<div class="sheet-col-1-3 sheet-center sheet-pad-b-md">
-				<button type="roll" class="sheet-roll" name="roll_Minor" value="@{Whisper} &{template:WF4e} {{title=^{MINOR-MISCAST}}} {{character_name=@{character_name}}} {{attacktype=^{CRITICAL}}} {{minorroll=[[1d100]]}}">
-					<span data-i18n="MINOR-MISCAST">Minor Miscast</span>
-				</button>
-			</div>	
-			<div class="sheet-col-1-3 sheet-center sheet-pad-b-md">
-				<button type="roll" class="sheet-roll" name="roll_Major" value="@{Whisper} &{template:WF4e} {{title=^{MAJOR-MISCAST}}} {{character_name=@{character_name}}} {{attacktype=^{CRITICAL}}} {{majorroll=[[1d100]]}}">
-					<span data-i18n="MAJOR-MISCAST">Major Miscast</span>
-				</button>
-			</div>				
-			<div class="sheet-col-1-3  sheet-center sheet-pad-b-md">	
-				<button type="roll" class="sheet-roll" name="roll_Wrath" value="@{Whisper} &{template:WF4e} {{title=^{WRATH-OF-THE-GODS}}} {{character_name=@{character_name}}} {{attacktype=^{CRITICAL}}} {{wrathroll=[[[[1d100]]+?{Sin|0}]]}}">
-					<span data-i18n="WRATH-OF-THE-GODS">Wrath of the Gods</span>
-				</button>
+			<div class="sheet-row">
+				<div class="sheet-img-spacer-apt"></div>	
 			</div>
-		</div>
-		<div class="sheet-row">
 			<div class="sheet-col-1">
 				<h4 class="sheet-center">
 					<span data-i18n="SPELLBOOK">Spellbook</span>
