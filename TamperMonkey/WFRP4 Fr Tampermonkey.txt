@@ -12,6 +12,10 @@
 // ==/UserScript==
 (function() {var css =`
 
+.sheet-row.sheet-spacebottom {
+    margin-bottom: 3px;
+}
+
 .sheet-img-death {
     background: url(https://i.imgur.com/174IOA3.png);
     background-size: 85%;
