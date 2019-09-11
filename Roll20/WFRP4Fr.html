@@ -3794,69 +3794,69 @@
 	<div class="sheet-section-weapons">
 	    <div class="sheet-row">					
 			<div class="sheet-col-1-2 sheet-pad-r-md">
-    			<div class="sheet-row">
-    				<div class="sheet-col-1">
-    					<h4 class="sheet-center">
-    						<span data-i18n="COMBAT">Combat</span>
-    					</h4>
-    				</div>
-    			</div>
-    			<span class="sheet-spacer"></span>	
-    			<div class="sheet-row">
-    				<div class="sheet-col-1-4 sheet-center">
-        		    	<div class="sheet-col-1 sheet-center sheet-pad-r-sm sheet-block-a">
-            				<button type="roll" class="sheet-roll btn ui-draggable" name="roll_Initiative" value="@{Whisper} &amp;{template:WF4e} {{title=^{INITIATIVE}}} {{character_name=@{character_name}}} {{inittest=[[1d10+(@{Initiative})&amp;{tracker}]]}}">
-            					<span data-i18n="INITIATIVE">Initiative</span>
-            				</button>
-            			</div>	    			
-    				</div>	
-    				<div class="sheet-col-1-4 sheet-center sheet-pad-r-md">
-    					<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
-    						<button type="roll" class="sheet-roll btn ui-draggable" name="roll_CriticalRoll" value="@{Whisper} &amp;{template:WF4e} {{title=Critical Roll}} {{character_name=@{character_name}}} {{attacktype=^{CRITICAL}}} {{critlocation=[[?{Localisation|Tête,1|Bras Droit,2|bras gauche,3|Corps,4|jambe Droite,5|Jambe Gauche,6}]]}} {{critroll=[[[[1d100]]+?{@{translation_modifier}|0}]]}}">
-    							<span data-i18n="CRITICAL-HIT">Coup Critique</span>
-    						</button>
-    					</div>
-    				</div>
-    				<div class="sheet-col-1-4 sheet-center">
-    					<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
-    						<button type="roll" class="sheet-roll btn ui-draggable" name="roll_FumbleTest" value="@{Whisper} &amp;{template:WF4e} {{title=^{FUMBLE}}} {{character_name=@{character_name}}} {{attacktype=^{CRITICAL}}} {{fumbleroll=[[1d100]]}}">
-    							<span data-i18n="OOPS">Oups</span>
-    						</button>
-    					</div>
-    				</div>
-    				<div class="sheet-col-1-4 sheet-center">
-    					<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
-    						<button type="roll" class="sheet-roll btn ui-draggable" name="roll_AmputationTest" value="@{Whisper} &amp;{template:WF4e} {{title=^{AMPUTATION}}} {{character_name=@{character_name}}} {{attacktype=^{CRITICAL}}} {{amputationroll=true}} {{test=[[1d100]]}} {{target=[[@{Endurance}+?{@{translation_modifier}|0}]]}}">
-    							<span data-i18n="AMPUTATION">Amputation</span>
-    						</button>
-    					</div>
-    				</div>
-    			</div>
-				<span class="sheet-spacer"></span>
 				<div class="sheet-row">
-    				<div class="sheet-col-1-3 sheet-center">
-    					<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
-    						<button type="roll" class="sheet-roll btn ui-draggable" name="roll_Dodge" value="@{Whisper} &amp;{template:WF4e} {{title=^{DODGE}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{target=[[@{DodgeChar}+@{DodgeAdv}+@{DodgeMisc}+(@{Advantage}*10)+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}">
-    							<span data-i18n="DODGE">Esquive</span>
-    						</button>
-    					</div>
-    				</div>	
-    				<div class="sheet-col-1-3 sheet-center">
-    					<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
-    						<button type="roll" class="sheet-roll btn ui-draggable" name="roll_Athletics" value="@{Whisper} &amp;{template:WF4e} {{title=^{ATHLETICS}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{target=[[@{AthleticsChar}+@{AthleticsAdv}+@{AthleticsMisc}+(@{Advantage}*10)+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}">
-    							<span data-i18n="ATHLETICS">Athlétisme</span>
-    						</button>
-    					</div>
-    				</div>	
-    				<div class="sheet-col-1-3 sheet-center">
-    					<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
-    						<button type="roll" class="sheet-roll btn ui-draggable" name="roll_Endurance" value="@{Whisper} &amp;{template:WF4e} {{title=^{ENDURANCE}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{target=[[@{EnduranceChar}+@{EnduranceAdv}+@{EnduranceMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}">
-    							<span data-i18n="ENDURANCE">Endurance</span>
-    						</button>
-    					</div>
-    				</div>				
-    			</div>	
-    			<span class="sheet-spacer"></span>	
+					<div class="sheet-col-1-3">
+						<div class="row">
+							<div class="sheet-col-1 sheet-right sheet-pad-r-sm sheet-block-a">
+				            	<button type="roll" class="sheet-roll sheet-btn sheet-ui-draggable btn ui-draggable" name="roll_Initiative" value="@{Whisper} &amp;{template:WF4e} {{title=^{INITIATIVE}}} {{character_name=@{character_name}}} {{inittest=[[1d10+(@{Initiative})&amp;{tracker}]]}}">
+				            		<span data-i18n="INITIATIVE">Initiative</span>
+				            	</button>
+				            </div>
+						</div>
+						<div class="row">
+				    		<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
+				    			<button type="roll" class="sheet-roll sheet-btn sheet-ui-draggable btn ui-draggable" name="roll_CriticalRoll" value="@{Whisper} &amp;{template:WF4e} {{title=Critical Roll}} {{character_name=@{character_name}}} {{attacktype=^{CRITICAL}}} {{critlocation=[[?{Localisation|Tête,1|Bras Droit,2|bras gauche,3|Corps,4|jambe Droite,5|Jambe Gauche,6}]]}} {{critroll=[[[[1d100]]+?{@{translation_modifier}|0}]]}}">
+				    				<span data-i18n="CRITICAL-HIT">Coup Critique</span>
+				    			</button>
+				    		</div>
+						</div>
+						<div class="row">
+				   			<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
+				   				<button type="roll" class="sheet-roll sheet-btn sheet-ui-draggable btn ui-draggable" name="roll_FumbleTest" value="@{Whisper} &amp;{template:WF4e} {{title=^{FUMBLE}}} {{character_name=@{character_name}}} {{attacktype=^{CRITICAL}}} {{fumbleroll=[[1d100]]}}">
+				    				<span data-i18n="OOPS">Maladresse</span>
+				    			</button>
+				    		</div>
+						</div>
+						<div class="row">
+				    		<div class="sheet-col-1 sheet-right sheet-pad-r-sm">
+				    			<button type="roll" class="sheet-roll sheet-btn sheet-ui-draggable btn ui-draggable" name="roll_AmputationTest" value="@{Whisper} &amp;{template:WF4e} {{title=^{AMPUTATION}}} {{character_name=@{character_name}}} {{attacktype=^{CRITICAL}}} {{amputationroll=true}} {{test=[[1d100]]}} {{target=[[@{Résistance}+?{@{translation_modifier}|0}]]}}">
+				    				<span data-i18n="AMPUTATION">Amputation</span>
+				    			</button>
+				    		</div>
+						</div>
+					</div>
+					<div class="sheet-col-1-3 sheet-img-fight"></div>
+					<div class="sheet-col-1-3">
+						<div class="row">
+				    		<div class="sheet-col-1 sheet-left sheet-pad-r-sm">
+				    			<button type="roll" class="sheet-roll sheet-btn sheet-ui-draggable btn ui-draggable" name="roll_Dodge" value="@{Whisper} &amp;{template:WF4e} {{title=^{DODGE}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{target=[[@{DodgeChar}+@{DodgeAdv}+@{DodgeMisc}+(@{Advantage}*10)+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}">
+				    				<span data-i18n="DODGE">Esquive</span>
+				    			</button>
+				    		</div>
+						</div>
+						<div class="row">
+				   			<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
+				   				<button type="roll" class="sheet-roll sheet-btn sheet-ui-draggable btn ui-draggable" name="roll_Acrobatie" value="@{Whisper} &amp;{template:WF4e} {{title=^{ACROBATIE}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{target=[[@{AcrobatieChar}+@{AcrobatieAdv}+@{AcrobatieMisc}+(@{Advantage}*10)+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}">
+				    				<span data-i18n="ACROBATIE">Acrobatie</span>
+				    			</button>
+				    		</div>
+						</div>
+						<div class="row">
+				    		<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
+				    			<button type="roll" class="sheet-roll sheet-btn sheet-ui-draggable btn ui-draggable" name="roll_Athletics" value="@{Whisper} &amp;{template:WF4e} {{title=^{ATHLETICS}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{target=[[@{AthleticsChar}+@{AthleticsAdv}+@{AthleticsMisc}+(@{Advantage}*10)+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}">
+				    				<span data-i18n="ATHLETICS">Athlétisme</span>
+				    			</button>
+				    		</div>
+						</div>
+						<div class="row">
+				    		<div class="sheet-col-1 sheet-left sheet-pad-r-sm">
+				    			<button type="roll" class="sheet-roll sheet-btn sheet-ui-draggable btn ui-draggable" name="roll_Résistance" value="@{Whisper} &amp;{template:WF4e} {{title=^{RESISTANCE}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{target=[[@{RésistanceChar}+@{RésistanceAdv}+@{RésistanceMisc}+(@{Advantage}*10)+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}">
+									<span data-i18n="RESISTANCE">Résistance</span>
+				    			</button>
+				    		</div>
+						</div>
+					</div>
+				</div>
     		</div>
 			<div class="sheet-col-1-2 sheet-vert-top">
 				<div class="sheet-row">

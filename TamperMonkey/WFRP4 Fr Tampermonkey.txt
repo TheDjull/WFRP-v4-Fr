@@ -12,6 +12,17 @@
 // ==/UserScript==
 (function() {var css =`
 
+.sheet-img-fight {
+    background: url(https://i.imgur.com/vLZUog5.png);
+    background-size: 80%;
+    height: 95px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: top;
+    top: 10px;
+    position: relative;
+}
+
 .sheet-row.sheet-spacebottom {
     margin-bottom: 3px;
 }
