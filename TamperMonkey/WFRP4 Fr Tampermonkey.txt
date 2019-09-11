@@ -12,6 +12,15 @@
 // ==/UserScript==
 (function() {var css =`
 
+.sheet-img-dice {
+    background: url(https://i.imgur.com/eS0PNwN.png);
+    background-size: 100%;
+    height: 111px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
 .sheet-img-armor {
     height: 185px;
     background: url(https://i.imgur.com/nONdg6C.png);
@@ -29,9 +38,9 @@
     background-position-y: center;
 }
 
-.sheet-img-spacer-blue {
-    height: 59px;
-    background: url(https://i.imgur.com/WKzn0y2.png);
+.sheet-img-spacer-atb {
+    height: 37px;
+    background: url(https://i.imgur.com/SN8tzhM.png);
     background-size: 50%;
     background-repeat: no-repeat;
     background-position-x: center;
