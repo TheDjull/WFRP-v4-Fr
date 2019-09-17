@@ -12,6 +12,15 @@
 // ==/UserScript==
 (function() {var css =`
 
+.sheet-img-note {
+    background: url(https://i.imgur.com/rhps6fu.png);
+    background-size: 70%;
+    height: 245px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
 .sheet-img-grimoire {
     background: url(https://i.imgur.com/J97T6dg.png);
     background-size: 85%;
