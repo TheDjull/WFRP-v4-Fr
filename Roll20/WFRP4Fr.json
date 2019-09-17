@@ -1271,6 +1271,8 @@
 	"COMEN20-DESC1": "Agilité +5 ; Sociabilité -5",
 	"COPHY-ROLL": "Jet de Corruption Physique",
 	"COMEN-ROLL": "Jet de Corruption Mentale",
+	"COPHY": "Corruption Physique",
+	"COMEN": "Corruption Mentale",
 	"ARCANE-MARK": "Marque d'Arcane",
 	"ARCANE-LORE": "Sort d'Arcane",
 	"MINOR-MISCAST": "Incantation Imparfaite Mineure",
@@ -1285,5 +1287,9 @@
 	"PSYCHOLOGY": "Psychologie",
 	"TRAUMA": "Traumatismes",
 	"SPECIFICITY": "Spécificité",
+	"CONTRACTION": "Contraction",
+	"INCUBATION": "Incubation",
+	"SYMPTOMS": "Symptômes",
+	"DISEASES": "Maladies & Poisons",
 	"NONE": "Aucun"
 }
