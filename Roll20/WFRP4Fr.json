@@ -431,7 +431,6 @@
 	"CASTING-TIME": "Temps d'incantation",
 	"DURATION": "Durée",
 	"TARGET": "Cible/Zone",
-	"NONE": "Aucun",
 	"1": "Max{1}",
 	"2": "Max{2}",
 	"3": "Max{3}",
@@ -1283,5 +1282,8 @@
 	"WRATH": "Colère",
 	"VENGEANCE": "Vengeance !",
 	"WRATH-OF-THE-GODS": "Colère des Dieux",
-	"PSYCHOLOGY": "Psychologie"
+	"PSYCHOLOGY": "Psychologie",
+	"TRAUMA": "Traumatismes",
+	"SPECIFICITY": "Spécificité",
+	"NONE": "Aucun"
 }
