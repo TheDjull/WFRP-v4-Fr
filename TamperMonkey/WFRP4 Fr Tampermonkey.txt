@@ -914,14 +914,14 @@ textarea,select,input,table,
 .ui-dialog .charsheet .repcontrol_edit {
     float: right;
     background: transparent!important;
-    color: #666!important;
+    color: transparent!important;
     border: 0px;
 }
 
 .charsheet .repcontrol, .charsheet .repcontrol_add, .charsheet .repcontrol_edit, .charsheet .repcontrol_del, .charsheet .repcontrol_move {
     height: 25px;
     background: transparent!important;
-    color: #666!important;
+    color: transparent!important;
     border: 0px;
 }
 
@@ -1612,8 +1612,11 @@ color: #a11504 !important;
 }
 
 .charsheet .repcontrol .repcontrol_add:before {
-	background-color:hsl(122,46%,54%) !important;
 	margin-right: 5px;
+    margin-left: 3px;
+    content: "&";
+    color: #777 !important;
+    font-family: pictos;
 }
 
 .textchatcontainer .avatar {
@@ -1624,8 +1627,10 @@ color: #a11504 !important;
 }
 
 .charsheet .repcontrol .repcontrol_edit:after {
-	background-color:hsl(30,90%,59%) !important;
-	margin-left: 5px;
+	margin-left: 8px;
+    content: "1";
+    color: #777;
+    font-family: pictos;
 }
 
 .ui-dialog .charsheet input[type=number] {
