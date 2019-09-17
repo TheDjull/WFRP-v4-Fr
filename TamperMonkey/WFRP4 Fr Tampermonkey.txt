@@ -1169,7 +1169,7 @@ div.dd-content:hover {
 }
 
 .ui-tabs .ui-tabs-nav li {
-text-decoration: none;
+	text-decoration: none;
     list-style: none;
     float: left;
     position: relative;
@@ -1962,7 +1962,7 @@ background-color: #444 !important;
 .charsheet div .sheet-pseudo-button-wrapper input[value='settings']:checked + span[class='sheet-pictos'],
 .charsheet .sheet-pseudo-button-wrapper input[type='radio']:checked ~ span[class='sheet-npc sheet-bold'],
 .charsheet .sheet-pseudo-button-wrapper.sheet-visible-button > input[name$='_rest'] + span {
-background-color: #313b92 !important;
+background-color: #777 !important;
 }
 
 .sheet-shaped-row .sheet-toggle-edit-mode + span {
