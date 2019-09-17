@@ -3655,7 +3655,13 @@
     		<fieldset class="repeating_TraumaSpecializationr">
     			<div class="sheet-row">
     				<div class="sheet-col-1-6 sheet-pad-r-sm sheet-vert-middle">
-    					<input class="sheet-center" type="text" name="attr_TraumaType"/>
+    					<select class="sheet-select-no-arrow-center" name="attr_TraumaChar">							    						    
+							<option value="@{Trauma1}" data-i18n="TRAUMA1">Fracture Mineure</option>
+							<option value="@{Trauma2}" data-i18n="TRAUMA2">Fracture Majeure</option>
+							<option value="@{Trauma3}" data-i18n="TRAUMA3">Déchirure Mineure</option>
+							<option value="@{Trauma4}" data-i18n="TRAUMA4">Déchirure Majeure</option>
+							<option value="@{Trauma5}" data-i18n="TRAUMA5">Amputation</option>
+						</select>
     				</div>					
      				<div class="sheet-col-1-6 sheet-center sheet-pad-r-sm sheet-vert-middle">
     					<input class="sheet-center" type="text" name="attr_TraumaSpe"/>
@@ -3681,11 +3687,32 @@
     	    	</div>    			
     			<fieldset class="repeating_CophySpecializationr">
     				<div class="sheet-row">
-    					<div class="sheet-col-1-3 sheet-pad-r-sm sheet-vert-middle">
-    						<input class="sheet-center" type="text" name="attr_CophyName"/>
-    					</div>					
-    	 				<div class="sheet-col-2-3 sheet-center sheet-pad-r-sm sheet-vert-middle">
-    						<textarea class="sheet-xs-textarea" type="text" name="attr_CophyEffects"></textarea>
+    					<div class="sheet-col-1-4 sheet-pad-r-sm sheet-vert-middle">
+    						<select class="sheet-select-no-arrow-center" name="attr_CophyChar">							    						    
+								<option value="COPHY01-DESC1" data-i18n="COPHY01-NAME1">CophyName01</option>
+								<option value="COPHY02-DESC1" data-i18n="COPHY02-NAME1">CophyName02</option>
+								<option value="COPHY03-DESC1" data-i18n="COPHY03-NAME1">CophyName03</option>
+								<option value="COPHY04-DESC1" data-i18n="COPHY04-NAME1">CophyName04</option>
+								<option value="COPHY05-DESC1" data-i18n="COPHY05-NAME1">CophyName05</option>
+								<option value="COPHY06-DESC1" data-i18n="COPHY06-NAME1">CophyName06</option>
+								<option value="COPHY07-DESC1" data-i18n="COPHY07-NAME1">CophyName07</option>
+								<option value="COPHY08-DESC1" data-i18n="COPHY08-NAME1">CophyName08</option>
+								<option value="COPHY09-DESC1" data-i18n="COPHY09-NAME1">CophyName09</option>
+								<option value="COPHY10-DESC1" data-i18n="COPHY10-NAME1">CophyName10</option>
+								<option value="COPHY11-DESC1" data-i18n="COPHY11-NAME1">CophyName11</option>
+								<option value="COPHY12-DESC1" data-i18n="COPHY12-NAME1">CophyName12</option>
+								<option value="COPHY13-DESC1" data-i18n="COPHY13-NAME1">CophyName13</option>
+								<option value="COPHY14-DESC1" data-i18n="COPHY14-NAME1">CophyName14</option>
+								<option value="COPHY15-DESC1" data-i18n="COPHY15-NAME1">CophyName15</option>
+								<option value="COPHY16-DESC1" data-i18n="COPHY16-NAME1">CophyName16</option>
+								<option value="COPHY17-DESC1" data-i18n="COPHY17-NAME1">CophyName17</option>
+								<option value="COPHY18-DESC1" data-i18n="COPHY18-NAME1">CophyName18</option>
+								<option value="COPHY19-DESC1" data-i18n="COPHY19-NAME1">CophyName19</option>
+								<option value="COPHY20-DESC1" data-i18n="COPHY20-NAME1">CophyName20</option>
+							</select>
+    					</div>
+    	 				<div class="sheet-col-3-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
+							<span name="attr_CophyChar" data-i18n-dynamic></span>
     					</div>
     				</div>
     			</fieldset>
@@ -3704,12 +3731,33 @@
     	    	</div>    			
     			<fieldset class="repeating_ComenSpecializationr">
     				<div class="sheet-row">
-    					<div class="sheet-col-1-3 sheet-pad-r-sm sheet-vert-middle">
-    						<input class="sheet-center" type="text" name="attr_ComenName"/>
-    					</div>					
-    	 				<div class="sheet-col-2-3 sheet-center sheet-pad-r-sm sheet-vert-middle">
-    						<textarea class="sheet-xs-textarea" type="text" name="attr_ComenEffects"></textarea>
-    					</div>	
+    					<div class="sheet-col-1-4 sheet-pad-r-sm sheet-vert-middle">
+    						<select class="sheet-select-no-arrow-center" name="attr_ComenChar">							    						    
+								<option value="COMEN01-DESC1" data-i18n="COMEN01-NAME1">ComenName01</option>
+								<option value="COMEN02-DESC1" data-i18n="COMEN02-NAME1">ComenName02</option>
+								<option value="COMEN03-DESC1" data-i18n="COMEN03-NAME1">ComenName03</option>
+								<option value="COMEN04-DESC1" data-i18n="COMEN04-NAME1">ComenName04</option>
+								<option value="COMEN05-DESC1" data-i18n="COMEN05-NAME1">ComenName05</option>
+								<option value="COMEN06-DESC1" data-i18n="COMEN06-NAME1">ComenName06</option>
+								<option value="COMEN07-DESC1" data-i18n="COMEN07-NAME1">ComenName07</option>
+								<option value="COMEN08-DESC1" data-i18n="COMEN08-NAME1">ComenName08</option>
+								<option value="COMEN09-DESC1" data-i18n="COMEN09-NAME1">ComenName09</option>
+								<option value="COMEN10-DESC1" data-i18n="COMEN10-NAME1">ComenName10</option>
+								<option value="COMEN11-DESC1" data-i18n="COMEN11-NAME1">ComenName11</option>
+								<option value="COMEN12-DESC1" data-i18n="COMEN12-NAME1">ComenName12</option>
+								<option value="COMEN13-DESC1" data-i18n="COMEN13-NAME1">ComenName13</option>
+								<option value="COMEN14-DESC1" data-i18n="COMEN14-NAME1">ComenName14</option>
+								<option value="COMEN15-DESC1" data-i18n="COMEN15-NAME1">ComenName15</option>
+								<option value="COMEN16-DESC1" data-i18n="COMEN16-NAME1">ComenName16</option>
+								<option value="COMEN17-DESC1" data-i18n="COMEN17-NAME1">ComenName17</option>
+								<option value="COMEN18-DESC1" data-i18n="COMEN18-NAME1">ComenName18</option>
+								<option value="COMEN19-DESC1" data-i18n="COMEN19-NAME1">ComenName19</option>
+								<option value="COMEN20-DESC1" data-i18n="COMEN20-NAME1">ComenName20</option>
+							</select>
+    					</div>
+    	 				<div class="sheet-col-3-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
+							<span name="attr_ComenChar" data-i18n-dynamic></span>
+    					</div>
     				</div>
     			</fieldset>
 			</div>
@@ -10269,6 +10317,5 @@ on('sheet:opened change:totalwounds', function (event) {
 		});
 	});
 });
-
 
 </script>
