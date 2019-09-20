@@ -128,7 +128,7 @@
 	</span>
 	<input type="radio" name="attr_tab" class="sheet-tab-page-settings sheet-pc-version-inline-block" value="settings"/>
 	<span class="sheet-tab-page-settings sheet-pc-version-inline-block">
-		<span class="sheet-pictos">y</span>
+		<span class="sheet-pictos sheet-pictos-setting">y</span>
 	</span>
 	<div class="sheet-col-1-10 sheet-pad-l-md">
 		<select class="sheet-select-whisper" name="attr_Whisper">
@@ -3487,65 +3487,65 @@
     		</div>
 			<div class="sheet-col-1-2 sheet-vert-top">
 				<div class="sheet-row">
-				<div class="sheet-row">
 					<div class="sheet-row">
-						<div class="sheet-row"> 
-				    		<div class="sheet-col-1-2 sheet-pad-r-md">
-				    			<h4 class="sheet-center">
-				    				<span data-i18n="LIFE">Vie</span>
-				    			</h4>
+						<div class="sheet-row">
+							<div class="sheet-row"> 
+					    		<div class="sheet-col-1-2 sheet-pad-r-md">
+					    			<h4 class="sheet-center">
+					    				<span data-i18n="LIFE">Vie</span>
+					    			</h4>
+					    		</div>
+				   		 		<div class="sheet-col-1-2">
+				    				<h4 class="sheet-center">
+				    					<span data-i18n="PWOUNDS">Blessures</span>
+				    				</h4>
+				    			</div>	 	  
 				    		</div>
-				    		<div class="sheet-col-1-2">
-				    			<h4 class="sheet-center">
-				    				<span data-i18n="PWOUNDS">Blessures</span>
-				    			</h4>
-				    		</div>	 	  
-				    	</div>
-						<div class="sheet-row"> 
-							<div class="sheet-col-1-2">
-				    			<div class="sheet-row sheet-sub-header">
-				    				<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="BASE-LIFE">Base</div>
-				    				<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="MOD-LIFE">Divers</div>
-				    				<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="CURRENT-LIFE">Restant</div>
-				    				<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="TOTAL-LIFE">Total</div>
-				    			</div>
-				    			<div class="sheet-row">
-				    				<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-				    					<input class="sheet-center" type="number" name="attr_Wounds" readonly="">
+							<div class="sheet-row"> 
+								<div class="sheet-col-1-2">
+				    				<div class="sheet-row sheet-sub-header">
+				    					<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="BASE-LIFE">Base</div>
+				    					<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="MOD-LIFE">Divers</div>
+				    					<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="CURRENT-LIFE">Restant</div>
+				    					<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="TOTAL-LIFE">Total</div>
 				    				</div>
-				    				<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-				    					<input class="sheet-center" type="number" name="attr_Modifiers" value="0">
-				    				</div>	
-				    				<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-				    					<input class="sheet-center" type="number" name="attr_Life" value="@{Life}" readonly="">
-				    				</div>
-				    				<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-				    					<input class="sheet-center" type="number" name="attr_TotalWounds" value="@{Wounds}+@{Modifiers}" readonly="">
+				    				<div class="sheet-row">
+				    					<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+				    						<input class="sheet-center" type="number" name="attr_Wounds" readonly="">
+				    					</div>
+				    					<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+				    						<input class="sheet-center" type="number" name="attr_Modifiers" value="0">
+				    					</div>	
+				    					<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+				    						<input class="sheet-center" type="number" name="attr_Life" value="@{Life}" readonly="">
+				    					</div>
+				    					<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+				    						<input class="sheet-center" type="number" name="attr_TotalWounds" value="@{Wounds}+@{Modifiers}" readonly="">
+				    					</div>
 				    				</div>
 				    			</div>
-				    		</div>
-				    		<div class="sheet-col-1-2">
-				    			<div class="sheet-row sheet-sub-header">
-				    	            <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="BASE-BLESS">Légères</div>
-				    	            <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="CRIT-BLESS">Graves</div>
-				    	            <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="TOTAL-BLESS">Total</div>
-				    			</div>
-								<div class="sheet-row">
-				    				<div class="sheet-col-1-3 sheet-center sheet-pad-r-sm">
-				    					<input class="sheet-center" type="number" name="attr_Damage" value="0">
+				    			<div class="sheet-col-1-2">
+				    				<div class="sheet-row sheet-sub-header">
+				    	    	        <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="BASE-BLESS">Légères</div>
+				    	    	        <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="CRIT-BLESS">Graves</div>
+				    	    	        <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="TOTAL-BLESS">Total</div>
 				    				</div>
-				    				<div class="sheet-col-1-3 sheet-center sheet-pad-r-sm">
-				    					<input class="sheet-center" type="number" name="attr_Impale" value="0">
-				    				</div>    
-				    				<div class="sheet-col-1-3 sheet-center sheet-pad-r-sm">
-				    					<input class="sheet-center" type="number" name="attr_TotalDamage" value="@{Damage}+@{Impale}" readonly="">
-				    				</div>        			
-						        </div>
-						    </div>
+									<div class="sheet-row">
+				    					<div class="sheet-col-1-3 sheet-center sheet-pad-r-sm">
+				    						<input class="sheet-center" type="number" name="attr_Damage" value="0">
+				    					</div>
+				    					<div class="sheet-col-1-3 sheet-center sheet-pad-r-sm">
+				    						<input class="sheet-center" type="number" name="attr_Impale" value="0">
+				    					</div>    
+				    					<div class="sheet-col-1-3 sheet-center sheet-pad-r-sm">
+				    						<input class="sheet-center" type="number" name="attr_TotalDamage" value="@{Damage}+@{Impale}" readonly="">
+				    					</div>        			
+						    	    </div>
+						    	</div>
+							</div>
 						</div>
-					</div>
-					<div class="sheet-row"> 
-						<div class="sheet-col-1-3 sheet-img-death"></div>
+						<div class="sheet-row"> 
+							<div class="sheet-col-1-3 sheet-img-death"></div>
 							<div class="sheet-col-2-3">
 		    					<div class="sheet-col-1 sheet-pad-r-sm">
 		    						<h4 class="sheet-center">
@@ -3573,33 +3573,42 @@
 		    						</div>     
 								</div>	
 								<div class="sheet-row">
-            						<div class="sheet-col-1">
+            						<div class="sheet-col-1-2 sheet-pad-r-md">
             							<h4 class="sheet-center">
             								<span data-i18n="MOVEMENT">Mouvement</span>
             							</h4>
-            						</div>	
-        		    				<div class="sheet-col-1">
+            						</div>
+            						<div class="sheet-col-1-2">
+            							<h4 class="sheet-center">
+            								<span data-i18n="CORRUPTION">Corruption</span>
+            							</h4>
+            						</div>									
+        		    				<div class="sheet-col-1-2 sheet-pad-r-md">
             							<div class="sheet-row">
                     				 		<div class="sheet-row sheet-sub-header">
-                    							<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="STARTING">Base</div>
-                    							<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="MODIFIER">Divers</div>
-                    							<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="WALK">Marche</div>
-                    							<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="RUN">Course</div>        
+                    							<div class="sheet-col-1-2 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="STARTING">Base</div>
+                    							<div class="sheet-col-1-2 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="MODIFIER">Divers</div>
                     						</div>
             							</div>	
             							<div class="sheet-row">
-                							<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+                							<div class="sheet-col-1-2 sheet-center sheet-pad-r-sm">
                 								<input class="sheet-center" type="number" name="attr_Movement" value="0">
                 							</div>
-                							<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+                							<div class="sheet-col-1-2 sheet-center sheet-pad-r-sm">
                 								<input class="sheet-center" type="number" name="attr_MovementTalents" value="0">
-                							</div>        			
-                							<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-                								<input class="sheet-center" type="number" name="attr_Charge" value="(@{Movement}+@{MovementTalents})*2" disabled="true" data-formula="(@{Movement}+@{MovementTalents})*2">
-                							</div>
-                							<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
-                								<input class="sheet-center" type="number" name="attr_Run" value="(@{Movement}+@{MovementTalents})*4" disabled="true" data-formula="(@{Movement}+@{MovementTalents})*4">
-                							</div>        				
+                							</div>       				
+            							</div>	
+        							</div>   
+        		    				<div class="sheet-col-1-2">
+            							<div class="sheet-row">
+                    				 		<div class="sheet-row sheet-sub-header">
+                    							<div class="sheet-col-1 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="CORRUPTION">Corruption</div>
+                    						</div>
+            							</div>	
+            							<div class="sheet-row">
+                							<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
+                								<input class="sheet-center" type="number" name="attr_Corruption" value="0">
+                							</div>      				
             							</div>	
         							</div>   
         						</div>
@@ -3608,69 +3617,6 @@
 					</div>
 				</div>			
 			</div>
-		</div>
-		<div class="sheet-row">
-			<div class="sheet-row">
-				<div class="sheet-img-spacer-apt"></div>	
-			</div>
-			<div class="sheet-row">
-    			<div class="sheet-col-1">
-    				<h4 class="sheet-center">
-    					<span data-i18n="CRITICALS">Criticals</span>
-    				</h4>
-    			</div>
-    		</div>  
-        	<div class="sheet-row sheet-sub-header">
-        		<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="NAME">Nom</div>
-        		<div class="sheet-col-1-12 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="WOUNDS">Wounds</div>
-        		<div class="sheet-col-2-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="EFFECTS">Additional Effects</div>
-        	</div>    			
-    		<fieldset class="repeating_CriticaSpecializationr">
-    			<div class="sheet-row">
-    				<div class="sheet-col-1-4 sheet-pad-r-sm sheet-vert-middle">
-    					<input class="sheet-center" type="text" name="attr_CriticalDescription"/>
-    				</div>					
-     				<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm sheet-vert-middle">
-    					<input class="sheet-center" type="text" name="attr_CriticalWounds"/>
-    				</div>
-    				<div class="sheet-col-2-3 sheet-center sheet-pad-r-sm sheet-vert-middle">
-    					<textarea  class="sheet-xs-textarea" type="text" name="attr_CriticalEffects"></textarea>
-    				</div>	
-    			</div>
-    		</fieldset>
-		</div>
-		<div class="sheet-row">
-			<div class="sheet-row">
-    			<div class="sheet-col-1">
-    				<h4 class="sheet-center">
-    					<span data-i18n="TRAUMA">Traumatismes</span>
-    				</h4>
-    			</div>
-    		</div>  
-        	<div class="sheet-row sheet-sub-header">
-        		<div class="sheet-col-1-6 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="TYPE">Type</div>
-        		<div class="sheet-col-1-6 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="SPECIFICITY">Spécificité</div>
-        		<div class="sheet-col-2-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="EFFECTS">Effets</div>
-        	</div>    			
-    		<fieldset class="repeating_TraumaSpecializationr">
-    			<div class="sheet-row">
-    				<div class="sheet-col-1-6 sheet-pad-r-sm sheet-vert-middle">
-    					<select class="sheet-select-no-arrow-center" name="attr_TraumaChar">							    						    
-							<option value="@{Trauma1}" data-i18n="TRAUMA1">Fracture Mineure</option>
-							<option value="@{Trauma2}" data-i18n="TRAUMA2">Fracture Majeure</option>
-							<option value="@{Trauma3}" data-i18n="TRAUMA3">Déchirure Mineure</option>
-							<option value="@{Trauma4}" data-i18n="TRAUMA4">Déchirure Majeure</option>
-							<option value="@{Trauma5}" data-i18n="TRAUMA5">Amputation</option>
-						</select>
-    				</div>					
-     				<div class="sheet-col-1-6 sheet-center sheet-pad-r-sm sheet-vert-middle">
-    					<input class="sheet-center" type="text" name="attr_TraumaSpe"/>
-    				</div>
-    				<div class="sheet-col-2-3 sheet-center sheet-pad-r-sm sheet-vert-middle">
-    					<textarea class="sheet-xs-textarea" type="text" name="attr_TraumaEffects"></textarea>
-    				</div>	
-    			</div>
-    		</fieldset>
 		</div>
 		<div class="sheet-row">
 			<div class="sheet-col-1-2">
@@ -3764,6 +3710,69 @@
 		</div>
 		<div class="sheet-row">
 			<div class="sheet-row">
+				<div class="sheet-img-spacer-apt"></div>	
+			</div>
+			<div class="sheet-row">
+    			<div class="sheet-col-1">
+    				<h4 class="sheet-center">
+    					<span data-i18n="CRITICALS">Criticals</span>
+    				</h4>
+    			</div>
+    		</div>  
+        	<div class="sheet-row sheet-sub-header">
+        		<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="NAME">Nom</div>
+        		<div class="sheet-col-1-12 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="WOUNDS">Wounds</div>
+        		<div class="sheet-col-2-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="EFFECTS">Additional Effects</div>
+        	</div>    			
+    		<fieldset class="repeating_CriticaSpecializationr">
+    			<div class="sheet-row">
+    				<div class="sheet-col-1-4 sheet-pad-r-sm sheet-vert-middle">
+    					<input class="sheet-center" type="text" name="attr_CriticalDescription"/>
+    				</div>					
+     				<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm sheet-vert-middle">
+    					<input class="sheet-center" type="text" name="attr_CriticalWounds"/>
+    				</div>
+    				<div class="sheet-col-2-3 sheet-center sheet-pad-r-sm sheet-vert-middle">
+    					<textarea  class="sheet-xs-textarea" type="text" name="attr_CriticalEffects"></textarea>
+    				</div>	
+    			</div>
+    		</fieldset>
+		</div>
+		<div class="sheet-row">
+			<div class="sheet-row">
+    			<div class="sheet-col-1">
+    				<h4 class="sheet-center">
+    					<span data-i18n="TRAUMA">Traumatismes</span>
+    				</h4>
+    			</div>
+    		</div>  
+        	<div class="sheet-row sheet-sub-header">
+        		<div class="sheet-col-1-6 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="TYPE">Type</div>
+        		<div class="sheet-col-1-6 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="SPECIFICITY">Spécificité</div>
+        		<div class="sheet-col-2-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="EFFECTS">Effets</div>
+        	</div>    			
+    		<fieldset class="repeating_TraumaSpecializationr">
+    			<div class="sheet-row">
+    				<div class="sheet-col-1-6 sheet-pad-r-sm sheet-vert-middle">
+    					<select class="sheet-select-no-arrow-center" name="attr_TraumaChar">							    						    
+							<option value="@{Trauma1}" data-i18n="TRAUMA1">Fracture Mineure</option>
+							<option value="@{Trauma2}" data-i18n="TRAUMA2">Fracture Majeure</option>
+							<option value="@{Trauma3}" data-i18n="TRAUMA3">Déchirure Mineure</option>
+							<option value="@{Trauma4}" data-i18n="TRAUMA4">Déchirure Majeure</option>
+							<option value="@{Trauma5}" data-i18n="TRAUMA5">Amputation</option>
+						</select>
+    				</div>					
+     				<div class="sheet-col-1-6 sheet-center sheet-pad-r-sm sheet-vert-middle">
+    					<input class="sheet-center" type="text" name="attr_TraumaSpe"/>
+    				</div>
+    				<div class="sheet-col-2-3 sheet-center sheet-pad-r-sm sheet-vert-middle">
+    					<textarea class="sheet-xs-textarea" type="text" name="attr_TraumaEffects"></textarea>
+    				</div>	
+    			</div>
+    		</fieldset>
+		</div>
+		<div class="sheet-row">
+			<div class="sheet-row">
     			<div class="sheet-col-1">
     				<h4 class="sheet-center">
     					<span data-i18n="DISEASES">Maladies & Poisons</span>
@@ -3808,6 +3817,7 @@
 						<div class="sheet-col-1">
 							<h4 class="sheet-center">
 								<span data-i18n="APPEARANCE">Appearance</span>
+								<span class="sheet-pictos">U</span>
 							</h4>
 						</div>
 					</div>
@@ -3875,6 +3885,7 @@
 						<div class="sheet-col-1">
 							<h4 class="sheet-center">
 								<span data-i18n="GOALS">Goals</span>
+								<span class="sheet-pictos">E</span>
 							</h4>
 						</div>		
 					</div>	
@@ -3933,11 +3944,13 @@
 			    <div class="sheet-col-1-3 sheet-pad-r-sm">
 					<h4 class="sheet-center">
 						<span data-i18n="BACKGROUND">Background</span>
+						<span class="sheet-pictos">H</span>
 					</h4>
 				</div>
 			    <div class="sheet-col-1-3 sheet-pad-r-sm">
 					<h4 class="sheet-center">
 						<span data-i18n="DISTINGUISHING-MARKS">Distinguishing Marks</span>
+						<span class="sheet-pictos">z</span>
 					</h4>
 				</div>			
 				<div class="sheet-col-1-3 sheet-pad-r-sm">
@@ -4999,7 +5012,7 @@
 					<div class="sheet-col-1">
 						<h4 class="sheet-center">
 							<span data-i18n="HIT-LOCATIONS">Hit Locations</span>
-							<span class="sheet-pictos">k</span>
+							<span class="sheet-pictos">@</span>
 						</h4>
 					</div>
 				</div>

@@ -900,22 +900,29 @@ input {
 
 
 /* === FONTS === */
+.sheet-pictos-setting {
+	position: relative;
+    top: -1px;
+	padding-left: 0px !important;
+}
+
 .sheet-pictos,
 .sheet-rolltemplate-WF4e .sheet-pictos {
 	font-family: "Pictos";
 	font-size: 14px;
-	position: relative;
-    top: -1px;
+	padding-left: 4px;
 }
 .sheet-pictos-custom,
 .sheet-rolltemplate-WF4e .sheet-pictos-custom {
 	font-family: "Pictos Custom";
 	font-size: 14px;
+	padding-left: 4px;
 }
 .sheet-pictos-three,
 .sheet-rolltemplate-WF4e .sheet-pictos-three {
 	font-family: "Pictos Three";
 	font-size: 14px;
+	padding-left: 4px;
 }
 .sheet-concentration-icon,
 .sheet-rolltemplate-WF4e .sheet-concentration-icon {
