@@ -3623,7 +3623,8 @@
 				<div class="sheet-row">
     				<div class="sheet-col-1">
     					<h4 class="sheet-center">
-    						<span data-i18n="COPHY">Corruption Physique</span>
+    						<span class=" sheet-pad-r-lg" data-i18n="COPHY">Corruption Physique</span>
+							<button type="roll" class="sheet-roll sheet-btn sheet-ui-draggable btn ui-draggable" name="roll_CophyRoll" value="@{Whisper} &amp;{template:WF4e} {{title=Corruption Physique}} {{character_name=@{character_name}}} {{attacktype=^{COPHY}}} {{cophyroll=[[[[1d100]]+?{@{translation_modifier}|0}]]}}"></button>
     					</h4>
     				</div>
     			</div>  
@@ -3667,7 +3668,8 @@
 				<div class="sheet-row">
     				<div class="sheet-col-1">
     					<h4 class="sheet-center">
-    						<span data-i18n="COMEN">Corruption Mentale</span>
+    						<span class=" sheet-pad-r-lg" data-i18n="COMEN">Corruption Mentale</span>
+							<button type="roll" class="sheet-roll sheet-btn sheet-ui-draggable btn ui-draggable" name="roll_ComenRoll" value="@{Whisper} &amp;{template:WF4e} {{title=Corruption Mentale}} {{character_name=@{character_name}}} {{attacktype=^{COMEN}}} {{comenroll=[[[[1d100]]+?{@{translation_modifier}|0}]]}}"></button>
     					</h4>
     				</div>
     			</div>  
@@ -6596,14 +6598,6 @@
 				<div class="sheet-rt-subheader">{{#spellingredients}}{{spellingredients}}{{/spellingredients}}</div>
 				<div class="sheet-rt-subheader">{{#spellduration}}{{spellduration}}{{/spellduration}}{{#spelltarget}} &bullet; {{spelltarget}}{{/spelltarget}}</div>
 			{{/spelltest}}
-			{{#ritualtest}}
-				<div class="sheet-rt-subheader">{{#ritualtype}}{{ritualtype}}{{/ritualtype}} <span data-i18n="RITUAL">Ritual</span> &bullet; {{#ritualtime}}{{ritualtime}}{{/ritualtime}}</div>
-				<div class="sheet-rt-subheader">{{#ritualingredients}}{{ritualingredients}}{{/ritualingredients}}</div>
-			{{/ritualtest}}
-			{{#inscribetest}}
-				<div class="sheet-rt-subheader">{{runetype}} <span data-i18n="RUNE">Rune</span></div>
-				<div class="sheet-rt-subheader">Empowerment {{runeempowerment}}</div>
-			{{/inscribetest}}
 			{{#subheader}}
 				<div class="sheet-rt-subheader">{{subheader}}{{#subheaderright}} &bullet; {{subheaderright}}{{/subheaderright}}</div>
 			{{/subheader}}
@@ -7901,7 +7895,7 @@
 				{{/rollTotal() test 100}}
 			{{/rollBetween() target -39 -30}}	
 			
-			<!-- CRTICALS -->			
+			<!-- CRITICALS -->			
 			{{#rollWasCrit() test}}
 				{{#^rollGreater() test target}}
 					<div class="sheet-row">
@@ -8330,7 +8324,7 @@
     			{{/damage}}				
 			{{/hitlocation}}	
 
-
+			<!-- INIT TEMPLATE -->
 			{{#inittest}}
 				<div class="sheet-row">
 					<div class="sheet-col-11-24 sheet-pad-l-md sheet-pad-r-md sheet-rt-key" data-i18n="INITIATIVE">Initiative</div>
@@ -8394,100 +8388,6 @@
     			{{/spelldamage}}						
 			{{/spellcastingnumber}}
 
-			<!-- RUNE TEMPLATE -->
-			{{#runeinscribenumber}}
-				<div class="sheet-row">
-				  <div class="sheet-col-11-24 sheet-pad-l-md sheet-pad-r-md sheet-rt-key" data-i18n="INSCRIPTION-NUMBER">Inscription Number</div>
-				  <div class="sheet-col-13-24 sheet-pad-r-sm sheet-smaller-letter-spacing sheet-rt-value">{{runeinscribenumber}}</div>
-				</div>
-				<div class="sheet-row">
-				  <div class="sheet-col-11-24 sheet-pad-l-md sheet-pad-r-md sheet-rt-key" data-i18n="INSCRIPTION-TEST">Inscription Test</div>
-				  <div class="sheet-col-13-24 sheet-pad-r-sm sheet-smaller-letter-spacing sheet-rt-value">{{inscribetest}}</div>
-				</div>
-				<div class="sheet-row">
-				  <div class="sheet-col-11-24 sheet-pad-l-md sheet-pad-r-md sheet-rt-key" data-i18n="INSCRIPTION-TIME">Inscription Time</div>
-				  <div class="sheet-col-13-24 sheet-pad-r-sm sheet-smaller-letter-spacing sheet-rt-value">{{insribetime}}</div>
-				</div>
-			{{/runeinscribenumber}}
-			{{#rollLess() inscribetest runeinscribenumber}}
-				<div class="sheet-row">
-					<div class="sheet-col-11-24 sheet-pad-l-md sheet-pad-r-md sheet-rt-key" data-i18n="OUTCOME">Outcome</div>
-					<div class="sheet-col-13-24 sheet-pad-r-sm sheet-smaller-letter-spacing sheet-rt-value" data-i18n="INSCRIPTION-FAILS">Inscription fails</div>
-				</div>
-			{{/rollLess() inscribetest runeinscribenumber}}
-			{{#rollTotal() inscribetest runeinscribenumber}}
-				<div class="sheet-row">
-					<div class="sheet-col-11-24 sheet-pad-l-md sheet-pad-r-md sheet-rt-key" data-i18n="OUTCOME">Outcome</div>
-					<div class="sheet-col-13-24 sheet-pad-r-sm sheet-smaller-letter-spacing sheet-rt-value" data-i18n="INSCRIPTION-SUCCEEDS">Inscription succeeds</div>
-				</div>
-				<div class="sheet-row">
-					<div class="sheet-col-1 sheet-pad-l-md sheet-pad-r-md sheet-rt-key" data-i18n="PERMANENT-RUNE-DESCRIPTION">Permanent Rune Description</div>
-					<div class="sheet-col-1 sheet-pad-l-md sheet-pad-r-md sheet-rt-value">{{runedescriptionpermanent}}</div>
-				</div>
-				<div class="sheet-row">
-					<div class="sheet-col-1 sheet-pad-l-md sheet-pad-r-md sheet-rt-key-wide" data-i18n="TEMPORARY-RUNE-DESCRIPTION">Temporary Rune Description</div>
-					<div class="sheet-col-1 sheet-pad-l-md sheet-pad-r-md sheet-rt-value">{{runedescriptiontemporary}}</div>
-				</div>
-			{{/rollTotal() inscribetest runeinscribenumber}}
-			{{#rollGreater() inscribetest runeinscribenumber}}
-				<div class="sheet-row">
-					<div class="sheet-col-11-24 sheet-pad-l-md sheet-pad-r-md sheet-rt-key" data-i18n="OUTCOME">Outcome</div>
-					<div class="sheet-col-13-24 sheet-pad-r-sm sheet-smaller-letter-spacing sheet-rt-value" data-i18n="INSCRIPTION-SUCCEEDS">Inscription succeeds</div>
-				</div>
-				<div class="sheet-row">
-					<div class="sheet-col-1 sheet-pad-l-md sheet-pad-r-md sheet-rt-key" data-i18n="PERMANENT-RUNE-DESCRIPTION">Permanent Rune Description</div>
-					<div class="sheet-col-1 sheet-pad-l-md sheet-pad-r-md sheet-rt-value">{{runedescriptionpermanent}}</div>
-				</div>
-				<div class="sheet-row">
-					<div class="sheet-col-1 sheet-pad-l-md sheet-pad-r-md sheet-rt-key-wide" data-i18n="TEMPORARY-RUNE-DESCRIPTION">Temporary Rune Description</div>
-					<div class="sheet-col-1 sheet-pad-l-md sheet-pad-r-md sheet-rt-value">{{runedescriptiontemporary}}</div>
-				</div>
-			{{/rollGreater() inscribetest runeinscribenumber}}
-			<!-- RITUAL TEMPLATE -->
-			{{#ritualcastingnumber}}
-				<div class="sheet-row">
-					<div class="sheet-col-11-24 sheet-pad-l-md sheet-pad-r-md sheet-rt-key" data-i18n="CASTING-NUMBER">Casting Number</div>
-					<div class="sheet-col-13-24 sheet-pad-r-sm sheet-smaller-letter-spacing sheet-rt-value">{{ritualcastingnumber}}</div>
-				</div>
-				<div class="sheet-row">
-					<div class="sheet-col-11-24 sheet-pad-l-md sheet-pad-r-md sheet-rt-key" data-i18n="CASTING-TEST">Casting Test</div>
-					<div class="sheet-col-13-24 sheet-pad-r-sm sheet-smaller-letter-spacing sheet-rt-value">{{ritualtest}}</div>
-				</div>
-				{{#rollLess() ritualtest ritualcastingnumber}}
-					<div class="sheet-row">
-						<div class="sheet-col-11-24 sheet-pad-l-md sheet-pad-r-md sheet-rt-key" data-i18n="OUTCOME">Outcome</div>
-						<div class="sheet-col-13-24 sheet-pad-r-sm sheet-smaller-letter-spacing sheet-rt-value" data-i18n="RITUAL-FAILS">Ritual fails</div>
-					</div>
-				{{/rollLess() ritualtest ritualcastingnumber}}
-				{{#rollTotal() ritualtest ritualcastingnumber}}
-					<div class="sheet-row">
-						<div class="sheet-col-11-24 sheet-pad-l-md sheet-pad-r-md sheet-rt-key" data-i18n="OUTCOME">Outcome</div>
-						<div class="sheet-col-13-24 sheet-pad-r-sm sheet-smaller-letter-spacing sheet-rt-value" data-i18n="RITUAL-SUCCEEDS">Ritual succeeds</div>
-					</div>
-				{{/rollTotal() ritualtest ritualcastingnumber}}
-				{{#rollGreater() ritualtest ritualcastingnumber}}
-					<div class="sheet-row">
-						<div class="sheet-col-11-24 sheet-pad-l-md sheet-pad-r-md sheet-rt-key" data-i18n="OUTCOME">Outcome</div>
-						<div class="sheet-col-13-24 sheet-pad-r-sm sheet-smaller-letter-spacing sheet-rt-value" data-i18n="RITUAL-SUCCEEDS">Ritual succeeds</div>
-					</div>
-				{{/rollGreater() ritualtest ritualcastingnumber}}
-				<div class="sheet-row">
-					<div class="sheet-col-1 sheet-pad-l-md sheet-pad-r-md sheet-rt-key-wide" data-i18n="INGREDIENTS">Ingredients</div>
-					<div class="sheet-col-1 sheet-pad-l-md sheet-pad-r-md sheet-rt-value">{{ritualingredients}}</div>
-				</div>
-				<div class="sheet-row">
-					<div class="sheet-col-1 sheet-pad-l-md sheet-pad-r-md sheet-rt-key" data-i18n="CONDITIONS">Conditions</div>
-					<div class="sheet-col-1 sheet-pad-l-md sheet-pad-r-md sheet-rt-value">{{ritualconditions}}</div>
-				</div>
-				<div class="sheet-row">
-					<div class="sheet-col-1 sheet-pad-l-md sheet-pad-r-md sheet-rt-key" data-i18n="CONSEQUENCES">Consequences</div>
-					<div class="sheet-col-1 sheet-pad-l-md sheet-pad-r-md sheet-rt-value">{{ritualconsequences}}</div>
-				</div>
-				<div class="sheet-row">
-					<div class="sheet-col-1 sheet-pad-l-md sheet-pad-r-md sheet-rt-key-wide" data-i18n="RITUAL-DESCRIPTION">Ritual Description</div>
-					<div class="sheet-col-1 sheet-pad-l-md sheet-pad-r-md sheet-rt-value">{{ritualdescription}}</div>
-				</div>
-			{{/ritualcastingnumber}}
 			<!-- SPECIAL TEMPLATE -->
 			{{#special_rule_description}}
 				<div class="sheet-row">
