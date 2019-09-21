@@ -1399,5 +1399,7 @@
 	"BENE19-TARG1": "1",
 	"BENE19-TIME1": "6 Rounds",
 	"BENE19-DESC1": "+10 initiative",
+	"WIN": "Réussite",
+	"LOSE": "Echec",
 	"NONE": "Aucun"
 }
