@@ -129,7 +129,7 @@
 }
 
 .sheet-textVS {
-    background: url(https://i.screenshot.net/1pk7phx);
+    background: url(https://i.imgur.com/4KhMKQ5.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position-x: center;
@@ -138,7 +138,7 @@
 }
 
 .sheet-texttest {
-    background: url(https://i.screenshot.net/d1e1ec4);
+    background: url(https://i.imgur.com/O4s4z3b.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position-x: center;
@@ -169,7 +169,7 @@
 }
 
 .sheet-texttarget {
-    background: url(https://i.screenshot.net/zlnylh5);
+    background: url(https://i.imgur.com/YVc34cx.png);
     background-size: 44%;
     background-repeat: no-repeat;
     background-position-x: center;
@@ -177,47 +177,47 @@
 }
 
 #sheet-bronze {
-    cursor: url(https://i.screenshot.net/m1q3yiy) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/XoA8Tpp.png) 10 6, auto!important;
 }
 
 #sheet-silver {
-    cursor: url(https://i.screenshot.net/l3j8gu2) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/YUSkii5.png) 10 6, auto!important;
 }
 
 #sheet-gold {
-    cursor: url(https://i.screenshot.net/lk42dsy) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/tmeHbUV.png) 10 6, auto!important;
 }
 
 #macrobar .macrobox {
-    cursor: url(https://i.screenshot.net/lm6doio) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/DIC9KC2.png) 10 6, auto!important;
 }
 
 .textchatcontainer .formattedformula>.dicegrouping.ui-sortable {
-    cursor: url(https://i.screenshot.net/lm6doio) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/DIC9KC2.png) 10 6, auto!important;
 }
 
 label input[type=checkbox] {
-    cursor: url(https://i.screenshot.net/o56wkb8) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
 }
 
 textarea {
-    cursor: url(https://i.screenshot.net/6doeetv) 10 16, auto!important;
+    cursor: url(https://i.imgur.com/wEiNb4J.png) 10 16, auto!important;
 }
 
 .player .playercolor, .player .color_picker {
-    cursor: url(https://i.screenshot.net/dk9x1sq) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/qDmtgFp.png) 10 6, auto!important;
 }
 
 .btn-group>.btn:last-child:not(:first-child), .btn-group>.dropdown-toggle:not(:first-child) {
-    cursor: url(https://i.screenshot.net/yy5kkiq) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto!important;
 }
 
 #rightsidebar .paddedtable tr {
-    cursor: url(https://i.screenshot.net/o56wkb8) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
 }
 
 div#color_selector {
-    cursor: url(https://i.screenshot.net/o56wkb8) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
 }
 
 .table th, .table td {
@@ -230,35 +230,35 @@ div#color_selector {
 }
 
 .hand .handcontainer .ui-sortable .cardinhand img {
-    cursor: url(https://i.screenshot.net/lm6doio) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/DIC9KC2.png) 10 6, auto!important;
 }
 
 .btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle) {
-    cursor: url(https://i.screenshot.net/yy5kkiq) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto!important;
 }
 
 #playerzone .deckhands .hand .cardback span {
-    cursor: url(https://i.screenshot.net/yy5kkiq) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto!important;
 }
 
 #playerzone .deckhands .hand .handcontainer {
-    cursor: url(https://i.screenshot.net/o56wkb8) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
 }
 
 select {
-    cursor: url(https://i.screenshot.net/o56wkb8) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
 }
 
 #dicerollerdialog .basicroll {
-    cursor: url(https://i.screenshot.net/yy5kkiq) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto!important;
 }
 
 .ui-widget-header .ui-icon {
-    cursor: url(https://i.screenshot.net/3x2eefe) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/u1ykhrH.png) 10 6, auto!important;
 }
 
 .ui-resizable-se {
-    cursor: url(https://i.screenshot.net/d194os3) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/nkhyMYk.png) 10 6, auto!important;
     background: rgba(0,0,0,0.1);
     height: 20px;
     width: 20px;
@@ -267,31 +267,31 @@ select {
 }
 
 div.color_picker {
-    cursor: url(https://i.screenshot.net/dk9x1sq) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/qDmtgFp.png) 10 6, auto!important;
 }
 
 .ui-dialog input {
-    cursor: url(https://i.screenshot.net/o56wkb8) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
 }
 
 #macrobar_macros {
-    cursor: url(https://i.screenshot.net/o56wkb8) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
 }
 
 #playerzone.smallvideo .player .playername {
-    cursor: url(https://i.screenshot.net/o56wkb8) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
 }
 
 div.color_swatch {
-    cursor: url(https://i.screenshot.net/o56wkb8) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
 }
 
 div#color_custom label {
-    cursor: url(https://i.screenshot.net/o56wkb8) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
 }
 
 .btn {
-    cursor: url(https://i.screenshot.net/yy5kkiq) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto!important;
 }
 
 .button-2{
@@ -313,11 +313,11 @@ span {
 }
 
 #lightly-overlay {
-    cursor: url(https://i.screenshot.net/o56wkb8) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
 }
 
 .d20contextmenu ul li {
-    cursor: url(https://i.screenshot.net/o56wkb8) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
 }
 
 #initiativewindow {
@@ -335,7 +335,7 @@ macrobar {
     bottom: 0;
     left: 0;
     pointer-events: auto;
-    cursor: url(https://i.screenshot.net/yy5kkiq) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto!important;
 }
 
 .player .video {
@@ -344,7 +344,7 @@ macrobar {
     background-repeat: no-repeat;
     background-size: 150px 150px;
     overflow: hidden;
-    cursor: url(https://i.screenshot.net/o56wkb8) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
 }
 
 #playerzone .deckhands {
@@ -353,16 +353,16 @@ macrobar {
     pointer-events: none;
     min-height: 50px;
     width: 100%;
-    cursor: url(https://i.screenshot.net/o56wkb8) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
 }
 
 #zoompanel select {
     width: 100px;
-    cursor: url(https://i.screenshot.net/o56wkb8) 10 6, auto;
+    cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto;
 }
 
 body {
-    background:url(https://i.screenshot.net/5dmh88v)!important;
+    background:url(https://i.imgur.com/DssJU5n.jpg)!important;
     font-family: "Adobe Caslon Pro", "Caslon Antique", serif, sans-serif;
 }
 
@@ -387,21 +387,21 @@ body {
     height: 326px!important;
     top: 40px;
     left: 15px;
-    cursor: url(https://i.screenshot.net/o56wkb8) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
 }
 
 #floatingtoolbar li.quickdice .quickdice-button, #floatingtoolbar li.quickdice .quickdice-toggle {
     border-right: 1px solid #999;
     display: inline-block;
     text-align: center;
-    cursor: url(https://i.screenshot.net/o56wkb8) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
 }
 
 #floatingtoolbar li.quickdice .quickdice-label {
     border-right: 1px solid #999;
     flex-basis: 37px;
     text-align: left;
-    cursor: url(https://i.screenshot.net/o56wkb8) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
 }
 
 .ui-resizable-w {
@@ -425,7 +425,7 @@ body {
 }
 
 #floatingtoolbar, #floatingplayerbar {
-    cursor: url(https://i.screenshot.net/yy5kkiq) 10 6, auto;
+    cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto;
 	background-color:hsl(0,0%,10%) !important;
 	border: none !important;
 	box-shadow: none !important;
@@ -521,11 +521,11 @@ body {
 #floatingtoolbar li.activebutton,
 #floatingtoolbar li:hover {
 background-color: #282150 !important;
-cursor: url(https://i.screenshot.net/yy5kkiq) 10 6, auto;
+cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto;
 }
 
 #editinglayer li.gm_slider_box .ui-slider-handle {
-    cursor: url(https://i.screenshot.net/nw5xoi3) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/ZGrSoBD.png) 10 6, auto!important;
 }
 
 .ui-slider .ui-slider-handle {
@@ -533,14 +533,14 @@ cursor: url(https://i.screenshot.net/yy5kkiq) 10 6, auto;
     z-index: 2;
     width: 1.2em;
     height: 1.2em;
-    cursor: url(https://i.screenshot.net/92jyvtz) 10 6, auto;
+    cursor: url(https://i.imgur.com/ZGrSoBD.png) 10 6, auto;
 }
 
 #page-toolbar {
 	background-color:hsl(0,0%,10%) !important;
 	border-radius: 0 !important;
     max-height: 40%;
-    cursor: url(https://i.screenshot.net/o56wkb8) 10 6, auto;
+    cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto;
 }
 
 #page-toolbar .ui-sortable::-webkit-scrollbar {
@@ -555,11 +555,11 @@ cursor: url(https://i.screenshot.net/yy5kkiq) 10 6, auto;
 #page-toolbar .availablepage span {
 	color:hsl(0,0%,80%) !important;
 	font-size: 12px !important;
-    cursor: url(https://i.screenshot.net/o56wkb8) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/w98RTTM.png) 10 6, auto!important;
 }
 
 #page-toolbar .playerbookmark img {
-    cursor: url(https://i.screenshot.net/p02jdh0) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/A0Z6zsM.png) 10 6, auto!important;
 }
 
 #page-toolbar .handle {
@@ -567,12 +567,12 @@ cursor: url(https://i.screenshot.net/yy5kkiq) 10 6, auto;
 	border:1px solid hsl(0,0%,0%)!important;
 	border-radius: 0 0 100% 100% !important;
 	color:hsl(0,0%,80%) !important;
-    cursor: url(https://i.screenshot.net/yy5kkiq) 10 6, auto;
+    cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto;
 }
 
 #editor-wrapper {
 	overflow: hidden !important;
-    cursor: url(https://i.screenshot.net/o56wkb8) 10 6, auto;
+    cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto;
 }
 
 .btn.btn-danger {
@@ -621,7 +621,7 @@ cursor: url(https://i.screenshot.net/yy5kkiq) 10 6, auto;
 #rightsidebar {
     width: 300px;
     border-left: 0px;
-    cursor: url(https://i.screenshot.net/o56wkb8) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
 }
 
 #sidebarcontrol {
@@ -646,7 +646,7 @@ cursor: url(https://i.screenshot.net/yy5kkiq) 10 6, auto;
     margin-right: -3px !important;
     margin-top: -61.5px !important;
     transition: width, margin-top, opacity, height, font-size .5s,.5s,.5s,.5s,.5s !important;
-    cursor: url(https://i.screenshot.net/yy5kkiq) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto!important;
 }
 
 #sidebarcontrol:hover {
@@ -681,7 +681,7 @@ code {
 
 #textchat .message {
     height: auto !important;
-    background: url(https://i.screenshot.net/gwy96i4)!important;
+    background: url(https://i.imgur.com/HysthVj.png)!important;
     background-position-x: 50%!important;
     background-repeat: no-repeat!important;
     background-size: 180px!important;
@@ -707,7 +707,7 @@ code {
 
 #textchat .rolled {
 	color:black!important;
-    cursor: url(https://i.screenshot.net/lm6doio) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/DIC9KC2.png) 10 6, auto!important;
 }
 
 .zoomoptions {
@@ -748,7 +748,7 @@ code {
 
 #textchat .userscript-sharelink a {
     color: rgba(0, 0, 0, 0)!important;
-    cursor: url(https://i.screenshot.net/rvkj6sj) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/I3oDGM3.png) 10 6, auto!important;
 }
 
 #textchat .userscript-sharelink {
@@ -813,7 +813,7 @@ code {
     width: 290px;
     height: 30px;
     border-radius: 15px;
-    cursor: url(https://i.screenshot.net/o56wkb8) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
 }
 
 .ui-tabs .ui-tabs-nav {
@@ -825,11 +825,11 @@ code {
 .ui-state-default,.ui-widget-content .ui-state-default,.ui-widget-header .ui-state-default {
 	box-shadow:none !important;
 	text-shadow:none !important;
-    cursor: url(https://i.screenshot.net/lvd8ohx) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/2T7vNzg.png) 10 6, auto!important;
 }
 
 #editinglayer li.gm_slider_box .ui-slider-handle {
-    cursor: url(https://i.screenshot.net/o56wkb8) 10 6, auto;
+    cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto;
 }
 
 #measure:not(.activebutton)>img {
@@ -863,7 +863,7 @@ code {
 }
 
 .dd-handle:before {
-    cursor: url(https://i.screenshot.net/lm6doio) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/DIC9KC2.png) 10 6, auto!important;
 }
 
 #textchat-input {
@@ -877,7 +877,7 @@ code {
     border-top: 0 solid hsl(0,0%,0%)!important;
     text-align: left!important;
     margin-top: -3px!important;
-    cursor: url(https://i.screenshot.net/o56wkb8) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
 }
 
 .btn {
@@ -914,13 +914,13 @@ textarea,select,input,table,
     width: auto !important;
     max-width: 980px !important;
     Border: 0px solid black!important;
-    background: url(https://i.screenshot.net/xokyps1), url(https://i.screenshot.net/50vljsj), url(https://i.screenshot.net/n7ge5h8), url(https://i.screenshot.net/kokd3sq)!important;
+    background: url(https://i.imgur.com/WzB0k5M.png), url(https://i.imgur.com/GIev9x9.png), url(https://i.imgur.com/Bw9WjAM.png), url(https://i.imgur.com/1M2Tndg.jpg)!important;
     background-repeat: no-repeat !important;
     background-position-x: right, right, left, left!important;
     background-size: auto, auto, auto, auto !important;
     border-radius: 25px!important;
     background-position-y: bottom, top, bottom, top!important;
-    cursor: url(https://i.screenshot.net/o56wkb8) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
     box-shadow: 10px 15px 20px 2px #222;
 }
 
@@ -967,7 +967,7 @@ textarea,select,input,table,
 .diceroll .didroll {
     text-shadow: 0 0 0px hsl(0,0%,0%)!important;
     color: black!important;
-    cursor: url(https://i.screenshot.net/lm6doio) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/DIC9KC2.png) 10 6, auto!important;
 }
 
 .diceroll.critfail .didroll {
@@ -1042,7 +1042,7 @@ textarea,select,input,table,
     bottom: 10px;
     left: 0px;
     padding: 0px !important;
-    cursor: url(https://i.screenshot.net/lm6doio) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/DIC9KC2.png) 10 6, auto!important;
 }
 
 .ui-dialog .ui-dialog-buttonpane {
@@ -1072,15 +1072,15 @@ textarea,select,input,table,
 
 .ui-widget-content a {
 	color:#888!important;
-    cursor: url(https://i.screenshot.net/yy5kkiq) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto!important;
 }
 
 #existingmacros .rollmacro {
-    cursor: url(https://i.screenshot.net/n0xnphy) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/rrWZdYI.png) 10 6, auto!important;
 }
 
 span.pictos.searchinfotoggle {
-    cursor: url(https://i.screenshot.net/jvmyoho) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/PK7O15m.png) 10 6, auto!important;
 }
 
 .ui-dialog-title {
@@ -1129,15 +1129,15 @@ label {
     display: block;
     margin-bottom: 5px;
     color: #666;
-    cursor: url(https://i.screenshot.net/o56wkb8) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
 }
 
 #rightsidebar .ui-tabs-nav li.ui-state-active a {
-    cursor: url(https://i.screenshot.net/yy5kkiq) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto!important;
 }
 
 #rightsidebar .ui-tabs-nav a {
-    cursor: url(https://i.screenshot.net/yy5kkiq) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto!important;
 }
 
 #imagedialog .searchbox {
@@ -1145,14 +1145,14 @@ label {
 }
 
 .ui-tabs .ui-tabs-nav li {;
-    cursor: url(https://i.screenshot.net/o56wkb8) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
 }
 
 #textchat .inlinerollresult {
     background-color: transparent !important;
     border: transparent !important;
     color: #222 !important;
-    cursor: url(http://imgsrv.roll20.net/?src=i.screenshot.net/jvmyoho) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/PK7O15m.png) 10 6, auto!important;
     padding: 0px!important;
     border-radius: 0px!important;
     margin: 0px !important;
@@ -1314,7 +1314,7 @@ li.ui-tabs-active.ui-state-active > a {
     top: 10px;
     position: relative;
     height:auto!important;
-    cursor: url(https://i.screenshot.net/6doeetv) 10 16, auto!important;
+    cursor: url(https://i.imgur.com/wEiNb4J.png) 10 16, auto!important;
 }
 
 .tokenizer::-webkit-scrollbar {
@@ -1342,7 +1342,7 @@ li.ui-tabs-active.ui-state-active > a {
     font-family: "Pictos";
     font-weight: normal;
     font-style: normal;
-    cursor: url(https://i.screenshot.net/yy5kkiq) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto!important;
 }
 
 a.btn.pictos.alltags.trigger {
@@ -1375,7 +1375,7 @@ a.btn.pictos.alltags.trigger {
     max-width: unset;
     max-height: unset;
     background-color: unset;
-    cursor: url(https://i.screenshot.net/yy5kkiq) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto!important;
 }
 
 .repcontainer {
@@ -1396,7 +1396,7 @@ a.btn.pictos.alltags.trigger {
 
 .dd-sortablehandle {
 	color: whitesmoke !important;
-    cursor: url(https://i.screenshot.net/lm6doio) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/DIC9KC2.png) 10 6, auto!important;
 }
 
 .sheet-spell-level .sheet-label {
@@ -1759,7 +1759,7 @@ opacity: 1 !important;
 .content > #player-search,
 #compendium > .searchbox span input {
     color: #888 !important;
-    cursor: url(https://i.screenshot.net/6doeetv) 10 16, auto!important;
+    cursor: url(https://i.imgur.com/wEiNb4J.png) 10 16, auto!important;
 }
 
 .tools-list .tool-row:nth-child(2n+1),
@@ -1773,7 +1773,7 @@ background-color: hsl(0,0%,20%) !important;
 .dd-handle {
     color: transparent !important;
     background-color: #444 !important;
-    cursor: url(https://i.screenshot.net/lm6doio) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/DIC9KC2.png) 10 6, auto!important;
 }
 
 #secondary-toolbar {
@@ -1886,15 +1886,15 @@ border: 1px solid #000 !important;
 
 .folderroot .dd-content {
 	border-top: 1px solid hsl(0,0%,30%) !important;
-    cursor: url(https://i.screenshot.net/yy5kkiq) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto!important;
 }
 
 img[src='/images/handout.png'] {
-	content: url('https://i.screenshot.net/krlmmtr')!important;
+	content: url(https://i.imgur.com/UBzGtHO.png)!important;
 }
 
 img[src='/images/character.png'] {
-	content: url('https://i.screenshot.net/yg7pwck')!important;
+	content: url(https://i.imgur.com/iFFMVUp.png)!important;
 }
 
 .dd-item .playerdots {

@@ -31,7 +31,7 @@
 .charsheet .sheet-section-spellbook .sheet-wrap-box {
     padding-top: 25px!important;
     margin-top: 15px!important;
-    background: url(https://i.screenshot.net/9nlg0id)!important;
+    background: url(https://i.imgur.com/KIHh9D5.png)!important;
     box-shadow: unset!important;
     background-repeat: no-repeat!important;
     background-size: 100%!important;
@@ -1034,7 +1034,7 @@ button.sheet-roll {
 	padding-bottom: 0px !important;
 	margin: 1px 0px!important;
 	color: white!important;
-	cursor: url(https://i.screenshot.net/n0xnphy) 10 6, auto!important;
+	cursor: url(https://i.imgur.com/rrWZdYI.png) 10 6, auto!important;
 }
 
 button.sheet-roll:hover {
@@ -1274,7 +1274,7 @@ input[disabled].sheet-passive-skill-score {
     max-height: 366px;
     padding-bottom: 30px;
     font-size: 11px;
-    background: url(https://i.screenshot.net/peymrhe), url(https://i.screenshot.net/7m7vzfr)!important;
+    background: url(https://i.imgur.com/8nUebYy.png), url(https://i.imgur.com/QYQ4rvj.jpg)!important;
     background-repeat: no-repeat !important;
     background-position-x: left, left!important;
     background-size: contain, cover !important;
@@ -1369,7 +1369,7 @@ input[disabled].sheet-passive-skill-score {
 	background-color: transparent;
 }
 .sheet-rolltemplate-WF4e .sheet-rt-header.sheet-ability:before {
-	background:url(https://i.screenshot.net/99mwzuv);
+	background:url(https://i.imgur.com/z4TFjoh.jpg);
 }
 .sheet-rolltemplate-WF4e .sheet-rt-header.sheet-ability:after {
 	border-left-color: transparent;
