@@ -12,6 +12,24 @@
 // ==/UserScript==
 (function() {var css =`
 
+.ui-dialog.dialog-collapsed {
+    opacity: .80;
+    max-width: 300px!important;
+    max-height: 40px!important;
+    background: black!important;
+    -webkit-transform: scale(0.75,0.75);
+    -moz-transform: scale(0.75,0.75);
+    transform: scale(0.75,0.75);
+}
+
+.sheet-DR {
+    font-size: large;
+    font-style: italic;
+    font-weight: bolder;
+    color: white;
+    text-shadow: 0px 0px 10px black;
+}
+
 .sheet-img-note {
     background: url(https://i.imgur.com/rhps6fu.png);
     background-size: 70%;
