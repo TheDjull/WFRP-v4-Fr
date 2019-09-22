@@ -13,15 +13,14 @@
 (function() {var css =`
 
 button.showpopout.btn.pictos {
-    top: -5px;
     position: absolute;
-    left: -45px;
+    left: -300px;
 }
 
 .ui-dialog.dialog-collapsed {
     opacity: .80;
     width: 200px!important;
-    height: 30px!important;
+    height: 40px!important;
     background: black!important;
     -webkit-transform: scale(0.75,0.75);
     -moz-transform: scale(0.75,0.75);
@@ -728,9 +727,8 @@ code {
 }
 
 .zoomoptions {
-    position: relative;
-    left: 13px;
-    top: 0px;
+    position: absolute;
+    left: -300px;
 }
 
 .editcharacter {
@@ -842,7 +840,7 @@ code {
 .ui-state-default,.ui-widget-content .ui-state-default,.ui-widget-header .ui-state-default {
 	box-shadow:none !important;
 	text-shadow:none !important;
-    cursor: url(https://i.imgur.com/2T7vNzg.png) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/rOqBXRj.png) 10 6, auto!important;
 }
 
 #editinglayer li.gm_slider_box .ui-slider-handle {
