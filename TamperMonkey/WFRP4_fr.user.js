@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          WFRP v4 Fr
-// @namespace     https://github.com/TheDjull/WFRP-v4-Fr/blob/master/TamperMonkey/WFRP4%20Fr%20Tampermonkey.txt
+// @namespace     https://github.com/TheDjull/WFRP-v4-Fr/blob/master/TamperMonkey/WFRP4_fr.user.js
 // @description	  Un thème pour WFRP4 dans Roll20.net.
 // @author        TheDjull
 // @Base          Modification importante du theme Roll20_Dark by RedReign (https://openuserjs.org/scripts/RedReign/Roll20_Dark)
