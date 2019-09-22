@@ -597,21 +597,16 @@ cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto;
 
 .characterdialog.ui-dialog-content {
     border: 0px;
-    max-height: 60vw !important;
-    height: auto !important;
-    min-width: 850px;
-    max-width: 850px;
-    margin-bottom: 65px;
-    padding: 0px 70px 0px 70px!important;
-    top: 20px;
+	margin: 10px 65px 45px 67px !important;
 }
 
 .ui-dialog .ui-dialog-content {
-    padding: 0px 70px 0px 70px!important;
+    padding: 0px !important;
     width: auto !important;
+    height: auto !important;
     max-height: 650px !important;
     max-width: 850px!important;
-    margin: 30px 0px 65px 0px;
+    margin: 30px 65px 65px 67px;
 }
 
 .ui-dialog-titlebar-close {
@@ -902,11 +897,10 @@ textarea,select,input,table,
 }
 
 #dicerollerdialog {
-    padding: 0px 70px 0px 70px!important;
-    margin: 30px 0px 50px 0px;
+    padding: 0px !important;
+    margin: 30px 65px 50px 65px;
     width: 300px !important;
-    height: auto!important;
-    max-height: 650px !important;
+    height: 500px !important;
 }
 
 .ui-dialog {
@@ -1013,21 +1007,9 @@ textarea,select,input,table,
 	color:hsl(240,100%,65%)!important;
 }
 
-.ui-dialog .ui-dialog-buttonpane {
-	border-top:none!important;
-	box-shadow:none!important;
-}
-
 .dialog.largedialog.rollabletableeditor {
-    padding: 30px 100px 50px 100px !important;
     width: auto !important;
     height: auto!important;
-}
-
-.ui-dialog .ui-dialog-title {
-    float: left;
-    font-weight: bold;
-    padding: 10px;
 }
 
 .dialog.largedialog.deckeditor {
@@ -1036,10 +1018,11 @@ textarea,select,input,table,
     padding: 0px 20px;
 }
 
-.ui-dialog .ui-dialog-titlebar {
+.ui-dialog-titlebar {
     border: none!important;
     width: auto !important;
     bottom: 10px;
+    margin: 40px 65px 0px 70px;
     left: 0px;
     padding: 0px !important;
     cursor: url(https://i.imgur.com/DIC9KC2.png) 10 6, auto!important;
@@ -1051,7 +1034,7 @@ textarea,select,input,table,
     margin: 0px;
     position: relative;
     padding: 0px;
-    bottom: 60px;
+    bottom: 50px;
     left: 70px;
 }
 
@@ -1084,12 +1067,12 @@ span.pictos.searchinfotoggle {
 }
 
 .ui-dialog-title {
-    float: left;
-    font-weight: bold;
-    padding: 10px!important;
+    float: left !important;
+    font-weight: bold !important;
+    padding: 0px !important;
     color: hsl(0,0%,80%)!important;
+    margin: 0px !important;
 }
-
 p {
     margin: 0 0 9px;
     font-family: "Adobe Caslon Pro", "Caslon Antique", serif, sans-serif;

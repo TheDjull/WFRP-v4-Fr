@@ -1129,7 +1129,7 @@ h4 {
 
 input[disabled],
 input.sheet-pseudo-disabled {
-	background-color: #F9F5F0;
+	background-color: rgba(0,0,0,0.1);
 	cursor: not-allowed;
 	-moz-appearance: textfield;
 }
