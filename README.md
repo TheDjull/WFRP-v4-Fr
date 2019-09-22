@@ -7,7 +7,7 @@
 Suivre les étapes ci dessous (en cliquant sur les liens) :
 
 * Installer un moteur de userscript comme [TamperMonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
-* Ajouter  [le script](./TamperMonkey/WFRP4_fr.user.js) à TamperMonkey qui s'activera automatiquement sur Roll20
+* Ajouter  [le script](https://raw.githubusercontent.com/TheDjull/WFRP-v4-Fr/master/TamperMonkey/WFRP4_fr.user.js) à TamperMonkey qui s'activera automatiquement sur Roll20
 
 
 
