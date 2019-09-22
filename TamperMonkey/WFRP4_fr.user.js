@@ -12,19 +12,17 @@
 // ==/UserScript==
 (function() {var css =`
 
-button.showpopout.btn.pictos {
-    position: absolute;
-    left: -300px;
-}
-
 .ui-dialog.dialog-collapsed {
     opacity: .80;
-    width: 200px!important;
-    height: 40px!important;
+    max-width: 300px!important;
+    max-height: 40px!important;
     background: black!important;
     -webkit-transform: scale(0.75,0.75);
     -moz-transform: scale(0.75,0.75);
     transform: scale(0.75,0.75);
+	margin: 15px 10px 0px 10px !important;
+    width: 140px !important;
+    padding-top: 2px !important;
 }
 
 .sheet-DR {
@@ -602,7 +600,7 @@ cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto;
 
 .characterdialog.ui-dialog-content {
     border: 0px;
-	margin: 40px 55px 45px 57px !important;
+	margin: 10px 55px 45px 57px !important;
 }
 
 .ui-dialog .ui-dialog-content {
@@ -612,26 +610,11 @@ cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto;
     max-height: 650px !important;
     min-width: 400px!important;
     max-width: 850px!important;
-    margin: 25px 55px 65px 57px;
+    margin: 30px 55px 65px 57px;
 }
 
-.ui-dialog .ui-dialog-titlebar-close {
-    position: absolute;
-    top: 50%;
-    right: 12%;
-    width: 19px;
-    margin: -10px 0 0 0;
-    padding: 1px;
-    height: 18px;
-    font-size: 20px;
-    font-weight: bold;
-    line-height: 13.5px;
-    text-shadow: 0 1px 0 #fff;
-    filter: alpha(opacity=25);
-    -khtml-opacity: .25;
-    -moz-opacity: .25;
-    opacity: .25;
-    background: hsl(0,0%,80%)!important;
+.ui-dialog-titlebar-close {
+	background:hsl(0,0%,80%)!important;
 }
 
 #rightsidebar {
@@ -727,14 +710,15 @@ code {
 }
 
 .zoomoptions {
-    position: absolute;
-    left: -300px;
+    position: relative;
+    left: 13px;
+    top: 0px;
 }
 
 .editcharacter {
-	position: absolute;
-    left: 740px;
-    top: -3px;
+    position: relative;
+    left: 10px;
+    top: 0px;
 }
 
 .edithandout {
@@ -744,9 +728,9 @@ code {
 }
 
 .broadcastcharacter {
-	position: absolute;
-    left: 595px;
-    top: -4px;
+    position: relative;
+    left: 10px;
+    top: 0px;
 }
 
 .broadcasthandout {
@@ -840,7 +824,7 @@ code {
 .ui-state-default,.ui-widget-content .ui-state-default,.ui-widget-header .ui-state-default {
 	box-shadow:none !important;
 	text-shadow:none !important;
-    cursor: url(https://i.imgur.com/rOqBXRj.png) 10 6, auto!important;
+    cursor: url(https://i.imgur.com/2T7vNzg.png) 10 6, auto!important;
 }
 
 #editinglayer li.gm_slider_box .ui-slider-handle {
@@ -920,7 +904,7 @@ textarea,select,input,table,
     padding: 0px !important;
     margin: 30px 55px 50px 55px;
     width: 300px !important;
-    height: auto !important;
+    height: 500px !important;
 }
 
 .ui-dialog {
@@ -1040,11 +1024,11 @@ textarea,select,input,table,
 
 .ui-dialog-titlebar {
     border: none!important;
-    min-width: 180px !important;
     width: auto !important;
-    padding: 0px !important;
-    height: 40px;
+    bottom: 10px;
+    margin: 15px 65px 0px 70px;
     left: 0px;
+    padding: 0px !important;
     cursor: url(https://i.imgur.com/DIC9KC2.png) 10 6, auto!important;
 }
 
@@ -1087,15 +1071,12 @@ span.pictos.searchinfotoggle {
 }
 
 .ui-dialog-title {
+    float: left !important;
     font-weight: bold !important;
     padding: 0px !important;
-    position: absolute;
     color: hsl(0,0%,80%)!important;
-    top: 25%;
-    left: 12%;
     margin: 0px !important;
 }
-
 p {
     margin: 0 0 9px;
     font-family: "Adobe Caslon Pro", "Caslon Antique", serif, sans-serif;
@@ -1153,6 +1134,1586 @@ label {
 .ui-tabs .ui-tabs-nav li {;
     cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
 }
+
+#textchat .inlinerollresult {
+    background-color: transparent !important;
+    border: transparent !important;
+    color: #222 !important;
+    cursor: url(https://i.imgur.com/PK7O15m.png) 10 6, auto!important;
+    padding: 0px!important;
+    border-radius: 0px!important;
+    margin: 0px !important;
+}
+
+#textchat .inlinerollresult.importantroll {
+	border: 2px solid hsl(240, 100%, 65%) !important;
+}
+
+#textchat .inlinerollresult.fullcrit {
+}
+
+#textchat .inlinerollresult.fullfail {
+}
+
+div.dd-content {
+	color:#ee5f5b !important;
+}
+
+div.dd-content:hover {
+	background-color:hsl(0,0%,40%) !important;
+}
+
+[class=\'sheet-row\'] {
+	color: #555 !important;
+}
+
+#sortrootjukeboxalpha {
+    left: 20px;
+    position: relative;
+    bottom: 8px;
+}
+
+.ui-tabs .ui-tabs-nav li {
+	text-decoration: none;
+    list-style: none;
+    float: left;
+    position: relative;
+    top: -5px;
+    padding: 0 0 1px 0;
+    white-space: nowrap;
+    background: none;
+    border: 0;
+    left: 25px;
+}
+
+
+.ui-tabs .ui-tabs-nav li:hover,
+.ui-tabs .ui-tabs-nav li a:hover {
+	background: hsl(0,0%,15%) !important;
+	border-bottom: 1px solid hsl(44,63%,63%) !important;
+}
+
+li.ui-tabs-active.ui-state-active:focus {
+	outline: none;
+}
+
+li.ui-tabs-active.ui-state-active:focus {
+	border-color: transparent !important;
+	outline: none;
+}
+
+li.ui-tabs-active.ui-state-active:hover,
+li.ui-tabs-active.ui-state-active > a:hover {
+	color:hsl(0,0%,100%) !important;
+}
+
+li.ui-tabs-active.ui-state-active > a {
+	outline: none;
+	border-bottom: 1px solid hsl(44,63%,63%) !important;
+	color:hsl(0,0%,96%) !important;
+}
+
+.dd-item.character > div.dd-content > .name {
+	color:hsl(44,63%,63%) !important;
+}
+
+.dd-item.handout .dd-content > .name {
+	color:hsl(214,100%,79%) !important
+}
+
+.sheet-container {
+	background-color:hsl(0,0%,10%) !important;
+
+}
+
+.sheet-desc {
+	color:hsl(0,0%,75%) !important;
+}
+
+.sheet-header {
+	color:hsl(0,0%,100%) !important;
+}
+
+.sheet-rolltemplate-dmg {
+	margin-top: 0px !important;
+}
+
+.sheet-rolltemplate-dmg > .sheet-desc {
+	background-color: transparent !important;
+}
+
+.sheet-sublabel {
+	margin-top: 3px !important;
+}
+
+.sheet-rolltemplate-npc,
+.sheet-rolltemplate-npcaction .sheet-container,
+.sheet-rolltemplate-npcatk,
+.sheet-rolltemplate-npcdmg,
+.sheet-rolltemplate-traits {
+	border: 2px solid hsl(0,0%,0%) !important;
+    border-radius: 8px !important;
+	background-color:transparent !important;
+}
+
+.charsheet .sheet-red,
+.charsheet .sheet-npc .sheet-display .sheet-red input,
+.charsheet .sheet-npc .sheet-display .sheet-red span {
+	color:hsl(0,0%,80%) !important;
+}
+
+.sheet-display .sheet-row.sheet-subtitle span {
+	color: hsl(0,100%,30%) !important;
+}
+
+ {
+    color: hsl(44,63%,63%) !important;
+}
+.sheet-npc .sheet-display > button span[name*="attr_"] {
+    color: hsl(0,0%,80%) !important;
+    background-color: transparent !important;
+}
+
+[name=\attr_name_display\]  {
+	color:hsl(0,100%,50%) !important;
+	font-weight: bold;
+}
+
+.charsheet .sheet-options .sheet-row > span, [name=\attr_name\] {
+	color:hsl(0,0%,80%) !important;
+}
+
+[name=\attr_desc\]  {
+	color:hsl(0,0%,80%) !important;
+}
+
+.charsheet .sheet-triangle,
+.sheet-row.sheet-actiontitle,
+.charsheet .sheet-header input,
+.charsheet .sheet-header select,
+.charsheet .sheet-hp .sheet-top input,
+.charsheet .sheet-hdice-dsaves-container .sheet-top input[type=text] {
+	border-color:hsl(0,0%,25%) !important
+}
+
+.ui-autocomplete-input {
+    width: 222px!important;
+    top: 10px;
+    position: relative;
+    height:auto!important;
+    cursor: url(https://i.imgur.com/wEiNb4J.png) 10 16, auto!important;
+}
+
+.tokenizer::-webkit-scrollbar {
+  display: none;
+}
+
+.ui-dialog-content::-webkit-scrollbar {
+  display: none;
+}
+
+.ui-autocomplete-input::-webkit-scrollbar {
+  display: none;
+}
+
+.content.searchbox {
+    height: 85px;
+}
+
+.ui-dialog .charsheet hr {
+    clear: unset;
+    display: none;
+}
+
+.pictos {
+    font-family: "Pictos";
+    font-weight: normal;
+    font-style: normal;
+    cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto!important;
+}
+
+a.btn.pictos.alltags.trigger {
+    position: relative;
+    top: 10px;
+}
+
+.nav.nav-tabs > li.active > a {
+	color:rgba(0,0,0,.5) !important !important;
+	font-weight: bold;
+	background-color: transparent;
+	border-bottom: 2px solid hsl(44,63%,63%) !important;
+}
+
+.sheet-spell-level input {
+	background-color:hsl(0,0%,10%) !important;
+	color:hsl(0,0%,80%) !important;
+}
+
+.sheet-spell-level .sheet-expended {
+	border-left: none !important;
+}
+
+#page-toolbar .pages .availablepage img.pagethumb {
+    width: 32px;
+    height: 32px;
+    order: 0;
+    margin-top: 0;
+    box-shadow: unset;
+    max-width: unset;
+    max-height: unset;
+    background-color: unset;
+    cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto!important;
+}
+
+.repcontainer {
+	margin-top: 0px;
+}
+
+.repcontrol {
+	margin-bottom: 5px;
+}
+
+.sheet-title > button {
+	height: 40px;
+}
+
+.sheet-attr-container > button > input {
+	min-width: 20px !important;
+}
+
+.dd-sortablehandle {
+	color: whitesmoke !important;
+    cursor: url(https://i.imgur.com/DIC9KC2.png) 10 6, auto!important;
+}
+
+.sheet-spell-level .sheet-label {
+	color:hsl(0,0%,75%) !important;
+}
+
+.sheet-spellcard.btn.ui-draggable {
+	background-color:transparent !important;
+}
+
+.nav-tabs {
+	border-color:transparent !important;
+}
+
+.nav-tabs>.active>a,
+.nav-tabs>.active>a:hover {
+	background-color: transparent !important;
+	border-color:transparent !important;
+}
+
+.nav-tabs a:hover,
+.nav-tabs a:hover {
+    background-color: transparent !important;
+    border-color: rgba(0, 0, 0, 0) !important;
+    color: #222 !important;
+}
+
+.inlinerollresult {
+	margin: 3px !important;
+}
+
+.sheet-rolltemplate-npc,
+.sheet-rolltemplate-npcaction .sheet-container,
+.sheet-rolltemplate-npcatk {
+	width: 180px;
+	margin-top: 5px;
+}
+
+.sheet-desc span.inlinerollresult {
+//	padding-top: 5px !important;
+//	padding-bottom: 5px !important;
+    line-height: 1.5em !important;
+}
+
+color: #a11504 !important;
+
+.sheet-savedc span.inlinerollresult {
+	padding: 4px !important;
+}
+
+.sheet-savedc > span,
+.sheet-save .sheet-label > span,
+.sheet-rolltemplate-simple .sheet-label > span,
+.message .sheet-rolltemplate-simple .sheet-header > span,
+.message .sheet-rolltemplate-npc .sheet-header, [name=\'roll_npc_dex\'] > span:first-child,
+[name=\'roll_npc_str\'] > span:first-child, [name=\'roll_npc_cha\'] > span:first-child,
+[name=\'roll_npc_wis\'] > span:first-child, [name=\'roll_npc_int\'] > span:first-child,
+[name=\'roll_npc_con\'] > span:first-child, [type=\'roll\'], [name=\attr_npcd_name\] {
+	color:hsl(44,63%,63%) !important;
+	border-color:hsl(0,0%,50%) !important;
+}
+
+.uppertab.active {
+    background-color: #666!important;
+    color: #f5f5f5!important;
+}
+
+.uppertab {
+    width: 50%;
+    height: 100%;
+    background-color: #DADAD9!important;
+    display: flex;
+    align-items: center;
+    color: #222!important;
+}
+
+#myaudio_playlists .listheader {
+    min-width: 460px;
+    height: 42px;
+    position: relative;
+    padding-bottom: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: transparent!important;
+}
+
+.listheader .title, .listheader .titleedit {
+    margin-top: 4px;
+    margin-bottom: 0;
+    padding: 4px;
+    font-size: 20px;
+    color: #222!important;
+}
+
+.selectize-input {
+    background: #DADAD9!important;
+    cursor: text;
+    border: 0px!important;
+    display: inline-block;
+    color: #222!important;
+}
+
+.largedialog label {
+    width: 100%;
+    text-align: left;
+    float: none;
+    color: black!important;
+}
+
+#textchat {
+    overflow: hidden;
+}
+
+.textchatcontainer .message {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.textchatcontainer {
+    background: transparent!important;
+    height: 87.5%!important;
+    position: relative!important;
+    top: 118px!important;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+}
+
+.message.general {
+	overflow-x: hidden;
+	height: 31px;
+}
+
+#imagedialog #librarysearchroot .googleresult {
+	background-color:hsl(0,0%,10%) !important;
+}
+
+#imagedialog #librarysearchroot .marketplacead {
+	background-color:hsl(0,0%,10%) !important;
+}
+
+#imagedialog #librarysearchroot .expandsearch {
+	background-color:hsl(0,0%,10%) !important;
+}
+
+#imagedialog #librarysearchroot .alert.orange {
+	background-color:hsl(0,0%,10%) !important;
+	color:hsl(0,0%,80%) !important;
+	border-color:transparent !important;
+	text-shadow:none !important;
+}
+
+.sheet-arrow-right {
+	border-color: hsl(0,0%,0%) !important;
+	border-top: 2px solid !important;
+	border-bottom: 0px transparent !important;
+	padding-bottom: 4px !important;
+	color: black !important;
+	border-left: none !important;
+}
+
+.sheet-italics {
+	color:hsl(0,0%,70%) !important;
+}
+
+.sheet-bold {
+	color:#ab1717 !important;
+}
+
+.sheet-damagetemplate > .sheet-result:not(:last-child) {
+	border-bottom: 1px solid hsl(0,50%,50%);
+}
+
+.sheet-rolltemplate-atkdmg .sheet-damagetemplate .sheet-result,
+.sheet-rolltemplate-dmg .sheet-damagetemplate .sheet-result {
+	padding-bottom: 5px;
+}
+
+.sheet-action sheet-compendium-drop-target ui-droppable {
+	color:hsl(0,0%,80%);
+}
+
+.charsheet .sheet-attacks .sheet-options-flag:checked + span,
+.charsheet .sheet-spell .sheet-options-flag:checked + span,
+.charsheet .sheet-tool .sheet-options-flag:checked + span,
+.charsheet .sheet-npc .sheet-npc_options-flag:checked + span,
+.charsheet .sheet-trait .sheet-options-flag:checked + span,
+.charsheet .sheet-action .sheet-options-flag:checked + span,
+.charsheet .sheet-equipment .sheet-inventorysubflag:checked + span,
+.charsheet .sheet-core .sheet-textbox .sheet-options-flag:checked + span,
+.charsheet .sheet-core .sheet-complex .sheet-options-flag:checked + span,
+.charsheet .sheet-core .sheet-header .sheet-options-flag:checked + span,
+.sheet-rolltemplate-5e-shaped a[href^='!'],
+.sheet-rolltemplate-5e-shaped a[href^='~'] {
+	color:hsl(44,63%,63%) !important;
+}
+
+.keywords,
+#player_displayname,
+#videobroadcasttype,
+#videoreceivetype,
+#videoplayersize,
+#videoplayerlocation,
+.videotech,
+#videobandwidth,
+#movablevideo,
+#globalvolume,
+#decksize {
+	background-color:hsl(0,0%,10%) !important;
+	color:hsl(0,0%,75%) !important;
+}
+
+.sheet-rolltemplate-spell {
+	margin-top: 10px;
+}
+
+.sheet-tab-button.sheet-core,
+.sheet-advantagetoggle {
+	margin-top: 1px !important;
+}
+
+.charsheet .sheet-advantagetoggle input[type=radio]:checked + span,
+.charsheet input[type=radio].sheet-tab-button:checked + span {
+	background-color:hsl(44,63%,63%) !important;
+	color:hsl(0,0%,0%) !important;
+}
+
+.charsheet .sheet-body {
+	margin-top: 25px !important;
+}
+
+.charsheet .repcontrol .repcontrol_add:before {
+	margin-right: 5px;
+    margin-left: 3px;
+    content: "&";
+    color: #777 !important;
+    font-family: pictos;
+}
+
+.textchatcontainer .avatar {
+    position: absolute;
+    top: 11px;
+    left: 16px;
+    width: 28px;
+}
+
+.charsheet .repcontrol .repcontrol_edit:after {
+	margin-left: 8px;
+    content: "1";
+    color: #777;
+    font-family: pictos;
+}
+
+.ui-dialog .charsheet input[type=number] {
+    background-color: transparent !important;
+    position: relative;
+    color: hsl(44, 58%, 22%) !important;
+    font-weight: bold;
+}
+
+.charsheet .sheet-header .sheet-header-info select {
+	padding-left: 5px !important;
+	padding-right: 5px !important;
+}
+
+.charsheet .sheet-cantrips > .sheet-label {
+	color:hsl(0,0%,96%) !important;
+	font-weight: 300 !important;
+}
+
+input[name=\attr_gp\] {
+	color:hsl(51,100%,50%) !important;
+}
+
+.charactereditor .avatar {
+    background-color: transparent!important;
+}
+
+.dropbox.filled {
+    border: 4px dashed #D1D1D1 !important;
+}
+
+input[name=\attr_pp\] {
+	color:hsl(40,5%,89%) !important;
+}
+
+[type=\'roll\'] > span, .sheet-attr {
+	color:hsl(0,0%,100%) !important;
+}
+
+input[name=\attr_sp\] {
+	color:hsl(0,0%,75%) !important;
+}
+
+input[name=\attr_cp\] {
+	color:hsl(29,57%,46%) !important;
+}
+
+.attributesabilities .abil {
+	background-color: transparent !important;
+}
+
+
+[name=\roll_death_save\], [name=\roll_hit_dice\]  {
+	color:hsl(0,0%,100%) !important;
+}
+
+[name=\attr_ac\], [name=\attr_initiative_bonus\], [name=\attr_speed\] {
+	color:hsl(0,0%,100%) !important;
+}
+
+.sheet-label {
+	color:hsl(0,0%,80%);
+}
+
+.sheet-wide {
+	color:hsl(0,0%,90%) !important;
+}
+
+/* RED'S EDITS */
+
+.ui-dialog-buttonset button[type='button'],
+.ui-dialog-buttonset > button,
+.r20es-dialog .btn {
+background-color: #1a1a1a !important;
+color: hsl(0,0%,80%) !important;
+border: 1px solid black !important;
+line-height: 18px;
+border-radius: 4px !important;
+padding: 4px 10px 4px !important;
+box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05) !important;
+}
+
+.ui-dialog .btn:not(.sheet-wrapper-button):hover,
+.ui-dialog-buttonset button[type='button']:hover,
+.ui-dialog-buttonset > button:hover {
+    background-color: hsl(0,0%,20%) !important;
+    color: white !important;
+}
+
+li.handout.compendium-item .namecontainer {
+box-shadow: none !important;
+}
+
+
+#measure.activebutton > img {
+    -webkit-filter: brightness(3) !important;
+    top: 2px;
+    position: relative;
+}
+}
+
+#measure:not(.activebutton) > img {
+opacity: 1 !important;
+-webkit-filter: brightness(2.5) !important;
+}
+
+.searchbox > input,
+.content > #player-search,
+#compendium > .searchbox span input {
+    color: #888 !important;
+    cursor: url(https://i.imgur.com/wEiNb4J.png) 10 16, auto!important;
+}
+
+.tools-list .tool-row:nth-child(2n+1),
+table.config-table tbody tr:nth-child(2n+1) {
+background-color: hsl(0,0%,20%) !important;
+}
+
+.charsheet .sheet-death-saving-throws-proficiency-wrapper .sheet-round-checkbox-wrapper span {
+    background-color: #1a1a1a;
+}
+.dd-handle {
+    color: transparent !important;
+    background-color: #444 !important;
+    cursor: url(https://i.imgur.com/DIC9KC2.png) 10 6, auto!important;
+}
+
+#secondary-toolbar {
+    background-color:#222 !important;
+    position: absolute;
+    top: 40px;
+    left: 190px;
+}
+
+#secondary-toolbar li{
+border-right: 1px solid #000 !important;
+}
+
+#measure_sticky_clear {
+background-color: #111 !important;
+border-color: black !important;
+}
+
+.dd-list .journalitem .name, .dd-list .library-item .name {
+position: static !important;
+}
+
+.textchatcontainer .message.you {
+    background-color:transparent!important;
+}
+
+#textchat .message.emote {
+    background-color:transparent!important;
+}
+
+#textchat .message.private,
+.charsheet .sheet-gm-info-block,
+.charsheet .sheet-gm-info-flex,
+.charsheet .sheet-gm-info-inline-block,
+.sheet-rolltemplate-5e-shaped .sheet-gm-info-block,
+.sheet-rolltemplate-5e-shaped .sheet-gm-info-flex,
+.sheet-rolltemplate-5e-shaped .sheet-gm-info-inline-block {
+	background-color:hsl0,0%,0%)!important;
+}
+
+.dd-item.handout .dd-content .redactor_editor > .name {
+	background-color:hsl(0,0%,20%) !important
+}
+li.search-choice {
+background-color: #333 !important;
+background-image: linear-gradient(#444444 20%,#404040 50%,#383838 52%,#3e3e3e 100%) !important;
+color: #ccc !important;
+}
+
+.textboxlist-bit-box {
+background: #223 !important;
+}
+
+.textboxlist-bits {
+border: 1px solid #000 !important;
+}
+
+.chosen-container-multi .chosen-choices {
+border: 1px solid #000 !important;
+}
+
+.textboxlist-autocomplete-placeholder, .textboxlist-autocomplete-results {
+opacity: 1 !important;
+filter: alpha(opacity=100) !important;
+background: #111 !important;
+-webkit-box-shadow: 0 3px 3px #222 !important;
+-moz-box-shadow: 0 3px 3px #222 !important;
+box-shadow: 0 3px 3px #222 !important;
+}
+
+.redactor_editor.content {
+	background-color: hsl(0,0%,10%) !important;
+}
+
+.note-editor span[style*='color: rgb( 0 , 0 , 0 )'],
+.note-editor span[style*='color: rgb( 66 , 66 , 66 )'] {
+    color: hsl(0,0%,75%) !important;
+}
+
+.note-editor.note-frame .note-editing-area .note-editable {
+color: inherit !important;
+}
+
+.note-editor .panel-default > .panel-heading {
+background-color: #2a2a2a !important;
+border-color: #111 !important;
+}
+
+.handouteditor .dropbox,
+.note-statusbar > .note-resizebar {
+background-color: #111 !important;
+}
+
+.note-editor.note-frame {
+border: 1px solid #000 !important;
+}
+
+#containerdiv,
+.redactor_box, .redactor_editor, .redactor_editor:focus, div[contenteditable], div[contenteditable]:focus {
+	background: #1a1a1a !important;
+}
+
+.charactereditor .defaulttoken {
+    height: 150px;
+    background-color: transparent!important;
+    margin-right: 5px;
+    width: 150px;
+    text-align: center;
+}
+
+.folderroot .dd-content {
+	border-top: 1px solid hsl(0,0%,30%) !important;
+    cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto!important;
+}
+
+img[src='/images/handout.png'] {
+	content: url(https://i.imgur.com/UBzGtHO.png)!important;
+}
+
+img[src='/images/character.png'] {
+	content: url(https://i.imgur.com/iFFMVUp.png)!important;
+}
+
+.dd-item .playerdots {
+background-color: transparent !important;
+}
+
+.chosen-container-multi .chosen-choices {
+background-color: #1a1a1a !important;
+background-image: none !important;
+}
+
+.textboxlist-bit-editable {
+    border: 1px solid #aaaaaa !important;
+}
+
+.anm-edit__gui-row-name {
+    color: black !important;
+    -webkit-text-stroke: 0px rgb(85, 85, 85) !important;
+}
+
+.anm-edit__gui-row {
+    border: 1px solid hsl(0,0%,30%) !important;
+}
+
+.anm-edit__gui-row:nth-child(2n) {
+    background: hsl(0,0%,20%) none repeat scroll 0% 0% !important;
+}
+
+.anm-edit__gui-row .flex-v-center div input,
+anm-edit__gui-row .flex-v-center div button {
+    height: 24px !important;
+}
+
+.anm-win {
+}
+
+.charactereditor .avatar,
+.artr__side {
+    background-color: transparent !important;
+}
+
+.artr__item,
+.artr__item__top,
+.artr__item__bottom {
+    background-color:#222 !important;
+}
+
+.artr__side__tag_header,
+.artr__side__head,
+.artr__side__tag_grid,
+.artr__search {
+    background-color:hsl(0,0%,10%) !important;
+    border-bottom: 1px solid black !important;
+}
+
+.artr__side__tag[data-state="1"] {
+	background-image: linear-gradient(#2a2a2a, #337ab7) !important;
+}
+
+.artr__side__tag[data-state="2"] {
+	background-image: linear-gradient(#2a2a2a, #8a1a1b) !important;
+}
+
+.artr__main .artr__view_inner,
+.artr__main .artr__view {
+background-color: hsl(0,0%,10%) !important;
+}
+
+[type='roll'] > span, .sheet-attr, .sheet-bold span {
+color: #666 !important !important
+}
+
+.charsheet .sheet-pseudo-button-wrapper > span {
+color: hsl(0,0%,90%) !important;
+background-color: #444 !important;
+}
+
+.charsheet .sheet-pseudo-button-wrapper input[type='radio']:checked + span,
+.charsheet .sheet-pseudo-button-wrapper.sheet-visible-button > span[class='sheet-small-label'],
+.charsheet .sheet-pseudo-button-wrapper input[type='radio']:checked + span[class='sheet-pc sheet-bold'],
+.charsheet .sheet-pseudo-button-wrapper input:checked + span,
+.charsheet .sheet-spells .sheet-pseudo-button-wrapper input:checked + span[class='sheet-bold'],
+.charsheet div .sheet-pseudo-button-wrapper input[value='settings']:checked + span[class='sheet-pictos'],
+.charsheet .sheet-pseudo-button-wrapper input[type='radio']:checked ~ span[class='sheet-npc sheet-bold'],
+.charsheet .sheet-pseudo-button-wrapper.sheet-visible-button > input[name$='_rest'] + span {
+background-color: #777 !important;
+}
+
+.sheet-shaped-row .sheet-toggle-edit-mode + span {
+background-color: transparent !important;
+}
+
+.charsheet .sheet-section-npc .sheet-top-stats {
+color: #a1311d !important;
+}
+
+.charsheet .sheet-round-checkbox-wrapper input:checked + .sheet-pseudo-circle,
+.charsheet .sheet-skill-proficiency[value='proficient'] + span {
+background-color: #64b342 !important;
+}
+
+.charsheet .sheet-bubble-radio-clear[value='0'] + span.sheet-bubble-clear{
+background-color:#1a1a1a !important
+}
+
+.charsheet .sheet-round-checkbox-wrapper .sheet-pseudo-circle,
+.charsheet .sheet-bubble {
+border: 1px solid #444 !important;
+}
+
+.charsheet .sheet-wrap-box-title {
+text-shadow: none !important;
+}
+
+.charsheet .sheet-inspiration-label [type='checkbox']:checked + span {
+background: url('http://imgsrv.roll20.net/?src=i.imgur.com/o20JTtU.png') center center no-repeat !important;
+-webkit-filter: invert(80%)
+}
+.charsheet .sheet-gray-background-wrapper {
+background-color: #333 !important;
+}
+
+.sheet-hit-dice, .sheet-death-saving-throws, .sheet-rest, .sheet-heart, .sheet-shield, .sheet-initiative, .sheet-speed {
+background-color: #333 !important
+}
+
+.ui-dialog .charsheet .sheet-shaped-row input[type='number'] {
+color: hsl(0,0%,80%) !important;
+}
+
+.charsheet span[class^='sheet-toggle-'] {
+background-color: #444 !important
+}
+
+.charsheet .sheet-spells input[type='checkbox']:not(.sheet-options-flag):checked + span:not(.sheet-pictos),
+.charsheet .sheet-spells .sheet-prepared-matters input:checked + span,
+.charsheet .sheet-spells input.sheet-toggle-concentration:checked + span.sheet-toggle-concentration,
+.charsheet .sheet-spells input.sheet-toggle-ritual:checked + span.sheet-toggle-ritual,
+.charsheet .sheet-spells input[class^='sheet-toggle-filter']:checked + span[class^='sheet-toggle-filter'],
+.charsheet .sheet-spells input[class^='sheet-toggle-spells-filter']:checked + span[class^='sheet-toggle-spells-filter'],
+.charsheet .sheet-spells input[type='checkbox']:checked + span[data-i18n='RITUAL'] {
+background-color: #591209 !important;
+}
+
+.charsheet .sheet-spells input[type='checkbox'] + span {
+background-color: #444 !important;
+}
+
+
+
+.charsheet .sheet-bubble {
+    background-color: #444 !important;
+}
+
+.charsheet .sheet-bubble-radio-clear:checked ~ .sheet-bubble-radio + .sheet-bubble,
+.charsheet .sheet-bubble-radio:checked ~ .sheet-bubble-radio + .sheet-bubble {
+    background-color: #1a1a1a !important;
+}
+
+button[name^='roll_shaped_coinage'] {
+    background-color: transparent !important;
+}
+
+.charsheet label[class^='sheet-slide-toggle-'] {
+    box-shadow:none !important;
+}
+
+.charsheet .sheet-section-settings .sheet-wrap-box {
+    background-color: #1a1a1a !important;
+}
+
+.charsheet .sheet-zebra-rows .sheet-shaped-row:nth-child(2n),
+.sheet-rolltemplate-5e-shaped .sheet-zebra {
+    background-color: #242424 !important;
+}
+
+.ui-dialog .charsheet .repcontainer .repitem .itemcontrol {
+    background-color: rgba(120,120,80,0.40) !important;
+}
+
+.charsheet .sheet-classes-select-wrapper {
+    background: #1a1a1a !important;
+}
+
+.charsheet .sheet-spells-wrap .sheet-spells > button.btn.ui-draggable[name='roll_shaped_spell_dc'],
+.charsheet .sheet-spells-wrap .sheet-spells > button.btn.ui-draggable[name='roll_shaped_spell_attack'] {
+    background-color: transparent !important;
+}
+
+.sheet-rolltemplate-5e-shaped .sheet-rt-content {
+color:hsl(0,0%,80%) !important;
+}
+
+.sheet-rolltemplate-5e-shaped .sheet-rt-title {
+color: #a11504 !important
+}
+
+.charsheet .sheet-shaped-row div span.sheet-heading {
+background-color: transparent !important;
+}
+
+.charsheet .sheet-section-npc .sheet-npc-content-wrap {
+background:#1a1a1a repeat !important;
+}
+
+.charsheet .sheet-character-name {
+background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/17bf440add2e0cdb5a6c9395961d272d/raw/8c2b58046ddde9e09d761c3c53d344e2f6d6b35f/nameRibbon.svg') no-repeat !important;
+}
+
+.charsheet .sheet-character-header {
+background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/9514856f2d94e236e6614837cc0a3c26/raw/3a0ea72082aa81ee145d6c327994e23ffe72a83c/topRibbonBackground.svg') no-repeat !important;
+}
+
+.charsheet .sheet-pointy-end-box-bottom-left, .charsheet .sheet-pointy-end-box-bottom-right, .charsheet .sheet-pointy-end-box-top-left, .charsheet .sheet-pointy-end-box-top-right {
+background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/c245d2673c0c466e4d99a157ad3c6a78/raw/1900f19c90dfd932c64177eed5d04cb0cc5f079f/pointyEndBoxCorner.svg') no-repeat !important;
+}
+
+.charsheet .sheet-pointy-end-box-expand-bottom, .charsheet .sheet-pointy-end-box-expand-top {
+background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/d6c1be48e337fece14f2350d84730caf/raw/a298e60d99cfd43270bbeafeca1859fe4ef29593/pointyEndBoxExpandTop.svg') repeat-x !important;
+}
+
+.charsheet .sheet-pointy-end-box-expand-left, .charsheet .sheet-pointy-end-box-expand-right {
+background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/a0ecf0168d1d9e909d127714fe5f4068/raw/024f2e0f366b6a5ce3eb828e91068cf483b8b90b/pointyEndBoxSideExpand.svg') left repeat-y !important;
+}
+
+.charsheet .sheet-right-ribbon {
+background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/17f52b1c4f990cff3bf04c1ca14426e1/raw/c05dc454460d84b752b8c8841333f5f85d928094/rightRibbon.svg') no-repeat !important;
+}
+
+.charsheet .sheet-inspiration {
+background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/5df74f374d39064c79790bba913c462a/raw/cb7a46e757ae6aad8f3383c2269d8e3a4b444f37/inspiration.svg') no-repeat !important;
+}
+
+.charsheet .sheet-very-boring-box-bottom-left, .charsheet .sheet-very-boring-box-bottom-right, .charsheet .sheet-very-boring-box-top-left, .charsheet .sheet-very-boring-box-top-right {
+background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/a669b42284ba13ceeb4d5d1d4850b0d7/raw/ab40b145a497fddc5246b11ac22e6786f7971aa8/veryBoringBoxCorner.svg') no-repeat !important;
+}
+
+.charsheet .sheet-very-boring-box-expand-bottom, .charsheet .sheet-very-boring-box-expand-top {
+background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/01e52f5edeea446319b96bf2e21e6723/raw/fa8e5ac2ccd63ffa7a82d7f183e26234efde55d5/veryBoringBoxLineBottomExpand.svg') repeat-x !important;
+}
+
+.charsheet .sheet-very-boring-box-expand-left, .charsheet .sheet-very-boring-box-expand-right {
+background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/1441163b95e39a7aa9e4cb0b387eb536/raw/247464bd86f8b2d767413e902a79cb36bd742dff/veryBoringBoxLineExpand.svg') repeat-y !important;
+}
+
+.charsheet .sheet-abilities-background {
+background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/095e81e22e2394519fff623894d4e257/raw/23590048548cd1ed67f993350a00dd031f38c47b/abilityBackgroundEnd.svg') center top no-repeat,url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/87436c1c4cdd24af9cf5b20d9079748a/raw/da1e96f25151a6eef9af6e815309b8a50ca29f96/abilityBackgroundEndBottom.svg') center bottom no-repeat,#333 !important;
+}
+
+.charsheet .sheet-ability-wrapper {
+background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/57a9b42ab7b021fb2697b775b313a2a9/raw/4d84509e6800707db142128d418d90b345682b92/ability.svg') no-repeat !important;
+}
+
+.charsheet .sheet-shield {
+background: #333 url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/0b95c6cdcaec13307e4f00d7bd3205f2/raw/5877203d71ac280e988e43abf27fdaceeefce836/ac.svg') no-repeat !important;
+}
+
+.charsheet .sheet-heart {
+background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/e24e1aaf31d9a4c23960414afad1145b/raw/a8f266bbbf9408f91b7b9f50dfa5cff41463968c/heart.svg') no-repeat !important;
+}
+
+.charsheet .sheet-gray-background-bottom-left, .charsheet .sheet-gray-background-bottom-right, .charsheet .sheet-gray-background-top-left, .charsheet .sheet-gray-background-top-right {
+background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/e36989cf8004ae96734de8330375a810/raw/8470eb7d7b3f4771f429f7d22b6d50525966a735/grayBackgroundCorner.svg') no-repeat !important;
+}
+
+.sheet-heart button {
+background-color: transparent !important;
+}
+
+.charsheet .sheet-death-saving-throws, .charsheet .sheet-hit-dice, .charsheet .sheet-initiative, .charsheet .sheet-rest, .charsheet .sheet-speed {
+background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/cef80b44113b2b25d6a563861ef54275/raw/b1219d2ba4a3f721df88e4a4aea5790b412bb05c/box.svg') no-repeat !important;
+}
+
+.charsheet .sheet-indented-box-horizontal-bottom-left, .charsheet .sheet-indented-box-horizontal-bottom-right, .charsheet .sheet-indented-box-horizontal-rounded-bottom-left, .charsheet .sheet-indented-box-horizontal-rounded-bottom-right, .charsheet .sheet-indented-box-horizontal-rounded-bottom-top-left, .charsheet .sheet-indented-box-horizontal-rounded-bottom-top-right, .charsheet .sheet-indented-box-horizontal-top-left, .charsheet .sheet-indented-box-horizontal-top-right {
+background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/7802ae10fa22c302eb173ead628c83e1/raw/0aabdf83a688dcadb5979edadfd359670102c856/indentedBoxHorizontalCorner.svg') no-repeat !important;
+}
+
+.charsheet .sheet-indented-box-horizontal-rounded-bottom-bottom-left, .charsheet .sheet-indented-box-horizontal-rounded-bottom-bottom-right, .charsheet .sheet-indented-box-horizontal-rounded-top-left, .charsheet .sheet-indented-box-horizontal-rounded-top-right {
+background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/92c7126f6400f44fed1e3cfe18814693/raw/0c708896da0a0c16f83fd29b97a4fa351cda0e18/indentedBoxHorizontalRoundedTopCorner.svg') no-repeat !important;
+}
+
+.charsheet .sheet-indented-box-horizontal-expand-bottom, .charsheet .sheet-indented-box-horizontal-expand-top, .charsheet .sheet-indented-box-horizontal-rounded-bottom-expand-bottom, .charsheet .sheet-indented-box-horizontal-rounded-bottom-expand-top, .charsheet .sheet-indented-box-horizontal-rounded-expand-bottom, .charsheet .sheet-indented-box-horizontal-rounded-expand-top,
+.charsheet .sheet-indented-box-horizontal-rounded-bottom-expand-left, .charsheet .sheet-indented-box-horizontal-rounded-bottom-expand-right, .charsheet .sheet-indented-box-horizontal-rounded-expand-left, .charsheet .sheet-indented-box-horizontal-rounded-expand-right,
+.charsheet .sheet-indented-box-horizontal-expand-left, .charsheet .sheet-indented-box-horizontal-expand-right {
+background-color: #1a1a1a !important;
+}
+
+.sheet-value > input {
+	background-color: transparent !important;
+	color:hsl(0,0%,0%) !important;
+}
+
+.sheet-rolltemplate-atk .sheet-sublabel span,
+.sheet-rolltemplate-atkdmg .sheet-sublabel span,
+.sheet-rolltemplate-dmg .sheet-sublabel span,
+.charsheet {
+	color:hsl(0,0%,80%) !important;
+}
+
+.charsheet .sheet-boring-box-top-left, .charsheet .sheet-boring-box-top-right,
+.sheet-rolltemplate-5e-shaped .sheet-boring-box-top-left, .sheet-rolltemplate-5e-shaped .sheet-boring-box-top-right {
+background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/fab3aa13509f03ee01b42964993a5588/raw/81b4a1a231bf7b33bdf5d48367bc0b8fcdb3b5cc/boringBoxTopCornerWhite.svg') no-repeat !important;
+}
+
+.charsheet .sheet-boring-box-expand-bottom, .charsheet .sheet-boring-box-expand-top,
+.sheet-rolltemplate-5e-shaped .sheet-boring-box-expand-bottom, .sheet-rolltemplate-5e-shaped .sheet-boring-box-expand-top {
+    background: #1a1a1a url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/a63fee182682ed9f41a8e35954cbd35f/raw/cdb0c1a5947549633aa106df9015b9a50e488698/boringBoxTopBottomExpandWhite.svg') repeat-x !important;
+}
+.sheet-rolltemplate-5e-shaped .sheet-boring-box-expand-bottom {
+    transform: scaleY(-1) scaleX(1.05) !important;
+}
+
+.charsheet .sheet-boring-box-expand-left, .charsheet .sheet-boring-box-expand-right,
+.sheet-rolltemplate-5e-shaped .sheet-boring-box-expand-left, .sheet-rolltemplate-5e-shaped .sheet-boring-box-expand-right {
+background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/ca1db5c4e2e117b7501f390198f2760b/raw/510b4fcf14727a574d2b26ceaa238c5a34407bea/boringBoxSideExpandWhite.svg') repeat-y !important;
+}
+
+.charsheet .sheet-boring-box-bottom-left, .charsheet .sheet-boring-box-bottom-right,
+.sheet-rolltemplate-5e-shaped .sheet-boring-box-bottom-left, .sheet-rolltemplate-5e-shaped .sheet-boring-box-bottom-right {
+background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/0bf33662756f948ed17fcc49aa9cf908/raw/8b37d710faa267102508f8adefb0a60fd47ca08c/boringBoxBottomCornerWhite.svg') no-repeat !important;
+}
+
+.charsheet .sheet-modifier-long {
+background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/97f47eeab64b20a9bb6c96c0be676fc5/raw/f5a240e73953285bfd9e3bff40b46d9241424ba8/modifierLong.svg') no-repeat !important;
+}
+
+.charsheet .sheet-modifier-short {
+background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/7e006f6645f31f0e785e93ecf5c6d4f0/raw/c944f70f1669619b11367ca89bf9894804f7ccf7/modifierShort.svg') no-repeat !important;
+}
+
+.charsheet .sheet-spell-level-title-background-left-no-number, .charsheet .sheet-spell-level-title-background-right {
+background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/d36565260acd415583c935b1bd9a1b76/raw/c494b45fd6478592ef53d4c7c1617693a9df8344/spellcastingTitleRight.svg') no-repeat !important;
+}
+
+.charsheet .sheet-spell-level-title-background-expand {
+background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/bc92bb122820840be2883a930a3a178c/raw/4b692304ee3860a228c60e9683af2dabd2d91052/spellcastingTitleExpand.svg') repeat-x !important;
+}
+
+.charsheet .sheet-spell-level-title-background-left {
+background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/a188dc921c2c5bb6cae4a33b322ba7b2/raw/205ced227f5a6cb2109cdc8da12c2321fb65c709/spellcastingTitleLeft.svg') no-repeat !important;
+}
+
+.charsheet .sheet-modifier {
+background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/53588b14e229d520daa7974051f9e42d/raw/1cf648aa6f111e1d5e380eaaaa7287555f9479c9/modifier.svg') no-repeat !important;
+}
+
+.charsheet .sheet-copper, .charsheet .sheet-silver, .charsheet .sheet-electrum, .charsheet .sheet-gold, .charsheet .sheet-platinum {
+background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/7ddb096717c32ed8ab64478918cdf44f/raw/4ca07b33a0f792570a4690665e40299b0fb17a4e/copper.svg') no-repeat !important;
+}
+
+.charsheet .sheet-indented-box-expand-bottom, .charsheet .sheet-indented-box-expand-top,
+.charsheet .sheet-max-hp-wrapper, .charsheet .sheet-temp-hp-wrapper {
+background-color: #1a1a1a !important;
+}
+
+.charsheet .sheet-indented-box-expand-left, .charsheet .sheet-indented-box-expand-right, .charsheet .sheet-box-middle,
+.sheet-rolltemplate-5e-shaped .sheet-box-middle {
+    background-color: #1a1a1a !important;
+}
+
+.sheet-inspiration-left, .sheet-inspiration-right, .sheet-proficiency-bonus button, .sheet-shaped-version > button {
+    background-color: transparent !important;
+}
+
+.sheet-shaped-version > button > span {
+    text-shadow: 1px 1px #1a1a1a;
+}
+
+/* OGL TIME LET'S GO */
+
+div.sheet-licensecontainer .sheet-npc_toggle[value="1"] ~ .sheet-npc .sheet-stat-block,
+div.sheet-licensecontainer .sheet-npc_toggle[value="1"] ~ .sheet-npc .sheet-actions,
+div.sheet-licensecontainer .sheet-npc_toggle[value="1"] + .sheet-npcspellcastingflag[value="1"] ~ .sheet-pc .sheet-page.sheet-spells .sheet-body .sheet-col {
+    background: transparent !important;
+}
+
+div.sheet-licensecontainer .sheet-container .sheet-body button.btn.ui-draggable {
+    color: hsl(44,63%,63%) !important;
+}
+
+div.sheet-licensecontainer .sheet-container .sheet-body button.btn.ui-draggable:hover {
+    color: #3f88e6 !important;
+}
+
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-subcontainer .sheet-row-container input[type="checkbox"]:checked {
+    background-color: #444 !important;
+}
+
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-core .sheet-col2 {
+	background: url("https://gistcdn.githack.com/RedReign/70800980c89d9a8ed2029f0136ae75f0/raw/a608c0a7f952138d35717dea053529d800f2201d/vitals.svg") !important;
+}
+
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-attributes-container {
+    background: url("https://gistcdn.githack.com/RedReign/f862ed28ee28687ea3572d3a363a373e/raw/ea2e1ee747d16f1d8aa5db70baec3e3b4befab97/abilityBack.svg") !important;
+}
+
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-attr-container {
+    background: url("https://gistcdn.githack.com/RedReign/4eaabf71e6949e781d9763acea1cdd4a/raw/8c7a7fe6b406cb8ff37e1a4624f5902d301884fb/abilitySTR.svg") !important;
+}
+
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-insp-prof-container {
+    background: url("https://gistcdn.githack.com/RedReign/8a64e22b55417338b4a55bce64e2b05e/raw/5f89a978eecb33b9b4afe355ef07d50234cae4dc/OGLinspiration.svg") no-repeat !important;
+}
+
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-insp-prof-container + .sheet-insp-prof-container {
+    background: url("https://gistcdn.githack.com/RedReign/035336cbe7d5887ed93daf3d751e8972/raw/f7f8037eb44d2c4de7a6e4b5e3236865f3adc0a9/OGLproficiencyBonus.svg") no-repeat !important;
+}
+
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-saving-throw-container,
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-skills-container {
+    border-image-source: url("https://gistcdn.githack.com/RedReign/bb3b9263161822b2e7adeca6e821ab07/raw/f76ee4ec3f8afb94f64aafa4eb3a2f727da80cbe/OGLsaves.svg") !important;
+}
+
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-col1 > .sheet-insp-prof-container {
+    background-image: url("https://gistcdn.githack.com/RedReign/e8630c5958ce244ec521ac7c2b587d64/raw/f6860c443c93d7bde76067b63a913c7baf50eb93/OGLperception.svg") !important;
+}
+
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-tool_proficiencies {
+    border-image-source: url("https://gistcdn.githack.com/RedReign/23e65423c73f9cab74a6a822e642f34f/raw/bb06f1e12c567784bef0d55353b6911cdfcbf502/OGLproficiencyBlock.svg") !important;
+}
+
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-attacks,
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-proficiencies,
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-traits,
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-equipment,
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-exhaustion {
+    border-image-source: url("https://gistcdn.githack.com/RedReign/5ee291a1048ad661e3d867aafa262af0/raw/282e8573c504f09f910b7b9e07ab0cf57a60eaa7/OGL5eBorder.svg") !important;
+    border-image-slice: 6% 8% 12% 8% fill !important;
+}
+
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-bio .sheet-textbox {
+    border-image-source: url("https://gistcdn.githack.com/RedReign/5ee291a1048ad661e3d867aafa262af0/raw/282e8573c504f09f910b7b9e07ab0cf57a60eaa7/OGL5eBorder.svg") !important;
+}
+
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-coin {
+    background-image: url("https://gistcdn.githack.com/RedReign/d419f81fe11fb67e7d514a648ab0889d/raw/8f78451fb73c13ad7ee9a058866af6d0d94bd5b5/OGLgold.svg") !important;
+}
+
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-pibf {
+    border-image-source: url("https://gistcdn.githack.com/RedReign/105730a1af47e85c3e5935c9507c56f9/raw/50e7167541bd35b3cd1a77425415a2e7bc6503d3/OGLvitalTop.svg") !important;
+}
+
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-pibf + .sheet-pibf {
+    border-image-source: url("https://gistcdn.githack.com/RedReign/bea2c5787339178bf23a0b47e37693a7/raw/13ca484fa6fd74f2178d3c04f3699e2d65135649/OGLvitalMid.svg") !important;
+}
+
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-pibf + .sheet-pibf + .sheet-pibf + .sheet-pibf {
+    border-image-source: url("https://gistcdn.githack.com/RedReign/05cae179d7d3cc12fbd7ed06c3a2030e/raw/381aa6c33f83b35a63024f6de999120dec47e0b7/OGLvitalBottom.svg") !important;
+}
+
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-hp + .sheet-hp {
+    background-image: url("https://gistcdn.githack.com/RedReign/05cae179d7d3cc12fbd7ed06c3a2030e/raw/381aa6c33f83b35a63024f6de999120dec47e0b7/OGLvitalBottom.svg") !important;
+}
+
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-subcontainer {
+    background-color: transparent !important;
+    border-image-source: url("https://gistcdn.githack.com/RedReign/256d7e0a1d2ab439c359a1ed638b2778/raw/67a354930c383453878f4f1570623b609262e19f/OGLvitalBox.svg") !important;
+    border-image-slice: 15 15 fill !important;
+}
+
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-ac-init-speed-container .sheet-init,
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-ac-init-speed-container .sheet-speed {
+    background-image: url("https://gistcdn.githack.com/RedReign/256d7e0a1d2ab439c359a1ed638b2778/raw/67a354930c383453878f4f1570623b609262e19f/OGLvitalBox.svg") !important;
+}
+
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-hp {
+    background-image: url("https://gistcdn.githack.com/RedReign/105730a1af47e85c3e5935c9507c56f9/raw/50e7167541bd35b3cd1a77425415a2e7bc6503d3/OGLvitalTop.svg") !important;
+}
+
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-ac-init-speed-container .sheet-ac {
+    background-image: url("https://gistcdn.githack.com/RedReign/80061e42296f262830cf1438164c73b7/raw/6ff4ae5fa6a452cd36c7a3ec727ba0044c84beda/OGLac.svg") !important;
+}
+
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-col1 .sheet-spell-level:nth-child(1) {
+    background-image: url("https://gistcdn.githack.com/RedReign/5fa17678f22adceac38370f55cc424bf/raw/904f94caf9d1df8e0ccd7d861e618310cab8e4cc/OGLcantrip.svg") !important;
+}
+
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-spell-level {
+    background-image: url("https://gistcdn.githack.com/RedReign/b9abd30f611eb4b015ca6dc316aebb73/raw/02538717a79c9e715ce8354619f7b7f1851703fd/OGLspellLevel.svg") !important;
+}
+
+div.sheet-licensecontainer .sheet-container.sheet-pc .sheet-spells .sheet-header .sheet-header-info .sheet-part {
+    background-image: url("https://gistcdn.githack.com/RedReign/d4585ddcf78ceb581a975d860f8d52ec/raw/ceacd6383b6cc5ecb8364c61527add0f28312ef6/OGLspellHeadBlock.svg") !important;
+}
+
+div.sheet-licensecontainer .sheet-container.sheet-pc .sheet-spells .sheet-header .sheet-header-info {
+    background-image: url("https://gistcdn.githack.com/RedReign/237aa9f3dfd1b7925a1e75342906a054/raw/99dcda2e8d69b47841e241c94c1e3ed7a151e991/OGLspellBox.svg") !important;
+}
+
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) div.sheet-page.sheet-spells > div.sheet-header {
+    background-image: url("https://gistcdn.githack.com/RedReign/0c0a62a7718186d7ce0f1ae45f9cf9c1/raw/24c0cfe62d18b0df01efee3c8b4d1035e097022c/OGLspellScroll.svg") !important;
+}
+
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) div.sheet-page > div.sheet-header::after {
+    background-image: url("https://gistcdn.githack.com/RedReign/cf1fae61a115894ffa29ed24884928aa/raw/e78c8d6d9bb5e2c080fc2cfa74f9a90d053c09d7/OGLscrollRight.svg") !important;
+}
+
+div.sheet-licensecontainer .sheet-container.sheet-pc .sheet-header .sheet-header-info {
+    background-image: url("https://gistcdn.githack.com/RedReign/73b5df43e0114ff932d0e76138bd7780/raw/94f941dfe655add03e361582d290053eb66be8a2/OGLcharBox.svg") !important;
+}
+
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) div.sheet-page.sheet-bio > div.sheet-header {
+    background-image: url("https://gistcdn.githack.com/RedReign/38cfe2044172cfdf65767bfd2d3472b6/raw/d15fb90aa8e01aeb586f25496ea4552f5a1e5c08/OGLbioScroll.svg") !important;
+}
+
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) div.sheet-page.sheet-core > div.sheet-header,
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) div.sheet-page.sheet-options > div.sheet-header {
+	background-image: url("https://gistcdn.githack.com/RedReign/e7758f7513b818ff9427a886cffc7fed/raw/45fcf8ecb0705f3352e966ed868fd57ff7c57232/OGLcharScroll.svg") !important;
+}
+
+div.sheet-licensecontainer .sheet-body .sheet-item .sheet-subitem > span {
+    background-color: hsl(0,0%,15%) !important;
+}
+
+div.sheet-licensecontainer .sheet-body .sheet-item .sheet-inventorysubflag {
+    background-color: transparent !important;
+}
+
+div.sheet-licensecontainer .sheet-proficiency .sheet-display button,
+div.sheet-licensecontainer .sheet-body .repcontrol .btn,
+div.sheet-licensecontainer .sheet-money .sheet-coin,
+div.sheet-licensecontainer .sheet-money .sheet-coin > input,
+.charsheet .sheet-textbox .sheet-display .sheet-desc,
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-ac-init-speed-container .sheet-ac input,
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-ac-init-speed-container .sheet-init span,
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-ac-init-speed-container .sheet-speed input,
+div.sheet-licensecontainer .sheet-header-info .sheet-part select[name="attr_spellcasting_ability"],
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-ac-init-speed-container .sheet-init > button {
+    background-color: transparent !important;
+}
+
+div.sheet-licensecontainer .sheet-body .sheet-spell .sheet-options .sheet-row > span[data-i18n*="spell-component-"],
+div.sheet-licensecontainer .sheet-body .sheet-spell .sheet-options .sheet-row > span[data-i18n*="ritual-u"],
+div.sheet-licensecontainer .sheet-body .sheet-spell .sheet-options .sheet-row > span[data-i18n*="concentration-u"] {
+	background-color: transparent !important;
+}
+
+div.sheet-licensecontainer .sheet-display button:hover,
+div.sheet-licensecontainer .sheet-body .repcontrol .btn:hover,
+div.sheet-licensecontainer .sheet-item:hover {
+    background-color: hsl(0,0%,20%) !important;
+}
+
+.sheet-body .sheet-attr-mod .sheet-baseattr {
+    background-color: transparent !important;
+}
+
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-attr-container .sheet-attr-mod {
+    border: 1px solid black !important;
+}
+
+.sheet-body .sheet-attributes-container .sheet-attr-container button {
+    border: 1px solid black !important;
+}
+
+.sheet-body .sheet-attributes-container .sheet-attr-container button:hover,
+div.sheet-licensecontainer .sheet-body button.btn:hover {
+    color: #3f88e6 !important;
+    background-color: hsl(0,0%,20%) !important;
+}
+
+div.sheet-licensecontainer .sheet-trait > .sheet-display > span.sheet-title[name*="attr_"] {
+    background-color: transparent !important;
+}
+
+div.sheet-licensecontainer .sheet-trait:hover > .sheet-display > span.sheet-title[name*="attr_"] {
+    color: #3f88e6 !important;
+}
+
+.sheet-rolltemplate-spell .sheet-container,
+.sheet-rolltemplate-npc, .sheet-rolltemplate-npcaction .sheet-container, .sheet-rolltemplate-npcatk, .sheet-rolltemplate-npcdmg, .sheet-rolltemplate-traits {
+    background: #222 url('https://i.imgur.com/n7ohb4t.png') repeat scroll left top !important;
+}
+
+.sheet-rolltemplate-spell .sheet-container span {
+    color: hsl(0,0%,80%) !important;
+}
+
+.sheet-display button.sheet-spellcard .sheet-innate {
+    background-color: transparent !important;
+}
+
+.charsheet .sheet-spell input[type='checkbox']:checked ~ span.sheet-prep {
+background-color: hsl(44,63%,63%) !important
+}
+
+.sheet-page.sheet-core .sheet-header .sheet-name-container img {
+display: block;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+background: url(http://imgsrv.roll20.net/?src=i.imgur.com/rzVfqwl.png) no-repeat;
+width: 250px; /* Width of new image */
+height: 45px; /* Height of new image */
+padding-left: 250px; /* Equal to width of new image */
+}
+
+.charsheet .sheet-attr-mod,
+.charsheet .sheet-insp-prof-container .sheet-value {
+background-color: #1a1a1a !important;
+}
+
+.charsheet .sheet-insp-prof-container .sheet-value input[type='checkbox'] ~ span {
+-webkit-filter: invert(80%) !important;
+}
+
+.charsheet .sheet-level::before {
+color: #111 !important;
+}
+
+.sheet-pibf .sheet-display > span[name="attr_personality_traits"],
+.sheet-pibf .sheet-display > span[name="attr_ideals"],
+.sheet-pibf .sheet-display > span[name="attr_bonds"],
+.sheet-pibf .sheet-display > span[name="attr_flaws"],
+div.sheet-licensecontainer .sheet-resources .sheet-subcontainer .sheet-label[name="attr_class_resource_name"],
+div.sheet-licensecontainer .sheet-resources .sheet-subcontainer .sheet-label[name="attr_other_resource_name"] {
+    background-color: transparent !important;
+}
+
+.sheet-display > span[name*='attr_'] {
+    background-color: #2a2a2a !important;
+}
+
+div.sheet-licensecontainer .sheet-npc_options span {
+    color: hsl(0,0%,70%) !important;
+}
+
+.charsheet .sheet-attacks .sheet-display .sheet-subheader span {
+    background-color:transparent !important;
+}
+
+.sheet-trait:hover,
+.sheet-item input,
+.sheet-display > .sheet-title,
+.sheet-display > button span[name*='attr_'],
+.sheet-display > button input[name*='attr_'],
+.charsheet .sheet-coin,
+.charsheet div.sheet-globaldisplay,
+.charsheet .sheet-pc .sheet-global-mod .sheet-options-flag:not(:checked) ~ .sheet-display .sheet-subheader {
+	background-color: #2a2a2a !important;
+}
+
+.charsheet .sheet-display > button .sheet-spellname[name='attr_spellname'] {
+    background-color: transparent !important;
+}
+
+.ui-dialog .btn[name='roll_spell'] {
+    border-color: transparent !important
+}
+
+.repitem .sheet-spell > .sheet-options-flag[type='checkbox'] + span,
+.charsheet .sheet-npc .sheet-npc_options-flag + span {
+    background-color: transparent !important;
+    z-index: 10 !important;
+}
+
+.repitem .sheet-spell > .sheet-options-flag[type='checkbox'],
+.charsheet .sheet-npc .sheet-npc_options-flag {
+    z-index: 11 !important;
+}
+
+.charsheet .sheet-npc .sheet-npc_options-flag,
+.charsheet .sheet-npc .sheet-npc_options-flag + span {
+    top: 10px !important;
+}
+
+.repitem .itemcontrol,
+.sheet-spell-container .repitem .itemcontrol .btn {
+    z-index: 12 !important;
+}
+
+.charsheet input[type='radio'].sheet-tab-button + span,
+.charsheet .sheet-advantagetoggle input[type='radio'] + span {
+    background-color: #666 !important;
+}
+
+div.sheet-rolltemplate-simple div.sheet-container {
+    background-image: url("https://i.imgur.com/FjwWl2K.png") !important;
+    background-color: transparent !important;
+}
+
+div.sheet-rolltemplate-atk div.sheet-container, div.sheet-rolltemplate-atkdmg div.sheet-container.sheet-atk, div.sheet-rolltemplate-dmg div.sheet-atk {
+    background: url('https://i.imgur.com/KphynRx.png') top left round !important;
+}
+
+div.sheet-rolltemplate-dmg div.sheet-container, div.sheet-rolltemplate-atkdmg div.sheet-container.sheet-damagetemplate {
+    background: url('https://i.imgur.com/g6uwvqk.png') top left round !important;
+}
+
+div.sheet-rolltemplate-atk div.sheet-desc,
+div.sheet-rolltemplate-atkdmg div.sheet-desc,
+div.sheet-rolltemplate-dmg div.sheet-desc,
+div.sheet-rolltemplate-desc div.sheet-desc {
+    background-image: url('https://i.imgur.com/5ZqDAqf.png') !important;
+}
+
+div.sheet-rolltemplate-atk div.sheet-desc.sheet-info .sheet-top,
+div.sheet-rolltemplate-atkdmg div.sheet-desc.sheet-info .sheet-top,
+div.sheet-rolltemplate-dmg div.sheet-desc.sheet-info .sheet-top,
+div.sheet-rolltemplate-desc div.sheet-desc.sheet-info .sheet-top {
+    background-image: url('https://i.imgur.com/xRbZ0nw.png') !important;
+}
+
+div.sheet-rolltemplate-atk div.sheet-desc.sheet-info .sheet-middle,
+div.sheet-rolltemplate-atkdmg div.sheet-desc.sheet-info .sheet-middle,
+div.sheet-rolltemplate-dmg div.sheet-desc.sheet-info .sheet-middle,
+div.sheet-rolltemplate-desc div.sheet-desc.sheet-info .sheet-top {
+    background-image: url('https://i.imgur.com/vhjUpjD.png') !important;
+}
+
+div.sheet-rolltemplate-atk div.sheet-desc.sheet-info .sheet-bottom,
+div.sheet-rolltemplate-atkdmg div.sheet-desc.sheet-info .sheet-bottom,
+div.sheet-rolltemplate-dmg div.sheet-desc.sheet-info .sheet-bottom,
+div.sheet-rolltemplate-desc div.sheet-desc.sheet-info .sheet-bottom {
+    background-image: url('https://i.imgur.com/N1mu4tJ.png') !important;
+}
+
+.sheet-damagetemplate > .sheet-result:not(:last-child) {
+    border-bottom: 1px solid #000 !important;
+}
+
+.charsheet .sheet-charmancer .sheet-bottombar {
+    border-top: 1px dashed #555 !important;
+    background: hsl(0,0%,20%) !important;
+}
+
+.charsheet .sheet-charmancer button, .charsheet .sheet-charmancer button[type="roll"] {
+    background-color: hsl(0,0%,40%) !important;
+}
+
+.charsheet .sheet-charmancer button.sheet-exit {
+    color: #800 !important;
+    border-color: #800 !important;
+}
+
+.charsheet .sheet-charmancer .sheet-steps {
+    background: hsl(0,0%,20%) !important;
+    border-bottom: 1px dashed #555 !important;
+}
+
+.charsheet .sheet-charmancer .sheet-hilite,{
+    background: #333 !important;
+}
+
+.charsheet .sheet-charmancer .sheet-levels-hp-row {
+    background: #333 !important;
+    border-color: black !important;
+}
+
+.charsheet .sheet-charmancer .sheet-spell-holder label,
+.charsheet .sheet-charmancer .sheet-container .sheet-spell-item:nth-child(2n) {
+    background-color: #2a2a2a !important;
+}
+
+.charsheet .sheet-charmancer .sheet-asi-row .sheet-switch:empty ~ .sheet-switch-container .sheet-asi-tab,
+.charsheet .sheet-charmancer .sheet-asi-row .sheet-switch:not(:empty) ~ .sheet-switch-container .sheet-feat-tab {
+    background-color: #1a1a1a !important;
+}
+
+.charsheet .sheet-charmancer .sheet-lp-summary .sheet-after h2 {
+    background-color: #333 !important;
+}
+
+.charsheet .sheet-charmancer .sheet-lp-summary .sheet-highlight {
+    background-color: #2a2a2a !important;
+}
+
+.charsheet .sheet-charmancer .sheet-levels-hp-row .sheet-hpbylevel-toggle:checked ~ span.sheet-collapse + div > div {
+    background: #2a2a2a !important;
+}
+
+.charmancer .content-text, .charmancer .content-text h1, .charmancer .content-text h2, .charmancer .content-text h3, .charmancer .content-text h4 {
+    color: hsl(0,0%,75%) !important;
+}
+
+.charmancer .container {
+    background-color: #1a1a1a !important;
+}
+
+.charmancer .sheet-summary:nth-child(2n) {
+    background: #2a2a2a !important;
+}
+
+.charsheet .sheet-charmancer .sheet-warning {
+    color: rgb(160, 25, 94) !important;
+
+.r20es-dialog,
+.r20es-dialog div {
+    background-color: hsl(0,0%,10%) !important;
+    color: hsl(0,0%,80%) !important;
+}
+
+.r20es-clickable-text.selected {
+	background-color: hsl(0,0%,20%) !important;
+}
+
+.r20es-welcome {
+    background-color: hsl(0,0%,10%) !important;
+    color: hsl(0,0%,75%) !important;
+}
+`;
+if (typeof GM_addStyle != "undefined") {
+	GM_addStyle(css);
+} else if (typeof PRO_addStyle != "undefined") {
+	PRO_addStyle(css);
+} else if (typeof addStyle != "undefined") {
+	addStyle(css);
+} else {
+
+    const node = document.createElement("style");
+	node.type = "text/css";
+	node.innerHTML = css;
+
+    // Note(stormy): wait for document.head to be available
+    const interval = 10;
+    const waitForDepts = () => {
+        if(!document.head) {
+            setTimeout(waitForDepts, 10);
+            return;
+        }
+
+        document.head.appendChild(node);
+
+    }
+    setTimeout(waitForDepts, 10);
+}
+})();
+(function(){
+const el = document.createElement("link");
+el.rel = "stylesheet";
+el.href = "/css/licensed5ednd.css";
+document.head.appendChild(el)
+})();
 
 #textchat .inlinerollresult {
     background-color: transparent !important;
