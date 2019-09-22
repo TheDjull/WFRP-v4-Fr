@@ -20,6 +20,9 @@
     -webkit-transform: scale(0.75,0.75);
     -moz-transform: scale(0.75,0.75);
     transform: scale(0.75,0.75);
+	margin: 15px 10px 0px 10px !important;
+    width: 140px !important;
+    padding-top: 2px !important;
 }
 
 .sheet-DR {
@@ -597,7 +600,7 @@ cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto;
 
 .characterdialog.ui-dialog-content {
     border: 0px;
-	margin: 10px 65px 45px 67px !important;
+	margin: 10px 55px 45px 57px !important;
 }
 
 .ui-dialog .ui-dialog-content {
@@ -605,8 +608,9 @@ cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto;
     width: auto !important;
     height: auto !important;
     max-height: 650px !important;
+    min-width: 400px!important;
     max-width: 850px!important;
-    margin: 30px 65px 65px 67px;
+    margin: 30px 55px 65px 57px;
 }
 
 .ui-dialog-titlebar-close {
@@ -898,7 +902,7 @@ textarea,select,input,table,
 
 #dicerollerdialog {
     padding: 0px !important;
-    margin: 30px 65px 50px 65px;
+    margin: 30px 55px 50px 55px;
     width: 300px !important;
     height: 500px !important;
 }
@@ -908,7 +912,7 @@ textarea,select,input,table,
     width: auto !important;
     max-width: 980px !important;
     Border: 0px solid black!important;
-    background: url(https://i.imgur.com/WzB0k5M.png), url(https://i.imgur.com/GIev9x9.png), url(https://i.imgur.com/Bw9WjAM.png), url(https://i.imgur.com/1M2Tndg.jpg)!important;
+    background: url(https://i.imgur.com/HiPzWbf.png), url(https://i.imgur.com/NdmfBp9.png), url(https://i.imgur.com/Xsr7U0O.png), url(https://i.imgur.com/rgJF4IZ.jpg)!important;
     background-repeat: no-repeat !important;
     background-position-x: right, right, left, left!important;
     background-size: auto, auto, auto, auto !important;
@@ -1022,7 +1026,7 @@ textarea,select,input,table,
     border: none!important;
     width: auto !important;
     bottom: 10px;
-    margin: 40px 65px 0px 70px;
+    margin: 15px 65px 0px 70px;
     left: 0px;
     padding: 0px !important;
     cursor: url(https://i.imgur.com/DIC9KC2.png) 10 6, auto!important;
