@@ -3,7 +3,7 @@
  Une feuille de personnage pour Warhammer Fantasy en V4
  
  
- !!! ATENTION : Optimisé pour Chrome OBLIGATOIRE !!!
+ !!! ATTENTION : Chrome OBLIGATOIRE !!!
  
  #### Modification de Roll20 (hors feuille de personnage)
 
