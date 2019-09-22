@@ -12,6 +12,14 @@
 // ==/UserScript==
 (function() {var css =`
 
+.sheet-DR {
+    font-size: large;
+    font-style: italic;
+    font-weight: bolder;
+    color: white;
+    text-shadow: 0px 0px 10px black;
+}
+
 .ui-dialog.dialog-collapsed {
     opacity: .80;
     max-width: 300px!important;
@@ -23,14 +31,6 @@
 	margin: 15px 10px 0px 10px !important;
     width: 140px !important;
     padding-top: 2px !important;
-}
-
-.sheet-DR {
-    font-size: large;
-    font-style: italic;
-    font-weight: bolder;
-    color: white;
-    text-shadow: 0px 0px 10px black;
 }
 
 .sheet-img-note {
