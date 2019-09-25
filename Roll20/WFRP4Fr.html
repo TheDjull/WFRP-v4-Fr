@@ -1,8 +1,10 @@
 <!-- Feuille de personnage Warhammer Fantasy RolePaly v4 en Francais pour Roll20.net -->
-<!-- Basé sur "Roll20-Warhammer-4e-Character-Sheet" by [vicberg]-->
-<!-- https://github.com/vicberg/Roll20-Warhammer-4e-Character-Sheet-->
-<!-- Modifié par [TheDjull] et optimisé pour Chrome-->
+<!-- Basé sur "Roll20-Warhammer-4e-Character-Sheet" by [vicberg] -->
+<!-- https://github.com/vicberg/Roll20-Warhammer-4e-Character-Sheet -->
+<!-- Modifié par [TheDjull] et optimisé pour Chrome -->
 
+
+<!-- Feuille de Personnage -->
 <div id="sheet-base">
   <div class="sheet-overall-wrapper">
 	<!-- HEADER -->
@@ -6561,13 +6563,189 @@
 	</div>
 	<!-- FOOTER -->
 	<div class="sheet-spacer-xl">
+		<input type="hidden" name="attr_CurrentWounds" value="" />
+		<input type="hidden" name="attr_CurrentWounds_max" value=""  />
 	</div>
   </div>
 </div>
 
-<input type="hidden" name="attr_CurrentWounds" value="" />
-<input type="hidden" name="attr_CurrentWounds_max" value=""  />
+<!-- JavaScript -->
+<script type="text/worker">
+	//<!-- TRANSLATIONS SCRIPT -->
+	on("sheet:opened", function(eventInfo){
+	    setAttrs({
+	        translation_targetnumber: getTranslationByKey("TARGET-NUMBER"),
+	        translation_modifier: getTranslationByKey("MODIFIER"),
+	        translation_chaostable: getTranslationByKey("CHAOS-TABLE"),
+	        translation_wrathtable: getTranslationByKey("WRATH-TABLE"),
+	        translation_rollbasic: getTranslationByKey("ROLL-BASIC-TABLES"),
+	        translation_rollextended: getTranslationByKey("ROLL-EXTENDED-TABLES"),
+	        translation_yes: getTranslationByKey("YES"),
+	        translation_no: getTranslationByKey("NO"),
+	        translation_minor: getTranslationByKey("MINOR-NORMAL"),
+	        translation_major: getTranslationByKey("MAJOR-NORMAL"),
+	        translation_cata: getTranslationByKey("CATASTROPHIC-NORMAL"),
+	        translation_minorextended: getTranslationByKey("MINOR-EXTENDED"),
+	        translation_majorextended: getTranslationByKey("MAJOR-EXTENDED"),
+	        translation_cataextended: getTranslationByKey("CATASTROPHIC-EXTENDED"),
+	        translation_wrath: getTranslationByKey("WRATH"),
+	        translation_vengeance: getTranslationByKey("VENGEANCE")
+	    });
+	});
+	
+//--- REPEATING SCRIPT ---
+/* ===== PARAMETERS ==========
+destination = the name of the attribute that stores the total quantity
+section = name of repeating fieldset, without the repeating_
+fields = the name of the attribute field to be summed
+      can be a single attribute: 'weight'
+      or an array of attributes: ['weight','number','equipped']
+multiplier (optional) = a multiplier to the entire fieldset total. For instance, if summing coins of weight 0.02, might want to multiply the final total by 0.02.
+*/
+const repeatingSum = (destination, section, fields, multiplier = 1) => {
+    if (!Array.isArray(fields)) fields = [fields];
+    getSectionIDs(`repeating_${section}`, idArray => {
+        const attrArray = idArray.reduce( (m,id) => [...m, ...(fields.map(field => `repeating_${section}_${id}_${field}`))],[]);
+        getAttrs(attrArray, v => {
+            console.log("===== values of v: "+ JSON.stringify(v) +" =====");
+                 // getValue: if not a number, returns 1 if it is 'on' (checkbox), otherwise returns 0..
+            const getValue = (section, id,field) => parseFloat(v[`repeating_${section}_${id}_${field}`], 10) || (v[`repeating_${section}_${id}_${field}`] === 'on' ? 1 : 0); 
+            const sumTotal = idArray.reduce((total, id) => total + fields.reduce((subtotal,field) => subtotal * getValue(section, id,field),1),0);
+            setAttrs({[destination]: sumTotal * multiplier});    
+        });
+    });
+};
 
+on("sheet:opened change:repeating_melee remove:repeating_melee", function(){
+	repeatingSum('EncMelee', 'melee','MeleeEnc');
+});
+	
+on("sheet:opened change:repeating_ranged remove:repeating_ranged", function(){
+	repeatingSum('EncRanged','ranged','RangedEnc');
+});        
+
+
+on("change:repeating_inventory remove:repeating_inventory", function(eventInfo) {
+    repeatingSum('calc_inventorycarried','inventory',['inventoryweight_repeat','inventorycarried_repeat','inventoryqty_repeat']);
+});
+
+	
+//<!-- UTILITY SCRIPT -->
+	on("sheet:opened change:trappings_layout", function() {
+		getAttrs(["trappings_layout"], function(values) {
+			setAttrs({
+				trappings_layout_old: (values.trappings_layout === '1' ? 1 : 0) 
+			})
+		});
+	});
+
+
+/* STAT MODIFIERS
+This sheet worker loop calculates the values of all the 10 core attributes from their constituent parts, and their modifiers.
+TotalWounds was dependent on a bunch of stats that were autocalc, so they needed to be replaced with sheet workers for it to work.
+
+*/
+const stats = ['WeaponSkill', 'BallisticSkill', 'Strength', 'Toughness', 'Initiative', 'Agility', 'Dexterity', 'Intelligence', 'Willpower', 'Fellowship'];
+stats.forEach(stat => {
+
+	on(`sheet:opened change:${stat.toLowerCase()}start change:${stat.toLowerCase()}talents change:${stat.toLowerCase()}adv change:${stat.toLowerCase()}mod`, function () {
+		getAttrs([`${stat}Start`, `${stat}Talents`, `${stat}Adv`, `${stat}Mod`], function (v) {
+			const start = +v[`${stat}Start`] || 0;
+			const talents = +v[`${stat}Talents`] || 0;
+			const adv = +v[`${stat}Adv`] || 0;
+			const mod = +v[`${stat}Mod`] || 0;
+			const score = start + talents + adv + mod;
+			const bonusstart = Math.floor(score / 10);
+			setAttrs({
+			    [stat]: score,
+				[`${stat}BonusStart`]: bonusstart
+			});
+		});
+	});
+
+	on(`sheet:opened change:${stat.toLowerCase()}bonusstart change:${stat.toLowerCase()}bonusmod`, function () {
+		getAttrs([`${stat}BonusStart`, `${stat}BonusMod`], function (v) {
+			const start = +v[`${stat}BonusStart`] || 0;
+			const mod = +v[`${stat}BonusMod`] || 0;
+			const bonus = start + mod;
+			setAttrs({
+				[`${stat}Bonus`]: bonus
+			});
+		});
+	});
+	
+});
+
+// WOUNDS stat
+on('sheet:opened change:race change:strengthbonus change:toughnessbonus change:willpowerbonus', function () {
+    getAttrs(['StrengthBonus', 'ToughnessBonus', 'WillPowerBonus', 'Race'], function (v) {
+        const str = +v.StrengthBonus || 0;
+        const tou = +v.ToughnessBonus || 0;
+        const wil = +v.WillPowerBonus || 0;
+        const race = v.Race.toLowerCase();
+        let wounds = str + tou*2 + wil;
+        if(race === 'halfling' || race === 'gnome') {
+            wounds -= str
+        }  
+        setAttrs({
+            Wounds: wounds
+        });
+    });
+});
+
+// LIFE stat
+on('sheet:opened change:TotalDamage change:TotalWounds' , function () {
+    getAttrs(['TotalDamage', 'TotalWounds'], function (v) {
+        const tD = +v.TotalDamage || 0;
+        const tW = +v.TotalWounds || 0;
+        let life = tW - tD;
+        
+        setAttrs({
+            Life: life,
+            Life_max: tW
+        });
+    });
+});
+
+/*
+SIMPLE ADDERS:
+if you have a bunch of attributes that are calculated just by adding two or more other attribute values together,
+you can use this. Just enter the attribute that is the final value, a colon, and then the attributes that are added together as an array.
+*/
+const simpleAdders = {
+	TotalWounds: ['Wounds', 'Modifiers'],
+	TotalDamage: ['Damage', 'Impale']
+};
+Object.keys(simpleAdders).forEach(attribute => {
+	const adders = simpleAdders[attribute];
+	on(adders.reduce((changes, step) => `${changes} change:${step.toLowerCase()}`,'sheet:opened'), function () {
+		getAttrs(adders, function (v) {
+			const sum = adders.reduce((total,add) => total + (+v[add] || 0), 0);
+			setAttrs({
+				[attribute]: sum
+			});
+		});
+	});
+});
+
+// hidden wound attribute for those who want to handle wounds via TokenBar only
+on('sheet:opened change:totalwounds', function (event) {
+	getAttrs(['TotalWounds', 'CurrentWounds'], function (v) {
+		const base = +v.TotalWounds || 0;
+		const change = (+event.newValue || 0) - (+event.previousValue || 0);
+		const max = base;
+		const wounds = (+v.CurrentWounds || 0) + change;
+		if (wounds > max) wounds = max;
+		setAttrs({
+			CurrentWounds: wounds,
+			CurrentWounds_max: max
+		});
+	});
+});
+
+</script>
+
+<!-- Tchat : Jets de Dé -->
 <rolltemplate class="sheet-rolltemplate-WF4e">
 	<div class="sheet-rt-card">
 		<div class="sheet-rt-header sheet-relative {{#chartest}} sheet-ability{{/chartest}}{{#skilltest}} sheet-action{{/skilltest}}{{#attacktest}} sheet-attack{{/attacktest}}{{#fumbleroll}} sheet-weapon{{/fumbleroll}}{{#amputationroll}} sheet-weapon{{/amputationroll}}{{#critroll}} sheet-weapon{{/critroll}}{{#spelltest}} sheet-spell{{/spelltest}}{{#inscribetest}} sheet-spell{{/inscribetest}}{{#arcanemark}} sheet-spell{{/arcanemark}}{{#godmark}} sheet-spell{{/godmark}}{{#bloodloss}} sheet-action{{/bloodloss}}">
@@ -10383,181 +10561,3 @@
 		</div>
 	</div>
 </rolltemplate>
-
-
-
-
-<script type="text/worker">
-	//<!-- TRANSLATIONS SCRIPT -->
-	on("sheet:opened", function(eventInfo){
-	    setAttrs({
-	        translation_targetnumber: getTranslationByKey("TARGET-NUMBER"),
-	        translation_modifier: getTranslationByKey("MODIFIER"),
-	        translation_chaostable: getTranslationByKey("CHAOS-TABLE"),
-	        translation_wrathtable: getTranslationByKey("WRATH-TABLE"),
-	        translation_rollbasic: getTranslationByKey("ROLL-BASIC-TABLES"),
-	        translation_rollextended: getTranslationByKey("ROLL-EXTENDED-TABLES"),
-	        translation_yes: getTranslationByKey("YES"),
-	        translation_no: getTranslationByKey("NO"),
-	        translation_minor: getTranslationByKey("MINOR-NORMAL"),
-	        translation_major: getTranslationByKey("MAJOR-NORMAL"),
-	        translation_cata: getTranslationByKey("CATASTROPHIC-NORMAL"),
-	        translation_minorextended: getTranslationByKey("MINOR-EXTENDED"),
-	        translation_majorextended: getTranslationByKey("MAJOR-EXTENDED"),
-	        translation_cataextended: getTranslationByKey("CATASTROPHIC-EXTENDED"),
-	        translation_wrath: getTranslationByKey("WRATH"),
-	        translation_vengeance: getTranslationByKey("VENGEANCE")
-	    });
-	});
-	
-//--- REPEATING SCRIPT ---
-/* ===== PARAMETERS ==========
-destination = the name of the attribute that stores the total quantity
-section = name of repeating fieldset, without the repeating_
-fields = the name of the attribute field to be summed
-      can be a single attribute: 'weight'
-      or an array of attributes: ['weight','number','equipped']
-multiplier (optional) = a multiplier to the entire fieldset total. For instance, if summing coins of weight 0.02, might want to multiply the final total by 0.02.
-*/
-const repeatingSum = (destination, section, fields, multiplier = 1) => {
-    if (!Array.isArray(fields)) fields = [fields];
-    getSectionIDs(`repeating_${section}`, idArray => {
-        const attrArray = idArray.reduce( (m,id) => [...m, ...(fields.map(field => `repeating_${section}_${id}_${field}`))],[]);
-        getAttrs(attrArray, v => {
-            console.log("===== values of v: "+ JSON.stringify(v) +" =====");
-                 // getValue: if not a number, returns 1 if it is 'on' (checkbox), otherwise returns 0..
-            const getValue = (section, id,field) => parseFloat(v[`repeating_${section}_${id}_${field}`], 10) || (v[`repeating_${section}_${id}_${field}`] === 'on' ? 1 : 0); 
-            const sumTotal = idArray.reduce((total, id) => total + fields.reduce((subtotal,field) => subtotal * getValue(section, id,field),1),0);
-            setAttrs({[destination]: sumTotal * multiplier});    
-        });
-    });
-};
-
-on("sheet:opened change:repeating_melee remove:repeating_melee", function(){
-	repeatingSum('EncMelee', 'melee','MeleeEnc');
-});
-	
-on("sheet:opened change:repeating_ranged remove:repeating_ranged", function(){
-	repeatingSum('EncRanged','ranged','RangedEnc');
-});        
-
-
-on("change:repeating_inventory remove:repeating_inventory", function(eventInfo) {
-    repeatingSum('calc_inventorycarried','inventory',['inventoryweight_repeat','inventorycarried_repeat','inventoryqty_repeat']);
-});
-
-	
-//<!-- UTILITY SCRIPT -->
-	on("sheet:opened change:trappings_layout", function() {
-		getAttrs(["trappings_layout"], function(values) {
-			setAttrs({
-				trappings_layout_old: (values.trappings_layout === '1' ? 1 : 0) 
-			})
-		});
-	});
-
-
-/* STAT MODIFIERS
-This sheet worker loop calculates the values of all the 10 core attributes from their constituent parts, and their modifiers.
-TotalWounds was dependent on a bunch of stats that were autocalc, so they needed to be replaced with sheet workers for it to work.
-
-*/
-const stats = ['WeaponSkill', 'BallisticSkill', 'Strength', 'Toughness', 'Initiative', 'Agility', 'Dexterity', 'Intelligence', 'Willpower', 'Fellowship'];
-stats.forEach(stat => {
-
-	on(`sheet:opened change:${stat.toLowerCase()}start change:${stat.toLowerCase()}talents change:${stat.toLowerCase()}adv change:${stat.toLowerCase()}mod`, function () {
-		getAttrs([`${stat}Start`, `${stat}Talents`, `${stat}Adv`, `${stat}Mod`], function (v) {
-			const start = +v[`${stat}Start`] || 0;
-			const talents = +v[`${stat}Talents`] || 0;
-			const adv = +v[`${stat}Adv`] || 0;
-			const mod = +v[`${stat}Mod`] || 0;
-			const score = start + talents + adv + mod;
-			const bonusstart = Math.floor(score / 10);
-			setAttrs({
-			    [stat]: score,
-				[`${stat}BonusStart`]: bonusstart
-			});
-		});
-	});
-
-	on(`sheet:opened change:${stat.toLowerCase()}bonusstart change:${stat.toLowerCase()}bonusmod`, function () {
-		getAttrs([`${stat}BonusStart`, `${stat}BonusMod`], function (v) {
-			const start = +v[`${stat}BonusStart`] || 0;
-			const mod = +v[`${stat}BonusMod`] || 0;
-			const bonus = start + mod;
-			setAttrs({
-				[`${stat}Bonus`]: bonus
-			});
-		});
-	});
-	
-});
-
-// WOUNDS stat
-on('sheet:opened change:race change:strengthbonus change:toughnessbonus change:willpowerbonus', function () {
-    getAttrs(['StrengthBonus', 'ToughnessBonus', 'WillPowerBonus', 'Race'], function (v) {
-        const str = +v.StrengthBonus || 0;
-        const tou = +v.ToughnessBonus || 0;
-        const wil = +v.WillPowerBonus || 0;
-        const race = v.Race.toLowerCase();
-        let wounds = str + tou*2 + wil;
-        if(race === 'halfling' || race === 'gnome') {
-            wounds -= str
-        }  
-        setAttrs({
-            Wounds: wounds
-        });
-    });
-});
-
-// LIFE stat
-on('sheet:opened change:TotalDamage change:TotalWounds' , function () {
-    getAttrs(['TotalDamage', 'TotalWounds'], function (v) {
-        const tD = +v.TotalDamage || 0;
-        const tW = +v.TotalWounds || 0;
-        let life = tW - tD;
-        
-        setAttrs({
-            Life: life,
-            Life_max: tW
-        });
-    });
-});
-
-/*
-SIMPLE ADDERS:
-if you have a bunch of attributes that are calculated just by adding two or more other attribute values together,
-you can use this. Just enter the attribute that is the final value, a colon, and then the attributes that are added together as an array.
-*/
-const simpleAdders = {
-	TotalWounds: ['Wounds', 'Modifiers'],
-	TotalDamage: ['Damage', 'Impale']
-};
-Object.keys(simpleAdders).forEach(attribute => {
-	const adders = simpleAdders[attribute];
-	on(adders.reduce((changes, step) => `${changes} change:${step.toLowerCase()}`,'sheet:opened'), function () {
-		getAttrs(adders, function (v) {
-			const sum = adders.reduce((total,add) => total + (+v[add] || 0), 0);
-			setAttrs({
-				[attribute]: sum
-			});
-		});
-	});
-});
-
-// hidden wound attribute for those who want to handle wounds via TokenBar only
-on('sheet:opened change:totalwounds', function (event) {
-	getAttrs(['TotalWounds', 'CurrentWounds'], function (v) {
-		const base = +v.TotalWounds || 0;
-		const change = (+event.newValue || 0) - (+event.previousValue || 0);
-		const max = base;
-		const wounds = (+v.CurrentWounds || 0) + change;
-		if (wounds > max) wounds = max;
-		setAttrs({
-			CurrentWounds: wounds,
-			CurrentWounds_max: max
-		});
-	});
-});
-
-</script>
