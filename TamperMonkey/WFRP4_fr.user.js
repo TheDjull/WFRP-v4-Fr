@@ -22,14 +22,13 @@
 
 .ui-dialog.dialog-collapsed {
     opacity: .80;
-    max-width: 300px!important;
     max-height: 40px!important;
     background: black!important;
     -webkit-transform: scale(0.75,0.75);
     -moz-transform: scale(0.75,0.75);
     transform: scale(0.75,0.75);
-	margin: 15px 10px 0px 10px !important;
-    width: 140px !important;
+    margin: 15px 10px 0px 10px !important;
+    width: 200px !important;
     padding-top: 2px !important;
 }
 
@@ -613,10 +612,6 @@ cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto;
     margin: 30px 55px 65px 57px;
 }
 
-.ui-dialog-titlebar-close {
-	background:hsl(0,0%,80%)!important;
-}
-
 #rightsidebar {
     width: 300px;
     border-left: 0px;
@@ -710,15 +705,20 @@ code {
 }
 
 .zoomoptions {
-    position: relative;
-    left: 13px;
-    top: 0px;
+    position: absolute;
+    display: none;
+}
+
+.showpopout {
+    position: absolute;
+    display: none;
 }
 
 .editcharacter {
-    position: relative;
-    left: 10px;
-    top: 0px;
+    position: absolute;
+    top: -5%;
+    left: 735px;
+    height: 15px;
 }
 
 .edithandout {
@@ -728,9 +728,10 @@ code {
 }
 
 .broadcastcharacter {
-    position: relative;
-    left: 10px;
-    top: 0px;
+    position: absolute;
+    bottom: 8%;
+    left: 600px;
+    height: 15px;
 }
 
 .broadcasthandout {
@@ -1022,14 +1023,40 @@ textarea,select,input,table,
     padding: 0px 20px;
 }
 
+.ui-dialog-title {
+    position: absolute;
+    top: 25%;
+    left: 12%;
+    font-weight: bold !important;
+    padding: 0px !important;
+    color: hsl(0,0%,80%)!important;
+    margin: 0px !important;
+}
+
 .ui-dialog-titlebar {
     border: none!important;
     width: auto !important;
-    bottom: 10px;
-    margin: 15px 65px 0px 70px;
-    left: 0px;
+    height: 40px;
     padding: 0px !important;
     cursor: url(https://i.imgur.com/DIC9KC2.png) 10 6, auto!important;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+    position: absolute;
+    right: 12%;
+    top: 50%;
+    width: 19px;
+    margin: -10px 0 0 0;
+    padding: 1px;
+    height: 19px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 13.5px;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=25);
+    -khtml-opacity: .25;
+    -moz-opacity: .25;
+    opacity: .25;
 }
 
 .ui-dialog .ui-dialog-buttonpane {
@@ -1070,13 +1097,6 @@ span.pictos.searchinfotoggle {
     cursor: url(https://i.imgur.com/PK7O15m.png) 10 6, auto!important;
 }
 
-.ui-dialog-title {
-    float: left !important;
-    font-weight: bold !important;
-    padding: 0px !important;
-    color: hsl(0,0%,80%)!important;
-    margin: 0px !important;
-}
 p {
     margin: 0 0 9px;
     font-family: "Adobe Caslon Pro", "Caslon Antique", serif, sans-serif;
