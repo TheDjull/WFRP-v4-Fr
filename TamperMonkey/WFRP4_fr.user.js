@@ -7,7 +7,7 @@
 // @include       https://app.roll20.net/editor*
 // @include       https://app.roll20.net/campaigns/chatarchive*
 // @run-at        document-start
-// @version       22.09.2019.1
+// @version       25.09.2019.1
 // @license       GPL-3.0-or-later
 // ==/UserScript==
 (function() {var css =`
@@ -716,9 +716,9 @@ code {
 
 .editcharacter {
     position: absolute;
-    top: -5%;
-    left: 735px;
+    right: -710px;
     height: 15px;
+    top: -2px;
 }
 
 .edithandout {
@@ -729,8 +729,8 @@ code {
 
 .broadcastcharacter {
     position: absolute;
-    bottom: 8%;
-    left: 600px;
+    top: -2px;
+    right: -630px;
     height: 15px;
 }
 
@@ -1047,6 +1047,7 @@ textarea,select,input,table,
     top: 50%;
     width: 19px;
     margin: -10px 0 0 0;
+    background: snow;
     padding: 1px;
     height: 19px;
     font-size: 20px;
