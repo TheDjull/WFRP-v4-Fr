@@ -599,7 +599,7 @@ cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto;
 
 .characterdialog.ui-dialog-content {
     border: 0px;
-	margin: 10px 55px 45px 57px !important;
+	margin: 15px 55px 45px 57px !important;
 }
 
 .ui-dialog .ui-dialog-content {
@@ -609,13 +609,19 @@ cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto;
     max-height: 650px !important;
     min-width: 400px!important;
     max-width: 850px!important;
-    margin: 30px 55px 65px 57px;
+    margin: 30px 55px 50px 57px;
 }
 
 #rightsidebar {
     width: 300px;
     border-left: 0px;
     cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
+}
+
+.dupedeck {
+    position: relative;
+    bottom: 53px;
+    left: 100px;
 }
 
 #sidebarcontrol {
@@ -1066,12 +1072,13 @@ textarea,select,input,table,
     margin: 0px;
     position: relative;
     padding: 0px;
-    bottom: 50px;
-    left: 70px;
 }
 
 .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
-    float: left;
+    float: none;
+    position: absolute;
+    right: 60px;
+    bottom: -15px;
 }
 
 #initiativewindow ul li {
