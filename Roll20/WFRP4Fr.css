@@ -1304,7 +1304,7 @@ input[disabled].sheet-passive-skill-score {
     border-radius: 5% 5% 5% 5%;
     margin-left: -45px;
     margin-top: 5px;
-    padding: 0px 30px 30px 30px;
+    padding: 25px 25px 25px 30px;
 }
 
 .sheet-rolltemplate-WF4e .sheet-rt-critical {
@@ -1328,8 +1328,8 @@ input[disabled].sheet-passive-skill-score {
     position: relative;
     color: #000;
     border: none;
-    margin: 0 0px 0px 0px;
-    padding: 30px 30px 10px 30px;
+    margin: 0px;
+    padding: 5px 0px 0px 0px;
 }
 .sheet-rolltemplate-WF4e .sheet-rt-header .inlinerollresult {
 	background: transparent;
@@ -1415,7 +1415,7 @@ input[disabled].sheet-passive-skill-score {
 	box-sizing: border-box;
 }
 .sheet-rolltemplate-WF4e .sheet-main-content .sheet-row:not(:first-child) {
-	margin-top: 2px;
+	margin-top: 0px;
 }
 .sheet-rolltemplate-WF4e .sheet-main-content hr.sheet-roll {
 	width: 80%;

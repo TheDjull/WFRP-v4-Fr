@@ -20,6 +20,10 @@
     text-shadow: 0px 0px 10px black;
 }
 
+.sheet-upspace  {
+	margin-top: 5px !important;
+}
+
 .ui-dialog.dialog-collapsed {
     opacity: .80;
     max-height: 40px!important;
@@ -121,6 +125,36 @@
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
+}
+
+.sheet-img-spacer-sm {
+    height: 10px;
+    background: url(https://i.imgur.com/SN8tzhM.png);
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+	margin: 2px 0px;
+}
+
+.sheet-img-spacer-md {
+    height: 10px;
+    background: url(https://i.imgur.com/SN8tzhM.png);
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+	margin: 5px 0px;
+}
+
+.sheet-img-spacer-lg {
+    height: 10px;
+    background: url(https://i.imgur.com/SN8tzhM.png);
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+	margin: 8px 0px;
 }
 
 .sheet-skillgrp {
@@ -799,7 +833,11 @@ code {
     margin-bottom: 0px!important;
 }
 
-
+.sheet-woundnumber {
+    position: relative;
+    left: 8px;
+    top: -2px;
+}
 
 .textchatcontainer .emote {
     font-weight: bold;
