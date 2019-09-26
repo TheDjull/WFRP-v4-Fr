@@ -6812,19 +6812,19 @@ on('sheet:opened change:totalwounds', function (event) {
 				{{#test}}
 					<div class="sheet-col-4-9">
 						<div class="sheet-texttest sheet-center">
-						<div class="sheet-rolltest sheet-pad-r-sm sheet-smaller-letter-spacing sheet-rt-value">{{test}}</div>
+							<div class="sheet-rolltest sheet-pad-r-sm sheet-smaller-letter-spacing sheet-rt-value">{{test}}</div>
 						</div>
 					</div>
 				{{/test}}
 				{{#target}}
 				    <div class="sheet-col-1-9">
 						<div class="sheet-textVS sheet-center">
-						<div class="sheet-rollVS sheet-pad-r-sm sheet-smaller-letter-spacing sheet-rt-value"></div>
+							<div class="sheet-rollVS sheet-pad-r-sm sheet-smaller-letter-spacing sheet-rt-value"></div>
 						</div>
 					</div>
 					<div class="sheet-col-4-9">
 						<div class="sheet-texttarget sheet-center">
-						<div class="sheet-rolltarget sheet-pad-r-sm sheet-smaller-letter-spacing sheet-rt-value">{{target}}</div>
+							<div class="sheet-rolltarget sheet-pad-r-sm sheet-smaller-letter-spacing sheet-rt-value">{{target}}</div>
 						</div>
 					</div>
 				{{/target}}		
@@ -8466,10 +8466,10 @@ on('sheet:opened change:totalwounds', function (event) {
 				            {{/rollTotal() test 90}}    
 				        {{/^rollGreater() test target}}	
 				    {{/rollGreater() impale 0}}
+								<div class="sheet-row">
+									<div class="sheet-img-spacer-lg"></div>	
+								</div>
 				{{/^rollWasCrit() test}}
-				<div class="sheet-row">
-					<div class="sheet-img-spacer-lg"></div>	
-				</div>
 			</div>
 			<!-- HIT TEMPLATE -->
 			<div class="sheet-row">
@@ -10419,7 +10419,12 @@ on('sheet:opened change:totalwounds', function (event) {
 					{{#rollBetween() cophyroll 96 100}}
 						<div class="sheet-row"><div class="sheet-col-1 sheet-pad-l-md sheet-pad-r-md sheet-rt-value" data-i18n="COPHY20-NAME1">Cophy20</div></div>
 						<div class="sheet-row"><div class="sheet-col-1 sheet-pad-l-md sheet-pad-r-md sheet-rt-value" data-i18n="COPHY20-DESC1">Cophy20</div></div>
-					{{/rollBetween() cophyroll 96 100}}			
+					{{/rollBetween() cophyroll 96 100}}
+						<div class="sheet-col-1-3 sheet-vert-top">
+							<div class="sheet-texttest sheet-center">
+								<div class="sheet-rolltest sheet-pad-r-sm sheet-smaller-letter-spacing sheet-rt-value">{{cophyroll}}</div>
+							</div>
+						</div>					
 				{{/cophyroll}}
 			</div>
 			<!-- CORRUPTION MENTALE TEMPLATE -->
@@ -10508,7 +10513,12 @@ on('sheet:opened change:totalwounds', function (event) {
 					{{#rollBetween() comenroll 96 100}}
 						<div class="sheet-row"><div class="sheet-col-1 sheet-pad-l-md sheet-pad-r-md sheet-rt-value" data-i18n="COMEN20-NAME1">Comen20</div></div>
 						<div class="sheet-row"><div class="sheet-col-1 sheet-pad-l-md sheet-pad-r-md sheet-rt-value" data-i18n="COMEN20-DESC1">Comen20</div></div>
-					{{/rollBetween() comenroll 96 100}}			
+					{{/rollBetween() comenroll 96 100}}
+						<div class="sheet-col-1-3 sheet-vert-top">
+							<div class="sheet-texttest sheet-center">
+								<div class="sheet-rolltest sheet-pad-r-sm sheet-smaller-letter-spacing sheet-rt-value">{{comenroll}}</div>
+							</div>
+						</div>					
 				{{/comenroll}}
 			</div>
 			<!-- EXTRA TEMPLATE -->
