@@ -7,7 +7,7 @@
 // @include       https://app.roll20.net/editor*
 // @include       https://app.roll20.net/campaigns/chatarchive*
 // @run-at        document-start
-// @version       25.09.2019.2
+// @version       26.09.2019.1
 // @license       GPL-3.0-or-later
 // ==/UserScript==
 (function() {var css =`
@@ -641,7 +641,6 @@ cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto;
     width: auto !important;
     height: auto !important;
     max-height: 650px !important;
-    min-width: 400px!important;
     max-width: 850px!important;
     margin: 30px 55px 50px 57px;
 }
