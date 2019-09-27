@@ -3992,7 +3992,7 @@
 						</div>
 						<div class="row">
 				    		<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
-				    			<button type="roll" class="sheet-roll sheet-btn sheet-ui-draggable btn ui-draggable" name="roll_CriticalRoll" value="@{Whisper} &amp;{template:WF4e} {{title=Critical Roll}} {{character_name=@{character_name}}} {{attacktype=^{CRITICAL}}} {{critlocation=[[?{Localisation|Tête,1|Bras Droit,2|bras gauche,3|Corps,4|jambe Droite,5|Jambe Gauche,6}]]}} {{critroll=[[[[1d100]]+?{@{translation_modifier}|0}]]}}">
+				    			<button type="roll" class="sheet-roll sheet-btn sheet-ui-draggable btn ui-draggable" name="roll_CriticalRoll" value="@{Whisper} &amp;{template:WF4e} {{title=^{CRITICAL-HIT}}} {{character_name=@{character_name}}} {{attacktype=^{CRITICAL}}} {{critlocation=[[?{Localisation|Tête,1|Bras Droit,2|bras gauche,3|Corps,4|jambe Droite,5|Jambe Gauche,6}]]}} {{critroll=[[[[1d100]]+?{@{translation_modifier}|0}]]}}">
 				    				<span data-i18n="CRITICAL-HIT">Coup Critique</span>
 				    			</button>
 				    		</div>
@@ -8744,7 +8744,6 @@ on('sheet:opened change:totalwounds', function (event) {
 			<div class="sheet-row">
 				{{#critlocation}}
 					<div class="sheet-row">
-						<div class="sheet-col-11-24 sheet-rt-key" data-i18n="CRITICAL-LOCATION">Critical Location</div>
 						{{#rollTotal() critlocation 1}}
 							<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value" data-i18n="HEAD">Head</div>
 						{{/rollTotal() critlocation 1}}
@@ -8763,11 +8762,7 @@ on('sheet:opened change:totalwounds', function (event) {
 						{{#rollTotal() critlocation 6}}
 							<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value" data-i18n="LEFT-LEG">Left Leg</div>
 						{{/rollTotal() critlocation 6}}
-					</div>
-					<div class="sheet-row">
-						<div class="sheet-col-11-24 sheet-rt-key" data-i18n="CRITICAL-ROLL">Critical Roll</div>
-						<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">{{critroll}}</div>
-					</div>
+					</div>	
 					{{#rollTotal() critlocation 1}}
 						{{#rollBetween() critroll 01 10}}
 							<div class="sheet-row">
@@ -9770,61 +9765,60 @@ on('sheet:opened change:totalwounds', function (event) {
 							</div>
 							<div class="sheet-row">
 								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">Death</div>
+								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">X</div>
 							</div>
 						{{/rollGreater() critroll 99}}
 					{{/rollBetween() critlocation 5 6}}
+							<div class="sheet-col-4-9 sheet-vert-top">
+								<div class="sheet-texttest sheet-center">
+									<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{critroll}}</div>
+								</div>
+							</div>
+							<div class="sheet-row">
+								<div class="sheet-img-spacer-lg"></div>
+							</div>
 				{{/critlocation}}
 			</div>
 			<!-- FUMBLE TEMPLATE -->
 			<div class="sheet-row">
 				{{#fumbleroll}}
-					<div class="sheet-row">
-						<div class="sheet-col-11-24 sheet-rt-key" data-i18n="FUMBLE-ROLL">Fumble Roll</div>
-						<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">{{fumbleroll}}</div>
-					</div>
 					{{#rollBetween() fumbleroll 01 20}}
-						<div class="sheet-row">
-							<div class="sheet-col-1 sheet-rt-value" data-i18n="FUMBLE-20-DESC">None</div>
-							<div class="sheet-col-1 sheet-rt-value" data-i18n="FUMBLE-20-EFCT">None</div>
-						</div>
+
+						<div class="sheet-col-1 sheet-rt-value sheet-pad-md" data-i18n="FUMBLE-20-DESC">None</div>
+						<div class="sheet-col-5-9 sheet-pad-t-md sheet-pad-l-md" data-i18n="FUMBLE-20-EFCT">None</div>
 					{{/rollBetween() fumbleroll 01 20}}
 					{{#rollBetween() fumbleroll 21 40}}
-						<div class="sheet-row">
-							<div class="sheet-col-1 sheet-rt-value" data-i18n="FUMBLE-40-DESC">None</div>
-							<div class="sheet-col-1 sheet-rt-value" data-i18n="FUMBLE-40-EFCT">None</div>
-						</div>
+						<div class="sheet-col-1 sheet-rt-value sheet-pad-md" data-i18n="FUMBLE-40-DESC">None</div>
+						<div class="sheet-col-5-9 sheet-pad-t-md sheet-pad-l-md" data-i18n="FUMBLE-40-EFCT">None</div>
 					{{/rollBetween() fumbleroll 21 40}}
 					{{#rollBetween() fumbleroll 41 60}}
-						<div class="sheet-row">
-							<div class="sheet-col-1 sheet-rt-value" data-i18n="FUMBLE-60-DESC">None</div>
-							<div class="sheet-col-1 sheet-rt-value" data-i18n="FUMBLE-60-EFCT">None</div>
-						</div>
+						<div class="sheet-col-1 sheet-rt-value sheet-pad-md" data-i18n="FUMBLE-60-DESC">None</div>
+						<div class="sheet-col-5-9 sheet-pad-t-md sheet-pad-l-md" data-i18n="FUMBLE-60-EFCT">None</div>
 					{{/rollBetween() fumbleroll 41 60}}
 					{{#rollBetween() fumbleroll 61 70}}
-						<div class="sheet-row">
-							<div class="sheet-col-1 sheet-rt-value" data-i18n="FUMBLE-70-DESC">None</div>
-							<div class="sheet-col-1 sheet-rt-value" data-i18n="FUMBLE-70-EFCT">None</div>
-						</div>
+						<div class="sheet-col-1 sheet-rt-value sheet-pad-md" data-i18n="FUMBLE-70-DESC">None</div>
+						<div class="sheet-col-5-9 sheet-pad-t-md sheet-pad-l-md" data-i18n="FUMBLE-70-EFCT">None</div>
 					{{/rollBetween() fumbleroll 61 70}}
 					{{#rollBetween() fumbleroll 71 80}}
-						<div class="sheet-row">
-							<div class="sheet-col-1 sheet-rt-value" data-i18n="FUMBLE-80-DESC">None</div>
-							<div class="sheet-col-1 sheet-rt-value" data-i18n="FUMBLE-80-EFCT">None</div>
-						</div>
+						<div class="sheet-col-1 sheet-rt-value sheet-pad-md" data-i18n="FUMBLE-80-DESC">None</div>
+						<div class="sheet-col-5-9 sheet-pad-t-md sheet-pad-l-md" data-i18n="FUMBLE-80-EFCT">None</div>
 					{{/rollBetween() fumbleroll 71 80}}
 					{{#rollBetween() fumbleroll 81 90}}
-						<div class="sheet-row">
-							<div class="sheet-col-1 sheet-rt-value" data-i18n="FUMBLE-90-DESC">None</div>
-							<div class="sheet-col-1 sheet-rt-value" data-i18n="FUMBLE-90-EFCT">None</div>
-						</div>
+						<div class="sheet-col-1 sheet-rt-value sheet-pad-md" data-i18n="FUMBLE-90-DESC">None</div>
+						<div class="sheet-col-5-9 sheet-pad-t-md sheet-pad-l-md" data-i18n="FUMBLE-90-EFCT">None</div>
 					{{/rollBetween() fumbleroll 81 90}}
 					{{#rollBetween() fumbleroll 91 100}}
-						<div class="sheet-row">
-							<div class="sheet-col-1 sheet-rt-value" data-i18n="FUMBLE-99-DESC">None</div>
-							<div class="sheet-col-1 sheet-rt-value" data-i18n="FUMBLE-99-EFCT">None</div>
-						</div>
+						<div class="sheet-col-1 sheet-rt-value sheet-pad-md" data-i18n="FUMBLE-99-DESC">None</div>
+						<div class="sheet-col-5-9 sheet-pad-t-md sheet-pad-l-md" data-i18n="FUMBLE-99-EFCT">None</div>
 					{{/rollBetween() fumbleroll 91 100}}
+						<div class="sheet-col-4-9 sheet-vert-top">
+							<div class="sheet-texttest sheet-center">
+								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{fumbleroll}}</div>
+							</div>
+						</div>
+						<div class="sheet-row">
+							<div class="sheet-img-spacer-lg"></div>
+						</div>
 				{{/fumbleroll}}
 			</div>
 			<!-- AMPUTATION TEMPLATE -->
