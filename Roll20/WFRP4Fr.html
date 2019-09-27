@@ -8414,6 +8414,9 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-center sheet-rt-key sheet-rt-fumble" data-i18n="FUMBLE">Fumble</div>
 						</div>
 					{{/rollGreater() test target}}
+						<div class="sheet-row">
+							<div class="sheet-img-spacer-lg"></div>
+						</div>
 				{{/rollWasCrit() test}}
 		<!-- IMPALE-->
 				{{#^rollWasCrit() test}}
@@ -8466,10 +8469,11 @@ on('sheet:opened change:totalwounds', function (event) {
 				            {{/rollTotal() test 90}}
 				        {{/^rollGreater() test target}}
 				    {{/rollGreater() impale 0}}
-								<div class="sheet-row">
-									<div class="sheet-img-spacer-lg"></div>
-								</div>
+					<div class="sheet-row">
+						<div class="sheet-img-spacer-lg"></div>
+					</div>
 				{{/^rollWasCrit() test}}
+
 			</div>
 			<!-- HIT TEMPLATE -->
 			<div class="sheet-row">
