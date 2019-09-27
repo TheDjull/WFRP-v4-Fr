@@ -158,120 +158,158 @@ button[type=roll] span {
 }
 
 /* === PADDINGS === */
-.sheet-pad-sm {
+.sheet-pad-sm
+.sheet-rolltemplate-WF4e .sheet-pad-sm {
 	padding: 2px;
 }
-.sheet-pad-md {
+.sheet-pad-md,
+.sheet-rolltemplate-WF4e .sheet-pad-md {
 	padding: 5px;
 }
-.sheet-pad-lg {
+.sheet-pad-lg,
+.sheet-rolltemplate-WF4e .sheet-pad-lg {
 	padding: 10px;
 }
-.sheet-pad-l-sm {
+.sheet-pad-l-sm,
+.sheet-rolltemplate-WF4e .sheet-pad-l-sm {
 	padding-left: 2px;
 }
-.sheet-pad-r-sm {
+.sheet-pad-r-sm,
+.sheet-rolltemplate-WF4e .sheet-pad-r-sm {
 	padding-right: 2px;
 }
-.sheet-pad-b-sm {
+.sheet-pad-b-sm,
+.sheet-rolltemplate-WF4e .sheet-pad-b-sm {
 	padding-bottom: 2px;
 }
-.sheet-pad-t-sm {
+.sheet-pad-t-sm,
+.sheet-rolltemplate-WF4e .sheet-pad-t-sm {
 	padding-top: 2px;
 }
-.sheet-pad-l-md {
+.sheet-pad-l-md,
+.sheet-rolltemplate-WF4e .sheet-pad-l-md {
 	padding-left: 5px;
 }
-.sheet-pad-r-md {
+.sheet-pad-r-md,
+.sheet-rolltemplate-WF4e .sheet-pad-r-md {
 	padding-right: 5px;
 }
-.sheet-pad-b-md {
+.sheet-pad-b-md,
+.sheet-rolltemplate-WF4e .sheet-pad-b-md {
 	padding-bottom: 5px;
 }
-.sheet-pad-t-md {
+.sheet-pad-t-md,
+.sheet-rolltemplate-WF4e .sheet-pad-t-md {
 	padding-top: 5px;
 }
-.sheet-pad-l-lg {
+.sheet-pad-l-lg,
+.sheet-rolltemplate-WF4e .sheet-pad-l-lg {
 	padding-left: 10px;
 }
-.sheet-pad-r-lg {
+.sheet-pad-r-lg,
+.sheet-rolltemplate-WF4e .sheet-pad-r-lg {
 	padding-right: 10px;
 }
-.sheet-pad-b-lg {
+.sheet-pad-b-lg,
+.sheet-rolltemplate-WF4e .sheet-pad-b-lg {
 	padding-bottom: 10px;
 }
-.sheet-pad-t-lg {
+.sheet-pad-t-lg,
+.sheet-rolltemplate-WF4e .sheet-pad-t-lg {
 	padding-top: 10px;
 }
-.sheet-pad-l-xl {
+.sheet-pad-l-xl,
+.sheet-rolltemplate-WF4e .sheet-pad-l-xl {
 	padding-left: 20px;
 }
-.sheet-pad-r-xl {
+.sheet-pad-r-xl,
+.sheet-rolltemplate-WF4e .sheet-pad-r-xl {
 	padding-right: 20px;
 }
-.sheet-pad-b-xl {
+.sheet-pad-b-xl,
+.sheet-rolltemplate-WF4e .sheet-pad-b-xl {
 	padding-bottom: 20px;
 }
-.sheet-pad-t-xl {
+.sheet-pad-t-xl,
+.sheet-rolltemplate-WF4e .sheet-pad-t-xl {
 	padding-top: 20px;
 }
-.sheet-pad-t-xl {
+.sheet-pad-t-xl,
+.sheet-rolltemplate-WF4e .sheet-pad-t-xl {
 	padding-top: 15px;
 }
-.sheet-pad-t-xs {
+.sheet-pad-t-xs,
+.sheet-rolltemplate-WF4e .sheet-pad-t-xs {
 	padding-top: -15px;
 }
-.sheet-pad-r-xs {
+.sheet-pad-r-xs,
+.sheet-rolltemplate-WF4e .sheet-pad-r-xs {
 	padding-right: -15px;
 }
 
 /* === MARGINS === */
-.sheet-mar-l-sm {
+.sheet-mar-l-sm,
+.sheet-rolltemplate-WF4e .sheet-mar-l-sm {
 	margin-left: 2px;
 }
-.sheet-mar-r-sm {
+.sheet-mar-r-sm,
+.sheet-rolltemplate-WF4e .sheet-mar-r-sm {
 	margin-right: 2px;
 }
-.sheet-mar-b-sm {
+.sheet-mar-b-sm,
+.sheet-rolltemplate-WF4e .sheet-mar-b-sm {
 	margin-bottom: 2px;
 }
-.sheet-mar-t-sm {
+.sheet-mar-t-sm,
+.sheet-rolltemplate-WF4e .sheet-mar-t-sm {
 	margin-top: 2px;
 }
-.sheet-mar-l-md {
+.sheet-mar-l-md,
+.sheet-rolltemplate-WF4e .sheet-mar-l-md {
 	margin-left: 5px;
 }
-.sheet-mar-r-md {
+.sheet-mar-r-md,
+.sheet-rolltemplate-WF4e .sheet-mar-r-md {
 	margin-right: 5px;
 }
-.sheet-mar-b-md {
+.sheet-mar-b-md,
+.sheet-rolltemplate-WF4e .sheet-mar-b-md {
 	margin-bottom: 5px;
 }
-.sheet-mar-t-md {
+.sheet-mar-t-md,
+.sheet-rolltemplate-WF4e .sheet-mar-t-md {
 	margin-top: 5px;
 }
-.sheet-mar-l-lg {
+.sheet-mar-l-lg,
+.sheet-rolltemplate-WF4e .sheet-mar-l-lg {
 	margin-left: 10px;
 }
-.sheet-mar-r-lg {
+.sheet-mar-r-lg,
+.sheet-rolltemplate-WF4e .sheet-mar-r-lg {
 	margin-right: 10px;
 }
-.sheet-mar-b-lg {
+.sheet-mar-b-lg,
+.sheet-rolltemplate-WF4e .sheet-mar-b-lg {
 	margin-bottom: 10px;
 }
-.sheet-mar-t-lg {
+.sheet-mar-t-lg,
+.sheet-rolltemplate-WF4e .sheet-mar-t-lg {
 	margin-top: 10px;
 }
-.sheet-mar-l-xs {
+.sheet-mar-l-xs,
+.sheet-rolltemplate-WF4e .sheet-mar-l-xs {
 	margin-left: -1px;
 }
-.sheet-mar-r-xs {
+.sheet-mar-r-xs,
+.sheet-rolltemplate-WF4e .sheet-mar-r-xs {
 	margin-right: -1px;
 }
-.sheet-mar-l-0 {
+.sheet-mar-l-0,
+.sheet-rolltemplate-WF4e .sheet-mar-l-0 {
 	margin-left: 0px;
 }
-.sheet-select-sizing {
+.sheet-select-sizing,
+.sheet-rolltemplate-WF4e .sheet-select-sizing {
     margin-top:0px;
     margin-left:0px;
     margin-bottom:-2px
@@ -1116,10 +1154,12 @@ span.sheet-spacer,
 .sheet-rolltemplate-WF4e .sheet-center {
 	text-align: center;
 }
-.sheet-right {
+.sheet-right,
+.sheet-rolltemplate-WF4e .sheet-right {
 	text-align: right;
 }
-.sheet-left {
+.sheet-left,
+.sheet-rolltemplate-WF4e .sheet-left {
 	text-align: left;
 }
 
@@ -1291,7 +1331,7 @@ input[disabled].sheet-passive-skill-score {
 .sheet-rolltemplate-WF4e .sheet-rt-card {
     width: 290px;
     height: auto;
-    min-height: 200px;
+    min-height: 50px;
     max-height: 366px;
     padding-bottom: 30px;
     font-size: 11px;

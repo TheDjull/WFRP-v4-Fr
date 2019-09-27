@@ -7,7 +7,7 @@
 // @include       https://app.roll20.net/editor*
 // @include       https://app.roll20.net/campaigns/chatarchive*
 // @run-at        document-start
-// @version       25.09.2019.2
+// @version       27.09.2019.1
 // @license       GPL-3.0-or-later
 // ==/UserScript==
 (function() {var css =`
@@ -18,38 +18,6 @@
     font-weight: bolder;
     color: white;
     text-shadow: 0px 0px 10px black;
-}
-
-.sheet-t-mar-md  {
-	margin-top: 5px !important;
-}
-
-.sheet-l-mar-md  {
-	margin-left: 5px !important;
-}
-
-.sheet-r-mar-md  {
-	margin-right: 5px !important;
-}
-
-.sheet-b-mar-md  {
-	margin-bottom: 5px !important;
-}
-
-.sheet-t-pad-md  {
-	padding-top: 5px !important;
-}
-
-.sheet-l-pad-md  {
-	padding-left: 5px !important;
-}
-
-.sheet-r-pad-md  {
-	padding-right: 5px !important;
-}
-
-.sheet-b-pad-md  {
-	padding-bottom: 5px !important;
 }
 
 .ui-dialog.dialog-collapsed {
@@ -385,7 +353,8 @@ span {
 }
 
 #initiativewindow {
-    padding: 30px 70px 0px 70px!important;
+    padding: 0px!important;
+    max-width: 200px !important;
 }
 
 macrobar {
