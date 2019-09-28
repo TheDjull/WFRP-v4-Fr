@@ -3992,7 +3992,7 @@
 						</div>
 						<div class="row">
 				    		<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
-				    			<button type="roll" class="sheet-roll sheet-btn sheet-ui-draggable btn ui-draggable" name="roll_CriticalRoll" value="@{Whisper} &amp;{template:WF4e} {{title=^{CRITICAL-HIT}}} {{character_name=@{character_name}}} {{attacktype=^{CRITICAL}}} {{critlocation=[[?{Localisation|Tête,1|Bras Droit,2|bras gauche,3|Corps,4|jambe Droite,5|Jambe Gauche,6}]]}} {{critroll=[[[[1d100]]+?{@{translation_modifier}|0}]]}}">
+				    			<button type="roll" class="sheet-roll sheet-btn sheet-ui-draggable btn ui-draggable" name="roll_CriticalRoll" value="@{Whisper} &amp;{template:WF4e} {{title=^{CRITICAL-HIT}}} {{character_name=@{character_name}}} {{attacktype=^{CRITICAL}}} {{critlocation=[[?{Localisation|Tête,1|Bras Droit,2|Bras Gauche,3|Torse,4|Jambe Droite,5|Jambe Gauche,6}]]}} {{critroll=[[[[1d100]]+?{@{translation_modifier}|0}]]}}">
 				    				<span data-i18n="CRITICAL-HIT">Coup Critique</span>
 				    			</button>
 				    		</div>
@@ -6764,7 +6764,24 @@ on('sheet:opened change:totalwounds', function (event) {
 				<div class="sheet-rt-subheader">{{attacktype}} {{#reach}} &bullet; {{reach}}{{/reach}}{{#range}} &bullet; {{range}}{{/range}}{{#ammo}} &bullet; {{ammo}} <span data-i18n="ABBREVIATE-AMMUNITION">ammo</span>{{/ammo}}</div>
 			{{/attacktest}}
 			{{#critroll}}
-				<div class="sheet-rt-subheader">{{attacktype}}</div>
+				{{#rollTotal() critlocation 1}}
+					<div class="sheet-rt-subheader" data-i18n="HIT-HEAD">Head</div>
+				{{/rollTotal() critlocation 1}}
+				{{#rollTotal() critlocation 2}}
+					<div class="sheet-rt-subheader" data-i18n="HIT-RIGHT-ARM">Right Arm</div>
+				{{/rollTotal() critlocation 2}}
+				{{#rollTotal() critlocation 3}}
+					<div class="sheet-rt-subheader" data-i18n="HIT-LEFT-ARM">Left Arm</div>
+				{{/rollTotal() critlocation 3}}
+				{{#rollTotal() critlocation 4}}
+					<div class="sheet-rt-subheader" data-i18n="HIT-BODY">Body</div>
+				{{/rollTotal() critlocation 4}}
+				{{#rollTotal() critlocation 5}}
+					<div class="sheet-rt-subheader" data-i18n="HIT-RIGHT-LEG">Right Leg</div>
+				{{/rollTotal() critlocation 5}}
+				{{#rollTotal() critlocation 6}}
+					<div class="sheet-rt-subheader" data-i18n="HIT-LEFT-LEG">Left Leg</div>
+				{{/rollTotal() critlocation 6}}
 			{{/critroll}}
 			{{#bloodloss}}
 				<div class="sheet-rt-subheader"><span data-i18n="BLOOD-LOSS">Blood Loss</span></div>
@@ -8743,1033 +8760,782 @@ on('sheet:opened change:totalwounds', function (event) {
 			<!-- CRITICAL TEMPLATE -->
 			<div class="sheet-row">
 				{{#critlocation}}
-					<div class="sheet-row">
-						{{#rollTotal() critlocation 1}}
-							<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value" data-i18n="HEAD">Head</div>
-						{{/rollTotal() critlocation 1}}
-						{{#rollTotal() critlocation 2}}
-							<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value" data-i18n="RIGHT-ARM">Right Arm</div>
-						{{/rollTotal() critlocation 2}}
-						{{#rollTotal() critlocation 3}}
-							<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value" data-i18n="LEFT-ARM">Left Arm</div>
-						{{/rollTotal() critlocation 3}}
-						{{#rollTotal() critlocation 4}}
-							<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value" data-i18n="BODY">Body</div>
-						{{/rollTotal() critlocation 4}}
-						{{#rollTotal() critlocation 5}}
-							<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value" data-i18n="RIGHT-LEG">Right Leg</div>
-						{{/rollTotal() critlocation 5}}
-						{{#rollTotal() critlocation 6}}
-							<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value" data-i18n="LEFT-LEG">Left Leg</div>
-						{{/rollTotal() critlocation 6}}
-					</div>	
 					{{#rollTotal() critlocation 1}}
 						{{#rollBetween() critroll 01 10}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD01-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-HEAD01-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD01-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD01-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">1</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-HEAD01-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD01-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD01-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD01-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+1 Blessure</div>
 							</div>
 						{{/rollBetween() critroll 01 10}}
 						{{#rollBetween() critroll 11 20}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD02-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-HEAD02-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD02-COND1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">1</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-HEAD02-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD02-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD02-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+1 Blessure</div>
 							</div>
 						{{/rollBetween() critroll 11 20}}
 						{{#rollBetween() critroll 21 25}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD03-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-HEAD03-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD03-COND1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">1</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-HEAD03-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD03-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD03-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+1 Blessure</div>
 							</div>
 						{{/rollBetween() critroll 21 25}}
 						{{#rollBetween() critroll 26 30}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD04-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-HEAD04-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD04-COND1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">1</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-HEAD04-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD04-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD04-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+1 Blessure</div>
 							</div>
 						{{/rollBetween() critroll 26 30}}
 						{{#rollBetween() critroll 31 35}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD05-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-HEAD05-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD05-COND1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">2</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-HEAD05-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD05-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD05-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+2 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 31 35}}
 						{{#rollBetween() critroll 36 40}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD06-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-HEAD06-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD06-COND1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">2</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-HEAD06-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD06-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD06-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+2 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 36 40}}
 						{{#rollBetween() critroll 41 45}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD07-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-HEAD07-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD07-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD07-COND2">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">2</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-HEAD07-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD07-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD07-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD07-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+2 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 41 45}}
 						{{#rollBetween() critroll 46 50}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD08-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-HEAD08-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD08-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD08-COND2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD08-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">2</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-HEAD08-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD08-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD08-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD08-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD08-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+2 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 46 50}}
 						{{#rollBetween() critroll 51 55}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD09-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-HEAD09-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD09-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD09-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">3</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-HEAD09-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD09-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD09-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD09-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+3 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 51 55}}
 						{{#rollBetween() critroll 56 60}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD10-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-HEAD10-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD10-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD10-COND2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD10-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">3</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-HEAD10-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD10-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD10-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD10-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD10-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+3 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 56 60}}
 						{{#rollBetween() critroll 61 65}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD11-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-HEAD11-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD11-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD11-EFCT1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD11-EFCT2">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">3</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-HEAD11-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD11-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD11-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD11-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD11-EFCT2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+3 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 61 65}}
 						{{#rollBetween() critroll 66 70}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD12-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-HEAD12-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD12-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD12-COND2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD12-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">3</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-HEAD12-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD12-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD12-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD12-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD12-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+3 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 66 70}}
 						{{#rollBetween() critroll 71 75}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD13-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-HEAD13-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD13-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD13-COND2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD13-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">4</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-HEAD13-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD13-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD13-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD13-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD13-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+4 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 71 75}}
 						{{#rollBetween() critroll 76 80}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD14-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-HEAD14-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD14-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD14-COND2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD14-COND3">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD14-COND4">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD14-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">4</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-HEAD14-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD14-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD14-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD14-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD14-COND3">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD14-COND4">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD14-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+4 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 76 80}}
 						{{#rollBetween() critroll 81 85}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD15-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-HEAD15-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD15-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD15-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">5</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-HEAD15-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD15-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD15-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD15-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+5 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 81 85}}
 						{{#rollBetween() critroll 86 90}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD16-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-HEAD16-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD16-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD16-COND2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD16-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">5</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-HEAD16-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD16-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD16-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD16-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD16-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+5 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 86 90}}
 						{{#rollBetween() critroll 91 93}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD17-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-HEAD17-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD17-COND2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD17-COND3">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD17-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">5</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-HEAD17-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD17-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD17-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD17-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD17-COND3">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD17-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+5 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 91 93}}
 						{{#rollBetween() critroll 94 96}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD18-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-HEAD18-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD18-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD18-COND2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD18-COND3">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD18-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">5</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-HEAD18-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD18-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD18-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD18-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD18-COND3">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD18-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+5 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 94 96}}
 						{{#rollBetween() critroll 97 99}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD19-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-HEAD19-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD19-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD19-COND2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD19-EFCT1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD19-EFCT2">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">5</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-HEAD19-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD19-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD19-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD19-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD19-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD19-EFCT2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+5 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 97 99}}
 						{{#rollGreater() critroll 99}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD20-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-HEAD20-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-HEAD20-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">Death</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-HEAD20-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD20-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD20-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-HEAD20-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">Mort Subite</div>
 							</div>
 						{{/rollGreater() critroll 99}}
 					{{/rollTotal() critlocation 1}}
 					{{#rollBetween() critlocation 2 3}}
 						{{#rollBetween() critroll 01 10}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS01-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-ARMS01-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS01-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">1</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-ARMS01-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS01-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS01-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS01-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+1 Blessure</div>
 							</div>
 						{{/rollBetween() critroll 01 10}}
 						{{#rollBetween() critroll 11 20}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS02-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-ARMS02-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS02-COND1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">1</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-ARMS02-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS02-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS02-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS02-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+1 Blessure</div>
 							</div>
 						{{/rollBetween() critroll 11 20}}
 						{{#rollBetween() critroll 21 25}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS03-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-ARMS03-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS03-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">1</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-ARMS03-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS03-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS03-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS03-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+1 Blessure</div>
 							</div>
 						{{/rollBetween() critroll 21 25}}
 						{{#rollBetween() critroll 26 30}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS04-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-ARMS04-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS04-EFCT1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS04-EFCT2">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">2</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-ARMS04-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS04-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS04-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS04-EFCT2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+2 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 26 30}}
 						{{#rollBetween() critroll 31 35}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS05-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-ARMS05-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS05-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS05-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">2</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-ARMS05-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS05-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS05-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS05-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+2 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 31 35}}
 						{{#rollBetween() critroll 36 40}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS06-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-ARMS06-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS06-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS06-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">2</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-ARMS06-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS06-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS06-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS06-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+2 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 36 40}}
 						{{#rollBetween() critroll 41 45}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS07-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-ARMS07-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS07-EFCT1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS07-EFCT2">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">2</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-ARMS07-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS07-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS07-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS07-EFCT2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+2 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 41 45}}
 						{{#rollBetween() critroll 46 50}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS08-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-ARMS08-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS08-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS08-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">3</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-ARMS08-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS08-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS08-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS08-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+3 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 46 50}}
 						{{#rollBetween() critroll 51 55}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS09-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-ARMS09-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS09-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS09-EFCT1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS09-EFCT2">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">3</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-ARMS09-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS09-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS09-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS09-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS09-EFCT2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+3 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 51 55}}
 						{{#rollBetween() critroll 56 60}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS10-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-ARMS10-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS10-EFCT1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS10-EFCT2">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">3</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-ARMS10-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS10-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS10-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS10-EFCT2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+3 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 56 60}}
 						{{#rollBetween() critroll 61 65}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS11-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-ARMS11-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS11-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS11-COND2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS11-COND3">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS11-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">3</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-ARMS11-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS11-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS11-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS11-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS11-COND3">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS11-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+3 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 61 65}}
 						{{#rollBetween() critroll 66 70}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS12-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-ARMS12-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS12-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS12-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">4</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-ARMS12-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS12-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS12-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS12-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+4 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 66 70}}
 						{{#rollBetween() critroll 71 75}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS13-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-ARMS13-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS13-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS13-EFCT1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS13-EFCT2">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">4</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-ARMS13-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS13-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS13-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS13-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS13-EFCT2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+4 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 71 75}}
 						{{#rollBetween() critroll 76 80}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS14-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-ARMS14-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS14-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS14-COND2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS14-COND3">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS14-EFCT1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS14-EFCT2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS14-EFCT3">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS14-EFCT4">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">4</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-ARMS14-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS14-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS14-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS14-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS14-COND3">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS14-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS14-EFCT2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS14-EFCT3">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS14-EFCT4">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+4 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 76 80}}
 						{{#rollBetween() critroll 81 85}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS15-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-ARMS15-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS15-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS15-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">5</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-ARMS15-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS15-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS15-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS15-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+4 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 81 85}}
 						{{#rollBetween() critroll 86 90}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS16-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-ARMS16-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS16-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS16-COND2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS16-COND3">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS16-EFCT1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS16-EFCT2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS16-EFCT3">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS16-EFCT4">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">5</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-ARMS16-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS16-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS16-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS16-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS16-COND3">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS16-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS16-EFCT2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS16-EFCT3">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS16-EFCT4">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+5 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 86 90}}
 						{{#rollBetween() critroll 91 93}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS17-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-ARMS17-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS17-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS17-COND2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS17-EFCT1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS17-EFCT2">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">5</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-ARMS17-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS17-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS17-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS17-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS17-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS17-EFCT2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+5 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 91 93}}
 						{{#rollBetween() critroll 94 96}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS18-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-ARMS18-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS18-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS18-COND2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS18-COND3">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS18-EFCT1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS18-EFCT2">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">5</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-ARMS18-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS18-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS18-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS18-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS18-COND3">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS18-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS18-EFCT2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+5 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 94 96}}
 						{{#rollBetween() critroll 97 99}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS19-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-ARMS19-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS19-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS19-COND2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS19-COND3">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS19-COND4">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS19-EFCT1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS19-EFCT2">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">5</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-ARMS19-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS19-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS19-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS19-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS19-COND3">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS19-COND4">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS19-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS19-EFCT2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+5 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 97 99}}
 						{{#rollGreater() critroll 99}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS20-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-ARMS20-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-ARMS20-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">Death</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-ARMS20-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS20-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS20-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-ARMS20-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">Mort Subite</div>
 							</div>
 						{{/rollGreater() critroll 99}}
 					{{/rollBetween() critlocation 2 3}}
 					{{#rollTotal() critlocation 4}}
 						{{#rollBetween() critroll 01 10}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY01-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-BODY01-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY01-COND1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">1</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-BODY01-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY01-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY01-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY01-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+1 Blessure</div>
 							</div>
 						{{/rollBetween() critroll 01 10}}
 						{{#rollBetween() critroll 11 20}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY02-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-BODY02-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY02-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY02-COND2">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">1</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-BODY02-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY02-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY02-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY02-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+1 Blessure</div>
 							</div>
 						{{/rollBetween() critroll 11 20}}
 						{{#rollBetween() critroll 21 25}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY03-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-BODY03-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY03-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY03-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">1</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-BODY03-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY03-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY03-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY03-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+1 Blessure</div>
 							</div>
 						{{/rollBetween() critroll 21 25}}
 						{{#rollBetween() critroll 26 30}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY04-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-BODY04-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY04-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">1</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-BODY04-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY04-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY04-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+1 Blessure</div>
 							</div>
 						{{/rollBetween() critroll 26 30}}
 						{{#rollBetween() critroll 31 35}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY05-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-BODY05-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY05-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY05-COND2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY05-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">2</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-BODY05-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY05-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY05-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY05-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY05-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+2 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 31 35}}
 						{{#rollBetween() critroll 36 40}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY06-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-BODY06-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY06-COND1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">2</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-BODY06-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY06-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY06-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+2 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 36 40}}
 						{{#rollBetween() critroll 41 45}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY07-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-BODY07-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY07-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">2</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-BODY07-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY07-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY07-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+2 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 41 45}}
 						{{#rollBetween() critroll 46 50}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY08-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-BODY08-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY08-COND1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">2</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-BODY08-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY08-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY08-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+2 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 46 50}}
 						{{#rollBetween() critroll 51 55}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY09-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-BODY09-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY09-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY09-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">3</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-BODY09-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY09-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY09-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY09-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+3 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 51 55}}
 						{{#rollBetween() critroll 56 60}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY10-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-BODY10-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY10-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY10-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">3</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-BODY10-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY10-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY10-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY10-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+3 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 56 60}}
 						{{#rollBetween() critroll 61 65}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY11-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-BODY11-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY11-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY11-COND2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY11-COND3">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">3</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-BODY11-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY11-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY11-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY11-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY11-COND3">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+3 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 61 65}}
 						{{#rollBetween() critroll 66 70}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY12-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-BODY12-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY12-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY12-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">3</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-BODY12-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY12-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY12-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY12-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+3 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 66 70}}
 						{{#rollBetween() critroll 71 75}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY13-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-BODY13W-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY13-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">4</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-BODY13-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY13-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY13-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+4 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 71 75}}
 						{{#rollBetween() critroll 76 80}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY14-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-BODY14-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY14-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY14-COND2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY14-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">4</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-BODY14-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY14-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY14-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY14-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY14-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+4 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 76 80}}
 						{{#rollBetween() critroll 81 85}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY15-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-BODY15-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY15-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY15-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">4</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-BODY15-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY15-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY15-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY15-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+4 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 81 85}}
 						{{#rollBetween() critroll 86 90}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY16-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-BODY16-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY16-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY16-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">4</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-BODY16-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY16-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY16-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY16-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+4 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 86 90}}
 						{{#rollBetween() critroll 91 93}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY17-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-BODY17-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY17-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY17-EFCT1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY17-EFCT2">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">5</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-BODY17-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY17-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY17-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY17-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY17-EFCT2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+5 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 91 93}}
 						{{#rollBetween() critroll 94 96}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY18-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-BODY18-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY18-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY18-EFCT1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY18-EFCT2">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">5</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-BODY18-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY18-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY18-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY18-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY18-EFCT2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+5 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 94 96}}
 						{{#rollBetween() critroll 97 99}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY19-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-BODY19-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY19-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY19-EFCT1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY19-EFCT2">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">5</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-BODY19-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY19-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY19-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY19-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY19-EFCT2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+5 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 97 99}}
 						{{#rollGreater() critroll 99}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY20-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-BODY20-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-BODY20-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">Death</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-BODY20-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY20-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY20-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-BODY20-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">Mort Subite</div>
 							</div>
 						{{/rollGreater() critroll 99}}
 					{{/rollTotal() critlocation 4}}
 					{{#rollBetween() critlocation 5 6}}
 						{{#rollBetween() critroll 01 10}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS01-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-LEGS01-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS01-COND1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">1</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-LEGS01-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS01-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS01-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+1 Blessure</div>
 							</div>
 						{{/rollBetween() critroll 01 10}}
 						{{#rollBetween() critroll 11 20}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS02-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-LEGS02-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS02-COND1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">1</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-LEGS02-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS02-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS02-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+1 Blessure</div>
 							</div>
 						{{/rollBetween() critroll 11 20}}
 						{{#rollBetween() critroll 21 25}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS03-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-LEGS03-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS03-COND1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">1</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-LEGS03-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS03-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS03-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+1 Blessure</div>
 							</div>
 						{{/rollBetween() critroll 21 25}}
 						{{#rollBetween() critroll 26 30}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS04-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-LEGS04-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS04-COND1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">1</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-LEGS04-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS04-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS04-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+1 Blessure</div>
 							</div>
 						{{/rollBetween() critroll 26 30}}
 						{{#rollBetween() critroll 31 35}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS05-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-LEGS05-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS05-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS05-COND2">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">2</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-LEGS05-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS05-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS05-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS05-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+2 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 31 35}}
 						{{#rollBetween() critroll 36 40}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS06-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-LEGS06-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS06-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">2</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-LEGS06-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS06-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS06-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+2 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 36 40}}
 						{{#rollBetween() critroll 41 45}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS07-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-LEGS07-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS07-COND1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">2</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-LEGS07-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS07-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS07-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+2 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 41 45}}
 						{{#rollBetween() critroll 46 50}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS08-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-LEGS08-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS08-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS08-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">2</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-LEGS08-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS08-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS08-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS08-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+2 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 46 50}}
 						{{#rollBetween() critroll 51 55}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS09-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-LEGS09-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS09-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS09-COND2">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">3</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-LEGS09-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS09-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS09-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS09-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+3 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 51 55}}
 						{{#rollBetween() critroll 56 60}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS10-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-LEGS10-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS10-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">3</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-LEGS10-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS10-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS10-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+3 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 56 60}}
 						{{#rollBetween() critroll 61 65}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS11-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-LEGS11-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS11-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS11-COND2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS11-COND3">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS11-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">3</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-LEGS11-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS11-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS11-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS11-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS11-COND3">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS11-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+3 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 61 65}}
 						{{#rollBetween() critroll 66 70}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS12-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-LEGS12-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS12-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS12-COND2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS12-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">3</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-LEGS12-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS12-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS12-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS12-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS12-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+3 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 66 70}}
 						{{#rollBetween() critroll 71 75}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS13-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-LEGS13-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS13-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS13-COND2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS13-COND3">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS13-EFCT1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS13-EFCT2">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">4</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-LEGS13-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS13-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS13-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS13-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS13-COND3">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS13-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS13-EFCT2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+4 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 71 75}}
 						{{#rollBetween() critroll 76 80}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS14-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-LEGS14-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS14-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS14-COND2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS14-EFCT1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS14-EFCT2">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">4</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-LEGS14-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS14-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS14-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS14-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS14-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS14-EFCT2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+4 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 76 80}}
 						{{#rollBetween() critroll 81 85}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS15-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-LEGS15-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS15-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS15-COND2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS15-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">4</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-LEGS15-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS15-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS15-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS15-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS15-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+4 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 81 85}}
 						{{#rollBetween() critroll 86 90}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS16-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-LEGS16-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS16-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS16-COND2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS16-COND3">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS16-EFCT1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS16-EFCT2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS16-EFCT3">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">4</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-LEGS16-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS16-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS16-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS16-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS16-COND3">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS16-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS16-EFCT2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS16-EFCT3">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+4 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 86 90}}
 						{{#rollBetween() critroll 91 93}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS17-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-LEGS17-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS17-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS17-COND2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS17-EFCT1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS17-EFCT2">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">5</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-LEGS17-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS17-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS17-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS17-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS17-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS17-EFCT2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+5 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 91 93}}
 						{{#rollBetween() critroll 94 96}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS18-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-LEGS18-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS18-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS18-COND2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS18-COND3">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS18-EFCT1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS18-EFCT2">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">5</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-LEGS18-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS18-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS18-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS18-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS18-COND3">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS18-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS18-EFCT2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+5 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 94 96}}
 						{{#rollBetween() critroll 97 99}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS19-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-LEGS19-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS19-COND1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS19-COND2">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS19-COND3">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS19-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">5</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-LEGS19-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS19-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS19-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS19-COND2">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS19-COND3">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS19-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">+5 Blessures</div>
 							</div>
 						{{/rollBetween() critroll 97 99}}
 						{{#rollGreater() critroll 99}}
-							<div class="sheet-row">
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS20-NAME1">None</div>
-								<div class="sheet-col-1 sheet-rt-value" data-i18n="CRIT-LEGS20-DESC1">None</div>
-								<div class="sheet-col-1 sheet-rt-key-wide" data-i18n="CRIT-LEGS20-EFCT1">None</div>
-							</div>
-							<div class="sheet-row">
-								<div class="sheet-col-11-24 sheet-rt-key" data-i18n="WOUNDS">Wounds</div>
-								<div class="sheet-col-13-24 sheet-smaller-letter-spacing sheet-rt-value">X</div>
+							<div class="sheet-col-1 sheet-mar-t-md sheet-mar-b-md sheet-rt-key sheet-center" data-i18n="CRIT-LEGS20-NAME1">None</div>
+							<div class="sheet-col-2-3">
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS20-DESC1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS20-COND1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md" data-i18n="CRIT-LEGS20-EFCT1">None</div>
+							<div class="sheet-col-1 sheet-pad-t-md sheet-pad-l-md">Mort Subite</div>
 							</div>
 						{{/rollGreater() critroll 99}}
 					{{/rollBetween() critlocation 5 6}}
-							<div class="sheet-col-4-9 sheet-vert-top">
+							<div class="sheet-col-1-3 sheet-vert-top">
 								<div class="sheet-texttest sheet-center">
 									<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{critroll}}</div>
 								</div>
@@ -9783,7 +9549,6 @@ on('sheet:opened change:totalwounds', function (event) {
 			<div class="sheet-row">
 				{{#fumbleroll}}
 					{{#rollBetween() fumbleroll 01 20}}
-
 						<div class="sheet-col-1 sheet-rt-value sheet-pad-md" data-i18n="FUMBLE-20-DESC">None</div>
 						<div class="sheet-col-5-9 sheet-pad-t-md sheet-pad-l-md" data-i18n="FUMBLE-20-EFCT">None</div>
 					{{/rollBetween() fumbleroll 01 20}}

@@ -1430,7 +1430,7 @@ input[disabled].sheet-passive-skill-score {
 	background-color: transparent;
 }
 .sheet-rolltemplate-WF4e .sheet-rt-header.sheet-ability:before {
-	background:url(https://i.imgur.com/z4TFjoh.jpg);
+	background: transparent;
 }
 .sheet-rolltemplate-WF4e .sheet-rt-header.sheet-ability:after {
 	border-left-color: transparent;
