@@ -2078,54 +2078,80 @@
 						<input type="checkbox" name="attr_EvaluateTaken" value="1"/>
 					</div>
 				</div>
-				<!-- Focalisation Vol (++) -->
-				<div class="sheet-row sheet-skill-header">
-					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle"><span>&nbsp;</span></div>
-    				<div class="sheet-col-3-8 sheet-vert-middle">
-    					<span data-i18n="CHANNELLING" class="sheet-italic">Channelling</span>
-    				</div>
-					<div class="sheet-row">
-						<fieldset class="repeating_Channelling">
-							<div class="sheet-row">
-								<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
-									<input type="checkbox" name="attr_ChannellingSpecializationCareer" value="1"/>
-								</div>
-								<div class="sheet-col-3-8 sheet-pad-r-sm sheet-vert-middle">
-									<input class="sheet-center sheet-skillgrp" type="text" name="attr_ChannellingSpecialization"/>
-								</div>
-								<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
-									<select class="sheet-select-no-arrow-center" name="attr_ChannellingSpecializationChar">
-										<option value="(@{WeaponSkill})" data-i18n="ABBREVIATE-WEAPON-SKILL">WS</option>
-										<option value="(@{BallisticSkill})" data-i18n="ABBREVIATE-BALLISTIC-SKILL">BS</option>
-										<option value="(@{Strength})" data-i18n="ABBREVIATE-STRENGTH">S</option>
-										<option value="(@{Toughness})" data-i18n="ABBREVIATE-TOUGHNESS">T</option>
-										<option value="(@{Initiative})" data-i18n="ABBREVIATE-INITIATIVE">I</option>
-										<option value="(@{Agility})" data-i18n="ABBREVIATE-AGILITY">Ag</option>
-										<option value="(@{Dexterity})" data-i18n="ABBREVIATE-DEXTERITY">Dex</option>
-										<option value="(@{Intelligence})" data-i18n="ABBREVIATE-INTELLIGENCE">Int</option>
-										<option value="(@{WillPower})" data-i18n="ABBREVIATE-WILL-POWER" selected="selected">Wp</option>
-										<option value="(@{Fellowship})" data-i18n="ABBREVIATE-FELLOWSHIP">Fel</option>
-									</select>
-								</div>
-								<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
-									<input class="sheet-center" type="number" name="attr_ChannellingSpecializationAdv" value="0"/>
-								</div>
-								<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
-									<input class="sheet-center" type="number" name="attr_ChannellingSpecializationMisc" value="0"/>
-								</div>
-								<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
-									<input class="sheet-center" type="number" name="attr_Channelling" value="(@{ChannellingSpecializationChar}+@{ChannellingSpecializationAdv}+@{ChannellingSpecializationMisc})*@{ChannellingSpecializationTaken}" disabled="true"/>
-								</div>
-								<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
-									<button type="roll" class="sheet-roll" name="roll_Channelling" value="@{Whisper} &{template:WF4e} {{title=@{ChannellingSpecialization}}} {{skill=^{CHANNELLING}}} {{character_name=@{character_name}}} {{target=[[@{Channelling}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}"></button>
-								</div>
-								<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
-									<input type="checkbox" name="attr_ChannellingSpecializationTaken" value="1"/>
-								</div>
-							</div>
-						</fieldset>
+				<!-- Focalisation Vol -->
+				<div class="sheet-row">
+					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+						<input type="checkbox" name="attr_ChannellingCareer" value="1"/>
 					</div>
-				</div>
+					<div class="sheet-col-3-8 sheet-pad-r-sm sheet-vert-middle">
+						<span data-i18n="CHANNELLING">Channelling</span>
+					</div>
+					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+						<select class="sheet-select-no-arrow-center" name="attr_ChannellingChar">
+							<option value="(@{WeaponSkill})" data-i18n="ABBREVIATE-WEAPON-SKILL">WS</option>
+							<option value="(@{BallisticSkill})" data-i18n="ABBREVIATE-BALLISTIC-SKILL">BS</option>
+							<option value="(@{Strength})" data-i18n="ABBREVIATE-STRENGTH">S</option>
+							<option value="(@{Toughness})" data-i18n="ABBREVIATE-TOUGHNESS">T</option>
+							<option value="(@{Initiative})" data-i18n="ABBREVIATE-INITIATIVE">I</option>
+							<option value="(@{Agility})" data-i18n="ABBREVIATE-AGILITY">Ag</option>
+							<option value="(@{Dexterity})" data-i18n="ABBREVIATE-DEXTERITY">Dex</option>
+							<option value="(@{Intelligence})" data-i18n="ABBREVIATE-INTELLIGENCE">Int</option>
+							<option value="(@{WillPower})" data-i18n="ABBREVIATE-WILL-POWER" selected="selected">Wp</option>
+							<option value="(@{Fellowship})" data-i18n="ABBREVIATE-FELLOWSHIP">Fel</option>
+						</select>
+					</div>
+					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+						<input class="sheet-center" type="number" name="attr_ChannellingAdv" value="0"/>
+					</div>
+					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+						<input class="sheet-center" type="number" name="attr_ChannellingMisc" value="0"/>
+					</div>
+					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+						<input class="sheet-center" type="number" name="attr_Channelling" value="(@{ChannellingChar}+@{ChannellingAdv}+@{ChannellingMisc})*@{ChannellingTaken}" disabled="true"/>
+					</div>
+					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+						<button type="roll" class="sheet-roll" name="roll_Channelling" value="@{Whisper} &{template:WF4e} {{title=^{CHANNELLING}}} {{skill=^{ADVANCED-SKILL}}}} {{character_name=@{character_name}}} {{target=[[@{Channelling}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}"></button>
+					</div>
+					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+						<input type="checkbox" name="attr_ChannellingTaken" value="1"/>
+					</div>
+				<!-- Incantation Int -->
+				<div class="sheet-row">
+					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+						<input type="checkbox" name="attr_CastCareer" value="1"/>
+					</div>
+					<div class="sheet-col-3-8 sheet-pad-r-sm sheet-vert-middle">
+						<span data-i18n="CAST">Cast</span>
+					</div>
+					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+						<select class="sheet-select-no-arrow-center" name="attr_CastChar">
+							<option value="(@{WeaponSkill})" data-i18n="ABBREVIATE-WEAPON-SKILL">WS</option>
+							<option value="(@{BallisticSkill})" data-i18n="ABBREVIATE-BALLISTIC-SKILL">BS</option>
+							<option value="(@{Strength})" data-i18n="ABBREVIATE-STRENGTH">S</option>
+							<option value="(@{Toughness})" data-i18n="ABBREVIATE-TOUGHNESS">T</option>
+							<option value="(@{Initiative})" data-i18n="ABBREVIATE-INITIATIVE">I</option>
+							<option value="(@{Agility})" data-i18n="ABBREVIATE-AGILITY">Ag</option>
+							<option value="(@{Dexterity})" data-i18n="ABBREVIATE-DEXTERITY">Dex</option>
+							<option value="(@{Intelligence})" data-i18n="ABBREVIATE-INTELLIGENCE" selected="selected">Int</option>
+							<option value="(@{WillPower})" data-i18n="ABBREVIATE-WILL-POWER">Wp</option>
+							<option value="(@{Fellowship})" data-i18n="ABBREVIATE-FELLOWSHIP">Fel</option>
+						</select>
+					</div>
+					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+						<input class="sheet-center" type="number" name="attr_CastAdv" value="0"/>
+					</div>
+					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+						<input class="sheet-center" type="number" name="attr_CastMisc" value="0"/>
+					</div>
+					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+						<input class="sheet-center" type="number" name="attr_Cast" value="(@{CastChar}+@{CastAdv}+@{CastMisc})*@{CastTaken}" disabled="true"/>
+					</div>
+					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+						<button type="roll" class="sheet-roll" name="roll_Cast" value="@{Whisper} &{template:WF4e} {{title=^{CAST}}} {{skill=^{ADVANCED-SKILL}}}} {{character_name=@{character_name}}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}"></button>
+					</div>
+					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+						<input type="checkbox" name="attr_CastTaken" value="1"/>
+					</div>
 				<!-- Langues et Langages Int (++) -->
 				<div class="sheet-row sheet-skill-header">
 					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle"><span>&nbsp;</span></div>
@@ -6749,7 +6775,7 @@ on('sheet:opened change:totalwounds', function (event) {
 <rolltemplate class="sheet-rolltemplate-WF4e">
 	<div class="sheet-rt-card">
 		<!-- HEAD TEMPLATE -->
-		<div class="sheet-rt-header sheet-relative {{#chartest}} sheet-ability{{/chartest}}{{#skilltest}} sheet-action{{/skilltest}}{{#attacktest}} sheet-attack{{/attacktest}}{{#fumbleroll}} sheet-weapon{{/fumbleroll}}{{#amputationroll}} sheet-weapon{{/amputationroll}}{{#critroll}} sheet-weapon{{/critroll}}{{#spelltest}} sheet-spell{{/spelltest}}{{#inscribetest}} sheet-spell{{/inscribetest}}{{#arcanemark}} sheet-spell{{/arcanemark}}{{#godmark}} sheet-spell{{/godmark}}{{#bloodloss}} sheet-action{{/bloodloss}}">
+		<div class="sheet-rt-header sheet-relative {{#chartest}} sheet-ability{{/chartest}}{{#skilltest}} sheet-action{{/skilltest}}{{#attacktest}} sheet-attack{{/attacktest}}{{#fumbleroll}} sheet-weapon{{/fumbleroll}}{{#amputationroll}} sheet-weapon{{/amputationroll}}{{#critroll}} sheet-weapon{{/critroll}}{{#spelltest}} sheet-spell{{/spelltest}}{{#inscribetest}} sheet-spell{{/inscribetest}}{{#arcanemark}} sheet-spell{{/arcanemark}}{{#godmark}} sheet-spell{{/godmark}}">
 			{{#character_name}}
 				<div class="sheet-rt-subheader">{{character_name}}</div>
 			{{/character_name}}
