@@ -2114,7 +2114,7 @@
 						<input class="sheet-center" type="number" name="attr_Channelling" value="(@{ChannellingChar}+@{ChannellingAdv}+@{ChannellingMisc})*@{ChannellingTaken}" disabled="true"/>
 					</div>
 					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
-						<button type="roll" class="sheet-roll" name="roll_Channelling" value="@{Whisper} &{template:WF4e} {{title=^{CHANNELLING}}} {{skill=^{ADVANCED-SKILL}}}} {{character_name=@{character_name}}} {{target=[[@{Channelling}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}"></button>
+						<button type="roll" class="sheet-roll" name="roll_Channelling" value="@{Whisper} &{template:WF4e} {{title=^{CHANNELLING}}} {{skill=^{ADVANCED-SKILL}}}} {{character_name=@{character_name}}} {{target=[[@{Channelling}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}} {{DRFoca=@{FocaRes}}}"></button>
 					</div>
 					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<input type="checkbox" name="attr_ChannellingTaken" value="1"/>
@@ -3657,7 +3657,7 @@
 				<div class="sheet-row">
     				<div class="sheet-col-1">
     					<h4 class="sheet-center">
-    						<span class=" sheet-pad-r-lg" data-i18n="COPHY">Corruption Physique</span>
+    						<span class="sheet-pad-r-lg" data-i18n="COPHY">Corruption Physique</span>
 							<button type="roll" class="sheet-roll sheet-btn sheet-ui-draggable btn ui-draggable" name="roll_CophyRoll" value="@{Whisper} &amp;{template:WF4e} {{title=Corruption Physique}} {{character_name=@{character_name}}} {{attacktype=^{COPHY}}} {{cophyroll=[[[[1d100]]+?{@{translation_modifier}|0}]]}}"></button>
     					</h4>
     				</div>
@@ -3702,7 +3702,7 @@
 				<div class="sheet-row">
     				<div class="sheet-col-1">
     					<h4 class="sheet-center">
-    						<span class=" sheet-pad-r-lg" data-i18n="COMEN">Corruption Mentale</span>
+    						<span class="sheet-pad-r-lg" data-i18n="COMEN">Corruption Mentale</span>
 							<button type="roll" class="sheet-roll sheet-btn sheet-ui-draggable btn ui-draggable" name="roll_ComenRoll" value="@{Whisper} &amp;{template:WF4e} {{title=Corruption Mentale}} {{character_name=@{character_name}}} {{attacktype=^{COMEN}}} {{comenroll=[[[[1d100]]+?{@{translation_modifier}|0}]]}}"></button>
     					</h4>
     				</div>
@@ -5398,19 +5398,16 @@
 							<div class="sheet-row">
 								<div class="sheet-col-1">
     								<h4 class="sheet-center">
-    									<span data-i18n="SIN-AND-CORRUPTION">Sin & Corruption</span>
+    									<span class="sheet-pad-r-lg" data-i18n="CHANNELLING">Focalisation</span>
+										<button type="roll" class="sheet-roll btn ui-draggable" name="roll_Channelling" value="@{Whisper} &amp;{template:WF4e} {{title=^{CHANNELLING}}} {{skill=^{ADVANCED-SKILL}}}} {{character_name=@{character_name}}} {{target=[[@{Channelling}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}} {{DRFoca=@{FocaRes}}}"></button>
     								</h4>
     							</div>
     							<div class="sheet-row sheet-sub-header">
-    					    		<div class="sheet-col-1-2 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="SIN">Sin</div>
-    					    		<div class="sheet-col-1-2 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="CORRUPTION">Corruption</div>
+    					    		<div class="sheet-col-1 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="RESERVE">Réserve</div>
     					    	</div>
 								<div class="sheet-row">
-    					    		<div class="sheet-col-1-2 sheet-center sheet-pad-r-sm">
-    					    			<input class="sheet-center" type="number" name="attr_Sin" value="0"/>
-    					    		</div>
-    					    		<div class="sheet-col-1-2 sheet-center sheet-pad-r-sm">
-    					    			<input class="sheet-center" type="number" name="attr_Corruption" value="0"/>
+    					    		<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
+    					    			<input class="sheet-center" type="number" name="attr_FocaRes" value="0"/>
     					    		</div>
     					    	</div>
 							</div>
@@ -7430,6 +7427,20 @@ on('sheet:opened change:totalwounds', function (event) {
 					</div>
 				{{/qualities}}
 			</div>
+			<!-- FOCALISATION TEMPLATE -->
+			<div class="sheet-row">
+				{{#DRFoca}}
+					<div class="sheet-col-2-5 sheet-mar-t-md">
+						<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="FOCARES">En réserve</div>
+					</div>
+					<div class="sheet-col-1-5">
+						<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">{{DRFoca}}</div>
+					</div>
+					<div class="sheet-row">
+						<div class="sheet-img-spacer-sm"></div>
+					</div>
+				{{/DRFoca}}
+			</div>
 			<!-- RESULT NUMBER TEMPLATE -->
 			<div class="sheet-row">
 				{{#test}}
@@ -7460,7 +7471,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+12</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+12" name="attr_FocaDR">+12</div>
 						</div>
 					{{/rollBetween() test 01 09}}
 					{{#rollBetween() test 10 19}}
@@ -7468,7 +7479,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+11</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+11" name="attr_FocaDR">+11</div>
 						</div>
 					{{/rollBetween() test 10 19}}
 					{{#rollBetween() test 20 29}}
@@ -7476,7 +7487,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+10</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+10" name="attr_FocaDR">+10</div>
 						</div>
 					{{/rollBetween() test 20 29}}
 					{{#rollBetween() test 30 39}}
@@ -7484,7 +7495,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+9</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+9" name="attr_FocaDR">+9</div>
 						</div>
 					{{/rollBetween() test 30 39}}
 					{{#rollBetween() test 40 49}}
@@ -7492,7 +7503,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+8</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+8" name="attr_FocaDR">+8</div>
 						</div>
 					{{/rollBetween() test 40 49}}
 					{{#rollBetween() test 50 59}}
@@ -7500,7 +7511,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+7</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+7" name="attr_FocaDR">+7</div>
 						</div>
 					{{/rollBetween() test 50 59}}
 					{{#rollBetween() test 60 69}}
@@ -7508,7 +7519,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+7</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+7" name="attr_FocaDR">+7</div>
 						</div>
 					{{/rollBetween() test 60 69}}
 					{{#rollBetween() test 70 79}}
@@ -7516,7 +7527,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+6</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+6" name="attr_FocaDR">+6</div>
 						</div>
 					{{/rollBetween() test 70 79}}
 					{{#rollBetween() test 80 89}}
@@ -7524,7 +7535,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+5</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+5" name="attr_FocaDR">+5</div>
 						</div>
 					{{/rollBetween() test 80 89}}
 					{{#rollBetween() test 90 95}}
@@ -7532,7 +7543,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+4</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+4" name="attr_FocaDR">+4</div>
 						</div>
 					{{/rollBetween() test 90 95}}
 					{{#rollBetween() test 96 100}}
@@ -7540,7 +7551,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-1" name="attr_FocaDR">-1</div>
 						</div>
 					{{/rollBetween() test 96 100}}
 				{{/rollBetween() target 120 129}}
@@ -7550,7 +7561,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+11</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+11" name="attr_FocaDR">+11</div>
 						</div>
 					{{/rollBetween() test 01 09}}
 					{{#rollBetween() test 10 19}}
@@ -7558,7 +7569,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+10</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+10" name="attr_FocaDR">+10</div>
 						</div>
 					{{/rollBetween() test 10 19}}
 					{{#rollBetween() test 20 29}}
@@ -7566,7 +7577,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+9</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+9" name="attr_FocaDR">+9</div>
 						</div>
 					{{/rollBetween() test 20 29}}
 					{{#rollBetween() test 30 39}}
@@ -7574,7 +7585,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+8</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+8" name="attr_FocaDR">+8</div>
 						</div>
 					{{/rollBetween() test 30 39}}
 					{{#rollBetween() test 40 49}}
@@ -7582,7 +7593,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+7</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+7" name="attr_FocaDR">+7</div>
 						</div>
 					{{/rollBetween() test 40 49}}
 					{{#rollBetween() test 50 59}}
@@ -7590,7 +7601,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+6</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+6" name="attr_FocaDR">+6</div>
 						</div>
 					{{/rollBetween() test 50 59}}
 					{{#rollBetween() test 60 69}}
@@ -7598,7 +7609,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+5</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+5" name="attr_FocaDR">+5</div>
 						</div>
 					{{/rollBetween() test 60 69}}
 					{{#rollBetween() test 70 79}}
@@ -7606,7 +7617,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+4</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+4" name="attr_FocaDR">+4</div>
 						</div>
 					{{/rollBetween() test 70 79}}
 					{{#rollBetween() test 80 89}}
@@ -7614,7 +7625,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+3</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+3" name="attr_FocaDR">+3</div>
 						</div>
 					{{/rollBetween() test 80 89}}
 					{{#rollBetween() test 90 95}}
@@ -7622,7 +7633,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+2</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+2" name="attr_FocaDR">+2</div>
 						</div>
 					{{/rollBetween() test 90 95}}
 					{{#rollBetween() test 96 100}}
@@ -7630,7 +7641,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-1" name="attr_FocaDR">-1</div>
 						</div>
 					{{/rollBetween() test 96 100}}
 				{{/rollBetween() target 110 119}}
@@ -7640,7 +7651,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+10</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+10" name="attr_FocaDR">+10</div>
 						</div>
 					{{/rollBetween() test 01 09}}
 					{{#rollBetween() test 10 19}}
@@ -7648,7 +7659,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+9</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+9" name="attr_FocaDR">+9</div>
 						</div>
 					{{/rollBetween() test 10 19}}
 					{{#rollBetween() test 20 29}}
@@ -7656,7 +7667,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+8</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+8" name="attr_FocaDR">+8</div>
 						</div>
 					{{/rollBetween() test 20 29}}
 					{{#rollBetween() test 30 39}}
@@ -7664,7 +7675,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+7</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+7" name="attr_FocaDR">+7</div>
 						</div>
 					{{/rollBetween() test 30 39}}
 					{{#rollBetween() test 40 49}}
@@ -7672,7 +7683,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+6</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+6" name="attr_FocaDR">+6</div>
 						</div>
 					{{/rollBetween() test 40 49}}
 					{{#rollBetween() test 50 59}}
@@ -7680,7 +7691,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+5</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+5" name="attr_FocaDR">+5</div>
 						</div>
 					{{/rollBetween() test 50 59}}
 					{{#rollBetween() test 60 69}}
@@ -7688,7 +7699,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+4</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+4" name="attr_FocaDR">+4</div>
 						</div>
 					{{/rollBetween() test 60 69}}
 					{{#rollBetween() test 70 79}}
@@ -7696,7 +7707,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+3</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+3" name="attr_FocaDR">+3</div>
 						</div>
 					{{/rollBetween() test 70 79}}
 					{{#rollBetween() test 80 89}}
@@ -7704,7 +7715,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+2</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+2" name="attr_FocaDR">+2</div>
 						</div>
 					{{/rollBetween() test 80 89}}
 					{{#rollBetween() test 90 95}}
@@ -7712,7 +7723,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+1" name="attr_FocaDR">+1</div>
 						</div>
 					{{/rollBetween() test 90 95}}
 					{{#rollBetween() test 96 100}}
@@ -7720,7 +7731,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-1" name="attr_FocaDR">-1</div>
 						</div>
 					{{/rollBetween() test 96 100}}
 				{{/rollBetween() target 100 109}}
@@ -7730,7 +7741,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+9</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+9" name="attr_FocaDR">+9</div>
 						</div>
 					{{/rollBetween() test 01 09}}
 					{{#rollBetween() test 10 19}}
@@ -7738,7 +7749,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+8</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+8" name="attr_FocaDR">+8</div>
 						</div>
 					{{/rollBetween() test 10 19}}
 					{{#rollBetween() test 20 29}}
@@ -7746,7 +7757,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+7</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+7" name="attr_FocaDR">+7</div>
 						</div>
 					{{/rollBetween() test 20 29}}
 					{{#rollBetween() test 30 39}}
@@ -7754,7 +7765,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+6</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+6" name="attr_FocaDR">+6</div>
 						</div>
 					{{/rollBetween() test 30 39}}
 					{{#rollBetween() test 40 49}}
@@ -7762,7 +7773,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+5</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+5" name="attr_FocaDR">+5</div>
 						</div>
 					{{/rollBetween() test 40 49}}
 					{{#rollBetween() test 50 59}}
@@ -7770,7 +7781,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+4</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+4" name="attr_FocaDR">+4</div>
 						</div>
 					{{/rollBetween() test 50 59}}
 					{{#rollBetween() test 60 69}}
@@ -7778,7 +7789,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+3</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+3" name="attr_FocaDR">+3</div>
 						</div>
 					{{/rollBetween() test 60 69}}
 					{{#rollBetween() test 70 79}}
@@ -7786,7 +7797,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+2</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+2" name="attr_FocaDR">+2</div>
 						</div>
 					{{/rollBetween() test 70 79}}
 					{{#rollBetween() test 80 89}}
@@ -7794,7 +7805,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+1" name="attr_FocaDR">+1</div>
 						</div>
 					{{/rollBetween() test 80 89}}
 					{{#rollBetween() test 90 95}}
@@ -7802,7 +7813,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">0</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="0" name="attr_FocaDR">0</div>
 						</div>
 					{{/rollBetween() test 90 95}}
 					{{#rollBetween() test 96 100}}
@@ -7810,7 +7821,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-1" name="attr_FocaDR">-1</div>
 						</div>
 					{{/rollBetween() test 96 100}}
 				{{/rollBetween() target 90 99}}
@@ -7820,7 +7831,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+8</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+8" name="attr_FocaDR">+8</div>
 						</div>
 					{{/rollBetween() test 01 09}}
 					{{#rollBetween() test 10 19}}
@@ -7828,7 +7839,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+7</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+7" name="attr_FocaDR">+7</div>
 						</div>
 					{{/rollBetween() test 10 19}}
 					{{#rollBetween() test 20 29}}
@@ -7836,7 +7847,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+6</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+6" name="attr_FocaDR">+6</div>
 						</div>
 					{{/rollBetween() test 20 29}}
 					{{#rollBetween() test 30 39}}
@@ -7844,7 +7855,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+5</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+5" name="attr_FocaDR">+5</div>
 						</div>
 					{{/rollBetween() test 30 39}}
 					{{#rollBetween() test 40 49}}
@@ -7852,7 +7863,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+4</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+4" name="attr_FocaDR">+4</div>
 						</div>
 					{{/rollBetween() test 40 49}}
 					{{#rollBetween() test 50 59}}
@@ -7860,7 +7871,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+3</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+3" name="attr_FocaDR">+3</div>
 						</div>
 					{{/rollBetween() test 50 59}}
 					{{#rollBetween() test 60 69}}
@@ -7868,7 +7879,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+2</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+2" name="attr_FocaDR">+2</div>
 						</div>
 					{{/rollBetween() test 60 69}}
 					{{#rollBetween() test 70 79}}
@@ -7876,7 +7887,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+1" name="attr_FocaDR">+1</div>
 						</div>
 					{{/rollBetween() test 70 79}}
 					{{#rollBetween() test 80 89}}
@@ -7884,7 +7895,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">0</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="0" name="attr_FocaDR">0</div>
 						</div>
 					{{/rollBetween() test 80 89}}
 					{{#rollBetween() test 90 99}}
@@ -7892,7 +7903,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-1" name="attr_FocaDR">-1</div>
 						</div>
 					{{/rollBetween() test 90 99}}
 					{{#rollTotal() test 100}}
@@ -7900,7 +7911,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-2</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-2" name="attr_FocaDR">-2</div>
 						</div>
 					{{/rollTotal() test 100}}
 				{{/rollBetween() target 80 89}}
@@ -7910,7 +7921,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+7</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+7" name="attr_FocaDR">+7</div>
 						</div>
 					{{/rollBetween() test 01 09}}
 					{{#rollBetween() test 10 19}}
@@ -7918,7 +7929,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+6</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+6" name="attr_FocaDR">+6</div>
 						</div>
 					{{/rollBetween() test 10 19}}
 					{{#rollBetween() test 20 29}}
@@ -7926,7 +7937,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+5</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+5" name="attr_FocaDR">+5</div>
 						</div>
 					{{/rollBetween() test 20 29}}
 					{{#rollBetween() test 30 39}}
@@ -7934,7 +7945,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+4</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+4" name="attr_FocaDR">+4</div>
 						</div>
 					{{/rollBetween() test 30 39}}
 					{{#rollBetween() test 40 49}}
@@ -7942,7 +7953,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+3</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+3" name="attr_FocaDR">+3</div>
 						</div>
 					{{/rollBetween() test 40 49}}
 					{{#rollBetween() test 50 59}}
@@ -7950,7 +7961,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+2</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+2" name="attr_FocaDR">+2</div>
 						</div>
 					{{/rollBetween() test 50 59}}
 					{{#rollBetween() test 60 69}}
@@ -7958,7 +7969,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+1" name="attr_FocaDR">+1</div>
 						</div>
 					{{/rollBetween() test 60 69}}
 					{{#rollBetween() test 70 79}}
@@ -7966,7 +7977,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">0</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="0" name="attr_FocaDR">0</div>
 						</div>
 					{{/rollBetween() test 70 79}}
 					{{#rollBetween() test 80 89}}
@@ -7974,7 +7985,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-1" name="attr_FocaDR">-1</div>
 						</div>
 					{{/rollBetween() test 80 89}}
 					{{#rollBetween() test 90 99}}
@@ -7982,7 +7993,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-2</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-2" name="attr_FocaDR">-2</div>
 						</div>
 					{{/rollBetween() test 90 99}}
 					{{#rollTotal() test 100}}
@@ -7990,7 +8001,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-3</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-3" name="attr_FocaDR">-3</div>
 						</div>
 					{{/rollTotal() test 100}}
 				{{/rollBetween() target 70 79}}
@@ -8000,7 +8011,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+6</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+6" name="attr_FocaDR">+6</div>
 						</div>
 					{{/rollBetween() test 01 09}}
 					{{#rollBetween() test 10 19}}
@@ -8008,7 +8019,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+5</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+5" name="attr_FocaDR">+5</div>
 						</div>
 					{{/rollBetween() test 10 19}}
 					{{#rollBetween() test 20 29}}
@@ -8016,7 +8027,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+4</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+4" name="attr_FocaDR">+4</div>
 						</div>
 					{{/rollBetween() test 20 29}}
 					{{#rollBetween() test 30 39}}
@@ -8024,7 +8035,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+3</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+3" name="attr_FocaDR">+3</div>
 						</div>
 					{{/rollBetween() test 30 39}}
 					{{#rollBetween() test 40 49}}
@@ -8032,7 +8043,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+2</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+2" name="attr_FocaDR">+2</div>
 						</div>
 					{{/rollBetween() test 40 49}}
 					{{#rollBetween() test 50 59}}
@@ -8040,7 +8051,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+1" name="attr_FocaDR">+1</div>
 						</div>
 					{{/rollBetween() test 50 59}}
 					{{#rollBetween() test 60 69}}
@@ -8048,7 +8059,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">0</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="0" name="attr_FocaDR">0</div>
 						</div>
 					{{/rollBetween() test 60 69}}
 					{{#rollBetween() test 70 79}}
@@ -8056,7 +8067,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-1" name="attr_FocaDR">-1</div>
 						</div>
 					{{/rollBetween() test 70 79}}
 					{{#rollBetween() test 80 89}}
@@ -8064,7 +8075,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-2</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-2" name="attr_FocaDR">-2</div>
 						</div>
 					{{/rollBetween() test 80 89}}
 					{{#rollBetween() test 90 99}}
@@ -8072,7 +8083,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-3</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-3" name="attr_FocaDR">-3</div>
 						</div>
 					{{/rollBetween() test 90 99}}
 					{{#rollTotal() test 100}}
@@ -8080,7 +8091,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-4</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-4" name="attr_FocaDR">-4</div>
 						</div>
 					{{/rollTotal() test 100}}
 				{{/rollBetween() target 60 69}}
@@ -8090,7 +8101,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+5</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+5" name="attr_FocaDR">+5</div>
 						</div>
 					{{/rollBetween() test 01 09}}
 					{{#rollBetween() test 10 19}}
@@ -8098,7 +8109,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+4</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+4" name="attr_FocaDR">+4</div>
 						</div>
 					{{/rollBetween() test 10 19}}
 					{{#rollBetween() test 20 29}}
@@ -8106,7 +8117,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+3</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+3" name="attr_FocaDR">+3</div>
 						</div>
 					{{/rollBetween() test 20 29}}
 					{{#rollBetween() test 30 39}}
@@ -8115,7 +8126,7 @@ on('sheet:opened change:totalwounds', function (event) {
 						</div>
 						<div class="sheet-col-1-5">
 
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+2</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+2" name="attr_FocaDR">+2</div>
 						</div>
 					{{/rollBetween() test 30 39}}
 					{{#rollBetween() test 40 49}}
@@ -8123,7 +8134,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+1" name="attr_FocaDR">+1</div>
 						</div>
 					{{/rollBetween() test 40 49}}
 					{{#rollBetween() test 50 59}}
@@ -8131,7 +8142,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">0</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="0" name="attr_FocaDR">0</div>
 						</div>
 					{{/rollBetween() test 50 59}}
 					{{#rollBetween() test 60 69}}
@@ -8139,7 +8150,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-1" name="attr_FocaDR">-1</div>
 						</div>
 					{{/rollBetween() test 60 69}}
 					{{#rollBetween() test 70 79}}
@@ -8147,7 +8158,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-2</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-2" name="attr_FocaDR">-2</div>
 						</div>
 					{{/rollBetween() test 70 79}}
 					{{#rollBetween() test 80 89}}
@@ -8155,7 +8166,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-3</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-3" name="attr_FocaDR">-3</div>
 						</div>
 					{{/rollBetween() test 80 89}}
 					{{#rollBetween() test 90 99}}
@@ -8163,7 +8174,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-4</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-4" name="attr_FocaDR">-4</div>
 						</div>
 					{{/rollBetween() test 90 99}}
 					{{#rollTotal() test 100}}
@@ -8171,7 +8182,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-5</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-5" name="attr_FocaDR">-5</div>
 						</div>
 					{{/rollTotal() test 100}}
 				{{/rollBetween() target 50 59}}
@@ -8181,7 +8192,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+4</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+4" name="attr_FocaDR">+4</div>
 						</div>
 					{{/rollBetween() test 01 09}}
 					{{#rollBetween() test 10 19}}
@@ -8189,7 +8200,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+3</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+3" name="attr_FocaDR">+3</div>
 						</div>
 					{{/rollBetween() test 10 19}}
 					{{#rollBetween() test 20 29}}
@@ -8197,7 +8208,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+2</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+2" name="attr_FocaDR">+2</div>
 						</div>
 					{{/rollBetween() test 20 29}}
 					{{#rollBetween() test 30 39}}
@@ -8205,7 +8216,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+1" name="attr_FocaDR">+1</div>
 						</div>
 					{{/rollBetween() test 30 39}}
 					{{#rollBetween() test 40 49}}
@@ -8213,7 +8224,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">0</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="0" name="attr_FocaDR">0</div>
 						</div>
 					{{/rollBetween() test 40 49}}
 					{{#rollBetween() test 50 59}}
@@ -8221,7 +8232,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-1" name="attr_FocaDR">-1</div>
 						</div>
 					{{/rollBetween() test 50 59}}
 					{{#rollBetween() test 60 69}}
@@ -8229,7 +8240,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-2</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-2" name="attr_FocaDR">-2</div>
 						</div>
 					{{/rollBetween() test 60 69}}
 					{{#rollBetween() test 70 79}}
@@ -8237,7 +8248,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-3</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-3" name="attr_FocaDR">-3</div>
 						</div>
 					{{/rollBetween() test 70 79}}
 					{{#rollBetween() test 80 89}}
@@ -8245,7 +8256,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-4</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-4" name="attr_FocaDR">-4</div>
 						</div>
 					{{/rollBetween() test 80 89}}
 					{{#rollBetween() test 90 99}}
@@ -8253,7 +8264,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-5</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-5" name="attr_FocaDR">-5</div>
 						</div>
 					{{/rollBetween() test 90 99}}
 					{{#rollTotal() test 100}}
@@ -8261,7 +8272,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-6</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-6" name="attr_FocaDR">-6</div>
 						</div>
 					{{/rollTotal() test 100}}
 				{{/rollBetween() target 40 49}}
@@ -8271,7 +8282,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+3</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+3" name="attr_FocaDR">+3</div>
 						</div>
 					{{/rollBetween() test 01 09}}
 					{{#rollBetween() test 10 19}}
@@ -8279,7 +8290,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+2</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+2" name="attr_FocaDR">+2</div>
 						</div>
 					{{/rollBetween() test 10 19}}
 					{{#rollBetween() test 20 29}}
@@ -8287,7 +8298,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+1" name="attr_FocaDR">+1</div>
 						</div>
 					{{/rollBetween() test 20 29}}
 					{{#rollBetween() test 30 39}}
@@ -8295,7 +8306,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">0</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="0" name="attr_FocaDR">0</div>
 						</div>
 					{{/rollBetween() test 30 39}}
 					{{#rollBetween() test 40 49}}
@@ -8303,7 +8314,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-1" name="attr_FocaDR">-1</div>
 						</div>
 					{{/rollBetween() test 40 49}}
 					{{#rollBetween() test 50 59}}
@@ -8311,7 +8322,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-2</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-2" name="attr_FocaDR">-2</div>
 						</div>
 					{{/rollBetween() test 50 59}}
 					{{#rollBetween() test 60 69}}
@@ -8319,7 +8330,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-3</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-3" name="attr_FocaDR">-3</div>
 						</div>
 					{{/rollBetween() test 60 69}}
 					{{#rollBetween() test 70 79}}
@@ -8327,7 +8338,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-4</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-4" name="attr_FocaDR">-4</div>
 						</div>
 					{{/rollBetween() test 70 79}}
 					{{#rollBetween() test 80 89}}
@@ -8335,7 +8346,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-5</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-5" name="attr_FocaDR">-5</div>
 						</div>
 					{{/rollBetween() test 80 89}}
 					{{#rollBetween() test 90 99}}
@@ -8343,7 +8354,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-6</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-6" name="attr_FocaDR">-6</div>
 						</div>
 					{{/rollBetween() test 90 99}}
 					{{#rollTotal() test 100}}
@@ -8351,7 +8362,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-7</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-7" name="attr_FocaDR">-7</div>
 						</div>
 					{{/rollTotal() test 100}}
 				{{/rollBetween() target 30 39}}
@@ -8361,7 +8372,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+2</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+2" name="attr_FocaDR">+2</div>
 						</div>
 					{{/rollBetween() test 01 09}}
 					{{#rollBetween() test 10 19}}
@@ -8369,7 +8380,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 					<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+1" name="attr_FocaDR">+1</div>
 						</div>
 					{{/rollBetween() test 10 19}}
 					{{#rollBetween() test 20 29}}
@@ -8377,7 +8388,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">0</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="0" name="attr_FocaDR">0</div>
 						</div>
 					{{/rollBetween() test 20 29}}
 					{{#rollBetween() test 30 39}}
@@ -8385,7 +8396,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-1" name="attr_FocaDR">-1</div>
 						</div>
 					{{/rollBetween() test 30 39}}
 					{{#rollBetween() test 40 49}}
@@ -8393,7 +8404,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-2</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-2" name="attr_FocaDR">-2</div>
 						</div>
 					{{/rollBetween() test 40 49}}
 					{{#rollBetween() test 50 59}}
@@ -8401,7 +8412,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-3</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-3" name="attr_FocaDR">-3</div>
 						</div>
 					{{/rollBetween() test 50 59}}
 					{{#rollBetween() test 60 69}}
@@ -8409,7 +8420,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-4</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-4" name="attr_FocaDR">-4</div>
 						</div>
 					{{/rollBetween() test 60 69}}
 					{{#rollBetween() test 70 79}}
@@ -8417,7 +8428,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-5</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-5" name="attr_FocaDR">-5</div>
 						</div>
 					{{/rollBetween() test 70 79}}
 					{{#rollBetween() test 80 89}}
@@ -8425,7 +8436,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-6</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-6" name="attr_FocaDR">-6</div>
 						</div>
 					{{/rollBetween() test 80 89}}
 					{{#rollBetween() test 90 99}}
@@ -8433,7 +8444,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-7</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-7" name="attr_FocaDR">-7</div>
 						</div>
 					{{/rollBetween() test 90 99}}
 					{{#rollTotal() test 100}}
@@ -8441,7 +8452,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-8</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-8" name="attr_FocaDR">-8</div>
 						</div>
 					{{/rollTotal() test 100}}
 				{{/rollBetween() target 20 29}}
@@ -8451,7 +8462,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+1" name="attr_FocaDR">+1</div>
 						</div>
 					{{/rollBetween() test 01 09}}
 					{{#rollBetween() test 10 19}}
@@ -8459,7 +8470,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">0</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="0" name="attr_FocaDR">0</div>
 						</div>
 					{{/rollBetween() test 10 19}}
 					{{#rollBetween() test 20 29}}
@@ -8467,7 +8478,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-1" name="attr_FocaDR">-1</div>
 						</div>
 					{{/rollBetween() test 20 29}}
 					{{#rollBetween() test 30 39}}
@@ -8475,7 +8486,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-2</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-2" name="attr_FocaDR">-2</div>
 						</div>
 					{{/rollBetween() test 30 39}}
 					{{#rollBetween() test 40 49}}
@@ -8483,7 +8494,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-3</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-3" name="attr_FocaDR">-3</div>
 						</div>
 					{{/rollBetween() test 40 49}}
 					{{#rollBetween() test 50 59}}
@@ -8491,7 +8502,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-4</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-4" name="attr_FocaDR">-4</div>
 						</div>
 					{{/rollBetween() test 50 59}}
 					{{#rollBetween() test 60 69}}
@@ -8499,7 +8510,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-5</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-5" name="attr_FocaDR">-5</div>
 						</div>
 					{{/rollBetween() test 60 69}}
 					{{#rollBetween() test 70 79}}
@@ -8507,7 +8518,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-6</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-6" name="attr_FocaDR">-6</div>
 						</div>
 					{{/rollBetween() test 70 79}}
 					{{#rollBetween() test 80 89}}
@@ -8515,7 +8526,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-7</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-7" name="attr_FocaDR">-7</div>
 						</div>
 					{{/rollBetween() test 80 89}}
 					{{#rollBetween() test 90 99}}
@@ -8523,7 +8534,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-8</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-8" name="attr_FocaDR">-8</div>
 						</div>
 					{{/rollBetween() test 90 99}}
 					{{#rollTotal() test 100}}
@@ -8531,7 +8542,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-9</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-9" name="attr_FocaDR">-9</div>
 						</div>
 					{{/rollTotal() test 100}}
 				{{/rollBetween() target 10 19}}
@@ -8541,7 +8552,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+1" name="attr_FocaDR">+1</div>
 						</div>
 					{{/rollBetween() test 01 05}}
 					{{#rollBetween() test 06 09}}
@@ -8549,7 +8560,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">0</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="0" name="attr_FocaDR">0</div>
 						</div>
 					{{/rollBetween() test 06 09}}
 					{{#rollBetween() test 10 19}}
@@ -8557,7 +8568,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-1" name="attr_FocaDR">-1</div>
 						</div>
 					{{/rollBetween() test 10 19}}
 					{{#rollBetween() test 20 29}}
@@ -8565,7 +8576,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-2</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-2" name="attr_FocaDR">-2</div>
 						</div>
 					{{/rollBetween() test 20 29}}
 					{{#rollBetween() test 30 39}}
@@ -8573,7 +8584,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-3</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-3" name="attr_FocaDR">-3</div>
 						</div>
 					{{/rollBetween() test 30 39}}
 					{{#rollBetween() test 40 49}}
@@ -8581,7 +8592,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-4</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-4" name="attr_FocaDR">-4</div>
 						</div>
 					{{/rollBetween() test 40 49}}
 					{{#rollBetween() test 50 59}}
@@ -8589,7 +8600,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-5</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-5" name="attr_FocaDR">-5</div>
 						</div>
 					{{/rollBetween() test 50 59}}
 					{{#rollBetween() test 60 69}}
@@ -8597,7 +8608,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-6</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-6" name="attr_FocaDR">-6</div>
 						</div>
 					{{/rollBetween() test 60 69}}
 					{{#rollBetween() test 70 79}}
@@ -8605,7 +8616,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-7</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-7" name="attr_FocaDR">-7</div>
 						</div>
 					{{/rollBetween() test 70 79}}
 					{{#rollBetween() test 80 89}}
@@ -8613,7 +8624,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-8</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-8" name="attr_FocaDR">-8</div>
 						</div>
 					{{/rollBetween() test 80 89}}
 					{{#rollBetween() test 90 99}}
@@ -8621,7 +8632,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-9</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-9" name="attr_FocaDR">-9</div>
 						</div>
 					{{/rollBetween() test 90 99}}
 					{{#rollTotal() test 100}}
@@ -8629,7 +8640,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-10</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-10" name="attr_FocaDR">-10</div>
 						</div>
 					{{/rollTotal() test 100}}
 				{{/rollBetween() target 01 09}}
@@ -8639,7 +8650,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+1" name="attr_FocaDR">+1</div>
 						</div>
 					{{/rollBetween() test 01 05}}
 					{{#rollBetween() test 06 09}}
@@ -8647,7 +8658,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">0</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="0" name="attr_FocaDR">0</div>
 						</div>
 					{{/rollBetween() test 06 09}}
 					{{#rollBetween() test 10 19}}
@@ -8655,7 +8666,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-1" name="attr_FocaDR">-1</div>
 						</div>
 					{{/rollBetween() test 10 19}}
 					{{#rollBetween() test 20 29}}
@@ -8663,7 +8674,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-2</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-2" name="attr_FocaDR">-2</div>
 						</div>
 					{{/rollBetween() test 20 29}}
 					{{#rollBetween() test 30 39}}
@@ -8671,7 +8682,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-3</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-3" name="attr_FocaDR">-3</div>
 						</div>
 					{{/rollBetween() test 30 39}}
 					{{#rollBetween() test 40 49}}
@@ -8679,7 +8690,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-4</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-4" name="attr_FocaDR">-4</div>
 						</div>
 					{{/rollBetween() test 40 49}}
 					{{#rollBetween() test 50 59}}
@@ -8687,7 +8698,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-5</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-5" name="attr_FocaDR">-5</div>
 						</div>
 					{{/rollBetween() test 50 59}}
 					{{#rollBetween() test 60 69}}
@@ -8695,7 +8706,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-6</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-6" name="attr_FocaDR">-6</div>
 						</div>
 					{{/rollBetween() test 60 69}}
 					{{#rollBetween() test 70 79}}
@@ -8703,7 +8714,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-7</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-7" name="attr_FocaDR">-7</div>
 						</div>
 					{{/rollBetween() test 70 79}}
 					{{#rollBetween() test 80 89}}
@@ -8711,7 +8722,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-8</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-8" name="attr_FocaDR">-8</div>
 						</div>
 					{{/rollBetween() test 80 89}}
 					{{#rollBetween() test 90 99}}
@@ -8719,7 +8730,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-9</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-9" name="attr_FocaDR">-9</div>
 						</div>
 					{{/rollBetween() test 90 99}}
 					{{#rollTotal() test 100}}
@@ -8727,7 +8738,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-10</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-10" name="attr_FocaDR">-10</div>
 						</div>
 					{{/rollTotal() test 100}}
 				{{/rollBetween() target -09 00}}
@@ -8737,7 +8748,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+1" name="attr_FocaDR">+1</div>
 						</div>
 					{{/rollBetween() test 01 05}}
 					{{#rollBetween() test 06 09}}
@@ -8745,7 +8756,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-1" name="attr_FocaDR">-1</div>
 						</div>
 					{{/rollBetween() test 06 09}}
 					{{#rollBetween() test 10 19}}
@@ -8753,7 +8764,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 					<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-2</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-2" name="attr_FocaDR">-2</div>
 						</div>
 					{{/rollBetween() test 10 19}}
 					{{#rollBetween() test 20 29}}
@@ -8761,7 +8772,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-3</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-3" name="attr_FocaDR">-3</div>
 						</div>
 					{{/rollBetween() test 20 29}}
 					{{#rollBetween() test 30 39}}
@@ -8769,7 +8780,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-4</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-4" name="attr_FocaDR">-4</div>
 						</div>
 					{{/rollBetween() test 30 39}}
 					{{#rollBetween() test 40 49}}
@@ -8777,7 +8788,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-5</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-5" name="attr_FocaDR">-5</div>
 						</div>
 					{{/rollBetween() test 40 49}}
 					{{#rollBetween() test 50 59}}
@@ -8785,7 +8796,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-6</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-6" name="attr_FocaDR">-6</div>
 						</div>
 					{{/rollBetween() test 50 59}}
 					{{#rollBetween() test 60 69}}
@@ -8793,7 +8804,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-7</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-7" name="attr_FocaDR">-7</div>
 						</div>
 					{{/rollBetween() test 60 69}}
 					{{#rollBetween() test 70 79}}
@@ -8801,7 +8812,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-8</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-8" name="attr_FocaDR">-8</div>
 						</div>
 					{{/rollBetween() test 70 79}}
 					{{#rollBetween() test 80 89}}
@@ -8809,7 +8820,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-9</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-9" name="attr_FocaDR">-9</div>
 						</div>
 					{{/rollBetween() test 80 89}}
 					{{#rollBetween() test 90 99}}
@@ -8817,7 +8828,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-10</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-10" name="attr_FocaDR">-10</div>
 						</div>
 					{{/rollBetween() test 90 99}}
 					{{#rollTotal() test 100}}
@@ -8825,7 +8836,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-11</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-11" name="attr_FocaDR">-11</div>
 						</div>
 					{{/rollTotal() test 100}}
 				{{/rollBetween() target -19 -10}}
@@ -8835,7 +8846,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+1" name="attr_FocaDR">+1</div>
 						</div>
 					{{/rollBetween() test 01 05}}
 					{{#rollBetween() test 06 09}}
@@ -8843,7 +8854,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-2</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-2" name="attr_FocaDR">-2</div>
 						</div>
 					{{/rollBetween() test 06 09}}
 					{{#rollBetween() test 10 19}}
@@ -8851,7 +8862,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-3</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-3" name="attr_FocaDR">-3</div>
 						</div>
 					{{/rollBetween() test 10 19}}
 					{{#rollBetween() test 20 29}}
@@ -8859,7 +8870,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-4</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-4" name="attr_FocaDR">-4</div>
 						</div>
 					{{/rollBetween() test 20 29}}
 					{{#rollBetween() test 30 39}}
@@ -8867,7 +8878,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-5</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-5" name="attr_FocaDR">-5</div>
 						</div>
 					{{/rollBetween() test 30 39}}
 					{{#rollBetween() test 40 49}}
@@ -8875,7 +8886,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-6</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-6" name="attr_FocaDR">-6</div>
 						</div>
 					{{/rollBetween() test 40 49}}
 					{{#rollBetween() test 50 59}}
@@ -8883,7 +8894,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-7</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-7" name="attr_FocaDR">-7</div>
 						</div>
 					{{/rollBetween() test 50 59}}
 					{{#rollBetween() test 60 69}}
@@ -8891,7 +8902,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-8</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-8" name="attr_FocaDR">-8</div>
 						</div>
 					{{/rollBetween() test 60 69}}
 					{{#rollBetween() test 70 79}}
@@ -8899,7 +8910,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-9</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-9" name="attr_FocaDR">-9</div>
 						</div>
 					{{/rollBetween() test 70 79}}
 					{{#rollBetween() test 80 89}}
@@ -8907,7 +8918,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-10</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-10" name="attr_FocaDR">-10</div>
 						</div>
 					{{/rollBetween() test 80 89}}
 					{{#rollBetween() test 90 99}}
@@ -8915,7 +8926,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-11</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-11" name="attr_FocaDR">-11</div>
 						</div>
 					{{/rollBetween() test 90 99}}
 					{{#rollTotal() test 100}}
@@ -8923,7 +8934,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-12</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-12" name="attr_FocaDR">-12</div>
 						</div>
 					{{/rollTotal() test 100}}
 				{{/rollBetween() target -29 -20}}
@@ -8933,7 +8944,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="WIN">Réussite</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">+1</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="+1" name="attr_FocaDR">+1</div>
 						</div>
 					{{/rollBetween() test 01 05}}
 					{{#rollBetween() test 06 09}}
@@ -8941,7 +8952,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-3</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-3" name="attr_FocaDR">-3</div>
 						</div>
 					{{/rollBetween() test 06 09}}
 					{{#rollBetween() test 10 19}}
@@ -8949,7 +8960,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-4</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-4" name="attr_FocaDR">-4</div>
 						</div>
 					{{/rollBetween() test 10 19}}
 					{{#rollBetween() test 20 29}}
@@ -8957,7 +8968,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-5</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-5" name="attr_FocaDR">-5</div>
 						</div>
 					{{/rollBetween() test 20 29}}
 					{{#rollBetween() test 30 39}}
@@ -8965,7 +8976,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-6</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-6" name="attr_FocaDR">-6</div>
 						</div>
 					{{/rollBetween() test 30 39}}
 					{{#rollBetween() test 40 49}}
@@ -8973,7 +8984,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-7</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-7" name="attr_FocaDR">-7</div>
 						</div>
 					{{/rollBetween() test 40 49}}
 					{{#rollBetween() test 50 59}}
@@ -8981,7 +8992,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-8</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-8" name="attr_FocaDR">-8</div>
 						</div>
 					{{/rollBetween() test 50 59}}
 					{{#rollBetween() test 60 69}}
@@ -8989,7 +9000,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-9</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-9" name="attr_FocaDR">-9</div>
 						</div>
 					{{/rollBetween() test 60 69}}
 					{{#rollBetween() test 70 79}}
@@ -8997,7 +9008,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-10</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-10" name="attr_FocaDR">-10</div>
 						</div>
 					{{/rollBetween() test 70 79}}
 					{{#rollBetween() test 80 89}}
@@ -9005,7 +9016,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-11</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-11" name="attr_FocaDR">-11</div>
 						</div>
 					{{/rollBetween() test 80 89}}
 					{{#rollBetween() test 90 99}}
@@ -9013,7 +9024,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-12</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-12" name="attr_FocaDR">-12</div>
 						</div>
 					{{/rollBetween() test 90 99}}
 					{{#rollTotal() test 100}}
@@ -9021,7 +9032,7 @@ on('sheet:opened change:totalwounds', function (event) {
 							<div class="sheet-col-1 sheet-rt-key sheet-center" data-i18n="LOSE">Echec</div>
 						</div>
 						<div class="sheet-col-1-5">
-							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center">-13</div>
+							<div class="sheet-col-1 sheet-smaller-letter-spacing sheet-rt-value sheet-DR sheet-center" type="number" value="-13" name="attr_FocaDR">-13</div>
 						</div>
 					{{/rollTotal() test 100}}
 				{{/rollBetween() target -39 -30}}
