@@ -46,7 +46,8 @@
     height: 54px;
 }
 
-.charsheet .sheet-section-spellbook .sheet-wrap-box {
+.charsheet .sheet-section-spellbook .sheet-wrap-box,
+.charsheet .sheet-section-bible .sheet-wrap-box {
     padding-top: 25px!important;
     margin-top: 15px!important;
     background: url(https://i.imgur.com/KIHh9D5.png)!important;
@@ -502,7 +503,7 @@ select {
 }
 select.sheet-select-whisper {
 	height: 19px !important;
-	width: 80px!important;
+	width: 48px!important;
 }
 select.sheet-select-no-arrow-center {
     height: 19px !important;
@@ -635,6 +636,7 @@ input.sheet-tab-page-career:checked ~ div.sheet-section-career,
 input.sheet-tab-page-weapons:checked ~ div.sheet-section-weapons,
 input.sheet-tab-page-actions:checked ~ div.sheet-section-actions,
 input.sheet-tab-page-spellbook:checked ~ div.sheet-section-spellbook,
+input.sheet-tab-page-bible:checked ~ div.sheet-section-bible,
 input.sheet-tab-page-armor:checked ~ div.sheet-section-armor,
 input.sheet-tab-page-inventory:checked ~ div.sheet-section-inventory,
 input.sheet-tab-page-settings:checked ~ div.sheet-section-settings {
@@ -659,14 +661,14 @@ span[class*="sheet-tab"] {
 
 input[class*="sheet-tab-page"],
 span[class*="sheet-tab-page"] {
-	width: 82px;
+	width: 81px;
 	height: 18px;
 	vertical-align: top;
 }
 
 span[class*="sheet-tab-page"] {
 	background-color: #666;
-	margin-left: -82px;
+	margin-left: -85px;
 }
 input.sheet-tab-page-career,
 span.sheet-tab-page-career {
@@ -677,10 +679,10 @@ span.sheet-tab-page-career {
 }
 input.sheet-tab-page-armor,
 span.sheet-tab-page-armor {
-	width: 56px;
+	width: 81px;
 }
 span.sheet-tab-page-armor {
-	margin-left: -56px;
+	margin-left: -85px;
 }
 input.sheet-tab-page-actions,
 span.sheet-tab-page-actions {
@@ -779,6 +781,7 @@ span.sheet-tab-class-action {
 	height: 5px;
 }
 .sheet-section-spellbook .sheet-wrap-box,
+.sheet-section-bible .sheet-wrap-box,
 .sheet-section-class .sheet-wrap-box,
 .sheet-section-actions .sheet-wrap-box,
 .sheet-section-weapons .sheet-wrap-box {
@@ -798,6 +801,7 @@ span.sheet-tab-class-action {
 	line-height: 100%;
 }
 .sheet-section-spellbook .sheet-wrap-box textarea,
+.sheet-section-bible .sheet-wrap-box textarea,
 .sheet-section-actions .sheet-wrap-box textarea {
 	font-size: 10px;
 	line-height: 100%;

@@ -124,6 +124,10 @@
 	<span class="sheet-tab-page-spellbook">
 		<span data-i18n="SPELLBOOK">Spellbook</span>
 	</span>
+	<input type="radio" name="attr_tab" class="sheet-tab-page-bible" value="bible"/>
+	<span class="sheet-tab-page-bible">
+		<span data-i18n="BIBLE">Bible</span>
+	</span>
 	<input type="radio" name="attr_tab" class="sheet-tab-page-inventory sheet-pc-version-inline-block" value="inventory"/>
 	<span class="sheet-tab-page-inventory sheet-pc-version-inline-block">
 		<span data-i18n="INVENTORY">Inventory</span>
@@ -132,10 +136,10 @@
 	<span class="sheet-tab-page-settings sheet-pc-version-inline-block">
 		<span class="sheet-pictos sheet-pictos-setting">y</span>
 	</span>
-	<div class="sheet-col-9-100 sheet-pad-l-md">
+	<div class="sheet-col-1-100 sheet-pad-l-md">
 		<select class="sheet-select-whisper" name="attr_Whisper">
-			<option value="" selected="selected" data-i18n="PUBLIC">Public Rolls</option>
-			<option value="/w GM" data-i18n="WHISPER">Whisper Rolls</option>
+			<option value="" selected="selected" data-i18n="PUBLIC">Tous</option>
+			<option value="/w GM" data-i18n="WHISPER">MJ</option>
 		</select>
 	</div>
 	<span class="sheet-spacer">
@@ -2115,6 +2119,7 @@
 					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<input type="checkbox" name="attr_ChannellingTaken" value="1"/>
 					</div>
+				</div>
 				<!-- Incantation Int -->
 				<div class="sheet-row">
 					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
@@ -2152,6 +2157,7 @@
 					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<input type="checkbox" name="attr_CastTaken" value="1"/>
 					</div>
+				</div>
 				<!-- Langues et Langages Int (++) -->
 				<div class="sheet-row sheet-skill-header">
 					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle"><span>&nbsp;</span></div>
@@ -5273,6 +5279,580 @@
 	</div>
 	<!-- SPELLBOOK TAB -->
 	<div class="sheet-section-spellbook">
+		<div class="sheet-row">
+			<div class="sheet-col-1-2 sheet-pad-r-md">
+				<div class="sheet-row">
+					<div class="sheet-row">
+						<div class="sheet-col-1">
+							<h4 class="sheet-center">
+								<span data-i18n="COMBAT">Combat</span>
+							</h4>
+						</div>
+					</div>
+					<span class="sheet-spacer"></span>
+					<div class="sheet-row">
+						<div class="sheet-col-1 sheet-center sheet-pad-b-md">
+							<button type="roll" class="sheet-roll" name="roll_Minor" value="@{Whisper} &{template:WF4e} {{title=^{MINOR-MISCAST}}} {{character_name=@{character_name}}} {{attacktype=^{CRITICAL}}} {{minorroll=[[1d100]]}}">
+								<span data-i18n="MINOR-MISCAST">Minor Miscast</span>
+							</button>
+						</div>
+						<div class="sheet-col-1 sheet-center sheet-pad-b-md">
+							<button type="roll" class="sheet-roll" name="roll_Major" value="@{Whisper} &{template:WF4e} {{title=^{MAJOR-MISCAST}}} {{character_name=@{character_name}}} {{attacktype=^{CRITICAL}}} {{majorroll=[[1d100]]}}">
+								<span data-i18n="MAJOR-MISCAST">Major Miscast</span>
+							</button>
+						</div>
+						<div class="sheet-col-1 sheet-center sheet-pad-b-md">
+							<button type="roll" class="sheet-roll" name="roll_Wrath" value="@{Whisper} &{template:WF4e} {{title=^{WRATH-OF-THE-GODS}}} {{character_name=@{character_name}}} {{attacktype=^{CRITICAL}}} {{wrathroll=[[[[1d100]]+?{Sin|0}]]}}">
+								<span data-i18n="WRATH-OF-THE-GODS">Wrath of the Gods</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sheet-col-1-2 sheet-vert-top">
+				<div class="sheet-row">
+					<div class="sheet-row">
+						<div class="sheet-row">
+				    		<div class="sheet-col-1-2 sheet-pad-r-md">
+				    			<h4 class="sheet-center">
+				    				<span data-i18n="LIFE">Vie</span>
+				    			</h4>
+				    		</div>
+				    		<div class="sheet-col-1-2">
+				    			<h4 class="sheet-center">
+				    				<span data-i18n="PWOUNDS">Blessures</span>
+				    			</h4>
+				    		</div>
+				    	</div>
+						<div class="sheet-row">
+							<div class="sheet-col-1-2 sheet-pad-r-md">
+				    			<div class="sheet-row sheet-sub-header">
+				    				<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="BASE-LIFE">Base</div>
+				    				<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="MOD-LIFE">Divers</div>
+				    				<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="CURRENT-LIFE">Restant</div>
+				    				<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="TOTAL-LIFE">Total</div>
+				    			</div>
+				    			<div class="sheet-row">
+				    				<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+				    					<input class="sheet-center" type="number" name="attr_Wounds" readonly="">
+				    				</div>
+				    				<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+				    					<input class="sheet-center" type="number" name="attr_Modifiers" value="0">
+				    				</div>
+				    				<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+				    					<input class="sheet-center" type="number" name="attr_Life" value="@{Life}" readonly="">
+				    				</div>
+				    				<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+				    					<input class="sheet-center" type="number" name="attr_TotalWounds" value="@{Wounds}+@{Modifiers}" readonly="">
+				    				</div>
+				    			</div>
+				    		</div>
+				    		<div class="sheet-col-1-2">
+				    			<div class="sheet-row sheet-sub-header">
+				    	            <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="BASE-BLESS">Légères</div>
+				    	            <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="CRIT-BLESS">Graves</div>
+				    	            <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="TOTAL-BLESS">Total</div>
+				    			</div>
+								<div class="sheet-row">
+				    				<div class="sheet-col-1-3 sheet-center sheet-pad-r-sm">
+				    					<input class="sheet-center" type="number" name="attr_Damage" value="0">
+				    				</div>
+				    				<div class="sheet-col-1-3 sheet-center sheet-pad-r-sm">
+				    					<input class="sheet-center" type="number" name="attr_Impale" value="0">
+				    				</div>
+				    				<div class="sheet-col-1-3 sheet-center sheet-pad-r-sm">
+				    					<input class="sheet-center" type="number" name="attr_TotalDamage" value="@{Damage}+@{Impale}" readonly="">
+				    				</div>
+						        </div>
+						    </div>
+						</div>
+					</div>
+					<div class="sheet-row">
+						<div class="sheet-col-1-3 sheet-img-grimoire"></div>
+						<div class="sheet-col-2-3">
+		    				<div class="sheet-col-1">
+		    					<h4 class="sheet-center">
+		    						<span data-i18n="FATE-AND-RESOLVE">Destin &amp; Résilience</span>
+		    					</h4>
+		    				</div>
+							<div class="sheet-row sheet-sub-header">
+		    					<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="FATE">Destin</div>
+		    					<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="FORTUNE">Fortune</div>
+		    					<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="RESILIENCE">Résilience</div>
+		    					<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="RESOLVE">Détermination</div>
+		    				</div>
+							<div class="sheet-row">
+		    					<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+		   							<input class="sheet-center" type="number" name="attr_Fate" value="0">
+		   						</div>
+		   						<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+		   							<input class="sheet-center" type="number" name="attr_Fortune" value="0">
+	    						</div>
+	    						<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+		    						<input class="sheet-center" type="number" name="attr_Resilience" value="0">
+		    					</div>
+		   						<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm">
+		   							<input class="sheet-center" type="number" name="attr_Resolve" value="0">
+		   						</div>
+							</div>
+							<div class="sheet-row">
+								<div class="sheet-col-1">
+    								<h4 class="sheet-center">
+    									<span data-i18n="SIN-AND-CORRUPTION">Sin & Corruption</span>
+    								</h4>
+    							</div>
+    							<div class="sheet-row sheet-sub-header">
+    					    		<div class="sheet-col-1-2 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="SIN">Sin</div>
+    					    		<div class="sheet-col-1-2 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="CORRUPTION">Corruption</div>
+    					    	</div>
+								<div class="sheet-row">
+    					    		<div class="sheet-col-1-2 sheet-center sheet-pad-r-sm">
+    					    			<input class="sheet-center" type="number" name="attr_Sin" value="0"/>
+    					    		</div>
+    					    		<div class="sheet-col-1-2 sheet-center sheet-pad-r-sm">
+    					    			<input class="sheet-center" type="number" name="attr_Corruption" value="0"/>
+    					    		</div>
+    					    	</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="sheet-row">
+			<div class="sheet-row">
+				<div class="sheet-img-spacer-apt"></div>
+			</div>
+			<div class="sheet-col-1">
+				<h4 class="sheet-center">
+					<span data-i18n="SPELLBOOK">Spellbook</span>
+					<span class="sheet-pictos-three">g</span>
+				</h4>
+			</div>
+		</div>
+		<span class="sheet-spacer"></span>
+		<!-- SPELL TAB SELECT -->
+		<input type="radio" name="attr_spellpagetab" class="sheet-tab-spell-page sheet-tab-spell0" value="0" title="Petty" checked="checked"/>
+		<span class="sheet-tab-spell-page sheet-tab-spell0">
+			<span data-i18n="PETTY">Petty</span>
+		</span>
+		<input type="radio" name="attr_spellpagetab" class="sheet-tab-spell-page sheet-tab-spell1" value="1"/>
+		<span class="sheet-tab-spell-page sheet-tab-spell1">
+			<span data-i18n="LESSER">Lesser</span>
+		</span>
+		<input type="radio" name="attr_spellpagetab" class="sheet-tab-spell-page sheet-tab-spell2" value="2"/>
+		<span class="sheet-tab-spell-page sheet-tab-spell2">
+			<span data-i18n="ARCANE">Arcane</span>
+		</span>
+		<input type="radio" name="attr_spellpagetab" class="sheet-tab-spell-page sheet-tab-spell3" value="3"/>
+		<span class="sheet-tab-spell-page sheet-tab-spell3">
+			<span data-i18n="DIVINE">Divine</span>
+		</span>
+		<input type="radio" name="attr_spellpagetab" class="sheet-tab-spell-page sheet-tab-spell4" value="4"/>
+		<span class="sheet-tab-spell-page sheet-tab-spell4">
+			<span data-i18n="RUNES">Runes</span>
+		</span>
+		<input type="radio" name="attr_spellpagetab" class="sheet-tab-spell-page sheet-tab-spell5" value="5"/>
+		<span class="sheet-tab-spell-page sheet-tab-spell5">
+			<span data-i18n="RITUALS">Rituals</span>
+		</span>
+		<span class="sheet-spacer"></span>
+		<!-- PETTY SPELLS -->
+		<div class="sheet-spell-page0">
+			<fieldset class="repeating_spellbookpetty">
+				<div class="sheet-wrap-box sheet-mar-b-md">
+					<div class="sheet-row sheet-pad-b-sm">
+						<div class="sheet-col-9-10 sheet-center sheet-vert-middle sheet-pad-l-sm sheet-pad-r-sm">
+							<input type="text" class="sheet-center sheet-spell-name" name="attr_spellname" placeholder="Spell" data-i18n-place="SPELL"/>
+						</div>
+						<div class="sheet-col-9-100 sheet-pad-r-sm">
+							<br/>
+						</div>
+					</div>
+					<div class="sheet-row sheet-pad-b-sm">
+						<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-l-sm sheet-pad-r-sm">
+							<div class="sheet-center sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="CASTING-NUMBER">CN</span>
+							</div>
+							<input type="text" class="sheet-center" name="attr_spellcastingnumber"/>
+						</div>
+						<div class="sheet-col-3-20 sheet-center sheet-vert-middle sheet-pad-r-sm">
+							<div class="sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="DURATION">Duration</span>
+							</div>
+							<input type="text" class="sheet-center" name="attr_spellduration"/>
+						</div>
+						<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-r-sm">
+							<div class="sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="RANGE">Range</span>
+							</div>
+							<input type="text" class="sheet-center" name="attr_spellrange"/>
+						</div>
+						<div class="sheet-col-3-20 sheet-center sheet-vert-middle sheet-pad-r-sm">
+							<div class="sheet-center sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="TARGET">Target</span>
+							</div>
+							<input type="text" class="sheet-center" name="attr_spelltarget"/>
+						</div>
+						<div class="sheet-col-3-20 sheet-center sheet-vert-middle sheet-pad-r-sm">
+							<div class="sheet-center sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="DAMAGE">Damage</span>
+							</div>
+							<input type="text" class="sheet-center" name="attr_spelldamage"/>
+						</div>
+						<div class="sheet-col-9-100 sheet-spell-button-group sheet-right">
+							<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=@{spellname}}} {{character_name=@{character_name}}} {{spelltype=^{PETTY-SPELL}}} {{spellrange=@{spellrange}}} {{spellduration=@{spellduration}}} {{spelltarget=@{spelltarget}}} {{hitlocation=[[1d100]]}} {{spelldamage=@{spelldamage}}} {{spelldescription=@{spelldescription}}} {{spellcastingnumber=@{spellcastingnumber}}} ">
+								<span data-i18n="CAST">Cast</span>
+							</button>
+						</div>
+					</div>
+					<div class="sheet-row">
+						<div class="sheet-col-1 sheet-center sheet-pad-l-sm sheet-pad-r-sm sheet-pad-b-sm">
+							<div class="sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="SPELL-DESCRIPTION">Spell Description</span>
+							</div>
+							<textarea class="sheet-small-textarea-resize" name="attr_spelldescription"></textarea>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+		<!-- LESSER SPELLS -->
+		<div class="sheet-spell-page1">
+			<fieldset class="repeating_spellbooklesser">
+				<div class="sheet-wrap-box sheet-mar-b-md">
+					<div class="sheet-row sheet-pad-b-sm">
+						<div class="sheet-col-9-10 sheet-center sheet-vert-middle sheet-pad-l-sm sheet-pad-r-sm">
+							<input type="text" class="sheet-center sheet-spell-name" name="attr_spellname" placeholder="Spell" data-i18n-place="SPELL"/>
+						</div>
+						<div class="sheet-col-9-100 sheet-pad-r-sm">
+							<br/>
+						</div>
+					</div>
+					<div class="sheet-row sheet-pad-b-sm">
+						<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-l-sm sheet-pad-r-sm">
+							<div class="sheet-center sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="CASTING-NUMBER">CN</span>
+							</div>
+							<input type="text" class="sheet-center" name="attr_spellcastingnumber"/>
+						</div>
+						<div class="sheet-col-3-20 sheet-center sheet-vert-middle sheet-pad-r-sm">
+							<div class="sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="DURATION">Duration</span>
+							</div>
+							<input type="text" class="sheet-center" name="attr_spellduration"/>
+						</div>
+						<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-r-sm">
+							<div class="sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="RANGE">Range</span>
+							</div>
+							<input type="text" class="sheet-center" name="attr_spellrange"/>
+						</div>
+						<div class="sheet-col-3-20 sheet-center sheet-vert-middle sheet-pad-r-sm">
+							<div class="sheet-center sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="TARGET">Target</span>
+							</div>
+							<input type="text" class="sheet-center" name="attr_spelltarget"/>
+						</div>
+						<div class="sheet-col-3-20 sheet-center sheet-vert-middle sheet-pad-r-sm">
+							<div class="sheet-center sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="DAMAGE">Damage</span>
+							</div>
+							<input type="text" class="sheet-center" name="attr_spelldamage"/>
+						</div>
+						<div class="sheet-col-9-100 sheet-spell-button-group sheet-right">
+							<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=@{spellname}}} {{character_name=@{character_name}}} {{spelltype=^{PETTY-SPELL}}} {{spellcasttime=@{spellcasttime}}} {{spellrange=@{spellrange}}} {{spellingredients=@{spellingredients}}} {{spellduration=@{spellduration}}} {{spelltarget=@{spelltarget}}} {{spellcastingnumber=[[@{spellcastingnumber}]]}} {{spelltest=[[?{Amount of Magic Used|1,1d10|2,2d10|3,3d10|4,4d10|5,5d10|6,6d10}+?{Channelling Success|No,0|Yes,(@{Magic})}+?{Ingredient Used|No,0|Yes,@{spellingredientbonus}}+?{Misc Modifier|0}]]}} {{spelldescription=@{spelldescription}}} {{spellhealing=[[@{spellhealing}]]}} {{spellhits=[[@{spellhits}]]}} {{hitlocation=[[1d100]]}} {{spelldamage=[[1d10+@{spelldamage}]]}} {{furytest=[[1d100]]}} {{furytarget=[[@{WillPower}]]}} {{furydamage=[[1d10!]]}} {{hitlocation2=[[1d100]]}} {{spelldamage2=[[1d10+@{spelldamage}]]}} {{furytest2=[[1d100]]}} {{furytarget2=[[@{WillPower}]]}} {{furydamage2=[[1d10!]]}} {{hitlocation3=[[1d100]]}} {{spelldamage3=[[1d10+@{spelldamage}]]}} {{furytest3=[[1d100]]}} {{furytarget3=[[@{WillPower}]]}} {{furydamage3=[[1d10!]]}} {{hitlocation4=[[1d100]]}} {{spelldamage4=[[1d10+@{spelldamage}]]}} {{furytest4=[[1d100]]}} {{furytarget4=[[@{WillPower}]]}} {{furydamage4=[[1d10!]]}} {{hitlocation5=[[1d100]]}} {{spelldamage5=[[1d10+@{spelldamage}]]}} {{furytest5=[[1d100]]}} {{furytarget5=[[@{WillPower}]]}} {{furydamage5=[[1d10!]]}} {{hitlocation6=[[1d100]]}} {{spelldamage6=[[1d10+@{spelldamage}]]}} {{furytest6=[[1d100]]}} {{furytarget6=[[@{WillPower}]]}} {{furydamage6=[[1d10!]]}} {{hitlocation7=[[1d100]]}} {{spelldamage7=[[1d10+@{spelldamage}]]}} {{furytest7=[[1d100]]}} {{furytarget7=[[@{WillPower}]]}} {{furydamage7=[[1d10!]]}} {{hitlocation8=[[1d100]]}} {{spelldamage8=[[1d10+@{spelldamage}]]}} {{furytest8=[[1d100]]}} {{furytarget8=[[@{WillPower}]]}} {{furydamage8=[[1d10!]]}} {{hitlocation9=[[1d100]]}} {{spelldamage9=[[1d10+@{spelldamage}]]}} {{furytest9=[[1d100]]}} {{furytarget9=[[@{WillPower}]]}} {{furydamage9=[[1d10!]]}} {{hitlocation10=[[1d100]]}} {{spelldamage10=[[1d10+@{spelldamage}]]}} {{furytest10=[[1d100]]}} {{furytarget10=[[@{WillPower}]]}} {{furydamage10=[[1d10!]]}}">
+								<span data-i18n="CAST">Cast</span>
+							</button>
+						</div>
+					</div>
+					<div class="sheet-row">
+						<div class="sheet-col-1 sheet-center sheet-pad-l-sm sheet-pad-r-sm sheet-pad-b-sm">
+							<div class="sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="SPELL-DESCRIPTION">Spell Description</span>
+							</div>
+							<textarea class="sheet-small-textarea-resize" name="attr_spelldescription"></textarea>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+		<!-- ARCANE SPELLS -->
+		<div class="sheet-spell-page2">
+			<fieldset class="repeating_spellbookarcane">
+				<div class="sheet-wrap-box sheet-mar-b-md">
+					<div class="sheet-row sheet-pad-b-sm">
+						<div class="sheet-col-9-10 sheet-center sheet-vert-middle sheet-pad-l-sm sheet-pad-r-sm">
+							<input type="text" class="sheet-center sheet-spell-name" name="attr_spellname" placeholder="Spell" data-i18n-place="SPELL"/>
+						</div>
+						<div class="sheet-col-9-100 sheet-pad-r-sm">
+							<br/>
+						</div>
+					</div>
+					<div class="sheet-row sheet-pad-b-sm">
+						<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-l-sm sheet-pad-r-sm">
+							<div class="sheet-center sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="CASTING-NUMBER">CN</span>
+							</div>
+							<input type="text" class="sheet-center" name="attr_spellcastingnumber"/>
+						</div>
+						<div class="sheet-col-3-20 sheet-center sheet-vert-middle sheet-pad-r-sm">
+							<div class="sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="DURATION">Duration</span>
+							</div>
+							<input type="text" class="sheet-center" name="attr_spellduration"/>
+						</div>
+						<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-r-sm">
+							<div class="sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="RANGE">Range</span>
+							</div>
+							<input type="text" class="sheet-center" name="attr_spellrange"/>
+						</div>
+						<div class="sheet-col-3-20 sheet-center sheet-vert-middle sheet-pad-r-sm">
+							<div class="sheet-center sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="TARGET">Target</span>
+							</div>
+							<input type="text" class="sheet-center" name="attr_spelltarget"/>
+						</div>
+						<div class="sheet-col-3-20 sheet-center sheet-vert-middle sheet-pad-r-sm">
+							<div class="sheet-center sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="DAMAGE">Damage</span>
+							</div>
+							<input type="text" class="sheet-center" name="attr_spelldamage"/>
+						</div>
+						<div class="sheet-col-9-100 sheet-spell-button-group sheet-right">
+							<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=@{spellname}}} {{character_name=@{character_name}}} {{spelltype=^{PETTY-SPELL}}} {{spellcasttime=@{spellcasttime}}} {{spellrange=@{spellrange}}} {{spellingredients=@{spellingredients}}} {{spellduration=@{spellduration}}} {{spelltarget=@{spelltarget}}} {{spellcastingnumber=[[@{spellcastingnumber}]]}} {{spelltest=[[?{Amount of Magic Used|1,1d10|2,2d10|3,3d10|4,4d10|5,5d10|6,6d10}+?{Channelling Success|No,0|Yes,(@{Magic})}+?{Ingredient Used|No,0|Yes,@{spellingredientbonus}}+?{Misc Modifier|0}]]}} {{spelldescription=@{spelldescription}}} {{spellhealing=[[@{spellhealing}]]}} {{spellhits=[[@{spellhits}]]}} {{hitlocation=[[1d100]]}} {{spelldamage=[[1d10+@{spelldamage}]]}} {{furytest=[[1d100]]}} {{furytarget=[[@{WillPower}]]}} {{furydamage=[[1d10!]]}} {{hitlocation2=[[1d100]]}} {{spelldamage2=[[1d10+@{spelldamage}]]}} {{furytest2=[[1d100]]}} {{furytarget2=[[@{WillPower}]]}} {{furydamage2=[[1d10!]]}} {{hitlocation3=[[1d100]]}} {{spelldamage3=[[1d10+@{spelldamage}]]}} {{furytest3=[[1d100]]}} {{furytarget3=[[@{WillPower}]]}} {{furydamage3=[[1d10!]]}} {{hitlocation4=[[1d100]]}} {{spelldamage4=[[1d10+@{spelldamage}]]}} {{furytest4=[[1d100]]}} {{furytarget4=[[@{WillPower}]]}} {{furydamage4=[[1d10!]]}} {{hitlocation5=[[1d100]]}} {{spelldamage5=[[1d10+@{spelldamage}]]}} {{furytest5=[[1d100]]}} {{furytarget5=[[@{WillPower}]]}} {{furydamage5=[[1d10!]]}} {{hitlocation6=[[1d100]]}} {{spelldamage6=[[1d10+@{spelldamage}]]}} {{furytest6=[[1d100]]}} {{furytarget6=[[@{WillPower}]]}} {{furydamage6=[[1d10!]]}} {{hitlocation7=[[1d100]]}} {{spelldamage7=[[1d10+@{spelldamage}]]}} {{furytest7=[[1d100]]}} {{furytarget7=[[@{WillPower}]]}} {{furydamage7=[[1d10!]]}} {{hitlocation8=[[1d100]]}} {{spelldamage8=[[1d10+@{spelldamage}]]}} {{furytest8=[[1d100]]}} {{furytarget8=[[@{WillPower}]]}} {{furydamage8=[[1d10!]]}} {{hitlocation9=[[1d100]]}} {{spelldamage9=[[1d10+@{spelldamage}]]}} {{furytest9=[[1d100]]}} {{furytarget9=[[@{WillPower}]]}} {{furydamage9=[[1d10!]]}} {{hitlocation10=[[1d100]]}} {{spelldamage10=[[1d10+@{spelldamage}]]}} {{furytest10=[[1d100]]}} {{furytarget10=[[@{WillPower}]]}} {{furydamage10=[[1d10!]]}}">
+								<span data-i18n="CAST">Cast</span>
+							</button>
+						</div>
+					</div>
+					<div class="sheet-row">
+						<div class="sheet-col-1 sheet-center sheet-pad-l-sm sheet-pad-r-sm sheet-pad-b-sm">
+							<div class="sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="SPELL-DESCRIPTION">Spell Description</span>
+							</div>
+							<textarea class="sheet-small-textarea-resize" name="attr_spelldescription"></textarea>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+		<!-- DIVINE SPELLS -->
+		<div class="sheet-spell-page3">
+			<fieldset class="repeating_spellbookdivine">
+				<div class="sheet-wrap-box sheet-mar-b-md">
+					<div class="sheet-row sheet-pad-b-sm">
+						<div class="sheet-col-9-10 sheet-center sheet-vert-middle sheet-pad-l-sm sheet-pad-r-sm">
+							<input type="text" class="sheet-center sheet-spell-name" name="attr_spellname" placeholder="Spell" data-i18n-place="SPELL"/>
+						</div>
+						<div class="sheet-col-9-100 sheet-pad-r-sm">
+							<br/>
+						</div>
+					</div>
+					<div class="sheet-row sheet-pad-b-sm">
+						<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-l-sm sheet-pad-r-sm">
+							<div class="sheet-center sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="CASTING-NUMBER">CN</span>
+							</div>
+							<input type="text" class="sheet-center" name="attr_spellcastingnumber"/>
+						</div>
+						<div class="sheet-col-3-20 sheet-center sheet-vert-middle sheet-pad-r-sm">
+							<div class="sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="DURATION">Duration</span>
+							</div>
+							<input type="text" class="sheet-center" name="attr_spellduration"/>
+						</div>
+						<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-r-sm">
+							<div class="sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="RANGE">Range</span>
+							</div>
+							<input type="text" class="sheet-center" name="attr_spellrange"/>
+						</div>
+						<div class="sheet-col-3-20 sheet-center sheet-vert-middle sheet-pad-r-sm">
+							<div class="sheet-center sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="TARGET">Target</span>
+							</div>
+							<input type="text" class="sheet-center" name="attr_spelltarget"/>
+						</div>
+						<div class="sheet-col-3-20 sheet-center sheet-vert-middle sheet-pad-r-sm">
+							<div class="sheet-center sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="DAMAGE">Damage</span>
+							</div>
+							<input type="text" class="sheet-center" name="attr_spelldamage"/>
+						</div>
+						<div class="sheet-col-9-100 sheet-spell-button-group sheet-right">
+							<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=@{spellname}}} {{character_name=@{character_name}}} {{spelltype=^{PETTY-SPELL}}} {{spellcasttime=@{spellcasttime}}} {{spellrange=@{spellrange}}} {{spellingredients=@{spellingredients}}} {{spellduration=@{spellduration}}} {{spelltarget=@{spelltarget}}} {{spellcastingnumber=[[@{spellcastingnumber}]]}} {{spelltest=[[?{Amount of Magic Used|1,1d10|2,2d10|3,3d10|4,4d10|5,5d10|6,6d10}+?{Channelling Success|No,0|Yes,(@{Magic})}+?{Ingredient Used|No,0|Yes,@{spellingredientbonus}}+?{Misc Modifier|0}]]}} {{spelldescription=@{spelldescription}}} {{spellhealing=[[@{spellhealing}]]}} {{spellhits=[[@{spellhits}]]}} {{hitlocation=[[1d100]]}} {{spelldamage=[[1d10+@{spelldamage}]]}} {{furytest=[[1d100]]}} {{furytarget=[[@{WillPower}]]}} {{furydamage=[[1d10!]]}} {{hitlocation2=[[1d100]]}} {{spelldamage2=[[1d10+@{spelldamage}]]}} {{furytest2=[[1d100]]}} {{furytarget2=[[@{WillPower}]]}} {{furydamage2=[[1d10!]]}} {{hitlocation3=[[1d100]]}} {{spelldamage3=[[1d10+@{spelldamage}]]}} {{furytest3=[[1d100]]}} {{furytarget3=[[@{WillPower}]]}} {{furydamage3=[[1d10!]]}} {{hitlocation4=[[1d100]]}} {{spelldamage4=[[1d10+@{spelldamage}]]}} {{furytest4=[[1d100]]}} {{furytarget4=[[@{WillPower}]]}} {{furydamage4=[[1d10!]]}} {{hitlocation5=[[1d100]]}} {{spelldamage5=[[1d10+@{spelldamage}]]}} {{furytest5=[[1d100]]}} {{furytarget5=[[@{WillPower}]]}} {{furydamage5=[[1d10!]]}} {{hitlocation6=[[1d100]]}} {{spelldamage6=[[1d10+@{spelldamage}]]}} {{furytest6=[[1d100]]}} {{furytarget6=[[@{WillPower}]]}} {{furydamage6=[[1d10!]]}} {{hitlocation7=[[1d100]]}} {{spelldamage7=[[1d10+@{spelldamage}]]}} {{furytest7=[[1d100]]}} {{furytarget7=[[@{WillPower}]]}} {{furydamage7=[[1d10!]]}} {{hitlocation8=[[1d100]]}} {{spelldamage8=[[1d10+@{spelldamage}]]}} {{furytest8=[[1d100]]}} {{furytarget8=[[@{WillPower}]]}} {{furydamage8=[[1d10!]]}} {{hitlocation9=[[1d100]]}} {{spelldamage9=[[1d10+@{spelldamage}]]}} {{furytest9=[[1d100]]}} {{furytarget9=[[@{WillPower}]]}} {{furydamage9=[[1d10!]]}} {{hitlocation10=[[1d100]]}} {{spelldamage10=[[1d10+@{spelldamage}]]}} {{furytest10=[[1d100]]}} {{furytarget10=[[@{WillPower}]]}} {{furydamage10=[[1d10!]]}}">
+								<span data-i18n="CAST">Cast</span>
+							</button>
+						</div>
+					</div>
+					<div class="sheet-row">
+						<div class="sheet-col-1 sheet-center sheet-pad-l-sm sheet-pad-r-sm sheet-pad-b-sm">
+							<div class="sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="SPELL-DESCRIPTION">Spell Description</span>
+							</div>
+							<textarea class="sheet-small-textarea-resize" name="attr_spelldescription"></textarea>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+		<!-- RUNES -->
+		<div class="sheet-spell-page4">
+			<fieldset class="repeating_spellbookrunes">
+				<div class="sheet-wrap-box sheet-mar-b-md">
+					<div class="sheet-row sheet-pad-b-sm">
+						<div class="sheet-col-9-10 sheet-center sheet-vert-middle sheet-pad-l-sm sheet-pad-r-sm">
+							<input type="text" class="sheet-center sheet-spell-name" name="attr_runename" placeholder="Rune" data-i18n-place="RUNE"/>
+						</div>
+						<div class="sheet-col-9-100 sheet-pad-r-sm">
+							<br/>
+						</div>
+					</div>
+					<div class="sheet-row sheet-pad-b-sm">
+						<div class="sheet-col-1-9 sheet-center sheet-vert-middle sheet-pad-l-sm sheet-pad-r-sm">
+							<div class="sheet-center sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="INSCRIPTION-NUMBER">Inscription Number</span>
+							</div>
+							<input type="text" class="sheet-center" name="attr_runeinscribenumber"/>
+						</div>
+						<div class="sheet-col-1-9 sheet-center sheet-vert-middle sheet-pad-r-sm">
+							<div class="sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="EMPOWERMENT">Empowerment</span>
+							</div>
+							<input type="text" class="sheet-center" name="attr_runeempowerment"/>
+						</div>
+						<div class="sheet-col-2-9 sheet-center sheet-vert-middle sheet-pad-r-sm">
+							<div class="sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="TYPE">Type</span>
+							</div>
+							<input type="text" class="sheet-center" name="attr_runetype"/>
+						</div>
+						<div class="sheet-col-9-100 sheet-spell-button-group sheet-right">
+							<button type="roll" class="sheet-roll" name="roll_RuneInscribe" value="@{Whisper} &{template:WF4e} {{title=@{runename}}} {{character_name=@{character_name}}} {{runetype=@{runetype}}} {{runeempowerment=@{runeempowerment}}} {{runeinscribenumber=[[@{runeinscribenumber}]]}} {{inscribetest=[[(@{Magic})d10]]}} {{runedescriptionpermanent=@{runedescriptionpermanent}}} {{runedescriptiontemporary=@{runedescriptiontemporary}}} {{insribetime=?{Rune Type|Temporary,[[2d10]] minutes (temporary)|Permanent,1 week (permanent)}}}">
+								<span data-i18n="INSCRIBE">Inscribe</span>
+							</button>
+						</div>
+					</div>
+					<div class="sheet-row">
+					<div class="sheet-col-1-2 sheet-pad-r-sm">
+						<div class="sheet-col-1 sheet-center sheet-pad-l-sm sheet-pad-r-sm">
+							<div class="sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="PERMANENT-RUNE-DESCRIPTION">Permanent Rune Description</span>
+							</div>
+							<textarea class="sheet-small-textarea-resize" name="attr_runedescriptionpermanent"></textarea>
+						</div>
+					</div>
+					<div class="sheet-col-1-2 sheet-pad-r-sm">
+						<div class="sheet-col-1 sheet-small-label sheet-center sheet-pad-l-sm sheet-pad-b-sm">
+							<div class="sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="TEMPORARY-RUNE-DESCRIPTION">Temporary Rune Description</span>
+							</div>
+							<textarea class="sheet-small-textarea-resize" name="attr_runedescriptiontemporary"></textarea>
+						</div>
+					</div>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+		<!-- RITUALS -->
+		<div class="sheet-spell-page5">
+			<fieldset class="repeating_spellbookrituals">
+				<div class="sheet-wrap-box sheet-mar-b-md">
+					<div class="sheet-row sheet-pad-b-sm">
+						<div class="sheet-col-9-10 sheet-center sheet-vert-middle sheet-pad-l-sm sheet-pad-r-sm">
+							<input type="text" class="sheet-center sheet-spell-name" name="attr_ritualname" placeholder="Ritual" data-i18n-place="RITUAL"/>
+						</div>
+						<div class="sheet-col-9-100 sheet-pad-r-sm">
+							<br/>
+						</div>
+					</div>
+					<div class="sheet-row sheet-pad-b-sm">
+						<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-l-sm sheet-pad-r-sm">
+							<div class="sheet-center sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="CASTING-NUMBER">Casting Number</span>
+							</div>
+							<input type="text" class="sheet-center" name="attr_ritualcastingnumber"/>
+						</div>
+						<div class="sheet-col-3-20 sheet-center sheet-vert-middle sheet-pad-r-sm">
+							<div class="sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="CASTING-TIME">Casting Time</span>
+							</div>
+							<input type="text" class="sheet-center" name="attr_ritualtime"/>
+						</div>
+						<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-r-sm">
+							<div class="sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="TYPE">Type</span>
+							</div>
+							<select class="sheet-select-no-arrow-center" name="attr_ritualtype">
+								<option value="0" selected="selected" data-i18n="ARCANE">Arcane</option>
+								<option value="1" data-i18n="DIVINE">Divine</option>
+							</select>
+						</div>
+						<div class="sheet-col-3-20 sheet-center sheet-vert-middle sheet-pad-r-sm">
+							<div class="sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="ARCANE-LANGUAGE">Arcane Language</span>
+							</div>
+							<input type="text" class="sheet-center" name="attr_rituallanguage"/>
+						</div>
+						<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-r-sm">
+							<div class="sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="MAGIC">Magic</span>
+							</div>
+							<input type="text" class="sheet-center" name="attr_ritualmagic"/>
+						</div>
+						<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-r-sm">
+							<div class="sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="XP">XP</span>
+							</div>
+							<input type="text" class="sheet-center" name="attr_ritualcost"/>
+						</div>
+						<div class="sheet-col-9-100 sheet-spell-button-group sheet-right">
+							<button type="roll" class="sheet-roll" name="roll_RitualCast" value="@{Whisper} &{template:WF4e} {{title=@{ritualname}}} {{character_name=@{character_name}}} {{ritualtype=[[@{ritualtype}]]}} {{ritualtime=@{ritualtime}}} {{ritualingredients=@{ritualingredients}}} {{ritualcastingnumber=[[@{ritualcastingnumber}]]}} {{ritualtest=[[?{Amount of Magic Used|1,1d10|2,2d10|3,3d10|4,4d10|5,5d10|6,6d10}+?{Channelling Success|No,0|Yes,(@{Magic})}+?{Misc Modifier|0}]]}} {{ritualconditions=@{ritualconditions}}} {{ritualconsequences=@{ritualconsequences}}} {{ritualdescription=@{ritualdescription}}}">
+								<span data-i18n="CAST">Cast</span>
+							</button>
+						</div>
+					</div>
+					<div class="sheet-row">
+					<div class="sheet-col-1-4 sheet-pad-r-sm">
+						<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-r-sm">
+							<div class="sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="INGREDIENTS">Ingredients</span>
+							</div>
+							<textarea class="sheet-small-textarea-resize" name="attr_ritualingredients"></textarea>
+						</div>
+					</div>
+					<div class="sheet-col-1-4 sheet-pad-r-sm">
+						<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-r-sm">
+							<div class="sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="CONDITIONS">Conditions</span>
+							</div>
+							<textarea class="sheet-small-textarea-resize" name="attr_ritualconditions"></textarea>
+						</div>
+					</div>
+					<div class="sheet-col-1-4 sheet-pad-r-sm">
+						<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-r-sm">
+							<div class="sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="CONSEQUENCES">Consequences</span>
+							</div>
+							<textarea class="sheet-small-textarea-resize" name="attr_ritualconsequences"></textarea>
+						</div>
+					</div>
+					<div class="sheet-col-1-4 sheet-pad-r-sm">
+						<div class="sheet-col-1 sheet-center sheet-pad-l-sm sheet-pad-r-sm sheet-pad-b-sm">
+							<div class="sheet-small-label sheet-pad-b-sm">
+								<span data-i18n="RITUAL-DESCRIPTION">Ritual Description</span>
+							</div>
+							<textarea class="sheet-small-textarea-resize" name="attr_ritualdescription"></textarea>
+						</div>
+					</div>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+	</div>
+	<!-- BIBLE TAB -->
+	<div class="sheet-section-bible">
 		<div class="sheet-row">
 			<div class="sheet-col-1-2 sheet-pad-r-md">
 				<div class="sheet-row">
