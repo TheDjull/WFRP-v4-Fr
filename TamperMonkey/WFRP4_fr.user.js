@@ -7,10 +7,26 @@
 // @include       https://app.roll20.net/editor*
 // @include       https://app.roll20.net/campaigns/chatarchive*
 // @run-at        document-start
-// @version       25.09.2019.2
+// @version       04.10.2019.1
 // @license       GPL-3.0-or-later
 // ==/UserScript==
 (function() {var css =`
+
+#rightsidebar li.alertify a {
+    background-color: #dcbc65;
+    color: white !important;
+	-webkit-animation: none;
+    text-shadow: none;
+}
+
+:focus {
+    outline: none;
+}
+
+.btn:focus {
+    outline: none;
+    outline-offset: unset;
+}
 
 .sheet-DR {
     font-size: large;
@@ -43,6 +59,15 @@
 
 .sheet-img-grimoire {
     background: url(https://i.imgur.com/J97T6dg.png);
+    background-size: 85%;
+    height: 111px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+.sheet-img-bible {
+    background: url(https://i.imgur.com/67t7ilG.png);
     background-size: 85%;
     height: 111px;
     background-repeat: no-repeat;
@@ -121,6 +146,36 @@
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
+}
+
+.sheet-img-spacer-sm {
+    height: 10px;
+    background: url(https://i.imgur.com/SN8tzhM.png);
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+	margin: 2px 0px;
+}
+
+.sheet-img-spacer-md {
+    height: 10px;
+    background: url(https://i.imgur.com/SN8tzhM.png);
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+	margin: 5px 0px;
+}
+
+.sheet-img-spacer-lg {
+    height: 10px;
+    background: url(https://i.imgur.com/SN8tzhM.png);
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+	margin: 8px 0px;
 }
 
 .sheet-skillgrp {
@@ -323,7 +378,8 @@ span {
 }
 
 #initiativewindow {
-    padding: 30px 70px 0px 70px!important;
+    padding: 0px!important;
+    max-width: 200px !important;
 }
 
 macrobar {
@@ -607,7 +663,6 @@ cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto;
     width: auto !important;
     height: auto !important;
     max-height: 650px !important;
-    min-width: 400px!important;
     max-width: 850px!important;
     margin: 30px 55px 50px 57px;
 }
@@ -799,7 +854,11 @@ code {
     margin-bottom: 0px!important;
 }
 
-
+.sheet-woundnumber {
+    position: relative;
+    left: 8px;
+    top: -2px;
+}
 
 .textchatcontainer .emote {
     font-weight: bold;
@@ -1914,6 +1973,10 @@ img[src='/images/character.png'] {
 
 .dd-item .playerdots {
 background-color: transparent !important;
+}
+
+.no-touch .dd-item:hover>.dd-sortablehandle {
+    opacity: 0!important;
 }
 
 .chosen-container-multi .chosen-choices {

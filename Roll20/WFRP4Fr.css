@@ -46,7 +46,8 @@
     height: 54px;
 }
 
-.charsheet .sheet-section-spellbook .sheet-wrap-box {
+.charsheet .sheet-section-spellbook .sheet-wrap-box,
+.charsheet .sheet-section-bible .sheet-wrap-box {
     padding-top: 25px!important;
     margin-top: 15px!important;
     background: url(https://i.imgur.com/KIHh9D5.png)!important;
@@ -158,120 +159,158 @@ button[type=roll] span {
 }
 
 /* === PADDINGS === */
-.sheet-pad-sm {
+.sheet-pad-sm
+.sheet-rolltemplate-WF4e .sheet-pad-sm {
 	padding: 2px;
 }
-.sheet-pad-md {
+.sheet-pad-md,
+.sheet-rolltemplate-WF4e .sheet-pad-md {
 	padding: 5px;
 }
-.sheet-pad-lg {
+.sheet-pad-lg,
+.sheet-rolltemplate-WF4e .sheet-pad-lg {
 	padding: 10px;
 }
-.sheet-pad-l-sm {
+.sheet-pad-l-sm,
+.sheet-rolltemplate-WF4e .sheet-pad-l-sm {
 	padding-left: 2px;
 }
-.sheet-pad-r-sm {
+.sheet-pad-r-sm,
+.sheet-rolltemplate-WF4e .sheet-pad-r-sm {
 	padding-right: 2px;
 }
-.sheet-pad-b-sm {
+.sheet-pad-b-sm,
+.sheet-rolltemplate-WF4e .sheet-pad-b-sm {
 	padding-bottom: 2px;
 }
-.sheet-pad-t-sm {
+.sheet-pad-t-sm,
+.sheet-rolltemplate-WF4e .sheet-pad-t-sm {
 	padding-top: 2px;
 }
-.sheet-pad-l-md {
+.sheet-pad-l-md,
+.sheet-rolltemplate-WF4e .sheet-pad-l-md {
 	padding-left: 5px;
 }
-.sheet-pad-r-md {
+.sheet-pad-r-md,
+.sheet-rolltemplate-WF4e .sheet-pad-r-md {
 	padding-right: 5px;
 }
-.sheet-pad-b-md {
+.sheet-pad-b-md,
+.sheet-rolltemplate-WF4e .sheet-pad-b-md {
 	padding-bottom: 5px;
 }
-.sheet-pad-t-md {
+.sheet-pad-t-md,
+.sheet-rolltemplate-WF4e .sheet-pad-t-md {
 	padding-top: 5px;
 }
-.sheet-pad-l-lg {
+.sheet-pad-l-lg,
+.sheet-rolltemplate-WF4e .sheet-pad-l-lg {
 	padding-left: 10px;
 }
-.sheet-pad-r-lg {
+.sheet-pad-r-lg,
+.sheet-rolltemplate-WF4e .sheet-pad-r-lg {
 	padding-right: 10px;
 }
-.sheet-pad-b-lg {
+.sheet-pad-b-lg,
+.sheet-rolltemplate-WF4e .sheet-pad-b-lg {
 	padding-bottom: 10px;
 }
-.sheet-pad-t-lg {
+.sheet-pad-t-lg,
+.sheet-rolltemplate-WF4e .sheet-pad-t-lg {
 	padding-top: 10px;
 }
-.sheet-pad-l-xl {
+.sheet-pad-l-xl,
+.sheet-rolltemplate-WF4e .sheet-pad-l-xl {
 	padding-left: 20px;
 }
-.sheet-pad-r-xl {
+.sheet-pad-r-xl,
+.sheet-rolltemplate-WF4e .sheet-pad-r-xl {
 	padding-right: 20px;
 }
-.sheet-pad-b-xl {
+.sheet-pad-b-xl,
+.sheet-rolltemplate-WF4e .sheet-pad-b-xl {
 	padding-bottom: 20px;
 }
-.sheet-pad-t-xl {
+.sheet-pad-t-xl,
+.sheet-rolltemplate-WF4e .sheet-pad-t-xl {
 	padding-top: 20px;
 }
-.sheet-pad-t-xl {
+.sheet-pad-t-xl,
+.sheet-rolltemplate-WF4e .sheet-pad-t-xl {
 	padding-top: 15px;
 }
-.sheet-pad-t-xs {
+.sheet-pad-t-xs,
+.sheet-rolltemplate-WF4e .sheet-pad-t-xs {
 	padding-top: -15px;
 }
-.sheet-pad-r-xs {
+.sheet-pad-r-xs,
+.sheet-rolltemplate-WF4e .sheet-pad-r-xs {
 	padding-right: -15px;
 }
 
 /* === MARGINS === */
-.sheet-mar-l-sm {
+.sheet-mar-l-sm,
+.sheet-rolltemplate-WF4e .sheet-mar-l-sm {
 	margin-left: 2px;
 }
-.sheet-mar-r-sm {
+.sheet-mar-r-sm,
+.sheet-rolltemplate-WF4e .sheet-mar-r-sm {
 	margin-right: 2px;
 }
-.sheet-mar-b-sm {
+.sheet-mar-b-sm,
+.sheet-rolltemplate-WF4e .sheet-mar-b-sm {
 	margin-bottom: 2px;
 }
-.sheet-mar-t-sm {
+.sheet-mar-t-sm,
+.sheet-rolltemplate-WF4e .sheet-mar-t-sm {
 	margin-top: 2px;
 }
-.sheet-mar-l-md {
+.sheet-mar-l-md,
+.sheet-rolltemplate-WF4e .sheet-mar-l-md {
 	margin-left: 5px;
 }
-.sheet-mar-r-md {
+.sheet-mar-r-md,
+.sheet-rolltemplate-WF4e .sheet-mar-r-md {
 	margin-right: 5px;
 }
-.sheet-mar-b-md {
+.sheet-mar-b-md,
+.sheet-rolltemplate-WF4e .sheet-mar-b-md {
 	margin-bottom: 5px;
 }
-.sheet-mar-t-md {
+.sheet-mar-t-md,
+.sheet-rolltemplate-WF4e .sheet-mar-t-md {
 	margin-top: 5px;
 }
-.sheet-mar-l-lg {
+.sheet-mar-l-lg,
+.sheet-rolltemplate-WF4e .sheet-mar-l-lg {
 	margin-left: 10px;
 }
-.sheet-mar-r-lg {
+.sheet-mar-r-lg,
+.sheet-rolltemplate-WF4e .sheet-mar-r-lg {
 	margin-right: 10px;
 }
-.sheet-mar-b-lg {
+.sheet-mar-b-lg,
+.sheet-rolltemplate-WF4e .sheet-mar-b-lg {
 	margin-bottom: 10px;
 }
-.sheet-mar-t-lg {
+.sheet-mar-t-lg,
+.sheet-rolltemplate-WF4e .sheet-mar-t-lg {
 	margin-top: 10px;
 }
-.sheet-mar-l-xs {
+.sheet-mar-l-xs,
+.sheet-rolltemplate-WF4e .sheet-mar-l-xs {
 	margin-left: -1px;
 }
-.sheet-mar-r-xs {
+.sheet-mar-r-xs,
+.sheet-rolltemplate-WF4e .sheet-mar-r-xs {
 	margin-right: -1px;
 }
-.sheet-mar-l-0 {
+.sheet-mar-l-0,
+.sheet-rolltemplate-WF4e .sheet-mar-l-0 {
 	margin-left: 0px;
 }
-.sheet-select-sizing {
+.sheet-select-sizing,
+.sheet-rolltemplate-WF4e .sheet-select-sizing {
     margin-top:0px;
     margin-left:0px;
     margin-bottom:-2px
@@ -464,7 +503,7 @@ select {
 }
 select.sheet-select-whisper {
 	height: 19px !important;
-	width: 80px!important;
+	width: 48px!important;
 }
 select.sheet-select-no-arrow-center {
     height: 19px !important;
@@ -597,6 +636,7 @@ input.sheet-tab-page-career:checked ~ div.sheet-section-career,
 input.sheet-tab-page-weapons:checked ~ div.sheet-section-weapons,
 input.sheet-tab-page-actions:checked ~ div.sheet-section-actions,
 input.sheet-tab-page-spellbook:checked ~ div.sheet-section-spellbook,
+input.sheet-tab-page-bible:checked ~ div.sheet-section-bible,
 input.sheet-tab-page-armor:checked ~ div.sheet-section-armor,
 input.sheet-tab-page-inventory:checked ~ div.sheet-section-inventory,
 input.sheet-tab-page-settings:checked ~ div.sheet-section-settings {
@@ -621,14 +661,14 @@ span[class*="sheet-tab"] {
 
 input[class*="sheet-tab-page"],
 span[class*="sheet-tab-page"] {
-	width: 82px;
+	width: 81px;
 	height: 18px;
 	vertical-align: top;
 }
 
 span[class*="sheet-tab-page"] {
 	background-color: #666;
-	margin-left: -82px;
+	margin-left: -85px;
 }
 input.sheet-tab-page-career,
 span.sheet-tab-page-career {
@@ -639,10 +679,10 @@ span.sheet-tab-page-career {
 }
 input.sheet-tab-page-armor,
 span.sheet-tab-page-armor {
-	width: 56px;
+	width: 81px;
 }
 span.sheet-tab-page-armor {
-	margin-left: -56px;
+	margin-left: -85px;
 }
 input.sheet-tab-page-actions,
 span.sheet-tab-page-actions {
@@ -741,6 +781,7 @@ span.sheet-tab-class-action {
 	height: 5px;
 }
 .sheet-section-spellbook .sheet-wrap-box,
+.sheet-section-bible .sheet-wrap-box,
 .sheet-section-class .sheet-wrap-box,
 .sheet-section-actions .sheet-wrap-box,
 .sheet-section-weapons .sheet-wrap-box {
@@ -760,6 +801,7 @@ span.sheet-tab-class-action {
 	line-height: 100%;
 }
 .sheet-section-spellbook .sheet-wrap-box textarea,
+.sheet-section-bible .sheet-wrap-box textarea,
 .sheet-section-actions .sheet-wrap-box textarea {
 	font-size: 10px;
 	line-height: 100%;
@@ -1116,10 +1158,12 @@ span.sheet-spacer,
 .sheet-rolltemplate-WF4e .sheet-center {
 	text-align: center;
 }
-.sheet-right {
+.sheet-right,
+.sheet-rolltemplate-WF4e .sheet-right {
 	text-align: right;
 }
-.sheet-left {
+.sheet-left,
+.sheet-rolltemplate-WF4e .sheet-left {
 	text-align: left;
 }
 
@@ -1143,7 +1187,7 @@ h4 {
     background-color: #333;
     color: #ddd!important;
     font-size: 12px;
-    padding-left: 5px;
+    padding: 0px 5px;
     border-radius: 10px 10px 0px 0px;
 
 }
@@ -1291,7 +1335,7 @@ input[disabled].sheet-passive-skill-score {
 .sheet-rolltemplate-WF4e .sheet-rt-card {
     width: 290px;
     height: auto;
-    min-height: 200px;
+    min-height: 50px;
     max-height: 366px;
     padding-bottom: 30px;
     font-size: 11px;
@@ -1304,7 +1348,7 @@ input[disabled].sheet-passive-skill-score {
     border-radius: 5% 5% 5% 5%;
     margin-left: -45px;
     margin-top: 5px;
-    padding: 0px 30px 30px 30px;
+    padding: 25px 25px 25px 30px;
 }
 
 .sheet-rolltemplate-WF4e .sheet-rt-critical {
@@ -1328,8 +1372,8 @@ input[disabled].sheet-passive-skill-score {
     position: relative;
     color: #000;
     border: none;
-    margin: 0 0px 0px 0px;
-    padding: 30px 30px 10px 30px;
+    margin: 0px;
+    padding: 5px 0px 0px 0px;
 }
 .sheet-rolltemplate-WF4e .sheet-rt-header .inlinerollresult {
 	background: transparent;
@@ -1390,7 +1434,7 @@ input[disabled].sheet-passive-skill-score {
 	background-color: transparent;
 }
 .sheet-rolltemplate-WF4e .sheet-rt-header.sheet-ability:before {
-	background:url(https://i.imgur.com/z4TFjoh.jpg);
+	background: transparent;
 }
 .sheet-rolltemplate-WF4e .sheet-rt-header.sheet-ability:after {
 	border-left-color: transparent;
@@ -1415,7 +1459,7 @@ input[disabled].sheet-passive-skill-score {
 	box-sizing: border-box;
 }
 .sheet-rolltemplate-WF4e .sheet-main-content .sheet-row:not(:first-child) {
-	margin-top: 2px;
+	margin-top: 0px;
 }
 .sheet-rolltemplate-WF4e .sheet-main-content hr.sheet-roll {
 	width: 80%;
