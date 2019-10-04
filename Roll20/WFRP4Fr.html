@@ -5963,7 +5963,7 @@
     									</h4>
     								</div>
     								<div class="sheet-row sheet-sub-header">
-    					    			<div class="sheet-col-1 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="SIN">Sin</div>
+    					    			<div class="sheet-col-1 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="PDP">PdP</div>
     					    		</div>
 									<div class="sheet-row">
     					    			<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
@@ -5973,7 +5973,7 @@
 								</div>
 								<div class="sheet-col-1-2 sheet-center sheet-vert-middle">
 									<div class="sheet-col-1 sheet-mar-t-sm sheet-mar-b-sm">
-										<button type="roll" class="sheet-roll btn ui-draggable" name="roll_Wrath" value="@{Whisper} &amp;{template:WF4e} {{title=^{WRATH-OF-THE-GODS}}} {{character_name=@{character_name}}} {{attacktype=^{CRITICAL}}} {{wrathroll=[[[[1d100]]+?{Sin|0}]]}}">
+										<button type="roll" class="sheet-roll btn ui-draggable" name="roll_Wrath" value="@{Whisper} &amp;{template:WF4e} {{title=^{WRATH-OF-THE-GODS}}} {{character_name=@{character_name}}} {{attacktype=^{CRITICAL}}} {{wrathroll=[[1d100+10*@{Sin}]]}}">
 											<span data-i18n="WRATH-OF-THE-GODS">Colère des Dieux</span>
 										</button>
 									</div>
