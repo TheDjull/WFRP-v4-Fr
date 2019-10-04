@@ -1975,6 +1975,10 @@ img[src='/images/character.png'] {
 background-color: transparent !important;
 }
 
+.no-touch .dd-item:hover>.dd-sortablehandle {
+    opacity: 0!important;
+}
+
 .chosen-container-multi .chosen-choices {
 background-color: #1a1a1a !important;
 background-image: none !important;
