@@ -355,6 +355,7 @@
     "TOUGHNESS-BONUS": "Bonus d'Endurance'",
     "MOVEMENT": "Mouvement",
     "MAGIC": "Magie",
+    "MAGICDOM": "Domaine de Magie",
     "INSANITY-POINTS": "Points de Folie",
     "FATE": "Destin",
     "CAREER-SKILLS": "Aptitudes de Carrière",
@@ -1285,10 +1286,10 @@
     "COMEN": "Corruption Mentale",
     "ARCANE-MARK": "Marque d'Arcane",
     "ARCANE-LORE": "Sort d'Arcane",
-    "MINOR-MISCAST": "Incantation Imparfaite Mineure",
-    "MAJOR-MISCAST": "Incantation Imparfaite Majeure",
-    "MINOR-ROLL": "Jet d'Incantation Imparfaite Mineure",
-    "MAJOR-ROLL": "Jet d'Incantation Imparfaite Majeure",
+    "MINOR-MISCAST": "Echo Mineur du Chaos",
+    "MAJOR-MISCAST": "Echo Majeur du Chaos",
+    "MINOR-ROLL": "Echo Mineur du Chaos",
+    "MAJOR-ROLL": "Echo Majeur du Chaos",
     "WRATH-ROLL": "Jet de Colère des Dieux",
     "WRATH-TABLE": "Tableau de Colère des Dieux",
     "WRATH": "Colère",
@@ -1405,4 +1406,3 @@
     "LOSE": "Echec",
     "NONE": "Aucun"
 }
-

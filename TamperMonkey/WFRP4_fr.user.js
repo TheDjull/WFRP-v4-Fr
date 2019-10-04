@@ -7,7 +7,7 @@
 // @include       https://app.roll20.net/editor*
 // @include       https://app.roll20.net/campaigns/chatarchive*
 // @run-at        document-start
-// @version       01.10.2019.1
+// @version       04.10.2019.1
 // @license       GPL-3.0-or-later
 // ==/UserScript==
 (function() {var css =`
@@ -59,6 +59,15 @@
 
 .sheet-img-grimoire {
     background: url(https://i.imgur.com/J97T6dg.png);
+    background-size: 85%;
+    height: 111px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+.sheet-img-bible {
+    background: url(https://i.imgur.com/67t7ilG.png);
     background-size: 85%;
     height: 111px;
     background-repeat: no-repeat;
