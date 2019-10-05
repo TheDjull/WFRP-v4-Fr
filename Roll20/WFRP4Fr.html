@@ -66,11 +66,23 @@
 								<span data-i18n="RACE">Race</span>
 							</div>
 						</div>
-						<div class="sheet-col-1-5 sheet-vert-middle sheet-relative sheet-pad-r-sm">
-							  <input class="sheet-center" type="text" name="attr_religion"/>
-							  <div class="sheet-wrap-box-label sheet-center">
-									<span data-i18n="RELIGION">Religion</span>
-							  </div>
+					    <div class="sheet-col-1-5 sheet-vert-middle sheet-pad-r-sm sheet-wrap-box-label" style="margin-top:3px">
+					        <select class="sheet-select-no-arrow-center" name="attr_Religion">
+								<option value="MANAAN" data-i18n="MANAAN">Manaan</option>
+								<option value="MORR" data-i18n="MORR">Morr</option>
+								<option value="MYRMIDIA" data-i18n="MYRMIDIA">Myrmidia</option>
+								<option value="RANALD" data-i18n="RANALD">Ranald</option>
+								<option value="RHYA" data-i18n="RHYA">Rhya</option>
+								<option value="SHALLYA" data-i18n="SHALLYA">Shallya</option>
+								<option value="SIGMAR" data-i18n="SIGMAR">Sigmar</option>
+								<option value="TAAL" data-i18n="TAAL">Taal</option>
+								<option value="ULRIC" data-i18n="ULRIC">Ulric</option>
+								<option value="VERANA" data-i18n="VERANA">Verana</option>
+								<option value="HERETIC" data-i18n="HERETIC">Hérétique</option>
+							</select>
+						    <div class="sheet-wrap-box-label sheet-center">
+								<span data-i18n="RELIGION">Religion</span>
+							</div>
 						</div>
 						<div class="sheet-col-1-5 sheet-vert-middle sheet-relative sheet-pad-r-sm">
 						    <input class="sheet-center" type="number" name="attr_xp" value="0"/>
@@ -5281,17 +5293,31 @@
 	<div class="sheet-section-spellbook">
 		<div class="sheet-row">
 			<div class="sheet-col-1-2 sheet-pad-r-md">
-				<div class="sheet-row">
-					<div class="sheet-row">
-						<div class="sheet-col-1">
-							<h4 class="sheet-center">
-								<span data-i18n="MAGICDOM">Domaine de Magie</span>
-							</h4>
+				<div class="sheet-col-1 sheet-pad-r-md">
+					<div class="sheet-col-1">
+						<h4 class="sheet-center">
+							<span data-i18n="MAGICDOM">Domaine Magique</span>
+						</h4>
+						<div class="sheet-center sheet-sub-header">
+							<select class="sheet-select-no-arrow-center" name="attr_MagicDom">
+								<option value="MMINOR" data-i18n="MMINOR">Mineure</option>
+								<option value="MARCANA" data-i18n="MARCANA">Arcane</option>
+								<option value="MBEAST" data-i18n="MBEAST">Bête</option>
+								<option value="MWIND" data-i18n="MWIND">Cieux</option>
+								<option value="MFIRE" data-i18n="MFIRE">Feu</option>
+								<option value="MLIGHT" data-i18n="MLIGHT">Lumière</option>
+								<option value="MSTEEL" data-i18n="MSTEEL">Métal</option>
+								<option value="MDEATH" data-i18n="MDEATH">Mort</option>
+								<option value="MSHADOW" data-i18n="MSHADOW">Ombre</option>
+								<option value="MLIFE" data-i18n="MLIFE">Vie</option>
+								<option value="MSAVAGE" data-i18n="MSAVAGE">Sauvage</option>
+								<option value="MWITCH" data-i18n="MWITCH">Sorcellerie</option>
+								<option value="MDEMONO" data-i18n="MDEMONO">Démonologie</option>
+								<option value="MNECRO" data-i18n="MNECRO">Nécromancie</option>
+								<option value="MCHAOS" data-i18n="MCHAOS">Chaos</option>
+							</select>
 						</div>
-					</div>
-					<span class="sheet-spacer"></span>
-					<div class="sheet-row">
-					
+						<textarea name="attr_Mag1" class="sheet-MagArea1"></textarea>
 					</div>
 				</div>
 			</div>
@@ -5853,17 +5879,29 @@
 	<div class="sheet-section-bible">
 		<div class="sheet-row">
 			<div class="sheet-col-1-2 sheet-pad-r-md">
-				<div class="sheet-row">
-					<div class="sheet-row">
-						<div class="sheet-col-1">
-							<h4 class="sheet-center">
-								<span data-i18n="RELIGION">Religion</span>
-							</h4>
+				<div class="sheet-col-1-2 sheet-pad-r-md">
+					<div class="sheet-col-1">
+						<h4 class="sheet-center">
+							<span data-i18n="RELIGION">Religion</span>
+						</h4>
+						<div class="sheet-center sheet-sub-header">
+							<span class="sheet-col-1 sheet-center sheet-small-label sheet-vert-middle" name="attr_Religion" data-i18n-dynamic></span>
 						</div>
+						<textarea name="attr_Reli1" class="sheet-ReliArea1"></textarea>
 					</div>
-					<span class="sheet-spacer"></span>
-					<div class="sheet-row">
-
+				</div>
+				<div class="sheet-col-25-49 sheet-vert-top">
+					<div class="sheet-col-1">
+						<h4 class="sheet-center">
+							<span data-i18n="COMMANDS">Commandements</span>
+						</h4>
+						<textarea name="attr_Reli2" class="sheet-ReliArea2"></textarea>
+					</div>
+					<div class="sheet-col-1">
+						<h4 class="sheet-center">
+							<span data-i18n="PENITENCES">Pénitences</span>
+						</h4>
+						<textarea name="attr_Reli3" class="sheet-ReliArea2"></textarea>
 					</div>
 				</div>
 			</div>
