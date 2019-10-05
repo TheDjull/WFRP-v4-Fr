@@ -720,6 +720,28 @@ input.sheet-tab-page99:checked + span.sheet-tab-page99 {
 
 
 /* Spell Page Settings */
+
+input.sheet-Taken:checked ~ div.sheet-tab-spell0,
+input.sheet-Taken:checked ~ div.sheet-tab-spell1,
+input.sheet-Taken:checked ~ div.sheet-tab-spell2,
+input.sheet-Taken:checked ~ div.sheet-tab-spell3,
+input.sheet-Taken:checked ~ div.sheet-tab-spell4,
+input.sheet-Taken:checked ~ div.sheet-tab-spell5,
+input.sheet-Taken:checked ~ div.sheet-tab-spell6,
+input.sheet-Taken:checked ~ div.sheet-tab-spell7,
+input.sheet-Taken:checked ~ div.sheet-tab-spell8,
+input.sheet-Taken:checked ~ div.sheet-tab-spell9,
+input.sheet-Taken:checked ~ div.sheet-tab-spell10,
+input.sheet-Taken:checked ~ div.sheet-tab-spell11,
+input.sheet-Taken:checked ~ div.sheet-tab-spell12,
+input.sheet-Taken:checked ~ div.sheet-tab-spell13,
+input.sheet-Taken:checked ~ div.sheet-tab-spell14,
+input.sheet-Taken:checked ~ div.sheet-tab-spell15,
+input.sheet-BeniTaken:checked ~ div.sheet-tab-spell16,
+input.sheet-InvoTaken:checked ~ div.sheet-tab-spell17 {
+	display: none;
+}
+
 div[class^="sheet-spell-page"] {
 	display: none;
 }
@@ -733,7 +755,15 @@ input.sheet-tab-spell5:checked ~ div.sheet-spell-page5,
 input.sheet-tab-spell6:checked ~ div.sheet-spell-page6,
 input.sheet-tab-spell7:checked ~ div.sheet-spell-page7,
 input.sheet-tab-spell8:checked ~ div.sheet-spell-page8,
-input.sheet-tab-spell9:checked ~ div.sheet-spell-page9 {
+input.sheet-tab-spell9:checked ~ div.sheet-spell-page9,
+input.sheet-tab-spell10:checked ~ div.sheet-spell-page10,
+input.sheet-tab-spell11:checked ~ div.sheet-spell-page11,
+input.sheet-tab-spell12:checked ~ div.sheet-spell-page12,
+input.sheet-tab-spell13:checked ~ div.sheet-spell-page13,
+input.sheet-tab-spell14:checked ~ div.sheet-spell-page14,
+input.sheet-tab-spell15:checked ~ div.sheet-spell-page15,
+input.sheet-tab-spell16:checked ~ div.sheet-spell-page16,
+input.sheet-tab-spell17:checked ~ div.sheet-spell-page17 {
 	display: block;
 }
 
@@ -874,6 +904,14 @@ input.sheet-tab-spell6:checked ~ span.sheet-tab-spell6,
 input.sheet-tab-spell7:checked ~ span.sheet-tab-spell7,
 input.sheet-tab-spell8:checked ~ span.sheet-tab-spell8,
 input.sheet-tab-spell9:checked ~ span.sheet-tab-spell9,
+input.sheet-tab-spell10:checked ~ span.sheet-tab-spell10,
+input.sheet-tab-spell11:checked ~ span.sheet-tab-spell11,
+input.sheet-tab-spell12:checked ~ span.sheet-tab-spell12,
+input.sheet-tab-spell13:checked ~ span.sheet-tab-spell13,
+input.sheet-tab-spell14:checked ~ span.sheet-tab-spell14,
+input.sheet-tab-spell15:checked ~ span.sheet-tab-spell15,
+input.sheet-tab-spell16:checked ~ span.sheet-tab-spell16,
+input.sheet-tab-spell17:checked ~ span.sheet-tab-spell17,
 input.sheet-tab-spell99:checked ~ span.sheet-tab-spell99,
 input.sheet-tab-inventory1:checked ~ span.sheet-tab-inventory1,
 input.sheet-tab-inventory2:checked ~ span.sheet-tab-inventory2,

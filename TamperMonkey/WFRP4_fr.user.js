@@ -1646,7 +1646,7 @@ color: #a11504 !important;
 }
 
 .sheet-ReliArea2 {
-    height: 63px !important;
+    height: 73px !important;
 }
 
 .sheet-MagArea1 {
