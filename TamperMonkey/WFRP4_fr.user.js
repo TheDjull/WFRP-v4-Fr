@@ -1642,11 +1642,11 @@ color: #a11504 !important;
 }
 
 .sheet-ReliArea1 {
-    height: 124px !important;
+    height: 123px !important;
 }
 
 .sheet-ReliArea2 {
-    height: 64px !important;
+    height: 63px !important;
 }
 
 .sheet-MagArea1 {
