@@ -5668,12 +5668,12 @@
 						</div>
 						<div class="sheet-col-1-5 sheet-spell-button-group sheet-center sheet-vert-top">
 							<div class="sheet-row sheet-pad-md">
-								<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=^{CHANNELLING}}} {{skill=@{spellname}}} {{character_name=@{character_name}}} {{target=[[@{Channelling}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}} {{DRFoca=@{FocaRes}}} {{SpellFoca=@{spellcastingnumber}}} {{SpellFoca=@{spellcastingnumber}}}">
+								<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=^{CHANNELLING}}} {{skill=@{spellname}}} {{character_name=@{character_name}}} {{target=[[@{Channelling}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}} {{DRFoca=@{FocaRes}}} {{SpellFoca=@{spellcastingnumber}}}">
 									<span data-i18n="CHANNELLING">Focalisation</span>
 								</button>
 							</div>
 							<div class="sheet-row sheet-pad-md">
-								<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=^{CAST}}} {{skill=@{spellname}}} {{character_name=@{character_name}}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}">
+								<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=^{CAST}}} {{SpellFoca=@{spellcastingnumber}}} {{skill=@{spellname}}} {{spelldescription=@{spelldescription}}} {{spelltim=@{spellduration}}} {{spelldist=@{spellrange}}} {{spelltarg=@{spelltarget}}} {{character_name=@{character_name}}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}">
 									<span data-i18n="CAST">Incantation</span>
 								</button>
 							</div>
@@ -5742,7 +5742,7 @@
 								</button>
 							</div>
 							<div class="sheet-row sheet-pad-md">
-								<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=^{CAST}}} {{skill=@{spellname}}} {{character_name=@{character_name}}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}">
+								<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=^{CAST}}} {{SpellFoca=@{spellcastingnumber}}} {{skill=@{spellname}}} {{spelldescription=@{spelldescription}}} {{spelltim=@{spellduration}}} {{spelldist=@{spellrange}}} {{spelltarg=@{spelltarget}}} {{character_name=@{character_name}}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}">
 									<span data-i18n="CAST">Incantation</span>
 								</button>
 							</div>
@@ -5811,7 +5811,7 @@
 								</button>
 							</div>
 							<div class="sheet-row sheet-pad-md">
-								<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=^{CAST}}} {{skill=@{spellname}}} {{character_name=@{character_name}}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}">
+								<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=^{CAST}}} {{SpellFoca=@{spellcastingnumber}}} {{skill=@{spellname}}} {{spelldescription=@{spelldescription}}} {{spelltim=@{spellduration}}} {{spelldist=@{spellrange}}} {{spelltarg=@{spelltarget}}} {{character_name=@{character_name}}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}">
 									<span data-i18n="CAST">Incantation</span>
 								</button>
 							</div>
@@ -5880,7 +5880,7 @@
 								</button>
 							</div>
 							<div class="sheet-row sheet-pad-md">
-								<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=^{CAST}}} {{skill=@{spellname}}} {{character_name=@{character_name}}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}">
+								<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=^{CAST}}} {{SpellFoca=@{spellcastingnumber}}} {{skill=@{spellname}}} {{spelldescription=@{spelldescription}}} {{spelltim=@{spellduration}}} {{spelldist=@{spellrange}}} {{spelltarg=@{spelltarget}}} {{character_name=@{character_name}}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}">
 									<span data-i18n="CAST">Incantation</span>
 								</button>
 							</div>
@@ -5949,7 +5949,7 @@
 								</button>
 							</div>
 							<div class="sheet-row sheet-pad-md">
-								<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=^{CAST}}} {{skill=@{spellname}}} {{character_name=@{character_name}}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}">
+								<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=^{CAST}}} {{SpellFoca=@{spellcastingnumber}}} {{skill=@{spellname}}} {{spelldescription=@{spelldescription}}} {{spelltim=@{spellduration}}} {{spelldist=@{spellrange}}} {{spelltarg=@{spelltarget}}} {{character_name=@{character_name}}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{test=[[1d100cs11cs22cs33cs44cs55cs66cs77cs88cs99]]}}">
 									<span data-i18n="CAST">Incantation</span>
 								</button>
 							</div>
@@ -9173,7 +9173,36 @@ on('sheet:opened change:totalwounds', function (event) {
 					<div class="sheet-row">
 						<div class="sheet-col-1 sheet-rt-value sheet-center">{{spelldescription}}</div>
 					</div>
+					<div class="sheet-row">
+						<div class="sheet-img-spacer-sm"></div>
+					</div>
 				{{/spelldescription}}
+    		</div>
+			<div class="sheet-row">
+				{{#spelltim}}
+					<div class="sheet-col-1-4">
+						<div class="sheet-col-1 sheet-mar-t-md">
+							<div class="sheet-col-1 sheet-center" data-i18n="DURATION">Durée</div>
+						</div>
+						<div class="sheet-col-1 sheet-rt-value sheet-center">{{spelltim}}</div>
+    				</div>
+				{{/spelltim}}
+				{{#spelldist}}
+					<div class="sheet-col-1-4">
+						<div class="sheet-col-1 sheet-mar-t-md">
+							<div class="sheet-col-1 sheet-center" data-i18n="RANGE">Portée</div>
+						</div>
+						<div class="sheet-col-1 sheet-rt-value sheet-center">{{spelldist}}</div>
+    				</div>
+				{{/spelldist}}
+				{{#spelltarg}}
+					<div class="sheet-col-1-4">
+						<div class="sheet-col-1 sheet-mar-t-md">
+							<div class="sheet-col-1 sheet-center" data-i18n="TARGET">Cible/Zone</div>
+						</div>
+						<div class="sheet-col-1 sheet-rt-value sheet-center">{{spelltarg}}</div>
+    				</div>
+				{{/spelltarg}}
     		</div>
 			<div class="sheet-row">	
 				{{#spelllocation}}

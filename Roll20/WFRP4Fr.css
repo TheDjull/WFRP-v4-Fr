@@ -1377,10 +1377,9 @@ input[disabled].sheet-passive-skill-score {
     width: 290px;
     height: auto;
     min-height: 50px;
-    max-height: 366px;
     padding-bottom: 30px;
     font-size: 11px;
-    background: url(https://i.imgur.com/8nUebYy.png), url(https://i.imgur.com/QYQ4rvj.jpg)!important;
+    background: url(https://i.imgur.com/8nUebYy.png), url(https://i.imgur.com/8DYW0fJ.jpg)!important;
     background-repeat: no-repeat !important;
     background-position-x: left, left!important;
     background-size: contain, cover !important;
