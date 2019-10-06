@@ -46,11 +46,19 @@
     height: 54px;
 }
 
-.charsheet .sheet-section-spellbook .sheet-wrap-box,
-.charsheet .sheet-section-bible .sheet-wrap-box {
+.charsheet .sheet-section-spellbook .sheet-wrap-box {
     padding-top: 25px!important;
     margin-top: 15px!important;
     background: url(https://i.imgur.com/jjEFR3A.png)!important;
+    box-shadow: unset!important;
+    background-repeat: no-repeat!important;
+    background-size: 100%!important;
+}
+
+.charsheet .sheet-section-bible .sheet-wrap-box {
+    padding-top: 25px!important;
+    margin-top: 15px!important;
+    background: url(https://i.imgur.com/R73E4Hc.png)!important;
     box-shadow: unset!important;
     background-repeat: no-repeat!important;
     background-size: 100%!important;
@@ -284,6 +292,10 @@ button[type=roll] span {
 .sheet-mar-l-lg,
 .sheet-rolltemplate-WF4e .sheet-mar-l-lg {
 	margin-left: 10px;
+}
+.sheet-mar-l-xl,
+.sheet-rolltemplate-WF4e .sheet-mar-l-xl {
+	margin-left: 20px;
 }
 .sheet-mar-r-lg,
 .sheet-rolltemplate-WF4e .sheet-mar-r-lg {
