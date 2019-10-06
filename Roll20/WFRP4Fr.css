@@ -46,11 +46,19 @@
     height: 54px;
 }
 
-.charsheet .sheet-section-spellbook .sheet-wrap-box,
+.charsheet .sheet-section-spellbook .sheet-wrap-box {
+    padding-top: 25px!important;
+    margin-top: 15px!important;
+    background: url(https://i.imgur.com/jjEFR3A.png)!important;
+    box-shadow: unset!important;
+    background-repeat: no-repeat!important;
+    background-size: 100%!important;
+}
+
 .charsheet .sheet-section-bible .sheet-wrap-box {
     padding-top: 25px!important;
     margin-top: 15px!important;
-    background: url(https://i.imgur.com/KIHh9D5.png)!important;
+    background: url(https://i.imgur.com/R73E4Hc.png)!important;
     box-shadow: unset!important;
     background-repeat: no-repeat!important;
     background-size: 100%!important;
@@ -284,6 +292,10 @@ button[type=roll] span {
 .sheet-mar-l-lg,
 .sheet-rolltemplate-WF4e .sheet-mar-l-lg {
 	margin-left: 10px;
+}
+.sheet-mar-l-xl,
+.sheet-rolltemplate-WF4e .sheet-mar-l-xl {
+	margin-left: 20px;
 }
 .sheet-mar-r-lg,
 .sheet-rolltemplate-WF4e .sheet-mar-r-lg {
@@ -706,6 +718,7 @@ input.sheet-tab-page-background:checked + span.sheet-tab-page-background,
 input.sheet-tab-page-career:checked + span.sheet-tab-page-career,
 input.sheet-tab-page-weapons:checked + span.sheet-tab-page-weapons,
 input.sheet-tab-page-spellbook:checked + span.sheet-tab-page-spellbook,
+input.sheet-tab-page-bible:checked + span.sheet-tab-page-bible,
 input.sheet-tab-page-inventory:checked + span.sheet-tab-page-inventory,
 input.sheet-tab-page-armor:checked + span.sheet-tab-page-armor,
 input.sheet-tab-page-settings:checked + span.sheet-tab-page-settings,
@@ -719,6 +732,28 @@ input.sheet-tab-page99:checked + span.sheet-tab-page99 {
 
 
 /* Spell Page Settings */
+
+input.sheet-Taken:checked ~ div.sheet-tab-spell0,
+input.sheet-Taken:checked ~ div.sheet-tab-spell1,
+input.sheet-Taken:checked ~ div.sheet-tab-spell2,
+input.sheet-Taken:checked ~ div.sheet-tab-spell3,
+input.sheet-Taken:checked ~ div.sheet-tab-spell4,
+input.sheet-Taken:checked ~ div.sheet-tab-spell5,
+input.sheet-Taken:checked ~ div.sheet-tab-spell6,
+input.sheet-Taken:checked ~ div.sheet-tab-spell7,
+input.sheet-Taken:checked ~ div.sheet-tab-spell8,
+input.sheet-Taken:checked ~ div.sheet-tab-spell9,
+input.sheet-Taken:checked ~ div.sheet-tab-spell10,
+input.sheet-Taken:checked ~ div.sheet-tab-spell11,
+input.sheet-Taken:checked ~ div.sheet-tab-spell12,
+input.sheet-Taken:checked ~ div.sheet-tab-spell13,
+input.sheet-Taken:checked ~ div.sheet-tab-spell14,
+input.sheet-Taken:checked ~ div.sheet-tab-spell15,
+input.sheet-BeniTaken:checked ~ div.sheet-tab-spell16,
+input.sheet-InvoTaken:checked ~ div.sheet-tab-spell17 {
+	display: none;
+}
+
 div[class^="sheet-spell-page"] {
 	display: none;
 }
@@ -732,7 +767,15 @@ input.sheet-tab-spell5:checked ~ div.sheet-spell-page5,
 input.sheet-tab-spell6:checked ~ div.sheet-spell-page6,
 input.sheet-tab-spell7:checked ~ div.sheet-spell-page7,
 input.sheet-tab-spell8:checked ~ div.sheet-spell-page8,
-input.sheet-tab-spell9:checked ~ div.sheet-spell-page9 {
+input.sheet-tab-spell9:checked ~ div.sheet-spell-page9,
+input.sheet-tab-spell10:checked ~ div.sheet-spell-page10,
+input.sheet-tab-spell11:checked ~ div.sheet-spell-page11,
+input.sheet-tab-spell12:checked ~ div.sheet-spell-page12,
+input.sheet-tab-spell13:checked ~ div.sheet-spell-page13,
+input.sheet-tab-spell14:checked ~ div.sheet-spell-page14,
+input.sheet-tab-spell15:checked ~ div.sheet-spell-page15,
+input.sheet-tab-spell16:checked ~ div.sheet-spell-page16,
+input.sheet-tab-spell17:checked ~ div.sheet-spell-page17 {
 	display: block;
 }
 
@@ -823,14 +866,15 @@ span[class*="sheet-tab-spellbook-prep-con-rit"] {
 	height: 14px;
 	padding: 2px;
 }
+
 .sheet-spell-name {
-	font-size: 160%;
-	padding: 0;
-	border: 0;
-	background-color: transparent;
-	color: #3D3B36;
-	font-weight: bold;
-	font-family: "Caslon Antique", "Adobe Caslon Pro", "Times New Roman";
+    font-size: 130% !important;
+    padding: 0px !important;
+    border: 0;
+    background-color: transparent !important;
+    color: #3D3B36 !important;
+    font-weight: bold;
+    font-family: "Caslon Antique", "Adobe Caslon Pro", "Times New Roman";
 }
 
 .sheet-action-name,
@@ -873,6 +917,14 @@ input.sheet-tab-spell6:checked ~ span.sheet-tab-spell6,
 input.sheet-tab-spell7:checked ~ span.sheet-tab-spell7,
 input.sheet-tab-spell8:checked ~ span.sheet-tab-spell8,
 input.sheet-tab-spell9:checked ~ span.sheet-tab-spell9,
+input.sheet-tab-spell10:checked ~ span.sheet-tab-spell10,
+input.sheet-tab-spell11:checked ~ span.sheet-tab-spell11,
+input.sheet-tab-spell12:checked ~ span.sheet-tab-spell12,
+input.sheet-tab-spell13:checked ~ span.sheet-tab-spell13,
+input.sheet-tab-spell14:checked ~ span.sheet-tab-spell14,
+input.sheet-tab-spell15:checked ~ span.sheet-tab-spell15,
+input.sheet-tab-spell16:checked ~ span.sheet-tab-spell16,
+input.sheet-tab-spell17:checked ~ span.sheet-tab-spell17,
 input.sheet-tab-spell99:checked ~ span.sheet-tab-spell99,
 input.sheet-tab-inventory1:checked ~ span.sheet-tab-inventory1,
 input.sheet-tab-inventory2:checked ~ span.sheet-tab-inventory2,
@@ -1098,6 +1150,7 @@ button.sheet-roll {
 	margin: 1px 0px!important;
 	color: white!important;
 	cursor: url(https://i.imgur.com/rrWZdYI.png) 10 6, auto!important;
+	background: black!important;
 }
 
 button.sheet-roll:hover {
@@ -1105,7 +1158,7 @@ button.sheet-roll:hover {
     padding-top: 0px !important;
     padding-bottom: 0px !important;
     margin: 1px 0px!important;
-    color: yellow!important;
+    color: white!important;
 }
 
 hr,
@@ -1336,10 +1389,9 @@ input[disabled].sheet-passive-skill-score {
     width: 290px;
     height: auto;
     min-height: 50px;
-    max-height: 366px;
     padding-bottom: 30px;
     font-size: 11px;
-    background: url(https://i.imgur.com/8nUebYy.png), url(https://i.imgur.com/QYQ4rvj.jpg)!important;
+    background: url(https://i.imgur.com/8nUebYy.png), url(https://i.imgur.com/8DYW0fJ.jpg)!important;
     background-repeat: no-repeat !important;
     background-position-x: left, left!important;
     background-size: contain, cover !important;

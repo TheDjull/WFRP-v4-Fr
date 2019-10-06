@@ -7,7 +7,7 @@
 // @include       https://app.roll20.net/editor*
 // @include       https://app.roll20.net/campaigns/chatarchive*
 // @run-at        document-start
-// @version       04.10.2019.1
+// @version       06.10.2019.1
 // @license       GPL-3.0-or-later
 // ==/UserScript==
 (function() {var css =`
@@ -1639,6 +1639,22 @@ color: #a11504 !important;
 
 .sheet-bold {
 	color:#ab1717 !important;
+}
+
+.sheet-ReliArea1 {
+    height: 123px !important;
+}
+
+.sheet-ReliArea2 {
+    height: 73px !important;
+}
+
+.sheet-MagArea1 {
+    height: 122px !important;
+}
+
+.sheet-MagArea2 {
+    height: 78px !important;
 }
 
 .sheet-damagetemplate > .sheet-result:not(:last-child) {
