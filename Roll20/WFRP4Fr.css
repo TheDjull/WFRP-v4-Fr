@@ -50,7 +50,7 @@
 .charsheet .sheet-section-bible .sheet-wrap-box {
     padding-top: 25px!important;
     margin-top: 15px!important;
-    background: url(https://i.imgur.com/KIHh9D5.png)!important;
+    background: url(https://i.imgur.com/jjEFR3A.png)!important;
     box-shadow: unset!important;
     background-repeat: no-repeat!important;
     background-size: 100%!important;
@@ -854,14 +854,15 @@ span[class*="sheet-tab-spellbook-prep-con-rit"] {
 	height: 14px;
 	padding: 2px;
 }
+
 .sheet-spell-name {
-	font-size: 160%;
-	padding: 0;
-	border: 0;
-	background-color: transparent;
-	color: #3D3B36;
-	font-weight: bold;
-	font-family: "Caslon Antique", "Adobe Caslon Pro", "Times New Roman";
+    font-size: 130% !important;
+    padding: 0px !important;
+    border: 0;
+    background-color: transparent !important;
+    color: #3D3B36 !important;
+    font-weight: bold;
+    font-family: "Caslon Antique", "Adobe Caslon Pro", "Times New Roman";
 }
 
 .sheet-action-name,
@@ -1137,6 +1138,7 @@ button.sheet-roll {
 	margin: 1px 0px!important;
 	color: white!important;
 	cursor: url(https://i.imgur.com/rrWZdYI.png) 10 6, auto!important;
+	background: black!important;
 }
 
 button.sheet-roll:hover {
@@ -1144,7 +1146,7 @@ button.sheet-roll:hover {
     padding-top: 0px !important;
     padding-bottom: 0px !important;
     margin: 1px 0px!important;
-    color: yellow!important;
+    color: white!important;
 }
 
 hr,

@@ -1653,6 +1653,10 @@ color: #a11504 !important;
     height: 122px !important;
 }
 
+.sheet-MagArea2 {
+    height: 78px !important;
+}
+
 .sheet-damagetemplate > .sheet-result:not(:last-child) {
 	border-bottom: 1px solid hsl(0,50%,50%);
 }
