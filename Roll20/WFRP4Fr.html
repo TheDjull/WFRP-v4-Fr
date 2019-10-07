@@ -4394,7 +4394,7 @@
 				</div>
 				<div class="sheet-row">
 					<div class="sheet-col-1-20 sheet-center sheet-vert-middle">
-						<input type="checkbox" name="attr_armoractiveH1" value="@{armortotalAPH1}"/>
+						<input type="checkbox" name="attr_armoractiveH1" value="1"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-r-sm">
 						<span data-i18n="LIGHT">Light</span>
@@ -4416,12 +4416,12 @@
 						<input type="number" name="attr_armordamageH1" value="0"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-vert-middle sheet-pad-r-sm">
-					    <input type="number" name="attr_armortotalAPH1" value="@{armorAPbaseH1}+@{armormagicbonusH1}-@{armordamageH1}" disabled="true"/>
+					    <input type="number" name="attr_armortotalAPH1" value="(@{armorAPbaseH1}+@{armormagicbonusH1}-@{armordamageH1})*@{armoractiveH1}" disabled="true"/>
 				    </div>
 				</div>
 				<div class="sheet-row">
 					<div class="sheet-col-1-20 sheet-center sheet-vert-middle">
-						<input type="checkbox" name="attr_armoractiveH2" value="@{armortotalAPH2}"/>
+						<input type="checkbox" name="attr_armoractiveH2" value="1"/>
 						</div>
 					<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-r-sm">
 						<span data-i18n="MEDIUM">Medium</span>
@@ -4443,12 +4443,12 @@
 						<input type="number" name="attr_armordamageH2" value="0"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-vert-middle sheet-pad-r-sm">
-					    <input type="number" name="attr_armortotalAPH2" value="@{armorAPbaseH2}+@{armormagicbonusH2}-@{armordamageH2}" disabled="true"/>
+					    <input type="number" name="attr_armortotalAPH2" value="(@{armorAPbaseH2}+@{armormagicbonusH2}-@{armordamageH2})*@{armoractiveH2}" disabled="true"/>
 				    </div>
 				</div>
 				<div class="sheet-row">
 					<div class="sheet-col-1-20 sheet-center sheet-vert-middle">
-						<input type="checkbox" name="attr_armoractiveH3" value="@{armortotalAPH3}"/>
+						<input type="checkbox" name="attr_armoractiveH3" value="1"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-r-sm">
 						<span data-i18n="HEAVY">Heavy</span>
@@ -4470,7 +4470,7 @@
 						<input type="number" name="attr_armordamageH3" value="0"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-vert-middle sheet-pad-r-sm">
-					    <input type="number" name="attr_armortotalAPH3" value="@{armorAPbaseH3}+@{armormagicbonusH3}-@{armordamageH3}" disabled="true"/>
+					    <input type="number" name="attr_armortotalAPH3" value="(@{armorAPbaseH3}+@{armormagicbonusH3}-@{armordamageH3})*@{armoractiveH3}" disabled="true"/>
 				    </div>
 				</div>
 
@@ -4491,7 +4491,7 @@
 				</div>
 				<div class="sheet-row">
 					<div class="sheet-col-1-20 sheet-center sheet-vert-middle">
-						<input type="checkbox" name="attr_armoractiveT1" value="@{armortotalAPT1}"/>
+						<input type="checkbox" name="attr_armoractiveT1" value="1"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-r-sm">
 						<span data-i18n="LIGHT">Light</span>
@@ -4513,12 +4513,12 @@
 						<input type="number" name="attr_armordamageT1" value="0"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-vert-middle sheet-pad-r-sm">
-					    <input type="number" name="attr_armortotalAPT1" value="@{armorAPbaseT1}+@{armormagicbonusT1}-@{armordamageT1}" disabled="true"/>
+					    <input type="number" name="attr_armortotalAPT1" value="(@{armorAPbaseT1}+@{armormagicbonusT1}-@{armordamageT1})*@{armoractiveT1}" disabled="true"/>
 				    </div>
 				</div>
 				<div class="sheet-row">
 					<div class="sheet-col-1-20 sheet-center sheet-vert-middle">
-						<input type="checkbox" name="attr_armoractiveT2" value="@{armortotalAPT2}"/>
+						<input type="checkbox" name="attr_armoractiveT2" value="1"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-r-sm">
 						<span data-i18n="MEDIUM">Medium</span>
@@ -4540,12 +4540,12 @@
 						<input type="number" name="attr_armordamageT2" value="0"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-vert-middle sheet-pad-r-sm">
-					    <input type="number" name="attr_armortotalAPT2" value="@{armorAPbaseT2}+@{armormagicbonusT2}-@{armordamageT2}" disabled="true"/>
+					    <input type="number" name="attr_armortotalAPT2" value="(@{armorAPbaseT2}+@{armormagicbonusT2}-@{armordamageT2})*@{armoractiveT2}" disabled="true"/>
 				    </div>
 				</div>
 				<div class="sheet-row">
 					<div class="sheet-col-1-20 sheet-center sheet-vert-middle">
-						<input type="checkbox" name="attr_armoractiveT3" value="@{armortotalAPT3}"/>
+						<input type="checkbox" name="attr_armoractiveT3" value="1"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-r-sm">
 						<span data-i18n="HEAVY">Heavy</span>
@@ -4567,7 +4567,7 @@
 						<input type="number" name="attr_armordamageT3" value="0"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-vert-middle sheet-pad-r-sm">
-					    <input type="number" name="attr_armortotalAPT3" value="@{armorAPbaseT3}+@{armormagicbonusT3}-@{armordamageT3}" disabled="true"/>
+					    <input type="number" name="attr_armortotalAPT3" value="(@{armorAPbaseT3}+@{armormagicbonusT3}-@{armordamageT3})*@{armoractiveT3}" disabled="true"/>
 				    </div>
 				</div>
 				<div class="sheet-row sheet-spell-header">
@@ -4587,7 +4587,7 @@
 				</div>
 				<div class="sheet-row">
 					<div class="sheet-col-1-20 sheet-center sheet-vert-middle">
-						<input type="checkbox" name="attr_armoractiveLA1" value="@{armortotalAPLA1}"/>
+						<input type="checkbox" name="attr_armoractiveLA1" value="1"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-r-sm">
 						<span data-i18n="LIGHT">Light</span>
@@ -4608,12 +4608,12 @@
 						<input type="number" name="attr_armordamageLA1" value="0"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-vert-middle sheet-pad-r-sm">
-					    <input type="number" name="attr_armortotalAPLA1" value="@{armorAPbaseLA1}+@{armormagicbonusLA1}-@{armordamageLA1}" disabled="true"/>
+					    <input type="number" name="attr_armortotalAPLA1" value="(@{armorAPbaseLA1}+@{armormagicbonusLA1}-@{armordamageLA1})*@{armoractiveLA1}" disabled="true"/>
 				    </div>
 				</div>
 				<div class="sheet-row">
 					<div class="sheet-col-1-20 sheet-center sheet-vert-middle">
-						<input type="checkbox" name="attr_armoractiveLA2" value="@{armortotalAPLA2}"/>
+						<input type="checkbox" name="attr_armoractiveLA2" value="1"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-r-sm">
 						<span data-i18n="MEDIUM">Medium</span>
@@ -4635,12 +4635,12 @@
 						<input type="number" name="attr_armordamageLA2" value="0"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-vert-middle sheet-pad-r-sm">
-					    <input type="number" name="attr_armortotalAPLA2" value="@{armorAPbaseLA2}+@{armormagicbonusLA2}-@{armordamageLA2}" disabled="true"/>
+					    <input type="number" name="attr_armortotalAPLA2" value="(@{armorAPbaseLA2}+@{armormagicbonusLA2}-@{armordamageLA2})*@{armoractiveLA2}" disabled="true"/>
 				    </div>
 				</div>
 				<div class="sheet-row">
 					<div class="sheet-col-1-20 sheet-center sheet-vert-middle">
-						<input type="checkbox" name="attr_armoractiveLA3" value="@{armortotalAPLA3}"/>
+						<input type="checkbox" name="attr_armoractiveLA3" value="1"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-r-sm">
 						<span data-i18n="HEAVY">Heavy</span>
@@ -4661,7 +4661,7 @@
 						<input type="number" name="attr_armordamageLA3" value="0"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-vert-middle sheet-pad-r-sm">
-					    <input type="number" name="attr_armortotalAPLA3" value="@{armorAPbaseLA3}+@{armormagicbonusLA3}-@{armordamageLA3}" disabled="true"/>
+					    <input type="number" name="attr_armortotalAPLA3" value="(@{armorAPbaseLA3}+@{armormagicbonusLA3}-@{armordamageLA3})*@{armoractiveLA3}" disabled="true"/>
 				    </div>
 				</div>
 				<div class="sheet-row sheet-spell-header">
@@ -4681,7 +4681,7 @@
 				</div>
 				<div class="sheet-row">
 					<div class="sheet-col-1-20 sheet-center sheet-vert-middle">
-						<input type="checkbox" name="attr_armoractiveRA1" value="@{armortotalAPRA1}"/>
+						<input type="checkbox" name="attr_armoractiveRA1" value="1"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-r-sm">
 						<span data-i18n="LIGHT">Light</span>
@@ -4702,12 +4702,12 @@
 						<input type="number" name="attr_armordamageRA1" value="0"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-vert-middle sheet-pad-r-sm">
-					    <input type="number" name="attr_armortotalAPRA1" value="@{armorAPbaseRA1}+@{armormagicbonusRA1}-@{armordamageRA1}" disabled="true"/>
+					    <input type="number" name="attr_armortotalAPRA1" value="(@{armorAPbaseRA1}+@{armormagicbonusRA1}-@{armordamageRA1})*@{armoractiveRA1}" disabled="true"/>
 				    </div>
 				</div>
 				<div class="sheet-row">
 					<div class="sheet-col-1-20 sheet-center sheet-vert-middle">
-						<input type="checkbox" name="attr_armoractiveRA2" value="@{armortotalAPRA2}"/>
+						<input type="checkbox" name="attr_armoractiveRA2" value="1"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-r-sm">
 						<span data-i18n="MEDIUM">Medium</span>
@@ -4729,12 +4729,12 @@
 						<input type="number" name="attr_armordamageRA2" value="0"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-vert-middle sheet-pad-r-sm">
-					    <input type="number" name="attr_armortotalAPRA2" value="@{armorAPbaseRA2}+@{armormagicbonusRA2}-@{armordamageRA2}" disabled="true"/>
+					    <input type="number" name="attr_armortotalAPRA2" value="(@{armorAPbaseRA2}+@{armormagicbonusRA2}-@{armordamageRA2})*@{armoractiveRA2}" disabled="true"/>
 				    </div>
 				</div>
 				<div class="sheet-row">
 					<div class="sheet-col-1-20 sheet-center sheet-vert-middle">
-						<input type="checkbox" name="attr_armoractiveRA3" value="@{armortotalAPRA3}"/>
+						<input type="checkbox" name="attr_armoractiveRA3" value="1"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-r-sm">
 						<span data-i18n="HEAVY">Heavy</span>
@@ -4755,7 +4755,7 @@
 						<input type="number" name="attr_armordamageRA3" value="0"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-vert-middle sheet-pad-r-sm">
-					    <input type="number" name="attr_armortotalAPRA3" value="@{armorAPbaseRA3}+@{armormagicbonusRA3}-@{armordamageRA3}" disabled="true"/>
+					    <input type="number" name="attr_armortotalAPRA3" value="(@{armorAPbaseRA3}+@{armormagicbonusRA3}-@{armordamageRA3})*@{armoractiveRA3}" disabled="true"/>
 				    </div>
 				</div>
 				<div class="sheet-row sheet-spell-header">
@@ -4775,7 +4775,7 @@
 				</div>
 				<div class="sheet-row">
 					<div class="sheet-col-1-20 sheet-center sheet-vert-middle">
-						<input type="checkbox" name="attr_armoractiveLL1" value="@{armortotalAPLL1}"/>
+						<input type="checkbox" name="attr_armoractiveLL1" value="1"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-r-sm">
 						<span data-i18n="LIGHT">Light</span>
@@ -4797,12 +4797,12 @@
 						<input type="number" name="attr_armordamageLL1" value="0"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-vert-middle sheet-pad-r-sm">
-					    <input type="number" name="attr_armortotalAPLL1" value="@{armorAPbaseLL1}+@{armormagicbonusLL1}-@{armordamageLL1}" disabled="true"/>
+					    <input type="number" name="attr_armortotalAPLL1" value="(@{armorAPbaseLL1}+@{armormagicbonusLL1}-@{armordamageLL1})*@{armoractiveLL1}" disabled="true"/>
 				    </div>
 				</div>
 				<div class="sheet-row">
 					<div class="sheet-col-1-20 sheet-center sheet-vert-middle">
-						<input type="checkbox" name="attr_armoractiveLL2" value="@{armortotalAPLL2}"/>
+						<input type="checkbox" name="attr_armoractiveLL2" value="1"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-r-sm">
 						<span data-i18n="MEDIUM">Medium</span>
@@ -4824,12 +4824,12 @@
 						<input type="number" name="attr_armordamageLL2" value="0"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-vert-middle sheet-pad-r-sm">
-					    <input type="number" name="attr_armortotalAPLL2" value="@{armorAPbaseLL2}+@{armormagicbonusLL2}-@{armordamageLL2}" disabled="true"/>
+					    <input type="number" name="attr_armortotalAPLL2" value="(@{armorAPbaseLL2}+@{armormagicbonusLL2}-@{armordamageLL2})*@{armoractiveLL2}" disabled="true"/>
 				    </div>
 				</div>
 				<div class="sheet-row">
 					<div class="sheet-col-1-20 sheet-center sheet-vert-middle">
-						<input type="checkbox" name="attr_armoractiveLL3" value="@{armortotalAPLL3}"/>
+						<input type="checkbox" name="attr_armoractiveLL3" value="1"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-r-sm">
 						<span data-i18n="HEAVY">Heavy</span>
@@ -4851,7 +4851,7 @@
 						<input type="number" name="attr_armordamageLL3" value="0"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-vert-middle sheet-pad-r-sm">
-					    <input type="number" name="attr_armortotalAPLL3" value="@{armorAPbaseLL3}+@{armormagicbonusLL3}-@{armordamageLL3}" disabled="true"/>
+					    <input type="number" name="attr_armortotalAPLL3" value="(@{armorAPbaseLL3}+@{armormagicbonusLL3}-@{armordamageLL3})*@{armoractiveLL3}" disabled="true"/>
 				    </div>
 				</div>
 				<div class="sheet-row sheet-spell-header">
@@ -4871,7 +4871,7 @@
 				</div>
 				<div class="sheet-row">
 					<div class="sheet-col-1-20 sheet-center sheet-vert-middle">
-						<input type="checkbox" name="attr_armoractiveRL1" value="@{armortotalAPRL1}"/>
+						<input type="checkbox" name="attr_armoractiveRL1" value="1"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-r-sm">
 						<span data-i18n="LIGHT">Light</span>
@@ -4893,12 +4893,12 @@
 						<input type="number" name="attr_armordamageRL1" value="0"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-vert-middle sheet-pad-r-sm">
-					    <input type="number" name="attr_armortotalAPRL1" value="@{armorAPbaseRL1}+@{armormagicbonusRL1}-@{armordamageRL1}" disabled="true"/>
+					    <input type="number" name="attr_armortotalAPRL1" value="(@{armorAPbaseRL1}+@{armormagicbonusRL1}-@{armordamageRL1})*@{armoractiveRL1}" disabled="true"/>
 				    </div>
 				</div>
 				<div class="sheet-row">
 					<div class="sheet-col-1-20 sheet-center sheet-vert-middle">
-						<input type="checkbox" name="attr_armoractiveRL2" value="@{armortotalAPRL2}"/>
+						<input type="checkbox" name="attr_armoractiveRL2" value="1"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-r-sm">
 						<span data-i18n="MEDIUM">Medium</span>
@@ -4920,12 +4920,12 @@
 						<input type="number" name="attr_armordamageRL2" value="0"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-vert-middle sheet-pad-r-sm">
-					    <input type="number" name="attr_armortotalAPRL2" value="@{armorAPbaseRL2}+@{armormagicbonusRL2}-@{armordamageRL2}" disabled="true"/>
+					    <input type="number" name="attr_armortotalAPRL2" value="(@{armorAPbaseRL2}+@{armormagicbonusRL2}-@{armordamageRL2})*@{armoractiveRL2}" disabled="true"/>
 				    </div>
 				</div>
 				<div class="sheet-row">
 					<div class="sheet-col-1-20 sheet-center sheet-vert-middle">
-						<input type="checkbox" name="attr_armoractiveRL3" value="@{armortotalAPRL3}"/>
+						<input type="checkbox" name="attr_armoractiveRL3" value="1"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-r-sm">
 						<span data-i18n="HEAVY">Heavy</span>
@@ -4947,7 +4947,7 @@
 						<input type="number" name="attr_armordamageRL3" value="0"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-vert-middle sheet-pad-r-sm">
-					    <input type="number" name="attr_armortotalAPRL3" value="@{armorAPbaseRL3}+@{armormagicbonusRL3}-@{armordamageRL3}" disabled="true"/>
+					    <input type="number" name="attr_armortotalAPRL3" value="(@{armorAPbaseRL3}+@{armormagicbonusRL3}-@{armordamageRL3})*@{armoractiveRL3}" disabled="true"/>
 				    </div>
 				</div>
 				<div class="sheet-row sheet-spell-header">
@@ -4967,7 +4967,7 @@
 				</div>
 				<div class="sheet-row">
 					<div class="sheet-col-1-20 sheet-center sheet-vert-middle">
-						<input type="checkbox" name="attr_armoractiveS1" value="@{armortotalAPS1}"/>
+						<input type="checkbox" name="attr_armoractiveS1" value="1"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-r-sm">
 						<span data-i18n="LIGHT">Light</span>
@@ -4989,12 +4989,12 @@
 						<input type="number" name="attr_armordamageS1" value="0"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-vert-middle sheet-pad-r-sm">
-					    <input type="number" name="attr_armortotalAPS1" value="@{armorAPbaseS1}+@{armormagicbonusS1}-@{armordamageS1}" disabled="true"/>
+					    <input type="number" name="attr_armortotalAPS1" value="(@{armorAPbaseS1}+@{armormagicbonusS1}-@{armordamageS1})*@{armoractiveS1}" disabled="true"/>
 				    </div>
 				</div>
 				<div class="sheet-row">
 					<div class="sheet-col-1-20 sheet-center sheet-vert-middle">
-						<input type="checkbox" name="attr_armoractiveS2" value="@{armortotalAPS2}"/>
+						<input type="checkbox" name="attr_armoractiveS2" value="1"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-r-sm">
 						<span data-i18n="MEDIUM">Medium</span>
@@ -5016,12 +5016,12 @@
 						<input type="number" name="attr_armordamageS2" value="0"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-vert-middle sheet-pad-r-sm">
-					    <input type="number" name="attr_armortotalAPS2" value="@{armorAPbaseS2}+@{armormagicbonusS2}-@{armordamageS2}" disabled="true"/>
+					    <input type="number" name="attr_armortotalAPS2" value="(@{armorAPbaseS2}+@{armormagicbonusS2}-@{armordamageS2})*@{armoractiveS2}" disabled="true"/>
 				    </div>
 				</div>
 				<div class="sheet-row">
 					<div class="sheet-col-1-20 sheet-center sheet-vert-middle">
-						<input type="checkbox" name="attr_armoractiveS3" value="@{armortotalAPS3}"/>
+						<input type="checkbox" name="attr_armoractiveS3" value="1"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-center sheet-vert-middle sheet-pad-r-sm">
 						<span data-i18n="HEAVY">Heavy</span>
@@ -5043,7 +5043,7 @@
 						<input type="number" name="attr_armordamageS3" value="0"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-vert-middle sheet-pad-r-sm">
-					    <input type="number" name="attr_armortotalAPS3" value="@{armorAPbaseS3}+@{armormagicbonusS3}-@{armordamageS3}" disabled="true"/>
+					    <input type="number" name="attr_armortotalAPS3" value="(@{armorAPbaseS3}+@{armormagicbonusS3}-@{armordamageS3})*@{armoractiveS3}" disabled="true"/>
 				    </div>
 				</div>
 				<div class="sheet-row">
@@ -5078,7 +5078,7 @@
 						</div>
 						<div class="sheet-row">
 							<div class="sheet-col-1 sheet-pad-t-md">
-								<input type="number" name="attr_armorAPtotalH" value="@{ToughnessBonus}+@{armoractiveH1}+@{armoractiveH2}+@{armoractiveH3}+@{armoractiveS1}+@{armoractiveS2}+@{armoractiveS3}" disabled="true"/>
+								<input type="number" name="attr_armorAPtotalH" value="@{ToughnessBonus}+(@{armortotalAPH1})+(@{armortotalAPH2})+(@{armortotalAPH3})+(@{armortotalAPS1})+(@{armortotalAPS2})+(@{armortotalAPS3})" disabled="true"/>
 							</div>
 						</div>
 						<div class="sheet-row">
@@ -5098,7 +5098,7 @@
 						</div>
 						<div class="sheet-row">
 							<div class="sheet-col-1 sheet-pad-t-md">
-								<input type="number" name="attr_armorAPtotalAR" value="@{ToughnessBonus}+@{armoractiveRA1}+@{armoractiveRA2}+@{armoractiveRA3}+@{armoractiveS1}+@{armoractiveS2}+@{armoractiveS3}" disabled="true"/>
+								<input type="number" name="attr_armorAPtotalAR" value="@{ToughnessBonus}+(@{armortotalAPRA1})+(@{armortotalAPRA2})+(@{armortotalAPRA3})+(@{armortotalAPS1})+(@{armortotalAPS2})+(@{armortotalAPS3})" disabled="true"/>
 							</div>
 						</div>
 						<div class="sheet-row">
@@ -5118,7 +5118,7 @@
 						</div>
 						<div class="sheet-row">
 							<div class="sheet-col-1 sheet-pad-t-md">
-								<input type="number" name="attr_armorAPtotalT" value="@{ToughnessBonus}+@{armoractiveT1}+@{armoractiveT2}+@{armoractiveT3}+@{armoractiveS1}+@{armoractiveS2}+@{armoractiveS3}" disabled="true"/>
+								<input type="number" name="attr_armorAPtotalT" value="@{ToughnessBonus}+(@{armortotalAPT1})+(@{armortotalAPT2})+(@{armortotalAPT3})+(@{armortotalAPS1})+(@{armortotalAPS2})+(@{armortotalAPS3})" disabled="true"/>
 							</div>
 						</div>
 						<div class="sheet-row">
@@ -5138,7 +5138,7 @@
 						</div>
 						<div class="sheet-row">
 							<div class="sheet-col-1 sheet-pad-t-md">
-								<input type="number" name="attr_armorAPtotalLR" value="@{ToughnessBonus}+@{armoractiveRL1}+@{armoractiveRL2}+@{armoractiveRL3}+@{armoractiveS1}+@{armoractiveS2}+@{armoractiveS3}" disabled="true"/>
+								<input type="number" name="attr_armorAPtotalLR" value="@{ToughnessBonus}+(@{armortotalAPRL1})+(@{armortotalAPRL2})+(@{armortotalAPRL3})+(@{armortotalAPS1})+(@{armortotalAPS2})+(@{armortotalAPS3})" disabled="true"/>
 							</div>
 						</div>
 						<div class="sheet-row">
@@ -5150,7 +5150,7 @@
                             <div style="position: absolute ; left: 267px ; bottom: 80px ; height: 50px ; width: 50px">
     						    <img src="https://i.imgur.com/3R0jWjd.png">
     						    <div style="position: absolute ; left: 6px ; bottom: 12px ; width: 40px">
-    						        <input type="number" name="attr_ShieldAP" value="@{armoractiveS1}+@{armoractiveS2}+@{armoractiveS3}" disabled="true"/>
+    						        <input type="number" name="attr_ShieldAP" value="(@{armortotalAPS1})+(@{armortotalAPS2})+(@{armortotalAPS3})" disabled="true"/>
 							    </div>
     					    </div>
     					</div>
@@ -5191,7 +5191,7 @@
 						</div>
 						<div class="sheet-row">
 							<div class="sheet-col-1 sheet-pad-t-md">
-								<input type="number" name="attr_armorAPtotalAL" value="@{ToughnessBonus}+@{armoractiveLA1}+@{armoractiveLA2}+@{armoractiveLA3}+@{armoractiveS1}+@{armoractiveS2}+@{armoractiveS3}" disabled="true"/>
+								<input type="number" name="attr_armorAPtotalAL" value="@{ToughnessBonus}+(@{armortotalAPLA1})+(@{armortotalAPLA2})+(@{armortotalAPLA3})+(@{armortotalAPS1})+(@{armortotalAPS2})+(@{armortotalAPS3})" disabled="true"/>
 							</div>
 						</div>
 						<div class="sheet-row">
@@ -5231,7 +5231,7 @@
 						</div>
 						<div class="sheet-row">
 							<div class="sheet-col-1 sheet-pad-t-md">
-								<input type="number" name="attr_armorAPtotalLL" value="@{ToughnessBonus}+@{armoractiveLL1}+@{armoractiveLL2}+@{armoractiveLL3}+@{armoractiveS1}+@{armoractiveS2}+@{armoractiveS3}" disabled="true"/>
+								<input type="number" name="attr_armorAPtotalLL" value="@{ToughnessBonus}+(@{armortotalAPLL1})+(@{armortotalAPLL2})+(@{armortotalAPLL3})+(@{armortotalAPS1})+(@{armortotalAPS2})+(@{armortotalAPS3})" disabled="true"/>
 							</div>
 						</div>
 						<div class="sheet-row">
@@ -6349,7 +6349,7 @@
 						<input type="number" name="attr_MaxEnc" value="[[@{StrengthBonus}+@{ToughnessBonus}+@{SturdyLevel}]]" disabled="true"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm">
-						<input type="number" name="attr_OverEnc" value="@{TotalEnc}" disabled="true"/>
+						<input type="number" name="attr_OverEnc" value="[[round(((@{TotalEnc})-(@{MaxEnc}))*10)/10]]" disabled="true"/>
 					</div>
 				</div>
 			</div>
