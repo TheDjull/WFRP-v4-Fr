@@ -6334,19 +6334,19 @@
 						<input type="number" name="attr_EncInventory" value="@{TotalInventoryEnc}" disabled="true"/>
 					</div>
 					<div class="sheet-col-1-9 sheet-center sheet-pad-r-sm">
-						<input type="number" name="attr_EncCoin" value="floor(((@{BP} + @{SS} + @{GC}) / 200))" disabled="true"/>
+						<input type="number" name="attr_EncCoin" value="[[round((@{bp}+@{ss}+@{gc})/20)/10]]" disabled="true"/>
 					</div>
 					<div class="sheet-col-1-9 sheet-center sheet-pad-r-sm">
 						<input type="number" name="attr_EncOther" value="0"/>
 					</div>
 					<div class="sheet-col-1-9 sheet-center sheet-pad-r-lg">
-						<input type="number" name="attr_TotalEnc" value="[[@{EncWeapon} + @{EncArmor} + @{EncInventory} + @{EncCoin} + @{EncOther}]]" disabled="true"/>
+						<input type="number" name="attr_TotalEnc" value="[[round((@{EncWeapon}+@{EncArmor}+@{EncInventory}+@{EncCoin}+@{EncOther})*10)/10]]" disabled="true"/>
 					</div>
 					<div class="sheet-col-1-9 sheet-center sheet-pad-r-sm">
 						<input type="number" name="attr_SturdyLevel" value="0"/>
 					</div>
 					<div class="sheet-col-1-9 sheet-center sheet-pad-r-sm">
-						<input type="number" name="attr_MaxEnc" value="[[@{StrengthBonus}+@{ToughnessBonus}+(@{SturdyLevel}*2)]]" disabled="true"/>
+						<input type="number" name="attr_MaxEnc" value="[[@{StrengthBonus}+@{ToughnessBonus}+@{SturdyLevel}]]" disabled="true"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm">
 						<input type="number" name="attr_OverEnc" value="0"/>
