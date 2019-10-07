@@ -6363,7 +6363,7 @@
 				</h4>
 			</div>
 		</div>
-		<input type="checkbox" name="attr_trappings_layout" class="sheet-hidden sheet-hider" value="1" checked="checked"/>
+		<input type="checkbox" name="attr_trappings_layout" class="sheet-hidden sheet-hider" value="1"/>
 		<div class="sheet-block-a">
 			<div class="sheet-row sheet-mar-b-md">
 				<div class="sheet-col-1-4 sheet-small-label sheet-vert-middle">
@@ -6933,7 +6933,7 @@
 			</div>
 			<hr/>
 		</div>
-		<input type="checkbox" name="attr_trappings_layout" class="sheet-hidden sheet-hider" value="2"/>
+		<input type="checkbox" name="attr_trappings_layout" class="sheet-hidden sheet-hider" value="2" checked="checked"/>
 		<div class="sheet-block-b">
 			<div class="sheet-row sheet-sub-header">
 				<div class="sheet-col-1-15 sheet-center sheet-small-label">
@@ -6968,41 +6968,45 @@
 	<!-- SETTINGS TAB -->
 	<div class="sheet-section-settings">
 		<div class="sheet-row">
-			<div class="sheet-col-1">
-				<h4 class="sheet-center">
-					<span data-i18n="SETTINGS">Settings</span>
-					<span class="sheet-pictos">y</span>
-				</h4>
+			<div class="sheet-row">
+				<div class="sheet-col-1">
+					<h4 class="sheet-center">
+						<span data-i18n="SETTINGS">Paramètres</span>
+						<span class="sheet-pictos">y</span>
+					</h4>
+				</div>
+			</div>
+			<div class="sheet-row">
+				<div class="sheet-col-1-3">
+					<div class="sheet-col-1 sheet-vert-bottom sheet-center sheet-small-label sheet-sub-header">
+						<span data-i18n="TRAPPINGS">Paquetage </span>
+					</div>
+					<div class="sheet-row sheet-mar-b-md">
+						<div class="sheet-col-1 sheet-pad-r-md">
+							<select class="sheet-select-no-arrow" name="attr_trappings_layout">
+								<option value="1" data-i18n="OLD-TRAPPINGS">Utiliser l'ancienne mise en page.</option>
+								<option value="2" selected="selected" data-i18n="NEW-TRAPPINGS">Utiliser la nouvelle mise en page.</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<hr>
+				<div class="sheet-col-2-3">
+					<div class="sheet-col-1 sheet-vert-bottom sheet-center sheet-small-label sheet-sub-header">
+						<span data-i18n="INITIATIVE">Initiative</span>
+					</div>
+					<div class="sheet-row sheet-mar-b-md">
+						<div class="sheet-col-1 sheet-pad-r-md">
+							<select class="sheet-select-no-arrow" name="attr_initiative_houserule">
+								<option value="0" selected="selected" data-i18n="DEFAULT-INITIATIVE">Utiliser la règle basique pour l'initiative.</option>
+								<option value="1" data-i18n="HOUSERULE-INITIATIVE">Utiliser la règle maison pour l'initiative : Applique le Bonus d'Initiative lors du jet d'Initiative.</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<hr>
 			</div>
 		</div>
-		<div class="sheet-row sheet-spell-header">
-			<div class="sheet-col-1 sheet-vert-bottom sheet-center sheet-small-label">
-				<span data-i18n="TRAPPINGS">Trappings</span>
-			</div>
-		</div>
-		<div class="sheet-row sheet-mar-b-md">
-			<div class="sheet-col-1 sheet-pad-r-md">
-				<select class="sheet-select-no-arrow" name="attr_trappings_layout">
-					<option value="1" selected="selected" data-i18n="OLD-TRAPPINGS">Use old Trappings layout</option>
-					<option value="2" data-i18n="NEW-TRAPPINGS">Use new Trappings layout</option>
-				</select>
-			</div>
-		</div>
-		<hr/>
-		<div class="sheet-row sheet-spell-header">
-			<div class="sheet-col-1 sheet-vert-bottom sheet-center sheet-small-label">
-				<span data-i18n="INITIATIVE">Initiative</span>
-			</div>
-		</div>
-		<div class="sheet-row sheet-mar-b-md">
-			<div class="sheet-col-1 sheet-pad-r-md">
-				<select class="sheet-select-no-arrow" name="attr_initiative_houserule">
-					<option value="0" selected="selected" data-i18n="DEFAULT-INITIATIVE">Use default Initiative rules</option>
-					<option value="1" data-i18n="HOUSERULE-INITIATIVE">Houserule: Apply Agility Bonus instead of Agility Characteristic to Initiative rolls</option>
-				</select>
-			</div>
-		</div>
-		<hr/>
 	</div>
 	<!-- FOOTER -->
 	<div class="sheet-spacer-xl">
