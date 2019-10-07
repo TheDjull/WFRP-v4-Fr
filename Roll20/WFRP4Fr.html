@@ -6325,7 +6325,7 @@
 				</div>
 				<div class="sheet-row sheet-mar-b-md">
 					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm">
-						<input type="number" name="attr_EncWeapon"/>
+						<input type="number" name="attr_EncWeapon" value="@{EncMelee}+@{EncRanged}" disabled="true"/>
 					</div>
 					<div class="sheet-col-1-9 sheet-center sheet-pad-r-sm">
 						<input type="number" name="attr_EncArmor" value="@{armortotalenc}" disabled="true"/>
@@ -6349,7 +6349,7 @@
 						<input type="number" name="attr_MaxEnc" value="[[@{StrengthBonus}+@{ToughnessBonus}+@{SturdyLevel}]]" disabled="true"/>
 					</div>
 					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm">
-						<input type="number" name="attr_OverEnc" value="0"/>
+						<input type="number" name="attr_OverEnc" value="@{TotalEnc}" disabled="true"/>
 					</div>
 				</div>
 			</div>
