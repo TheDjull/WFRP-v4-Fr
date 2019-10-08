@@ -9,6 +9,7 @@
 
 Suivre les étapes ci dessous (en cliquant sur les liens) :
 
+* Suivre la procédure pour installer [VTT Enhancement Suite](https://ssstormy.github.io/roll20-enhancement-suite/chrome) dans chrome.
 * Installer dans Chrome un moteur de userscript comme [TamperMonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
 * "Autoriser l'accès aux URL de fichier" dans Chrome > Paramètres > Extensions > TamperMonkey Détails
 * Ajouter le [Script](https://raw.githubusercontent.com/TheDjull/WFRP-v4-Fr/master/TamperMonkey/WFRP4_fr.user.js) à TamperMonkey qui s'activera automatiquement sur Roll20
