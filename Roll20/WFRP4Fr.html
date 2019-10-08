@@ -393,38 +393,73 @@
 				</div>
 				<span class="sheet-spacer"></span>
 				<div class="sheet-row">
-					<div class="sheet-col-3-20 sheet-pad-t-xsm sheet-pad-r-sm">
-						<br/>
+					<input type="checkbox" name="attr_roll_type" class="sheet-hidden sheet-hider" value="1" checked="checked"/>
+					<div class="sheet-row">
+						<div class="sheet-col-3-20 sheet-pad-t-xsm sheet-pad-r-sm"></div>
+						<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
+							<button type="roll" class="sheet-roll" name="roll_Weapon_Skill" value="@{Whisper} &{template:WF4e} {{title=^{WEAPON-SKILL}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{WeaponSkill}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
+						</div>
+						<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
+							<button type="roll" class="sheet-roll" name="roll_Ballistic_Skill" value="@{Whisper} &{template:WF4e} {{title=^{BALLISTIC-SKILL}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{BallisticSkill}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
+						</div>
+						<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
+							<button type="roll" class="sheet-roll" name="roll_Strength" value="@{Whisper} &{template:WF4e} {{title=^{STRENGTH}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Strength}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
+						</div>
+						<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
+							<button type="roll" class="sheet-roll" name="roll_Toughness" value="@{Whisper} &{template:WF4e} {{title=^{TOUGHNESS}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Toughness}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
+						</div>
+						<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
+							<button type="roll" class="sheet-roll" name="roll_Initiative" value="@{Whisper} &{template:WF4e} {{title=^{INITIATIVE}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Initiative}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
+						</div>
+						<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
+							<button type="roll" class="sheet-roll" name="roll_Agility" value="@{Whisper} &{template:WF4e} {{title=^{AGILITY}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Agility}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
+						</div>
+						<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
+							<button type="roll" class="sheet-roll" name="roll_Dexterity" value="@{Whisper} &{template:WF4e} {{title=^{DEXTERITY}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Dexterity}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
+						</div>
+						<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
+							<button type="roll" class="sheet-roll" name="roll_Intelligence" value="@{Whisper} &{template:WF4e} {{title=^{INTELLIGENCE}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Intelligence}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
+						</div>
+						<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
+							<button type="roll" class="sheet-roll" name="roll_Will_Power" value="@{Whisper} &{template:WF4e} {{title=^{WILL-POWER}}}{{character_name=@{character_name}}}  {{test=[[1d100]]}} {{target=[[@{WillPower}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
+						</div>
+						<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
+							<button type="roll" class="sheet-roll" name="roll_Fellowship" value="@{Whisper} &{template:WF4e} {{title=^{FELLOWSHIP}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Fellowship}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
+						</div>
 					</div>
-					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<button type="roll" class="sheet-roll" name="roll_Weapon_Skill" value="@{Whisper} &{template:WF4e} {{title=^{WEAPON-SKILL}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{WeaponSkill}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
-					</div>
-					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<button type="roll" class="sheet-roll" name="roll_Ballistic_Skill" value="@{Whisper} &{template:WF4e} {{title=^{BALLISTIC-SKILL}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{BallisticSkill}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
-					</div>
-					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<button type="roll" class="sheet-roll" name="roll_Strength" value="@{Whisper} &{template:WF4e} {{title=^{STRENGTH}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Strength}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
-					</div>
-					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<button type="roll" class="sheet-roll" name="roll_Toughness" value="@{Whisper} &{template:WF4e} {{title=^{TOUGHNESS}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Toughness}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
-					</div>
-					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<button type="roll" class="sheet-roll" name="roll_Initiative" value="@{Whisper} &{template:WF4e} {{title=^{INITIATIVE}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Initiative}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
-					</div>
-					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<button type="roll" class="sheet-roll" name="roll_Agility" value="@{Whisper} &{template:WF4e} {{title=^{AGILITY}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Agility}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
-					</div>
-					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<button type="roll" class="sheet-roll" name="roll_Dexterity" value="@{Whisper} &{template:WF4e} {{title=^{DEXTERITY}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Dexterity}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
-					</div>
-					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<button type="roll" class="sheet-roll" name="roll_Intelligence" value="@{Whisper} &{template:WF4e} {{title=^{INTELLIGENCE}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Intelligence}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
-					</div>
-					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<button type="roll" class="sheet-roll" name="roll_Will_Power" value="@{Whisper} &{template:WF4e} {{title=^{WILL-POWER}}}{{character_name=@{character_name}}}  {{test=[[1d100]]}} {{target=[[@{WillPower}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
-					</div>
-					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<button type="roll" class="sheet-roll" name="roll_Fellowship" value="@{Whisper} &{template:WF4e} {{title=^{FELLOWSHIP}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Fellowship}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
+					<input type="checkbox" name="attr_roll_type" class="sheet-hidden sheet-hider" value="2"/>
+					<div class="sheet-row">
+						<div class="sheet-col-3-20 sheet-pad-t-xsm sheet-pad-r-sm"></div>
+						<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
+							<button type="roll" class="sheet-roll" name="roll_Weapon_Skill" value="@{Whisper} &{template:WF4e} {{title=^{WEAPON-SKILL}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{WeaponSkill}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
+						</div>
+						<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
+							<button type="roll" class="sheet-roll" name="roll_Ballistic_Skill" value="@{Whisper} &{template:WF4e} {{title=^{BALLISTIC-SKILL}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{BallisticSkill}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
+						</div>
+						<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
+							<button type="roll" class="sheet-roll" name="roll_Strength" value="@{Whisper} &{template:WF4e} {{title=^{STRENGTH}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{Strength}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
+						</div>
+						<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
+							<button type="roll" class="sheet-roll" name="roll_Toughness" value="@{Whisper} &{template:WF4e} {{title=^{TOUGHNESS}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{Toughness}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
+						</div>
+						<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
+							<button type="roll" class="sheet-roll" name="roll_Initiative" value="@{Whisper} &{template:WF4e} {{title=^{INITIATIVE}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{Initiative}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
+						</div>
+						<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
+							<button type="roll" class="sheet-roll" name="roll_Agility" value="@{Whisper} &{template:WF4e} {{title=^{AGILITY}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{Agility}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
+						</div>
+						<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
+							<button type="roll" class="sheet-roll" name="roll_Dexterity" value="@{Whisper} &{template:WF4e} {{title=^{DEXTERITY}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{Dexterity}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
+						</div>
+						<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
+							<button type="roll" class="sheet-roll" name="roll_Intelligence" value="@{Whisper} &{template:WF4e} {{title=^{INTELLIGENCE}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{Intelligence}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
+						</div>
+						<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
+							<button type="roll" class="sheet-roll" name="roll_Will_Power" value="@{Whisper} &{template:WF4e} {{title=^{WILL-POWER}}}{{character_name=@{character_name}}}  {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{WillPower}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
+						</div>
+						<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
+							<button type="roll" class="sheet-roll" name="roll_Fellowship" value="@{Whisper} &{template:WF4e} {{title=^{FELLOWSHIP}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{Fellowship}+?{@{translation_modifier}|0}]]}} {{chartest=true}}"></button>
+						</div>
 					</div>
 				</div>
 				<span class="sheet-spacer"></span>
@@ -5333,7 +5368,7 @@
 						<div class="sheet-col-1-2 sheet-pad-b-md">
 							<div class="sheet-row sheet-pad-b-sm">
 								<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
-									<input type="checkbox" name="attr_MMINORTaken" value="1">
+									<input type="checkbox" class="sheet-M00Taken" name="attr_MMINORTaken" value="1">
 								</div>
 								<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
 									<span data-i18n="MMINOR">Mineure</span>
@@ -5341,7 +5376,7 @@
 							</div>
 							<div class="sheet-row sheet-pad-b-sm">
 								<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
-									<input type="checkbox" name="attr_MBEASTTaken" value="1">
+									<input type="checkbox" class="sheet-M02Taken" name="attr_MBEASTTaken" value="1">
 								</div>
 								<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
 									<span data-i18n="MBEAST">Bête</span>
@@ -5349,7 +5384,7 @@
 							</div>
 							<div class="sheet-row sheet-pad-b-sm">
 								<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
-									<input type="checkbox" name="attr_MFIRETaken" value="1">
+									<input type="checkbox" class="sheet-M04Taken" name="attr_MFIRETaken" value="1">
 								</div>
 								<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
 									<span data-i18n="MFIRE">Feu</span>
@@ -5357,7 +5392,7 @@
 							</div>
 							<div class="sheet-row sheet-pad-b-sm">
 								<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
-									<input type="checkbox" name="attr_MSTEELTaken" value="1">
+									<input type="checkbox" class="sheet-M06Taken" name="attr_MSTEELTaken" value="1">
 								</div>
 								<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
 									<span data-i18n="MSTEEL">Métal</span>
@@ -5365,7 +5400,7 @@
 							</div>
 							<div class="sheet-row sheet-pad-b-sm">
 								<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
-									<input type="checkbox" name="attr_MSHADOWTaken" value="1">
+									<input type="checkbox" class="sheet-M08Taken" name="attr_MSHADOWTaken" value="1">
 								</div>
 								<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
 									<span data-i18n="MSHADOW">Ombre</span>
@@ -5373,7 +5408,7 @@
 							</div>
 							<div class="sheet-row sheet-pad-b-sm">
 								<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
-									<input type="checkbox" name="attr_MSAVAGETaken" value="1">
+									<input type="checkbox" class="sheet-M10Taken" name="attr_MSAVAGETaken" value="1">
 								</div>
 								<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
 									<span data-i18n="MSAVAGE">Sauvage</span>
@@ -5381,7 +5416,7 @@
 							</div>
 							<div class="sheet-row sheet-pad-b-sm">
 								<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
-									<input type="checkbox" name="attr_MDEMONOTaken" value="1">
+									<input type="checkbox" class="sheet-M12Taken" name="attr_MDEMONOTaken" value="1">
 								</div>
 								<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
 									<span data-i18n="MDEMONO">Démonologie</span>
@@ -5389,7 +5424,7 @@
 							</div>
 							<div class="sheet-row sheet-pad-b-sm">
 								<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
-									<input type="checkbox" name="attr_MCHAOSTaken" value="1">
+									<input type="checkbox" class="sheet-M14Taken" name="attr_MCHAOSTaken" value="1">
 								</div>
 								<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
 									<span data-i18n="MCHAOS">Chaos</span>
@@ -5399,7 +5434,7 @@
 						<div class="sheet-col-1-2 sheet-vert-top">
 							<div class="sheet-row sheet-pad-b-sm">
 								<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
-									<input type="checkbox" name="attr_MARCANATaken" value="1">
+									<input type="checkbox" class="sheet-M01Taken" name="attr_MARCANATaken" value="1">
 								</div>
 								<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
 									<span data-i18n="MARCANA">Arcane</span>
@@ -5407,7 +5442,7 @@
 							</div>
 							<div class="sheet-row sheet-pad-b-sm">
 								<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
-									<input type="checkbox" name="attr_MWINDTaken" value="1">
+									<input type="checkbox" class="sheet-M03Taken" name="attr_MWINDTaken" value="1">
 								</div>
 								<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
 									<span data-i18n="MWIND">Cieux</span>
@@ -5415,7 +5450,7 @@
 							</div>
 							<div class="sheet-row sheet-pad-b-sm">
 								<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
-									<input type="checkbox" name="attr_MLIGHTTaken" value="1">
+									<input type="checkbox" class="sheet-M05Taken" name="attr_MLIGHTTaken" value="1">
 								</div>
 								<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
 									<span data-i18n="MLIGHT">Lumière</span>
@@ -5423,7 +5458,7 @@
 							</div>
 							<div class="sheet-row sheet-pad-b-sm">
 								<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
-									<input type="checkbox" name="attr_MDEATHTaken" value="1">
+									<input type="checkbox" class="sheet-M07Taken" name="attr_MDEATHTaken" value="1">
 								</div>
 								<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
 									<span data-i18n="MDEATH">Mort</span>
@@ -5431,7 +5466,7 @@
 							</div>
 							<div class="sheet-row sheet-pad-b-sm">
 								<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
-									<input type="checkbox" name="attr_MLIFETaken" value="1">
+									<input type="checkbox" class="sheet-M09Taken" name="attr_MLIFETaken" value="1">
 								</div>
 								<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
 									<span data-i18n="MLIFE">Vie</span>
@@ -5439,7 +5474,7 @@
 							</div>
 							<div class="sheet-row sheet-pad-b-sm">
 								<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
-									<input type="checkbox" name="attr_MWITCHTaken" value="1">
+									<input type="checkbox" class="sheet-M11Taken" name="attr_MWITCHTaken" value="1">
 								</div>
 								<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
 									<span data-i18n="MWITCH">Sorcellerie</span>
@@ -5447,7 +5482,7 @@
 							</div>
 							<div class="sheet-row sheet-pad-b-sm">
 								<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
-									<input type="checkbox" name="attr_MNECROTaken" value="1">
+									<input type="checkbox" class="sheet-M13Taken" name="attr_MNECROTaken" value="1">
 								</div>
 								<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
 									<span data-i18n="MNECRO">Nécromancie</span>
@@ -5618,64 +5653,79 @@
 			<fieldset class="repeating_spellbook0">
 				<div class="sheet-wrap-box sheet-mar-b-md">
 					<div class="sheet-row sheet-mar-l-xl">
-						<div class="sheet-col-4-5 sheet-center sheet-vert-middle sheet-pad-l-sm sheet-pad-r-sm">
+						<div class="sheet-col-4-5 sheet-center sheet-vert-middle sheet-mar-b-sm sheet-mar-t-sm">
 							<input type="text" class="sheet-center sheet-spell-name" name="attr_spellname" placeholder="NOM DU SORT" data-i18n-place="SPELL"/>
 						</div>
-					</div>
-					<div class="sheet-row sheet-mar-l-xl">
-						<div class="sheet-col-1-5">
-							<div class="sheet-col-2-5">
-								<div class="sheet-col-1 sheet-center">
-									<div class="sheet-center sheet-small-label sheet-pad-b-sm">
-										<span data-i18n="CASTING-NUMBER">CN</span>
-									</div>
-								</div>
-								<div class="sheet-col-1 sheet-center">
-									<div class="sheet-small-label sheet-pad-b-sm">
-										<span data-i18n="DURATION">Duration</span>
-									</div>
-								</div>
-								<div class="sheet-col-1 sheet-center">
-									<div class="sheet-small-label sheet-pad-b-sm">
-										<span data-i18n="RANGE">Range</span>
-									</div>
-								</div>
-								<div class="sheet-col-1 sheet-center">
-									<div class="sheet-center sheet-small-label sheet-pad-b-sm">
-										<span data-i18n="TARGET">Target</span>
-									</div>
-								</div>
-							</div>
-							<div class="sheet-col-1-2 sheet-vert-top">
-								<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
-									<input type="text" class="sheet-center" name="attr_spellcastingnumber"/>
-								</div>
-								<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
-									<input type="text" class="sheet-center" name="attr_spellduration"/>
-								</div>
-								<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
-									<input type="text" class="sheet-center" name="attr_spellrange"/>
-								</div>
-								<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
-									<input type="text" class="sheet-center" name="attr_spelltarget"/>
-								</div>
-							</div>
+						<div class="sheet-col-1-6"></div>
+						<div class="sheet-col-1-40">
+							<select class="sheet-select-no-arrow sheet-pictos" name="attr_roll_type">
+								<option value="1" selected="selected" class="sheet-pictos"></option>
+								<option value="2" class="sheet-pictos">!</option>
+							</select>
 						</div>
-						<div class="sheet-col-2-5 sheet-vert-top">
-							<div class="sheet-col-1">
-								<textarea class="sheet-center sheet-pad-md sheet-MagArea2" name="attr_spelldescription" placeholder="Description du Sort"></textarea>
+						<div class="sheet-row">
+							<div class="sheet-col-1-5">
+								<div class="sheet-col-2-5">
+									<div class="sheet-col-1 sheet-center">
+										<div class="sheet-center sheet-small-label sheet-pad-b-sm">
+											<span data-i18n="CASTING-NUMBER">CN</span>
+										</div>
+									</div>
+									<div class="sheet-col-1 sheet-center">
+										<div class="sheet-small-label sheet-pad-b-sm">
+											<span data-i18n="DURATION">Duration</span>
+										</div>
+									</div>
+									<div class="sheet-col-1 sheet-center">
+										<div class="sheet-small-label sheet-pad-b-sm">
+											<span data-i18n="RANGE">Range</span>
+										</div>
+									</div>
+									<div class="sheet-col-1 sheet-center">
+										<div class="sheet-center sheet-small-label sheet-pad-b-sm">
+											<span data-i18n="TARGET">Target</span>
+										</div>
+									</div>
+								</div>
+								<div class="sheet-col-1-2 sheet-vert-top">
+									<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
+										<input type="text" class="sheet-center" name="attr_spellcastingnumber"/>
+									</div>
+									<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
+										<input type="text" class="sheet-center" name="attr_spellduration"/>
+									</div>
+									<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
+										<input type="text" class="sheet-center" name="attr_spellrange"/>
+									</div>
+									<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
+										<input type="text" class="sheet-center" name="attr_spelltarget"/>
+									</div>
+								</div>
 							</div>
-						</div>
-						<div class="sheet-col-1-5 sheet-spell-button-group sheet-center sheet-vert-top">
-							<div class="sheet-row sheet-pad-md">
-								<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=^{CHANNELLING}}} {{skill=@{spellname}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Channelling}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{DRFoca=@{FocaRes}}} {{SpellFoca=@{spellcastingnumber}}}">
-									<span data-i18n="CHANNELLING">Focalisation</span>
-								</button>
+							<div class="sheet-col-2-5 sheet-vert-top">
+								<div class="sheet-col-1">
+									<textarea class="sheet-center sheet-pad-md sheet-MagArea2" name="attr_spelldescription" placeholder="Description du Sort"></textarea>
+								</div>
 							</div>
-							<div class="sheet-row sheet-pad-md">
-								<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=@{spellname}}} {{SpellFoca=@{spellcastingnumber}}} {{skill=@{spellpagetab}}} {{spelldescription=@{spelldescription}}} {{spelltim=@{spellduration}}} {{spelldist=@{spellrange}}} {{spelltarg=@{spelltarget}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}">
-									<span data-i18n="CAST">Incantation</span>
-								</button>
+							<div class="sheet-col-1-5 sheet-spell-button-group sheet-center sheet-vert-top">
+								<input type="checkbox" name="attr_roll_type" class="sheet-hidden sheet-hider" value="1" checked="checked"/>
+								<div class="sheet-row sheet-pad-md">
+									<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=^{CHANNELLING}}} {{skill=@{spellname}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Channelling}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{DRFoca=@{FocaRes}}} {{SpellFoca=@{spellcastingnumber}}}">
+										<span data-i18n="CHANNELLING">Focalisation</span>
+									</button>
+									<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=@{spellname}}} {{SpellFoca=@{spellcastingnumber}}} {{skill=@{spellpagetab}}} {{spelldescription=@{spelldescription}}} {{spelltim=@{spellduration}}} {{spelldist=@{spellrange}}} {{spelltarg=@{spelltarget}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}">
+										<span data-i18n="CAST">Incantation</span>
+									</button>
+								</div>
+								<input type="checkbox" name="attr_roll_type" class="sheet-hidden sheet-hider" value="2"/>
+								<div class="sheet-row sheet-pad-md">
+									<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=^{CHANNELLING}}} {{skill=@{spellname}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{Channelling}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{DRFoca=@{FocaRes}}} {{SpellFoca=@{spellcastingnumber}}}">
+										<span data-i18n="CHANNELLING">Focalisation</span>
+									</button>
+									<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=@{spellname}}} {{SpellFoca=@{spellcastingnumber}}} {{skill=@{spellpagetab}}} {{spelldescription=@{spelldescription}}} {{spelltim=@{spellduration}}} {{spelldist=@{spellrange}}} {{spelltarg=@{spelltarget}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}">
+										<span data-i18n="CAST">Incantation</span>
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -5687,64 +5737,79 @@
 			<fieldset class="repeating_spellbook1">
 				<div class="sheet-wrap-box sheet-mar-b-md">
 					<div class="sheet-row sheet-mar-l-xl">
-						<div class="sheet-col-4-5 sheet-center sheet-vert-middle sheet-pad-l-sm sheet-pad-r-sm">
+						<div class="sheet-col-4-5 sheet-center sheet-vert-middle sheet-mar-b-sm sheet-mar-t-sm">
 							<input type="text" class="sheet-center sheet-spell-name" name="attr_spellname" placeholder="NOM DU SORT" data-i18n-place="SPELL"/>
 						</div>
-					</div>
-					<div class="sheet-row sheet-mar-l-xl">
-						<div class="sheet-col-1-5">
-							<div class="sheet-col-2-5">
-								<div class="sheet-col-1 sheet-center">
-									<div class="sheet-center sheet-small-label sheet-pad-b-sm">
-										<span data-i18n="CASTING-NUMBER">CN</span>
-									</div>
-								</div>
-								<div class="sheet-col-1 sheet-center">
-									<div class="sheet-small-label sheet-pad-b-sm">
-										<span data-i18n="DURATION">Duration</span>
-									</div>
-								</div>
-								<div class="sheet-col-1 sheet-center">
-									<div class="sheet-small-label sheet-pad-b-sm">
-										<span data-i18n="RANGE">Range</span>
-									</div>
-								</div>
-								<div class="sheet-col-1 sheet-center">
-									<div class="sheet-center sheet-small-label sheet-pad-b-sm">
-										<span data-i18n="TARGET">Target</span>
-									</div>
-								</div>
-							</div>
-							<div class="sheet-col-1-2 sheet-vert-top">
-								<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
-									<input type="text" class="sheet-center" name="attr_spellcastingnumber"/>
-								</div>
-								<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
-									<input type="text" class="sheet-center" name="attr_spellduration"/>
-								</div>
-								<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
-									<input type="text" class="sheet-center" name="attr_spellrange"/>
-								</div>
-								<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
-									<input type="text" class="sheet-center" name="attr_spelltarget"/>
-								</div>
-							</div>
+						<div class="sheet-col-1-6"></div>
+						<div class="sheet-col-1-40">
+							<select class="sheet-select-no-arrow sheet-pictos" name="attr_roll_type">
+								<option value="1" selected="selected" class="sheet-pictos"></option>
+								<option value="2" class="sheet-pictos">!</option>
+							</select>
 						</div>
-						<div class="sheet-col-2-5 sheet-vert-top">
-							<div class="sheet-col-1">
-								<textarea class="sheet-center sheet-pad-md sheet-MagArea2" name="attr_spelldescription" placeholder="Description du Sort"></textarea>
+						<div class="sheet-row">
+							<div class="sheet-col-1-5">
+								<div class="sheet-col-2-5">
+									<div class="sheet-col-1 sheet-center">
+										<div class="sheet-center sheet-small-label sheet-pad-b-sm">
+											<span data-i18n="CASTING-NUMBER">CN</span>
+										</div>
+									</div>
+									<div class="sheet-col-1 sheet-center">
+										<div class="sheet-small-label sheet-pad-b-sm">
+											<span data-i18n="DURATION">Duration</span>
+										</div>
+									</div>
+									<div class="sheet-col-1 sheet-center">
+										<div class="sheet-small-label sheet-pad-b-sm">
+											<span data-i18n="RANGE">Range</span>
+										</div>
+									</div>
+									<div class="sheet-col-1 sheet-center">
+										<div class="sheet-center sheet-small-label sheet-pad-b-sm">
+											<span data-i18n="TARGET">Target</span>
+										</div>
+									</div>
+								</div>
+								<div class="sheet-col-1-2 sheet-vert-top">
+									<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
+										<input type="text" class="sheet-center" name="attr_spellcastingnumber"/>
+									</div>
+									<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
+										<input type="text" class="sheet-center" name="attr_spellduration"/>
+									</div>
+									<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
+										<input type="text" class="sheet-center" name="attr_spellrange"/>
+									</div>
+									<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
+										<input type="text" class="sheet-center" name="attr_spelltarget"/>
+									</div>
+								</div>
 							</div>
-						</div>
-						<div class="sheet-col-1-5 sheet-spell-button-group sheet-center sheet-vert-top">
-							<div class="sheet-row sheet-pad-md">
-								<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=^{CHANNELLING}}} {{skill=@{spellname}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Channelling}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{DRFoca=@{FocaRes}}} {{SpellFoca=@{spellcastingnumber}}}">
-									<span data-i18n="CHANNELLING">Focalisation</span>
-								</button>
+							<div class="sheet-col-2-5 sheet-vert-top">
+								<div class="sheet-col-1">
+									<textarea class="sheet-center sheet-pad-md sheet-MagArea2" name="attr_spelldescription" placeholder="Description du Sort"></textarea>
+								</div>
 							</div>
-							<div class="sheet-row sheet-pad-md">
-								<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=@{spellname}}} {{SpellFoca=@{spellcastingnumber}}} {{skill=@{spellpagetab}}} {{spelldescription=@{spelldescription}}} {{spelltim=@{spellduration}}} {{spelldist=@{spellrange}}} {{spelltarg=@{spelltarget}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}">
-									<span data-i18n="CAST">Incantation</span>
-								</button>
+							<div class="sheet-col-1-5 sheet-spell-button-group sheet-center sheet-vert-top">
+								<input type="checkbox" name="attr_roll_type" class="sheet-hidden sheet-hider" value="1" checked="checked"/>
+								<div class="sheet-row sheet-pad-md">
+									<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=^{CHANNELLING}}} {{skill=@{spellname}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Channelling}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{DRFoca=@{FocaRes}}} {{SpellFoca=@{spellcastingnumber}}}">
+										<span data-i18n="CHANNELLING">Focalisation</span>
+									</button>
+									<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=@{spellname}}} {{SpellFoca=@{spellcastingnumber}}} {{skill=@{spellpagetab}}} {{spelldescription=@{spelldescription}}} {{spelltim=@{spellduration}}} {{spelldist=@{spellrange}}} {{spelltarg=@{spelltarget}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}">
+										<span data-i18n="CAST">Incantation</span>
+									</button>
+								</div>
+								<input type="checkbox" name="attr_roll_type" class="sheet-hidden sheet-hider" value="2"/>
+								<div class="sheet-row sheet-pad-md">
+									<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=^{CHANNELLING}}} {{skill=@{spellname}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{Channelling}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{DRFoca=@{FocaRes}}} {{SpellFoca=@{spellcastingnumber}}}">
+										<span data-i18n="CHANNELLING">Focalisation</span>
+									</button>
+									<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=@{spellname}}} {{SpellFoca=@{spellcastingnumber}}} {{skill=@{spellpagetab}}} {{spelldescription=@{spelldescription}}} {{spelltim=@{spellduration}}} {{spelldist=@{spellrange}}} {{spelltarg=@{spelltarget}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}">
+										<span data-i18n="CAST">Incantation</span>
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -5756,64 +5821,79 @@
 			<fieldset class="repeating_spellbook2">
 				<div class="sheet-wrap-box sheet-mar-b-md">
 					<div class="sheet-row sheet-mar-l-xl">
-						<div class="sheet-col-4-5 sheet-center sheet-vert-middle sheet-pad-l-sm sheet-pad-r-sm">
+						<div class="sheet-col-4-5 sheet-center sheet-vert-middle sheet-mar-b-sm sheet-mar-t-sm">
 							<input type="text" class="sheet-center sheet-spell-name" name="attr_spellname" placeholder="NOM DU SORT" data-i18n-place="SPELL"/>
 						</div>
-					</div>
-					<div class="sheet-row sheet-mar-l-xl">
-						<div class="sheet-col-1-5">
-							<div class="sheet-col-2-5">
-								<div class="sheet-col-1 sheet-center">
-									<div class="sheet-center sheet-small-label sheet-pad-b-sm">
-										<span data-i18n="CASTING-NUMBER">CN</span>
-									</div>
-								</div>
-								<div class="sheet-col-1 sheet-center">
-									<div class="sheet-small-label sheet-pad-b-sm">
-										<span data-i18n="DURATION">Duration</span>
-									</div>
-								</div>
-								<div class="sheet-col-1 sheet-center">
-									<div class="sheet-small-label sheet-pad-b-sm">
-										<span data-i18n="RANGE">Range</span>
-									</div>
-								</div>
-								<div class="sheet-col-1 sheet-center">
-									<div class="sheet-center sheet-small-label sheet-pad-b-sm">
-										<span data-i18n="TARGET">Target</span>
-									</div>
-								</div>
-							</div>
-							<div class="sheet-col-1-2 sheet-vert-top">
-								<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
-									<input type="text" class="sheet-center" name="attr_spellcastingnumber"/>
-								</div>
-								<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
-									<input type="text" class="sheet-center" name="attr_spellduration"/>
-								</div>
-								<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
-									<input type="text" class="sheet-center" name="attr_spellrange"/>
-								</div>
-								<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
-									<input type="text" class="sheet-center" name="attr_spelltarget"/>
-								</div>
-							</div>
+						<div class="sheet-col-1-6"></div>
+						<div class="sheet-col-1-40">
+							<select class="sheet-select-no-arrow sheet-pictos" name="attr_roll_type">
+								<option value="1" selected="selected" class="sheet-pictos"></option>
+								<option value="2" class="sheet-pictos">!</option>
+							</select>
 						</div>
-						<div class="sheet-col-2-5 sheet-vert-top">
-							<div class="sheet-col-1">
-								<textarea class="sheet-center sheet-pad-md sheet-MagArea2" name="attr_spelldescription" placeholder="Description du Sort"></textarea>
+						<div class="sheet-row">
+							<div class="sheet-col-1-5">
+								<div class="sheet-col-2-5">
+									<div class="sheet-col-1 sheet-center">
+										<div class="sheet-center sheet-small-label sheet-pad-b-sm">
+											<span data-i18n="CASTING-NUMBER">CN</span>
+										</div>
+									</div>
+									<div class="sheet-col-1 sheet-center">
+										<div class="sheet-small-label sheet-pad-b-sm">
+											<span data-i18n="DURATION">Duration</span>
+										</div>
+									</div>
+									<div class="sheet-col-1 sheet-center">
+										<div class="sheet-small-label sheet-pad-b-sm">
+											<span data-i18n="RANGE">Range</span>
+										</div>
+									</div>
+									<div class="sheet-col-1 sheet-center">
+										<div class="sheet-center sheet-small-label sheet-pad-b-sm">
+											<span data-i18n="TARGET">Target</span>
+										</div>
+									</div>
+								</div>
+								<div class="sheet-col-1-2 sheet-vert-top">
+									<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
+										<input type="text" class="sheet-center" name="attr_spellcastingnumber"/>
+									</div>
+									<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
+										<input type="text" class="sheet-center" name="attr_spellduration"/>
+									</div>
+									<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
+										<input type="text" class="sheet-center" name="attr_spellrange"/>
+									</div>
+									<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
+										<input type="text" class="sheet-center" name="attr_spelltarget"/>
+									</div>
+								</div>
 							</div>
-						</div>
-						<div class="sheet-col-1-5 sheet-spell-button-group sheet-center sheet-vert-top">
-							<div class="sheet-row sheet-pad-md">
-								<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=^{CHANNELLING}}} {{skill=@{spellname}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Channelling}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{DRFoca=@{FocaRes}}} {{SpellFoca=@{spellcastingnumber}}}">
-									<span data-i18n="CHANNELLING">Focalisation</span>
-								</button>
+							<div class="sheet-col-2-5 sheet-vert-top">
+								<div class="sheet-col-1">
+									<textarea class="sheet-center sheet-pad-md sheet-MagArea2" name="attr_spelldescription" placeholder="Description du Sort"></textarea>
+								</div>
 							</div>
-							<div class="sheet-row sheet-pad-md">
-								<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=@{spellname}}} {{SpellFoca=@{spellcastingnumber}}} {{skill=@{spellpagetab}}} {{spelldescription=@{spelldescription}}} {{spelltim=@{spellduration}}} {{spelldist=@{spellrange}}} {{spelltarg=@{spelltarget}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}">
-									<span data-i18n="CAST">Incantation</span>
-								</button>
+							<div class="sheet-col-1-5 sheet-spell-button-group sheet-center sheet-vert-top">
+								<input type="checkbox" name="attr_roll_type" class="sheet-hidden sheet-hider" value="1" checked="checked"/>
+								<div class="sheet-row sheet-pad-md">
+									<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=^{CHANNELLING}}} {{skill=@{spellname}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Channelling}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{DRFoca=@{FocaRes}}} {{SpellFoca=@{spellcastingnumber}}}">
+										<span data-i18n="CHANNELLING">Focalisation</span>
+									</button>
+									<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=@{spellname}}} {{SpellFoca=@{spellcastingnumber}}} {{skill=@{spellpagetab}}} {{spelldescription=@{spelldescription}}} {{spelltim=@{spellduration}}} {{spelldist=@{spellrange}}} {{spelltarg=@{spelltarget}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}">
+										<span data-i18n="CAST">Incantation</span>
+									</button>
+								</div>
+								<input type="checkbox" name="attr_roll_type" class="sheet-hidden sheet-hider" value="2"/>
+								<div class="sheet-row sheet-pad-md">
+									<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=^{CHANNELLING}}} {{skill=@{spellname}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{Channelling}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{DRFoca=@{FocaRes}}} {{SpellFoca=@{spellcastingnumber}}}">
+										<span data-i18n="CHANNELLING">Focalisation</span>
+									</button>
+									<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=@{spellname}}} {{SpellFoca=@{spellcastingnumber}}} {{skill=@{spellpagetab}}} {{spelldescription=@{spelldescription}}} {{spelltim=@{spellduration}}} {{spelldist=@{spellrange}}} {{spelltarg=@{spelltarget}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}">
+										<span data-i18n="CAST">Incantation</span>
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -5825,64 +5905,79 @@
 			<fieldset class="repeating_spellbook3">
 				<div class="sheet-wrap-box sheet-mar-b-md">
 					<div class="sheet-row sheet-mar-l-xl">
-						<div class="sheet-col-4-5 sheet-center sheet-vert-middle sheet-pad-l-sm sheet-pad-r-sm">
+						<div class="sheet-col-4-5 sheet-center sheet-vert-middle sheet-mar-b-sm sheet-mar-t-sm">
 							<input type="text" class="sheet-center sheet-spell-name" name="attr_spellname" placeholder="NOM DU SORT" data-i18n-place="SPELL"/>
 						</div>
-					</div>
-					<div class="sheet-row sheet-mar-l-xl">
-						<div class="sheet-col-1-5">
-							<div class="sheet-col-2-5">
-								<div class="sheet-col-1 sheet-center">
-									<div class="sheet-center sheet-small-label sheet-pad-b-sm">
-										<span data-i18n="CASTING-NUMBER">CN</span>
-									</div>
-								</div>
-								<div class="sheet-col-1 sheet-center">
-									<div class="sheet-small-label sheet-pad-b-sm">
-										<span data-i18n="DURATION">Duration</span>
-									</div>
-								</div>
-								<div class="sheet-col-1 sheet-center">
-									<div class="sheet-small-label sheet-pad-b-sm">
-										<span data-i18n="RANGE">Range</span>
-									</div>
-								</div>
-								<div class="sheet-col-1 sheet-center">
-									<div class="sheet-center sheet-small-label sheet-pad-b-sm">
-										<span data-i18n="TARGET">Target</span>
-									</div>
-								</div>
-							</div>
-							<div class="sheet-col-1-2 sheet-vert-top">
-								<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
-									<input type="text" class="sheet-center" name="attr_spellcastingnumber"/>
-								</div>
-								<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
-									<input type="text" class="sheet-center" name="attr_spellduration"/>
-								</div>
-								<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
-									<input type="text" class="sheet-center" name="attr_spellrange"/>
-								</div>
-								<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
-									<input type="text" class="sheet-center" name="attr_spelltarget"/>
-								</div>
-							</div>
+						<div class="sheet-col-1-6"></div>
+						<div class="sheet-col-1-40">
+							<select class="sheet-select-no-arrow sheet-pictos" name="attr_roll_type">
+								<option value="1" selected="selected" class="sheet-pictos"></option>
+								<option value="2" class="sheet-pictos">!</option>
+							</select>
 						</div>
-						<div class="sheet-col-2-5 sheet-vert-top">
-							<div class="sheet-col-1">
-								<textarea class="sheet-center sheet-pad-md sheet-MagArea2" name="attr_spelldescription" placeholder="Description du Sort"></textarea>
+						<div class="sheet-row">
+							<div class="sheet-col-1-5">
+								<div class="sheet-col-2-5">
+									<div class="sheet-col-1 sheet-center">
+										<div class="sheet-center sheet-small-label sheet-pad-b-sm">
+											<span data-i18n="CASTING-NUMBER">CN</span>
+										</div>
+									</div>
+									<div class="sheet-col-1 sheet-center">
+										<div class="sheet-small-label sheet-pad-b-sm">
+											<span data-i18n="DURATION">Duration</span>
+										</div>
+									</div>
+									<div class="sheet-col-1 sheet-center">
+										<div class="sheet-small-label sheet-pad-b-sm">
+											<span data-i18n="RANGE">Range</span>
+										</div>
+									</div>
+									<div class="sheet-col-1 sheet-center">
+										<div class="sheet-center sheet-small-label sheet-pad-b-sm">
+											<span data-i18n="TARGET">Target</span>
+										</div>
+									</div>
+								</div>
+								<div class="sheet-col-1-2 sheet-vert-top">
+									<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
+										<input type="text" class="sheet-center" name="attr_spellcastingnumber"/>
+									</div>
+									<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
+										<input type="text" class="sheet-center" name="attr_spellduration"/>
+									</div>
+									<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
+										<input type="text" class="sheet-center" name="attr_spellrange"/>
+									</div>
+									<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
+										<input type="text" class="sheet-center" name="attr_spelltarget"/>
+									</div>
+								</div>
 							</div>
-						</div>
-						<div class="sheet-col-1-5 sheet-spell-button-group sheet-center sheet-vert-top">
-							<div class="sheet-row sheet-pad-md">
-								<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=^{CHANNELLING}}} {{skill=@{spellname}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Channelling}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{DRFoca=@{FocaRes}}} {{SpellFoca=@{spellcastingnumber}}}">
-									<span data-i18n="CHANNELLING">Focalisation</span>
-								</button>
+							<div class="sheet-col-2-5 sheet-vert-top">
+								<div class="sheet-col-1">
+									<textarea class="sheet-center sheet-pad-md sheet-MagArea2" name="attr_spelldescription" placeholder="Description du Sort"></textarea>
+								</div>
 							</div>
-							<div class="sheet-row sheet-pad-md">
-								<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=@{spellname}}} {{SpellFoca=@{spellcastingnumber}}} {{skill=@{spellpagetab}}} {{spelldescription=@{spelldescription}}} {{spelltim=@{spellduration}}} {{spelldist=@{spellrange}}} {{spelltarg=@{spelltarget}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}">
-									<span data-i18n="CAST">Incantation</span>
-								</button>
+							<div class="sheet-col-1-5 sheet-spell-button-group sheet-center sheet-vert-top">
+								<input type="checkbox" name="attr_roll_type" class="sheet-hidden sheet-hider" value="1" checked="checked"/>
+								<div class="sheet-row sheet-pad-md">
+									<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=^{CHANNELLING}}} {{skill=@{spellname}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Channelling}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{DRFoca=@{FocaRes}}} {{SpellFoca=@{spellcastingnumber}}}">
+										<span data-i18n="CHANNELLING">Focalisation</span>
+									</button>
+									<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=@{spellname}}} {{SpellFoca=@{spellcastingnumber}}} {{skill=@{spellpagetab}}} {{spelldescription=@{spelldescription}}} {{spelltim=@{spellduration}}} {{spelldist=@{spellrange}}} {{spelltarg=@{spelltarget}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}">
+										<span data-i18n="CAST">Incantation</span>
+									</button>
+								</div>
+								<input type="checkbox" name="attr_roll_type" class="sheet-hidden sheet-hider" value="2"/>
+								<div class="sheet-row sheet-pad-md">
+									<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=^{CHANNELLING}}} {{skill=@{spellname}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{Channelling}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{DRFoca=@{FocaRes}}} {{SpellFoca=@{spellcastingnumber}}}">
+										<span data-i18n="CHANNELLING">Focalisation</span>
+									</button>
+									<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=@{spellname}}} {{SpellFoca=@{spellcastingnumber}}} {{skill=@{spellpagetab}}} {{spelldescription=@{spelldescription}}} {{spelltim=@{spellduration}}} {{spelldist=@{spellrange}}} {{spelltarg=@{spelltarget}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}">
+										<span data-i18n="CAST">Incantation</span>
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -5894,64 +5989,79 @@
 			<fieldset class="repeating_spellbook4">
 				<div class="sheet-wrap-box sheet-mar-b-md">
 					<div class="sheet-row sheet-mar-l-xl">
-						<div class="sheet-col-4-5 sheet-center sheet-vert-middle sheet-pad-l-sm sheet-pad-r-sm">
+						<div class="sheet-col-4-5 sheet-center sheet-vert-middle sheet-mar-b-sm sheet-mar-t-sm">
 							<input type="text" class="sheet-center sheet-spell-name" name="attr_spellname" placeholder="NOM DU SORT" data-i18n-place="SPELL"/>
 						</div>
-					</div>
-					<div class="sheet-row sheet-mar-l-xl">
-						<div class="sheet-col-1-5">
-							<div class="sheet-col-2-5">
-								<div class="sheet-col-1 sheet-center">
-									<div class="sheet-center sheet-small-label sheet-pad-b-sm">
-										<span data-i18n="CASTING-NUMBER">CN</span>
-									</div>
-								</div>
-								<div class="sheet-col-1 sheet-center">
-									<div class="sheet-small-label sheet-pad-b-sm">
-										<span data-i18n="DURATION">Duration</span>
-									</div>
-								</div>
-								<div class="sheet-col-1 sheet-center">
-									<div class="sheet-small-label sheet-pad-b-sm">
-										<span data-i18n="RANGE">Range</span>
-									</div>
-								</div>
-								<div class="sheet-col-1 sheet-center">
-									<div class="sheet-center sheet-small-label sheet-pad-b-sm">
-										<span data-i18n="TARGET">Target</span>
-									</div>
-								</div>
-							</div>
-							<div class="sheet-col-1-2 sheet-vert-top">
-								<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
-									<input type="text" class="sheet-center" name="attr_spellcastingnumber"/>
-								</div>
-								<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
-									<input type="text" class="sheet-center" name="attr_spellduration"/>
-								</div>
-								<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
-									<input type="text" class="sheet-center" name="attr_spellrange"/>
-								</div>
-								<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
-									<input type="text" class="sheet-center" name="attr_spelltarget"/>
-								</div>
-							</div>
+						<div class="sheet-col-1-6"></div>
+						<div class="sheet-col-1-40">
+							<select class="sheet-select-no-arrow sheet-pictos" name="attr_roll_type">
+								<option value="1" selected="selected" class="sheet-pictos"></option>
+								<option value="2" class="sheet-pictos">!</option>
+							</select>
 						</div>
-						<div class="sheet-col-2-5 sheet-vert-top">
-							<div class="sheet-col-1">
-								<textarea class="sheet-center sheet-pad-md sheet-MagArea2" name="attr_spelldescription" placeholder="Description du Sort"></textarea>
+						<div class="sheet-row">
+							<div class="sheet-col-1-5">
+								<div class="sheet-col-2-5">
+									<div class="sheet-col-1 sheet-center">
+										<div class="sheet-center sheet-small-label sheet-pad-b-sm">
+											<span data-i18n="CASTING-NUMBER">CN</span>
+										</div>
+									</div>
+									<div class="sheet-col-1 sheet-center">
+										<div class="sheet-small-label sheet-pad-b-sm">
+											<span data-i18n="DURATION">Duration</span>
+										</div>
+									</div>
+									<div class="sheet-col-1 sheet-center">
+										<div class="sheet-small-label sheet-pad-b-sm">
+											<span data-i18n="RANGE">Range</span>
+										</div>
+									</div>
+									<div class="sheet-col-1 sheet-center">
+										<div class="sheet-center sheet-small-label sheet-pad-b-sm">
+											<span data-i18n="TARGET">Target</span>
+										</div>
+									</div>
+								</div>
+								<div class="sheet-col-1-2 sheet-vert-top">
+									<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
+										<input type="text" class="sheet-center" name="attr_spellcastingnumber"/>
+									</div>
+									<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
+										<input type="text" class="sheet-center" name="attr_spellduration"/>
+									</div>
+									<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
+										<input type="text" class="sheet-center" name="attr_spellrange"/>
+									</div>
+									<div class="sheet-col-1 sheet-center sheet-vert-middle sheet-pad-t-sm">
+										<input type="text" class="sheet-center" name="attr_spelltarget"/>
+									</div>
+								</div>
 							</div>
-						</div>
-						<div class="sheet-col-1-5 sheet-spell-button-group sheet-center sheet-vert-top">
-							<div class="sheet-row sheet-pad-md">
-								<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=^{CHANNELLING}}} {{skill=@{spellname}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Channelling}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{DRFoca=@{FocaRes}}} {{SpellFoca=@{spellcastingnumber}}}">
-									<span data-i18n="CHANNELLING">Focalisation</span>
-								</button>
+							<div class="sheet-col-2-5 sheet-vert-top">
+								<div class="sheet-col-1">
+									<textarea class="sheet-center sheet-pad-md sheet-MagArea2" name="attr_spelldescription" placeholder="Description du Sort"></textarea>
+								</div>
 							</div>
-							<div class="sheet-row sheet-pad-md">
-								<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=@{spellname}}} {{SpellFoca=@{spellcastingnumber}}} {{skill=@{spellpagetab}}} {{spelldescription=@{spelldescription}}} {{spelltim=@{spellduration}}} {{spelldist=@{spellrange}}} {{spelltarg=@{spelltarget}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}">
-									<span data-i18n="CAST">Incantation</span>
-								</button>
+							<div class="sheet-col-1-5 sheet-spell-button-group sheet-center sheet-vert-top">
+								<input type="checkbox" name="attr_roll_type" class="sheet-hidden sheet-hider" value="1" checked="checked"/>
+								<div class="sheet-row sheet-pad-md">
+									<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=^{CHANNELLING}}} {{skill=@{spellname}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Channelling}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{DRFoca=@{FocaRes}}} {{SpellFoca=@{spellcastingnumber}}}">
+										<span data-i18n="CHANNELLING">Focalisation</span>
+									</button>
+									<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=@{spellname}}} {{SpellFoca=@{spellcastingnumber}}} {{skill=@{spellpagetab}}} {{spelldescription=@{spelldescription}}} {{spelltim=@{spellduration}}} {{spelldist=@{spellrange}}} {{spelltarg=@{spelltarget}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}">
+										<span data-i18n="CAST">Incantation</span>
+									</button>
+								</div>
+								<input type="checkbox" name="attr_roll_type" class="sheet-hidden sheet-hider" value="2"/>
+								<div class="sheet-row sheet-pad-md">
+									<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=^{CHANNELLING}}} {{skill=@{spellname}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{Channelling}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{DRFoca=@{FocaRes}}} {{SpellFoca=@{spellcastingnumber}}}">
+										<span data-i18n="CHANNELLING">Focalisation</span>
+									</button>
+									<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=@{spellname}}} {{SpellFoca=@{spellcastingnumber}}} {{skill=@{spellpagetab}}} {{spelldescription=@{spelldescription}}} {{spelltim=@{spellduration}}} {{spelldist=@{spellrange}}} {{spelltarg=@{spelltarget}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}">
+										<span data-i18n="CAST">Incantation</span>
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -5982,11 +6092,10 @@
 						<div class="sheet-row sheet-sub-header">
                     		<div class="sheet-col-1 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="PRAY">Prière</div>
                     	</div>
-
 						<div class="sheet-col-1 sheet-pad-b-md">
 							<div class="sheet-row sheet-pad-b-sm">
 								<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
-									<input type="checkbox" class="sheet-BeniTaken" name="attr_BeniTaken" value="1">
+									<input type="checkbox" name="attr_M16Taken" value="1">
 								</div>
 								<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
 									<span data-i18n="BENI">Béni</span>
@@ -5994,7 +6103,7 @@
 							</div>
 							<div class="sheet-row sheet-pad-b-sm">
 								<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
-									<input type="checkbox" class="sheet-InvoTaken" name="attr_InvoTaken" value="1">
+									<input type="checkbox" name="attr_M17Taken" value="1">
 								</div>
 								<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
 									<span data-i18n="INVOCATION">Invocation</span>
@@ -6149,13 +6258,20 @@
 			<span data-i18n="INVOCATION">Invocation</span>
 		</span>
 		<span class="sheet-spacer"></span>
-		<!-- BENEDICTION SPELLS -->
+			<!-- BENEDICTION SPELLS -->
 		<div class="sheet-spell-page16">
 			<fieldset class="repeating_spellbook16">
 				<div class="sheet-wrap-box sheet-mar-b-md">
 					<div class="sheet-row sheet-mar-l-xl">
-						<div class="sheet-col-4-5 sheet-center sheet-vert-middle sheet-pad-l-sm sheet-pad-r-sm">
+						<div class="sheet-col-4-5 sheet-center sheet-vert-middle sheet-mar-b-sm sheet-mar-t-sm">
 							<input type="text" class="sheet-center sheet-spell-name" name="attr_spellname" placeholder="NOM DE LA BENEDICTION" data-i18n-place="SPELL"/>
+						</div>
+						<div class="sheet-col-1-6"></div>
+						<div class="sheet-col-1-40">
+							<select class="sheet-select-no-arrow sheet-pictos" name="attr_roll_type">
+								<option value="1" selected="selected" class="sheet-pictos"></option>
+								<option value="2" class="sheet-pictos">!</option>
+							</select>
 						</div>
 					</div>
 					<div class="sheet-row sheet-mar-l-xl">
@@ -6195,8 +6311,15 @@
 							</div>
 						</div>
 						<div class="sheet-col-1-5 sheet-spell-button-group sheet-center sheet-vert-top">
+							<input type="checkbox" name="attr_roll_type" class="sheet-hidden sheet-hider" value="1" checked="checked"/>
 							<div class="sheet-row sheet-pad-md">
 								<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=@{spellname}}} {{skill=@{spellpagetab}}} {{spelldescription=@{spelldescription}}} {{spelltim=@{spellduration}}} {{spelldist=@{spellrange}}} {{spelltarg=@{spelltarget}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}">
+									<span data-i18n="PRAY">Prière</span>
+								</button>
+							</div>
+							<input type="checkbox" name="attr_roll_type" class="sheet-hidden sheet-hider" value="2"/>
+							<div class="sheet-row sheet-pad-md">
+								<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=@{spellname}}} {{skill=@{spellpagetab}}} {{spelldescription=@{spelldescription}}} {{spelltim=@{spellduration}}} {{spelldist=@{spellrange}}} {{spelltarg=@{spelltarget}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}">
 									<span data-i18n="PRAY">Prière</span>
 								</button>
 							</div>
@@ -6205,13 +6328,20 @@
 				</div>
 			</fieldset>
 		</div>
-		<!-- INVOCATION SPELLS -->
+			<!-- INVOCATION SPELLS -->
 		<div class="sheet-spell-page17">
 			<fieldset class="repeating_spellbook17">
 				<div class="sheet-wrap-box sheet-mar-b-md">
 					<div class="sheet-row sheet-mar-l-xl">
-						<div class="sheet-col-4-5 sheet-center sheet-vert-middle sheet-pad-l-sm sheet-pad-r-sm">
-							<input type="text" class="sheet-center sheet-spell-name" name="attr_spellname" placeholder="NOM DU MIRACLE" data-i18n-place="SPELL"/>
+						<div class="sheet-col-4-5 sheet-center sheet-vert-middle sheet-mar-b-sm sheet-mar-t-sm">
+							<input type="text" class="sheet-center sheet-spell-name" name="attr_spellname" placeholder="NOM DE LA BENEDICTION" data-i18n-place="SPELL"/>
+						</div>
+						<div class="sheet-col-1-6"></div>
+						<div class="sheet-col-1-40">
+							<select class="sheet-select-no-arrow sheet-pictos" name="attr_roll_type">
+								<option value="1" selected="selected" class="sheet-pictos"></option>
+								<option value="2" class="sheet-pictos">!</option>
+							</select>
 						</div>
 					</div>
 					<div class="sheet-row sheet-mar-l-xl">
@@ -6247,12 +6377,19 @@
 						</div>
 						<div class="sheet-col-2-5 sheet-vert-top">
 							<div class="sheet-col-1">
-								<textarea class="sheet-center sheet-pad-md sheet-MagArea2" name="attr_spelldescription" placeholder="Description du Miracle"></textarea>
+								<textarea class="sheet-center sheet-pad-md sheet-MagArea2" name="attr_spelldescription" placeholder="Description de la Bénédiction"></textarea>
 							</div>
 						</div>
 						<div class="sheet-col-1-5 sheet-spell-button-group sheet-center sheet-vert-top">
+							<input type="checkbox" name="attr_roll_type" class="sheet-hidden sheet-hider" value="1" checked="checked"/>
 							<div class="sheet-row sheet-pad-md">
 								<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=@{spellname}}} {{skill=@{spellpagetab}}} {{spelldescription=@{spelldescription}}} {{spelltim=@{spellduration}}} {{spelldist=@{spellrange}}} {{spelltarg=@{spelltarget}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}">
+									<span data-i18n="PRAY">Prière</span>
+								</button>
+							</div>
+							<input type="checkbox" name="attr_roll_type" class="sheet-hidden sheet-hider" value="2"/>
+							<div class="sheet-row sheet-pad-md">
+								<button type="roll" class="sheet-roll" name="roll_SpellCast" value="@{Whisper} &{template:WF4e} {{title=@{spellname}}} {{skill=@{spellpagetab}}} {{spelldescription=@{spelldescription}}} {{spelltim=@{spellduration}}} {{spelldist=@{spellrange}}} {{spelltarg=@{spelltarget}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}">
 									<span data-i18n="PRAY">Prière</span>
 								</button>
 							</div>
@@ -6363,7 +6500,38 @@
 				</h4>
 			</div>
 		</div>
-		<input type="checkbox" name="attr_trappings_layout" class="sheet-hidden sheet-hider" value="1"/>
+		<input type="checkbox" name="attr_trappings_layout" class="sheet-hidden sheet-hider" value="1" checked="checked"/>
+		<div class="sheet-block-b">
+			<div class="sheet-row sheet-sub-header">
+				<div class="sheet-col-1-15 sheet-center sheet-small-label">
+					<span data-i18n="CARRIED-QUESTION">Carried?</span>
+				</div>
+				<div class="sheet-col-1-15 sheet-center sheet-small-label sheet-pad-r-sm">
+					<span data-i18n="ABBREVIATE-QUANTITY">Qty</span>
+				</div>
+				<div class="sheet-col-4-15 sheet-center sheet-small-label sheet-pad-r-sm">
+					<span data-i18n="NAME">Name</span>
+				</div>
+				<div class="sheet-col-1-15 sheet-center sheet-small-label sheet-pad-r-sm">
+					<span data-i18n="WEIGHT">Weight</span>
+				</div>
+				<div class="sheet-col-8-15 sheet-center sheet-small-label sheet-pad-r-sm">
+					<span data-i18n="DESCRIPTION">Descripton</span>
+				</div>
+			</div>
+			<fieldset class="repeating_inventory">
+				<div class="sheet-inventory-row">
+					<div class="sheet-row sheet-grey-row">
+						<div class="sheet-col-1-15 sheet-center sheet-vert-middle"><input type="checkbox" name="attr_inventorycarried_repeat" value="1" checked="checked"/></div>
+						<div class="sheet-col-1-15 sheet-pad-r-sm"><input type="number" name="attr_inventoryqty_repeat" value="1"/></div>
+						<div class="sheet-col-4-15 sheet-pad-r-sm"><input type="text" name="attr_inventoryname_repeat"/></div>
+						<div class="sheet-col-1-15 sheet-pad-r-sm"><input type="number" name="attr_inventoryweight_repeat" value="0"/></div>
+						<div class="sheet-col-8-15 sheet-pad-r-sm"><input type="text" name="attr_inventorydescription_repeat"/></div>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+		<input type="checkbox" name="attr_trappings_layout" class="sheet-hidden sheet-hider" value="2"/>
 		<div class="sheet-block-a">
 			<div class="sheet-row sheet-mar-b-md">
 				<div class="sheet-col-1-4 sheet-small-label sheet-vert-middle">
@@ -6933,37 +7101,6 @@
 			</div>
 			<hr/>
 		</div>
-		<input type="checkbox" name="attr_trappings_layout" class="sheet-hidden sheet-hider" value="2" checked="checked"/>
-		<div class="sheet-block-b">
-			<div class="sheet-row sheet-sub-header">
-				<div class="sheet-col-1-15 sheet-center sheet-small-label">
-					<span data-i18n="CARRIED-QUESTION">Carried?</span>
-				</div>
-				<div class="sheet-col-1-15 sheet-center sheet-small-label sheet-pad-r-sm">
-					<span data-i18n="ABBREVIATE-QUANTITY">Qty</span>
-				</div>
-				<div class="sheet-col-4-15 sheet-center sheet-small-label sheet-pad-r-sm">
-					<span data-i18n="NAME">Name</span>
-				</div>
-				<div class="sheet-col-1-15 sheet-center sheet-small-label sheet-pad-r-sm">
-					<span data-i18n="WEIGHT">Weight</span>
-				</div>
-				<div class="sheet-col-8-15 sheet-center sheet-small-label sheet-pad-r-sm">
-					<span data-i18n="DESCRIPTION">Descripton</span>
-				</div>
-			</div>
-			<fieldset class="repeating_inventory">
-				<div class="sheet-inventory-row">
-					<div class="sheet-row sheet-grey-row">
-						<div class="sheet-col-1-15 sheet-center sheet-vert-middle"><input type="checkbox" name="attr_inventorycarried_repeat" value="1" checked="checked"/></div>
-						<div class="sheet-col-1-15 sheet-pad-r-sm"><input type="number" name="attr_inventoryqty_repeat" value="1"/></div>
-						<div class="sheet-col-4-15 sheet-pad-r-sm"><input type="text" name="attr_inventoryname_repeat"/></div>
-						<div class="sheet-col-1-15 sheet-pad-r-sm"><input type="number" name="attr_inventoryweight_repeat" value="0"/></div>
-						<div class="sheet-col-8-15 sheet-pad-r-sm"><input type="text" name="attr_inventorydescription_repeat"/></div>
-					</div>
-				</div>
-			</fieldset>
-		</div>
 	</div>
 	<!-- SETTINGS TAB -->
 	<div class="sheet-section-settings">
@@ -6977,34 +7114,36 @@
 				</div>
 			</div>
 			<div class="sheet-row">
-				<div class="sheet-col-1-3">
+				<div class="sheet-col-1-2">
 					<div class="sheet-col-1 sheet-vert-bottom sheet-center sheet-small-label sheet-sub-header">
 						<span data-i18n="TRAPPINGS">Paquetage </span>
 					</div>
-					<div class="sheet-row sheet-mar-b-md">
-						<div class="sheet-col-1 sheet-pad-r-md">
+					<div class="sheet-row sheet-mar-b-md sheet-mar-l-lg">
+						<div class="sheet-col-1-3 sheet-pad-r-md">
+						</div>
+						<div class="sheet-col-1-3 sheet-pad-r-md">
 							<select class="sheet-select-no-arrow" name="attr_trappings_layout">
-								<option value="1" data-i18n="OLD-TRAPPINGS">Utiliser l'ancienne mise en page.</option>
-								<option value="2" selected="selected" data-i18n="NEW-TRAPPINGS">Utiliser la nouvelle mise en page.</option>
+								<option value="1" selected="selected" data-i18n="NEW-TRAPPINGS">Utiliser la nouvelle mise en page.</option>
+								<option value="2" data-i18n="OLD-TRAPPINGS">Utiliser l'ancienne mise en page.</option>
 							</select>
 						</div>
 					</div>
 				</div>
-				<hr>
-				<div class="sheet-col-2-3">
-					<div class="sheet-col-1 sheet-vert-bottom sheet-center sheet-small-label sheet-sub-header">
-						<span data-i18n="INITIATIVE">Initiative</span>
+				<div class="sheet-col-1-2 sheet-vert-top">
+					<div class="sheet-col-1 sheet-center sheet-small-label sheet-sub-header">
+						<span data-i18n="ROLL-MJ">Réservé MJ</span>
 					</div>
-					<div class="sheet-row sheet-mar-b-md">
-						<div class="sheet-col-1 sheet-pad-r-md">
-							<select class="sheet-select-no-arrow" name="attr_initiative_houserule">
-								<option value="0" selected="selected" data-i18n="DEFAULT-INITIATIVE">Utiliser la règle basique pour l'initiative.</option>
-								<option value="1" data-i18n="HOUSERULE-INITIATIVE">Utiliser la règle maison pour l'initiative : Applique le Bonus d'Initiative lors du jet d'Initiative.</option>
+					<div class="sheet-row sheet-mar-b-md sheet-mar-l-lg">
+						<div class="sheet-col-1-3 sheet-pad-r-md">
+						</div>
+						<div class="sheet-col-1-3 sheet-pad-r-md">
+							<select class="sheet-select-no-arrow" name="attr_roll_type">
+								<option value="1" selected="selected" data-i18n="ROLL-NORMAL">Jet de Dé Classique</option>
+								<option value="2" data-i18n="ROLL-ALT">Jet de Dé Alternatif</option>
 							</select>
 						</div>
 					</div>
 				</div>
-				<hr>
 			</div>
 		</div>
 	</div>
@@ -7085,7 +7224,6 @@ on("change:repeating_inventory remove:repeating_inventory", function(eventInfo) 
 			})
 		});
 	});
-
 
 /* STAT MODIFIERS
 This sheet worker loop calculates the values of all the 10 core attributes from their constituent parts, and their modifiers.
