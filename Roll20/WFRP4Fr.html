@@ -926,6 +926,12 @@
         					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
         						<button type="roll" class="sheet-roll" name="roll_ArtSpecialization" value="@{Whisper} &{template:WF4e} {{title=@{ArtSpecializationName}}} {{skill=^{ART}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{ArtSpecializationChar}+@{ArtSpecializationAdv}+@{ArtSpecializationMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
         					</div>
+							<div class="sheet-col-1-100">
+								<select class="sheet-select-no-arrow sheet-pictos" name="attr_roll_type">
+									<option value="1" selected="selected" class="sheet-pictos"></option>
+									<option value="2" class="sheet-pictos">!</option>
+								</select>
+        					</div>
         				</div>
         			</fieldset>
         		</div>
@@ -1210,6 +1216,12 @@
             					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
             						<button type="roll" class="sheet-roll" name="roll_StealthSpecialization" value="@{Whisper} &{template:WF4e} {{title=@{StealthSpecializationName}}} {{skill=^{STEALTH}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{StealthSpecializationChar}+@{StealthSpecializationAdv}+@{StealthSpecializationMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
             					</div>
+								<div class="sheet-col-1-100">
+									<select class="sheet-select-no-arrow sheet-pictos" name="attr_roll_type">
+										<option value="1" selected="selected" class="sheet-pictos"></option>
+										<option value="2" class="sheet-pictos">!</option>
+									</select>
+ 		       					</div>
             				</div>
             			</fieldset>
             		</div>
@@ -1285,6 +1297,12 @@
             					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
             						<button type="roll" class="sheet-roll" name="roll_EntertainSpecialization" value="@{Whisper} &{template:WF4e} {{title=@{EntertainSpecializationName}}} {{skill=^{ENTERTAIN}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{EntertainSpecializationChar}+@{EntertainSpecializationAdv}+@{EntertainSpecializationMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
             					</div>
+								<div class="sheet-col-1-100">
+									<select class="sheet-select-no-arrow sheet-pictos" name="attr_roll_type">
+										<option value="1" selected="selected" class="sheet-pictos"></option>
+										<option value="2" class="sheet-pictos">!</option>
+									</select>
+        						</div>
             				</div>
             			</fieldset>
             		</div>
@@ -1360,6 +1378,12 @@
             					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
             						<button type="roll" class="sheet-roll" name="roll_RideSpecialization" value="@{Whisper} &{template:WF4e} {{title=@{RideSpecializationName}}} {{skill=^{RIDE}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{RideSpecializationChar}+@{RideSpecializationAdv}+@{RideSpecializationMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
             					</div>
+								<div class="sheet-col-1-100">
+									<select class="sheet-select-no-arrow sheet-pictos" name="attr_roll_type">
+										<option value="1" selected="selected" class="sheet-pictos"></option>
+										<option value="2" class="sheet-pictos">!</option>
+									</select>
+        						</div>
             				</div>
             			</fieldset>
             		</div>
@@ -1785,6 +1809,12 @@
             					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
             						<button type="roll" class="sheet-roll" name="roll_RésistanceSpecialization" value="@{Whisper} &{template:WF4e} {{title=@{RésistanceSpecializationName}}} {{skill=^{RESISTANCE}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{RésistanceSpecializationChar}+@{RésistanceSpecializationAdv}+@{RésistanceSpecializationMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
             					</div>
+								<div class="sheet-col-1-100">
+									<select class="sheet-select-no-arrow sheet-pictos" name="attr_roll_type">
+										<option value="1" selected="selected" class="sheet-pictos"></option>
+										<option value="2" class="sheet-pictos">!</option>
+									</select>
+        						</div>
             				</div>
             			</fieldset>
             		</div>
@@ -1917,7 +1947,7 @@
 					<div class="sheet-col-9-100 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="ABBREVIATE-MISCELLANEOUS">Misc</div>
 					<div class="sheet-col-9-100 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="TOTAL">Total</div>
 					<div class="sheet-col-7-100 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="ROLL">Roll</div>
-					<div class="sheet-col-9-100 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="TAKEN">Taken</div>
+					<div class="sheet-col-7-100 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="TAKEN">Taken</div>
 				</div>
 				<!-- Artisanats & Commerces Dex (++) -->
 				<div class="sheet-row sheet-skill-header">
@@ -1960,8 +1990,14 @@
 								<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 									<button type="roll" class="sheet-roll" name="roll_Trade" value="@{Whisper} &{template:WF4e} {{title=@{TradeSpecialization}}} {{skill=^{TRADE}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Trade}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
 								</div>
-								<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+								<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 									<input type="checkbox" name="attr_TradeTaken" value="1"/>
+								</div>
+								<div class="sheet-col-1-100">
+									<select class="sheet-select-no-arrow sheet-pictos" name="attr_roll_type">
+										<option value="1" selected="selected" class="sheet-pictos"></option>
+										<option value="2" class="sheet-pictos">!</option>
+									</select>
 								</div>
 							</div>
 						</fieldset>
@@ -2001,7 +2037,7 @@
 					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<button type="roll" class="sheet-roll" name="roll_PickLock" value="@{Whisper} &{template:WF4e} {{title=^{PICK-LOCK}}} {{skill=^{ADVANCED-SKILL}}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{PickLock}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
 					</div>
-					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<input type="checkbox" name="attr_PickLockTaken" value="1"/>
 					</div>
 				</div>
@@ -2046,8 +2082,14 @@
 								<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 									<button type="roll" class="sheet-roll" name="roll_AnimalTraining" value="@{Whisper} &{template:WF4e} {{title=@{AnimalTrainingSpecialization}}} {{skill=^{ANIMAL-TRAINING}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{AnimalTraining}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
 								</div>
-								<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+								<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 									<input type="checkbox" name="attr_AnimalTrainingTaken" value="1"/>
+								</div>
+								<div class="sheet-col-1-100">
+									<select class="sheet-select-no-arrow sheet-pictos" name="attr_roll_type">
+										<option value="1" selected="selected" class="sheet-pictos"></option>
+										<option value="2" class="sheet-pictos">!</option>
+									</select>
 								</div>
 							</div>
 						</fieldset>
@@ -2087,7 +2129,7 @@
 					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<button type="roll" class="sheet-roll" name="roll_SetTrap" value="@{Whisper} &{template:WF4e} {{title=^{SLEIGHT-OF-HAND}}} {{skill=^{ADVANCED-SKILL}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{SleightofHand}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
 					</div>
-					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<input type="checkbox" name="attr_SleightofHandTaken" value="1"/>
 					</div>
 				</div>
@@ -2125,7 +2167,7 @@
 					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<button type="roll" class="sheet-roll" name="roll_Evaluate" value="@{Whisper} &{template:WF4e} {{title=^{EVALUATE}}} {{skill=^{ADVANCED-SKILL}}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Evaluate}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
 					</div>
-					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<input type="checkbox" name="attr_EvaluateTaken" value="1"/>
 					</div>
 				</div>
@@ -2163,7 +2205,7 @@
 					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<button type="roll" class="sheet-roll" name="roll_Channelling" value="@{Whisper} &{template:WF4e} {{title=^{CHANNELLING}}} {{skill=^{ADVANCED-SKILL}}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Channelling}+?{@{translation_modifier}|0}]]}} {{skilltest=true}} {{DRFoca=@{FocaRes}}}"></button>
 					</div>
-					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<input type="checkbox" name="attr_ChannellingTaken" value="1"/>
 					</div>
 				</div>
@@ -2201,7 +2243,7 @@
 					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<button type="roll" class="sheet-roll" name="roll_Cast" value="@{Whisper} &{template:WF4e} {{title=@{spellname}}} {{skill=^{ADVANCED-SKILL}}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Cast}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
 					</div>
-					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<input type="checkbox" name="attr_CastTaken" value="1"/>
 					</div>
 				</div>
@@ -2246,8 +2288,14 @@
 								<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 									<button type="roll" class="sheet-roll" name="roll_Language" value="@{Whisper} &{template:WF4e} {{title=@{LanguageSpecialization}}} {{skill=^{LANGUAGE}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Language}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
 								</div>
-								<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+								<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 									<input type="checkbox" name="attr_LanguageTaken" value="1"/>
+								</div>
+								<div class="sheet-col-1-100">
+									<select class="sheet-select-no-arrow sheet-pictos" name="attr_roll_type">
+										<option value="1" selected="selected" class="sheet-pictos"></option>
+										<option value="2" class="sheet-pictos">!</option>
+									</select>
 								</div>
 							</div>
 						</fieldset>
@@ -2294,8 +2342,14 @@
 								<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 									<button type="roll" class="sheet-roll" name="roll_Play" value="@{Whisper} &{template:WF4e} {{title=@{PlaySpecialization}}} {{skill=^{PLAY}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Play}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
 								</div>
-								<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+								<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 									<input type="checkbox" name="attr_PlayTaken" value="1"/>
+								</div>
+								<div class="sheet-col-1-100">
+									<select class="sheet-select-no-arrow sheet-pictos" name="attr_roll_type">
+										<option value="1" selected="selected" class="sheet-pictos"></option>
+										<option value="2" class="sheet-pictos">!</option>
+									</select>
 								</div>
 							</div>
 						</fieldset>
@@ -2335,7 +2389,7 @@
 					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<button type="roll" class="sheet-roll" name="roll_Swim" value="@{Whisper} &{template:WF4e} {{title=^{SWIM}}} {{skill=^{ADVANCED-SKILL}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Swim}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
 					</div>
-					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<input type="checkbox" name="attr_SwimTaken" value="1"/>
 					</div>
 				</div>
@@ -2380,8 +2434,14 @@
 								<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 									<button type="roll" class="sheet-roll" name="roll_Sail" value="@{Whisper} &{template:WF4e} {{title=@{SailSpecialization}}} {{skill=^{SAIL}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Sail}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
 								</div>
-								<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+								<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 									<input type="checkbox" name="attr_SailTaken" value="1"/>
+								</div>
+								<div class="sheet-col-1-100">
+									<select class="sheet-select-no-arrow sheet-pictos" name="attr_roll_type">
+										<option value="1" selected="selected" class="sheet-pictos"></option>
+										<option value="2" class="sheet-pictos">!</option>
+									</select>
 								</div>
 							</div>
 						</fieldset>
@@ -2421,7 +2481,7 @@
 					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<button type="roll" class="sheet-roll" name="roll_SetTrap" value="@{Whisper} &{template:WF4e} {{title=^{SET-TRAP}}} {{skill=^{ADVANCED-SKILL}}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{SetTrap}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
 					</div>
-					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<input type="checkbox" name="attr_SetTrapTaken" value="1"/>
 					</div>
 				</div>
@@ -2459,7 +2519,7 @@
 					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<button type="roll" class="sheet-roll" name="roll_Track" value="@{Whisper} &{template:WF4e} {{title=^{TRACK}}} {{skill=^{ADVANCED-SKILL}}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Track}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
 					</div>
-					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<input type="checkbox" name="attr_TrackTaken" value="1"/>
 					</div>
 				</div>
@@ -2497,7 +2557,7 @@
 					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<button type="roll" class="sheet-roll" name="roll_Pray" value="@{Whisper} &{template:WF4e} {{title=^{PRAY}}} {{skill=^{ADVANCED-SKILL}}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Pray}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
 					</div>
-					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<input type="checkbox" name="attr_PrayTaken" value="1"/>
 					</div>
 				</div>
@@ -2535,7 +2595,7 @@
 					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<button type="roll" class="sheet-roll" name="roll_Research" value="@{Whisper} &{template:WF4e} {{title=^{RESEARCH}}} {{skill=^{ADVANCED-SKILL}}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Research}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
 					</div>
-					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<input type="checkbox" name="attr_ResearchTaken" value="1"/>
 					</div>
 				</div>
@@ -2580,8 +2640,14 @@
 								<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 									<button type="roll" class="sheet-roll" name="roll_Perform" value="@{Whisper} &{template:WF4e} {{title=@{PerformSpecialization}}} {{skill=^{PERFORM}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Perform}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
 								</div>
-								<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+								<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 									<input type="checkbox" name="attr_PerformTaken" value="1"/>
+								</div>
+								<div class="sheet-col-1-100">
+									<select class="sheet-select-no-arrow sheet-pictos" name="attr_roll_type">
+										<option value="1" selected="selected" class="sheet-pictos"></option>
+										<option value="2" class="sheet-pictos">!</option>
+									</select>
 								</div>
 							</div>
 						</fieldset>
@@ -2628,8 +2694,14 @@
 								<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 									<button type="roll" class="sheet-roll" name="roll_Lore" value="@{Whisper} &{template:WF4e} {{title=@{LoreSpecialization}}} {{skill=^{LORE}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Lore}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
 								</div>
-								<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+								<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 									<input type="checkbox" name="attr_LoreTaken" value="1"/>
+								</div>
+								<div class="sheet-col-1-100">
+									<select class="sheet-select-no-arrow sheet-pictos" name="attr_roll_type">
+										<option value="1" selected="selected" class="sheet-pictos"></option>
+										<option value="2" class="sheet-pictos">!</option>
+									</select>
 								</div>
 							</div>
 						</fieldset>
@@ -2676,8 +2748,14 @@
 								<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 									<button type="roll" class="sheet-roll" name="roll_SecretSigns" value="@{Whisper} &{template:WF4e} {{title=@{SecretSignsSpecialization}}} {{skill=^{SECRET-SIGNS}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{SecretSigns}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
 								</div>
-								<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+								<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 									<input type="checkbox" name="attr_SecretSignsTaken" value="1"/>
+								</div>
+								<div class="sheet-col-1-100">
+									<select class="sheet-select-no-arrow sheet-pictos" name="attr_roll_type">
+										<option value="1" selected="selected" class="sheet-pictos"></option>
+										<option value="2" class="sheet-pictos">!</option>
+									</select>
 								</div>
 							</div>
 						</fieldset>
@@ -2717,7 +2795,7 @@
 					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<button type="roll" class="sheet-roll" name="roll_Heal" value="@{Whisper} &{template:WF4e} {{title=^{HEAL}}} {{skill=^{ADVANCED-SKILL}}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{Heal}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
 					</div>
-					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<input type="checkbox" name="attr_HealTaken" value="1"/>
 					</div>
 				</div>
@@ -2755,7 +2833,7 @@
 					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<button type="roll" class="sheet-roll" name="roll_AnimalCare" value="@{Whisper} &{template:WF4e} {{title=^{ANIMAL-CARE}}} {{skill=^{ADVANCED-SKILL}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{AnimalCare}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
 					</div>
-					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<input type="checkbox" name="attr_AnimalCareTaken" value="1"/>
 					</div>
 				</div>
@@ -4252,9 +4330,9 @@
 				<div class="sheet-col-9-100 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="REACH">Reach</div>
     			<div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="QUALITIES-AND-FLAWS">Qualities and Flaws</div>
     			<div class="sheet-col-4-100 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="ABBREVIATE-DEFENSIVE">Def</div>
-    			<div class="sheet-col-4-100 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="ABBREVIATE-IMPALE">Imp</div>
-    			<div class="sheet-col-4-100 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="ABBREVIATE-ATTACK">Atk</div>
     			<div class="sheet-col-4-100 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="OPP">Opp</div>
+    			<div class="sheet-col-4-100 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="ABBREVIATE-ATTACK">Atk</div>
+    			<div class="sheet-col-4-100 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="ABBREVIATE-IMPALE">Imp</div>
     		</div>
     		<div class="sheet-row">
     			<fieldset class="repeating_melee">
@@ -4302,15 +4380,21 @@
             			<div class="sheet-col-4-100 sheet-pad-r-sm sheet-center">
             				<input class="sheet-center" type="checkbox" name="attr_MeleeDefensive" value="1"/>
             			</div>
-            			<div class="sheet-col-4-100 sheet-pad-r-sm sheet-center">
-            				<input class="sheet-center" type="checkbox" name="attr_MeleeImpale" value="1"/>
+            			<div class="sheet-col-4-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+            				<span><button type="roll" class="sheet-roll" name="roll_MeleeOpposed" value="@{Whisper} &{template:WF4e} {{title=@{MeleeWeapon}}} {{character_name=@{character_name}}} {{attacktype=^{OPPOSED}}} {{test=[[1d100]]}} {{target=[[@{MeleeChar}+(@{Advantage}*10)+(@{MeleeDefensive}*10)+?{@{translation_modifier}|0}]]}} {{attacktest=true}} {{qualities=@{MeleeQualities}}}}} "></button></span>
             			</div>
             			<div class="sheet-col-4-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
             				<span><button type="roll" class="sheet-roll" name="roll_MeleeAttack" value="@{Whisper} &{template:WF4e} {{title=@{MeleeWeapon}}} {{character_name=@{character_name}}} {{attacktype=^{MELEE}}} {{test=[[1d100]]}} {{target=[[@{MeleeChar}+(@{Advantage}*10)+?{@{translation_modifier}|0}]]}} {{attacktest=true}} {{hitlocation=true}} {{impale=[[[[1d10]]*@{MeleeImpale}]]}} {{qualities=@{MeleeQualities}}} {{damage=[[@{MeleeStrengthBonus}+@{MeleeDamageBonus}]]}}"></button></span>
             			</div>
-            			<div class="sheet-col-4-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
-            				<span><button type="roll" class="sheet-roll" name="roll_MeleeOpposed" value="@{Whisper} &{template:WF4e} {{title=@{MeleeWeapon}}} {{character_name=@{character_name}}} {{attacktype=^{OPPOSED}}} {{test=[[1d100]]}} {{target=[[@{MeleeChar}+(@{Advantage}*10)+(@{MeleeDefensive}*10)+?{@{translation_modifier}|0}]]}} {{attacktest=true}} {{qualities=@{MeleeQualities}}}}} "></button></span>
+            			<div class="sheet-col-4-100 sheet-pad-r-sm sheet-center">
+            				<input class="sheet-center" type="checkbox" name="attr_MeleeImpale" value="1"/>
             			</div>
+						<div class="sheet-col-1-100">
+							<select class="sheet-select-no-arrow sheet-pictos" name="attr_roll_type">
+								<option value="1" selected="selected" class="sheet-pictos"></option>
+								<option value="2" class="sheet-pictos">!</option>
+							</select>
+						</div>
             		</div>
             	</fieldset>
             </div>
@@ -4331,12 +4415,12 @@
     			<div class="sheet-col-1-25 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="SB?">SB?</div>
     			<div class="sheet-col-1-25 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="DMG">Dmg</div>
 				<div class="sheet-col-1-25 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="ABBREVIATE-ENCUMBRANCE">Enc</div>
+    			<div class="sheet-col-1-8 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="ABBREVIATE-AMMUNITION">Ammo Type</div>
+    			<div class="sheet-col-1-25 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="NBR">Nbr</div>
     			<div class="sheet-col-1-25 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="RANGE">Range</div>
-    			<div class="sheet-col-1-25 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="ABBREVIATE-AMMUNITION">Ammo</div>
-    			<div class="sheet-col-1-6 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="AMMO-TYPE">Ammo Type</div>
-    			<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="QUALITIES-AND-FLAWS">Qualities and Flaws</div>
-    			<div class="sheet-col-4-100 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="ABBREVIATE-IMPALE">Imp</div>
+    			<div class="sheet-col-5-17 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="QUALITIES-AND-FLAWS">Qualities and Flaws</div>
     			<div class="sheet-col-1-25 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="ABBREVIATE-ATTACK">Atk</div>
+    			<div class="sheet-col-4-100 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="ABBREVIATE-IMPALE">Imp</div>
     		</div>
     		<div class="sheet-row">
     			<fieldset class="repeating_ranged">
@@ -4368,13 +4452,7 @@
 						<div class="sheet-col-1-25 sheet-pad-r-sm">
             			    <input type="number" name="attr_RangedEnc" value="0"/>
             			</div>
-            			<div class="sheet-col-1-25 sheet-center sheet-pad-r-sm">
-            			    <input class="sheet-center" type="text" name="attr_WeaponRange"/>
-            		    </div>
-            			<div class="sheet-col-1-25 sheet-center sheet-pad-r-sm">
-            			    <input class="sheet-center" type="text" name="attr_RangedAmmo"/>
-            		    </div>
-            			<div class="sheet-col-1-6 sheet-center sheet-pad-r-sm">
+            			<div class="sheet-col-1-8 sheet-center sheet-pad-r-sm">
 							<select class="sheet-select-no-arrow-center" name="attr_AmmoDam">
 								<option value="0" data-i18n="AMMO1">Ammo</option>
 								<option value="0" data-i18n="AMMO2">Ammo</option>
@@ -4386,15 +4464,27 @@
 								<option value="0" data-i18n="AMMO8">Ammo</option>
 							</select>
             		    </div>
-            			<div class="sheet-col-1-4 sheet-pad-r-sm">
+            			<div class="sheet-col-1-25 sheet-center sheet-pad-r-sm">
+            			    <input class="sheet-center" type="text" name="attr_RangedAmmo"/>
+            		    </div>
+            			<div class="sheet-col-1-25 sheet-center sheet-pad-r-sm">
+            			    <input class="sheet-center" type="text" name="attr_WeaponRange"/>
+            		    </div>
+            			<div class="sheet-col-5-17 sheet-pad-r-sm">
             				<textarea class="sheet-center sheet-xs-textarea" name="attr_RangedQualities"></textarea>
-            			</div>
-            			<div class="sheet-col-4-100 sheet-pad-r-sm sheet-center">
-            				<input class="sheet-center" type="checkbox" name="attr_RangedImpale" value="1"/>
             			</div>
             			<div class="sheet-col-1-25 sheet-center sheet-pad-r-sm">
             				<button type="roll" class="sheet-roll" name="roll_RangedAttack" value="@{Whisper} &{template:WF4e} {{title=@{RangedWeaponName}}} {{character_name=@{character_name}}} {{attacktype=^{SRANGED}}} {{test=[[1d100]]}} {{target=[[@{DistChar}+(@{Advantage}*10)+?{@{translation_modifier}|0}]]}} {{attacktest=true}} {{hitlocation=true}} {{impale=[[[[1d10]]*@{RangedImpale}]]}} {{qualities=@{RangedQualities}}} {{damage=[[@{RangedStrengthBonus}+@{RangedDamage}+@{AmmoDam}]]}}"></button>
             			</div>
+            			<div class="sheet-col-4-100 sheet-pad-r-sm sheet-center">
+            				<input class="sheet-center" type="checkbox" name="attr_RangedImpale" value="1"/>
+            			</div>
+						<div class="sheet-col-1-100">
+							<select class="sheet-select-no-arrow sheet-pictos" name="attr_roll_type">
+								<option value="1" selected="selected" class="sheet-pictos"></option>
+								<option value="2" class="sheet-pictos">!</option>
+							</select>
+						</div>
             		</div>
             	</fieldset>
 			</div>
