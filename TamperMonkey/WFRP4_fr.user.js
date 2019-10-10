@@ -7,7 +7,7 @@
 // @include       https://app.roll20.net/editor*
 // @include       https://app.roll20.net/campaigns/chatarchive*
 // @run-at        document-start
-// @version       2019.10.10.3
+// @version       2019.10.10.4
 // @license       GPL-3.0-or-later
 // ==/UserScript==
 (function() {var css =`
@@ -446,7 +446,7 @@ body {
     position: absolute;
 	background-color:hsl(0,0%,10%) !important;
     border: 1px black;
-    height: 326px!important;
+    height: 330px!important;
     top: 40px;
     left: 15px;
     cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
@@ -598,6 +598,10 @@ cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto;
     width: 1.2em;
     height: 1.2em;
     cursor: url(https://i.imgur.com/ZGrSoBD.png) 10 6, auto;
+}
+
+li#helpsite {
+    padding: 3px 3px 7px 3px;
 }
 
 #page-toolbar {
