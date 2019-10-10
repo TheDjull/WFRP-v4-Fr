@@ -7,7 +7,7 @@
 // @include       https://app.roll20.net/editor*
 // @include       https://app.roll20.net/campaigns/chatarchive*
 // @run-at        document-start
-// @version       2019.10.10.2
+// @version       2019.10.10.3
 // @license       GPL-3.0-or-later
 // ==/UserScript==
 (function() {var css =`
@@ -494,6 +494,7 @@ body {
 	width: 40px !important;
     top: 40px;
     left: 40px;
+	border-radius: 10px;
 }
 
 #floatingtoolbar div.submenu {
@@ -558,6 +559,7 @@ body {
 #floatingtoolbar li, #floatinglayerbar li {
 	border: 0 !important;
 	color:hsl(0,0%,80%) !important;
+	border-radius: 10px;
 }
 
 #floatingtoolbar #measure:not(.activebutton) > img {
