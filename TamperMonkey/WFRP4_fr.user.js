@@ -294,6 +294,12 @@ div#color_selector {
     border-radius: 10px 10px 0px 0px!important;
 }
 
+.avatar.filled .inner {
+    padding-top: 0;
+    min-height: 25px;
+    background: transparent;
+}
+
 .hand .handcontainer .ui-sortable .cardinhand img {
     cursor: url(https://i.imgur.com/DIC9KC2.png) 10 6, auto!important;
 }
@@ -1850,6 +1856,14 @@ input[name=\attr_gp\] {
 
 .dropbox.filled {
     border: 4px dashed #D1D1D1 !important;
+    background: transparent;
+}
+
+.cardeditor .avatar, .deckeditor .avatar {
+    width: 100%;
+    min-height: 160px;
+    max-width: 250px;
+    background-color: transparent;
 }
 
 input[name=\attr_pp\] {
