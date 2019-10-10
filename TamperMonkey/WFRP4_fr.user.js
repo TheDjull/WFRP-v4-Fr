@@ -7,7 +7,7 @@
 // @include       https://app.roll20.net/editor*
 // @include       https://app.roll20.net/campaigns/chatarchive*
 // @run-at        document-start
-// @version       2019.10.12.03
+// @version       2019.10.12.04
 // @license       GPL-3.0-or-later
 // ==/UserScript==
 (function() {var css =`
@@ -790,15 +790,16 @@ code {
 
 .editcharacter {
     position: relative;
+    top: -2px;
     right: -15px;
     height: 15px;
-    top: -2px;
 }
 
 .edithandout {
     position: relative;
-    left: 10px;
     top: 0px;
+    left: 10px;
+    height: 15px;
 }
 
 .broadcastcharacter {
@@ -810,8 +811,9 @@ code {
 
 .broadcasthandout {
     position: relative;
-    left: 10px;
     top: 0px;
+    left: 10px;
+    height: 15px;
 }
 
 #textchat .message.system {
@@ -1104,9 +1106,7 @@ textarea,select,input,table,
 }
 
 .ui-dialog-title {
-    position: absolute;
-    top: 25%;
-    left: 12%;
+    left: 65px;
     font-weight: bold !important;
     padding: 0px !important;
     color: hsl(0,0%,80%)!important;
@@ -1121,9 +1121,12 @@ textarea,select,input,table,
     cursor: url(https://i.imgur.com/DIC9KC2.png) 10 6, auto!important;
 }
 
+#ui-id-9 {
+    left: 65px;
+}
+
 .ui-dialog .ui-dialog-titlebar-close {
-    position: absolute;
-    right: 12%;
+    right: 65px;
     top: 50%;
     width: 19px;
     margin: -10px 0 0 0;
@@ -1960,6 +1963,10 @@ box-shadow: 0 3px 3px #222 !important;
 .note-editor span[style*='color: rgb( 0 , 0 , 0 )'],
 .note-editor span[style*='color: rgb( 66 , 66 , 66 )'] {
     color: hsl(0,0%,75%) !important;
+}
+
+.note-editor {
+    min-width: 200px;
 }
 
 .note-editor.note-frame .note-editing-area .note-editable {
