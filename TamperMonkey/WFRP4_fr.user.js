@@ -9,7 +9,7 @@
 // @run-at        document-start
 // @version       2019.10.11.1
 // @license       GPL-3.0-or-later
-// ==/UserScript==
+// ==/UserScript== 
 (function() {var css =`
 
 #rightsidebar li.alertify a {
