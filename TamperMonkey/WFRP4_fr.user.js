@@ -7,7 +7,7 @@
 // @include       https://app.roll20.net/editor*
 // @include       https://app.roll20.net/campaigns/chatarchive*
 // @run-at        document-start
-// @version       2019.10.12.05
+// @version       2019.10.12.08
 // @license       GPL-3.0-or-later
 // ==/UserScript==
 (function() {var css =`
@@ -31,6 +31,9 @@
 
 .ui-dialog input[type=text] {
     text-align: center;
+	background: transparent;
+    border: 0px;
+    color: black;
 }
 
 .sheet-DR {
@@ -627,8 +630,26 @@ li#helpsite {
     cursor: url(https://i.imgur.com/w98RTTM.png) 10 6, auto!important;
 }
 
+.textchatcontainer .tstamp {
+    font-size: .8em;
+    color: hsl(50, 65%, 41%);
+    display: block;
+    padding: 0;
+    margin: -4px 0 2px 0;
+    position: relative;
+    left: 0px;
+    top: -2px;
+    line-height: 10px;
+    font-family: "Adobe Caslon Pro", "Caslon Antique", serif, sans-serif;
+}
+
 #page-toolbar .playerbookmark img {
     cursor: url(https://i.imgur.com/A0Z6zsM.png) 10 6, auto!important;
+}
+
+.nav>li>a:hover, .nav>li>a:focus {
+    text-decoration: none;
+    background-color: transparent;
 }
 
 #page-toolbar .handle {
@@ -977,10 +998,14 @@ textarea,select,input,table,
 #rightsidebar .btn,
 .tokenactions .btn,
 .ui-dialog-content .ui-dialog-buttonset > button {
-    background-color: #1a1a1a !important;
+    background-color: #1a1a1a;
     color: hsl(0,0%,75%);
     border-color: #1a1a1a!important;
     box-shadow: unset;
+}
+
+#audioOutputSource {
+    background-color: #1a1a1a;
 }
 
 #dicerollerdialog {
@@ -1598,12 +1623,38 @@ color: #a11504 !important;
     color: #222!important;
 }
 
+.selectize-dropdown-content {
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #ddd;
+    max-height: 200px;
+}
+
+.textboxlist-bit-editable {
+    border: 1px solid #aaaaaa !important;
+    border-radius: 8px;
+}
+
+.selectize-dropdown .active {
+    background-color: #ccc;
+    color: #495c68;
+}
+
+.selectize-control.multi .selectize-input>div {
+	cursor: unset;
+    margin: 0 3px 3px 0;
+    padding: 2px 6px;
+    background: transparent;
+    color: #303030;
+    border: 0px solid #d0d0d0;
+}
+
 .selectize-input {
-    background: #DADAD9!important;
-    cursor: text;
-    border: 0px!important;
+    background: rgba(0,0,0,0.05) !important;
+    border: 1px!important;
     display: inline-block;
     color: #222!important;
+    cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
 }
 
 .largedialog label {
@@ -1945,11 +1996,17 @@ color: #ccc !important;
 }
 
 .textboxlist-bit-box {
-background: #223 !important;
+    background: rgba(0,0,0,0.25) !important;
+    border: 1px;
+    color: #f5f5f5;
 }
 
 .textboxlist-bits {
-border: 1px solid #000 !important;
+    background: transparent !important;
+    cursor: text;
+    border: 0px!important;
+    display: inline-block;
+    color: #222!important;
 }
 
 .chosen-container-multi .chosen-choices {
@@ -1983,17 +2040,32 @@ color: inherit !important;
 }
 
 .note-editor .panel-default > .panel-heading {
-background-color: #2a2a2a !important;
+background-color: transparent !important;
 border-color: #111 !important;
 }
 
 .handouteditor .dropbox,
 .note-statusbar > .note-resizebar {
-background-color: #111 !important;
+	background-color: transparent !important;
+    cursor: url(https://i.imgur.com/w98RTTM.png) 10 6, auto!important;
+}
+
+.note-editor.note-frame .note-statusbar {
+    background-color: transparent;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+#containerdiv, .redactor_box, .redactor_editor, .redactor_editor:focus, div[contenteditable], div[contenteditable]:focus {
+    border: 1px solid black;
+    border-top: 0px;
+    background: transparent !important;
+    cursor: url(https://i.imgur.com/wEiNb4J.png) 10 16, auto!important;
 }
 
 .note-editor.note-frame {
-border: 1px solid #000 !important;
+    border: 0px solid #000 !important;
+    background: transparent;
 }
 
 #containerdiv,
