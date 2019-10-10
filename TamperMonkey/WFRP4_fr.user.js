@@ -7,7 +7,7 @@
 // @include       https://app.roll20.net/editor*
 // @include       https://app.roll20.net/campaigns/chatarchive*
 // @run-at        document-start
-// @version       2019.10.10.7
+// @version       2019.10.11.1
 // @license       GPL-3.0-or-later
 // ==/UserScript==
 (function() {var css =`
@@ -1179,7 +1179,7 @@ span.pictos.searchinfotoggle {
 p {
     margin: 0 0 9px;
     font-family: "Adobe Caslon Pro", "Caslon Antique", serif, sans-serif;
-    color: hsl(214, 100%, 67%) !important;
+    color: #666 !important;
 }
 
 hr {
@@ -1243,6 +1243,7 @@ label {
     padding: 0px!important;
     border-radius: 0px!important;
     margin: 0px !important;
+	font-size: 11px !important;
 }
 
 #textchat .inlinerollresult.importantroll {
