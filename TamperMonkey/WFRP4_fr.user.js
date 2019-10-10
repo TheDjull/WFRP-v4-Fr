@@ -7,7 +7,7 @@
 // @include       https://app.roll20.net/editor*
 // @include       https://app.roll20.net/campaigns/chatarchive*
 // @run-at        document-start
-// @version       2019.10.11.2
+// @version       2019.10.11.3
 // @license       GPL-3.0-or-later
 // ==/UserScript== 
 (function() {var css =`
@@ -790,7 +790,7 @@ code {
 
 .editcharacter {
     position: absolute;
-    right: -710px;
+    right: -10px;
     height: 15px;
     top: -2px;
 }
@@ -802,9 +802,9 @@ code {
 }
 
 .broadcastcharacter {
-    position: absolute;
+    position: relative;
     top: -2px;
-    right: -630px;
+    right: -10px;
     height: 15px;
 }
 
