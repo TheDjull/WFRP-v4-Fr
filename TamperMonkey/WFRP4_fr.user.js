@@ -915,7 +915,7 @@ code {
 #rightsidebar .paddedtable .content {
     padding: 10px 10px 10px 10px!important;
     background: #222;
-    border-radius: 25px 25px 25px 25px;
+    border-radius: 15px;
     margin-bottom: 2px;
 }
 
@@ -928,7 +928,7 @@ code {
     top: 40px;
     max-height: 95.3%;
     margin-top: 4px;
-    border-radius: 25px;
+    border-radius: 15px;
 	width: 300px;
 }
 
@@ -937,7 +937,7 @@ code {
 }
 
 #textchat-input {
-    border-radius: 25px;
+    border-radius: 15px;
     width: 290px!important;
     right: 0!important;
     top: 47px!important;
