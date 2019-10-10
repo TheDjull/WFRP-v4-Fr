@@ -7,7 +7,7 @@
 // @include       https://app.roll20.net/editor*
 // @include       https://app.roll20.net/campaigns/chatarchive*
 // @run-at        document-start
-// @version       2019.10.12.01
+// @version       2019.10.12.03
 // @license       GPL-3.0-or-later
 // ==/UserScript==
 (function() {var css =`
@@ -1264,7 +1264,7 @@ div.dd-content {
 }
 
 div.dd-content:hover {
-	background-color:hsl(0,0%,40%) !important;
+	background-color: transparent !important;
 }
 
 [class=\'sheet-row\'] {
@@ -1994,7 +1994,7 @@ border: 1px solid #000 !important;
 }
 
 .folderroot .dd-content {
-	border-top: 1px solid hsl(0,0%,30%) !important;
+	border-top: 0px solid hsl(0,0%,30%) !important;
     cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto!important;
 }
 
