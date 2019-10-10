@@ -1179,7 +1179,7 @@ span.pictos.searchinfotoggle {
 p {
     margin: 0 0 9px;
     font-family: "Adobe Caslon Pro", "Caslon Antique", serif, sans-serif;
-    color: #666!important;
+    color: hsl(214, 100%, 67%) !important;
 }
 
 hr {
@@ -1203,7 +1203,7 @@ hr {
 h3 {
     line-height: 27px;
     font-size: 18px;
-    color: #666;
+    color: #ee5f5b !important;
 }
 
 h4 {
@@ -1214,7 +1214,7 @@ h4 {
 label {
     display: block;
     margin-bottom: 5px;
-    color: #666;
+    color: hsl(44,63%,63%) !important;
     cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
 }
 
