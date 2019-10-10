@@ -7,7 +7,7 @@
 // @include       https://app.roll20.net/editor*
 // @include       https://app.roll20.net/campaigns/chatarchive*
 // @run-at        document-start
-// @version       2019.10.11.1
+// @version       2019.10.11.2
 // @license       GPL-3.0-or-later
 // ==/UserScript== 
 (function() {var css =`
@@ -682,6 +682,7 @@ li#helpsite {
     width: 300px;
     border-left: 0px;
     cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
+	margin-right: 3px;
 }
 
 .dupedeck {
@@ -691,6 +692,7 @@ li#helpsite {
 }
 
 #sidebarcontrol {
+	right: 304px!important;
     opacity: .7 !important;
     padding: 0 !important;
     -webkit-transform: translateX(0) rotate(-90deg) !important;
@@ -954,6 +956,7 @@ code {
     border-top: 0 solid hsl(0,0%,0%)!important;
     text-align: left!important;
     margin-top: -3px!important;
+	margin-right: 3px!important;
     cursor: url(https://i.imgur.com/LoDPkJa.png) 10 6, auto!important;
 }
 
@@ -1609,11 +1612,9 @@ color: #a11504 !important;
 
 .textchatcontainer {
     background: transparent!important;
-    height: 87.5%!important;
+    height: 88.2%!important;
     position: relative!important;
     top: 118px!important;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
 }
 
 }
