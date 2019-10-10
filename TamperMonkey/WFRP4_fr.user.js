@@ -7,7 +7,7 @@
 // @include       https://app.roll20.net/editor*
 // @include       https://app.roll20.net/campaigns/chatarchive*
 // @run-at        document-start
-// @version       2019.10.10.4
+// @version       2019.10.10.5
 // @license       GPL-3.0-or-later
 // ==/UserScript==
 (function() {var css =`
@@ -1223,6 +1223,7 @@ label {
 
 #rightsidebar .ui-tabs-nav a {
     cursor: url(https://i.imgur.com/EPMx80k.png) 10 6, auto!important;
+	padding: 1px 9px;
 }
 
 #imagedialog .searchbox {
@@ -1277,7 +1278,7 @@ div.dd-content:hover {
     float: left;
     position: relative;
     top: -5px;
-    padding: 0 0 1px 0;
+    padding: 0px 0px 1px 0px;
     white-space: nowrap;
     background: none;
     border: 0;
@@ -1287,8 +1288,12 @@ div.dd-content:hover {
 
 .ui-tabs .ui-tabs-nav li:hover,
 .ui-tabs .ui-tabs-nav li a:hover {
-	background: hsl(0,0%,15%) !important;
-	border-bottom: 1px solid hsl(44,63%,63%) !important;
+	background: rgba(0,0,0,0.05) !important;
+    border-bottom: 1px solid #ee5f5b !important;
+}
+
+.ui-tabs .ui-tabs-nav li a {
+	margin-right:0px !important;
 }
 
 li.ui-tabs-active.ui-state-active:focus {
