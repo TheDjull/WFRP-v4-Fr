@@ -7,7 +7,7 @@
 // @include       https://app.roll20.net/editor*
 // @include       https://app.roll20.net/campaigns/chatarchive*
 // @run-at        document-start
-// @version       2019.10.12.04
+// @version       2019.10.12.05
 // @license       GPL-3.0-or-later
 // ==/UserScript==
 (function() {var css =`
@@ -977,7 +977,7 @@ textarea,select,input,table,
 #rightsidebar .btn,
 .tokenactions .btn,
 .ui-dialog-content .ui-dialog-buttonset > button {
-    background-color: #1a1a1a;
+    background-color: #1a1a1a !important;
     color: hsl(0,0%,75%);
     border-color: #1a1a1a!important;
     box-shadow: unset;
@@ -1105,8 +1105,17 @@ textarea,select,input,table,
     padding: 0px 20px;
 }
 
+#jukeboxwhatsplaying {
+	border: 0px solid #d1d1d1;
+    margin: 10px 0;
+    padding: 3px;
+    min-height: 49px;
+    position: relative;
+}
+
 .ui-dialog-title {
-    left: 65px;
+    top: 12px;
+	left: 65px;
     font-weight: bold !important;
     padding: 0px !important;
     color: hsl(0,0%,80%)!important;
