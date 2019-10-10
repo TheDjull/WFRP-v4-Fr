@@ -7,7 +7,7 @@
 // @include       https://app.roll20.net/editor*
 // @include       https://app.roll20.net/campaigns/chatarchive*
 // @run-at        document-start
-// @version       2019.10.11.3
+// @version       2019.10.11.4
 // @license       GPL-3.0-or-later
 // ==/UserScript== 
 (function() {var css =`
@@ -789,7 +789,7 @@ code {
 }
 
 .editcharacter {
-    position: absolute;
+    position: relative;
     right: -10px;
     height: 15px;
     top: -2px;
