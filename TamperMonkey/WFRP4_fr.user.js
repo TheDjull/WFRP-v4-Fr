@@ -7,7 +7,7 @@
 // @include       https://app.roll20.net/editor*
 // @include       https://app.roll20.net/campaigns/chatarchive*
 // @run-at        document-start
-// @version       2019.10.08.1
+// @version       2019.10.10.1
 // @license       GPL-3.0-or-later
 // ==/UserScript==
 (function() {var css =`
@@ -929,6 +929,7 @@ code {
     max-height: 95.3%;
     margin-top: 4px;
     border-radius: 25px;
+	width: 300px;
 }
 
 .dd-handle:before {
