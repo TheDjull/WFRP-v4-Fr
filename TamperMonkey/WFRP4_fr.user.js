@@ -2046,7 +2046,7 @@ box-shadow: 0 3px 3px #222 !important;
 }
 
 .note-editor {
-    min-width: 200px;
+    min-width: 350px;
 }
 
 .note-editor.note-frame .note-editing-area .note-editable {
