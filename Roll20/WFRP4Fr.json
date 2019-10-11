@@ -665,7 +665,7 @@
     "CRIT-HEAD12-DESC1": "Un coup violent porté sur l'arête de votre nez fait jaillir un flot de sang.",
     "CRIT-HEAD12-COND1": "+1 Hémorragie [T.Rés](+0)",
     "CRIT-HEAD12-COND2": "+2 Hémorragie",
-    "CRIT-HEAD12-EFCT1": "Jusqu'à [Chirurgie] esthétique et selon le contexte, [M.Soc](+1 ou -1 DR).",
+    "CRIT-HEAD12-EFCT1": "Jusqu'à [Chirurgie] esthétique et selon le contexte, [DR.Soc](+1/-1).",
     "CRIT-HEAD13-NAME1": "Mâchoire Cassée",
     "CRIT-HEAD13-DESC1": "Le coup qui vous brise la mâchoire est accompagné d'un bruit ignoble.",
     "CRIT-HEAD13-COND1": "+3 Assommé +1 si [T.Rés](+0)",
