@@ -24,6 +24,10 @@
     outline: none;
 }
 
+.tokenslot.filled {
+    border: 4px dashed #D1D1D1;
+}
+
 .btn:focus {
     outline: none;
     outline-offset: unset;
