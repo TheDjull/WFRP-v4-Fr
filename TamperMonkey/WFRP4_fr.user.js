@@ -7,7 +7,7 @@
 // @include       https://app.roll20.net/editor*
 // @include       https://app.roll20.net/campaigns/chatarchive*
 // @run-at        document-start
-// @version       2019.10.12.08
+// @version       2019.10.17.01
 // @license       GPL-3.0-or-later
 // ==/UserScript==
 (function() {var css =`
@@ -2046,7 +2046,7 @@ box-shadow: 0 3px 3px #222 !important;
 
 .note-editor span[style*='color: rgb( 0 , 0 , 0 )'],
 .note-editor span[style*='color: rgb( 66 , 66 , 66 )'] {
-    color: hsl(0,0%,75%) !important;
+    color: color: #777 !important;;
 }
 
 .note-editor {
