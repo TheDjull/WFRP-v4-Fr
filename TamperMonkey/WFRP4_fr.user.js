@@ -7,7 +7,7 @@
 // @include       https://app.roll20.net/editor*
 // @include       https://app.roll20.net/campaigns/chatarchive*
 // @run-at        document-start
-// @version       2019.10.17.02
+// @version       2019.10.18.01
 // @license       GPL-3.0-or-later
 // ==/UserScript==
 (function() {var css =`
@@ -902,8 +902,8 @@ code {
 
 .sheet-woundnumber {
     position: relative;
-    left: 8px;
-    top: -2px;
+    left: 11px;
+    top: -3px;
 }
 
 .textchatcontainer .emote {
