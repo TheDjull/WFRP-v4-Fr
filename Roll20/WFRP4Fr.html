@@ -1783,46 +1783,97 @@
 						<button type="roll" class="sheet-roll" name="roll_Navigation" value="@{Whisper} &{template:WF4e} {{title=^{NAVIGATION}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{NavigationChar}+@{NavigationAdv}+@{NavigationMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
 					</div>
 				</div>
-				<!-- Perception Ini -->
-				<div class="sheet-row">
-					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
-						<input type="checkbox" name="attr_PerceptionCareer" value="1"/>
+				<!-- Perception Ini (++) -->
+				<div class="sheet-skill-header">
+    				<div class="sheet-row">
+						<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+							<input type="checkbox" name="attr_PerceptionCareer" value="1"/>
+						</div>
+						<div class="sheet-col-4-9 sheet-pad-r-sm sheet-vert-middle">
+							<span data-i18n="PERCEPTION" class="sheet-italic">Perception</span>
+						</div>
+						<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+							<select class="sheet-select-no-arrow-center" name="attr_PerceptionChar">
+								<option value="(@{WeaponSkill})" data-i18n="ABBREVIATE-WEAPON-SKILL">WS</option>
+								<option value="(@{BallisticSkill})" data-i18n="ABBREVIATE-BALLISTIC-SKILL">BS</option>
+								<option value="(@{Strength})" data-i18n="ABBREVIATE-STRENGTH">S</option>
+								<option value="(@{Toughness})" data-i18n="ABBREVIATE-TOUGHNESS">T</option>
+								<option value="(@{Initiative})" data-i18n="ABBREVIATE-INITIATIVE" selected="selected">I</option>
+								<option value="(@{Agility})" data-i18n="ABBREVIATE-AGILITY">Ag</option>
+								<option value="(@{Dexterity})" data-i18n="ABBREVIATE-DEXTERITY">Dex</option>
+								<option value="(@{Intelligence})" data-i18n="ABBREVIATE-INTELLIGENCE">Int</option>
+								<option value="(@{WillPower})" data-i18n="ABBREVIATE-WILL-POWER">Wp</option>
+								<option value="(@{Fellowship})" data-i18n="ABBREVIATE-FELLOWSHIP">Fel</option>
+							</select>
+						</div>
+						<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+							<input class="sheet-center" type="number" name="attr_PerceptionAdv" value="0"/>
+						</div>
+						<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+							<input class="sheet-center" type="number" name="attr_PerceptionMisc" value="0"/>
+						</div>
+						<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+							<input class="sheet-center" type="number" name="attr_Perception" value="@{PerceptionChar}+@{PerceptionAdv}+@{PerceptionMisc}-@{armorcoifpenalty}-@{armoropenpenalty}-@{armorhelmpenalty}" disabled="true"/>
+						</div>
+						<input type="checkbox" name="attr_roll_type" class="sheet-hidden sheet-hider" value="1" checked="checked"/>
+						<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+							<button type="roll" class="sheet-roll" name="roll_Perception" value="@{Whisper} &{template:WF4e} {{title=^{PERCEPTION}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{PerceptionChar}+@{PerceptionAdv}+@{PerceptionMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
+						</div>
+						<input type="checkbox" name="attr_roll_type" class="sheet-hidden sheet-hider" value="2"/>
+						<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+							<button type="roll" class="sheet-roll" name="roll_Perception" value="@{Whisper} &{template:WF4e} {{title=^{PERCEPTION}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{PerceptionChar}+@{PerceptionAdv}+@{PerceptionMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
+						</div>
 					</div>
-					<div class="sheet-col-4-9 sheet-pad-r-sm sheet-vert-middle">
-						<span data-i18n="PERCEPTION">Perception</span>
-					</div>
-					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
-						<select class="sheet-select-no-arrow-center" name="attr_PerceptionChar">
-							<option value="(@{WeaponSkill})" data-i18n="ABBREVIATE-WEAPON-SKILL">WS</option>
-							<option value="(@{BallisticSkill})" data-i18n="ABBREVIATE-BALLISTIC-SKILL">BS</option>
-							<option value="(@{Strength})" data-i18n="ABBREVIATE-STRENGTH">S</option>
-							<option value="(@{Toughness})" data-i18n="ABBREVIATE-TOUGHNESS">T</option>
-							<option value="(@{Initiative})" data-i18n="ABBREVIATE-INITIATIVE" selected="selected">I</option>
-							<option value="(@{Agility})" data-i18n="ABBREVIATE-AGILITY">Ag</option>
-							<option value="(@{Dexterity})" data-i18n="ABBREVIATE-DEXTERITY">Dex</option>
-							<option value="(@{Intelligence})" data-i18n="ABBREVIATE-INTELLIGENCE">Int</option>
-							<option value="(@{WillPower})" data-i18n="ABBREVIATE-WILL-POWER">Wp</option>
-							<option value="(@{Fellowship})" data-i18n="ABBREVIATE-FELLOWSHIP">Fel</option>
-						</select>
-					</div>
-					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
-						<input class="sheet-center" type="number" name="attr_PerceptionAdv" value="0"/>
-					</div>
-					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
-						<input class="sheet-center" type="number" name="attr_PerceptionMisc" value="0"/>
-					</div>
-					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
-						<input class="sheet-center" type="number" name="attr_Perception" value="@{PerceptionChar}+@{PerceptionAdv}+@{PerceptionMisc}-@{armorcoifpenalty}-@{armoropenpenalty}-@{armorhelmpenalty}" disabled="true"/>
-					</div>
-					<input type="checkbox" name="attr_roll_type" class="sheet-hidden sheet-hider" value="1" checked="checked"/>
-					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
-						<button type="roll" class="sheet-roll" name="roll_Perception" value="@{Whisper} &{template:WF4e} {{title=^{PERCEPTION}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{PerceptionChar}+@{PerceptionAdv}+@{PerceptionMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
-					</div>
-					<input type="checkbox" name="attr_roll_type" class="sheet-hidden sheet-hider" value="2"/>
-					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
-						<button type="roll" class="sheet-roll" name="roll_Perception" value="@{Whisper} &{template:WF4e} {{title=^{PERCEPTION}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{PerceptionChar}+@{PerceptionAdv}+@{PerceptionMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
-					</div>
-				</div>
+        			<div class="sheet-row">
+            			<fieldset class="repeating_PerceptionSpecialization">
+            				<div class="sheet-row">
+            					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+            						<input type="checkbox" name="attr_PerceptionSpecializationCareer" value="1"/>
+            					</div>
+            					<div class="sheet-col-4-9 sheet-pad-r-sm sheet-vert-middle">
+            						<input class="sheet-center sheet-skillgrp" type="text" name="attr_PerceptionSpecializationName"/>
+            					</div>
+								<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+									<select class="sheet-select-no-arrow-center" name="attr_PerceptionSpecializationChar">
+										<option value="(@{WeaponSkill})" data-i18n="ABBREVIATE-WEAPON-SKILL">WS</option>
+										<option value="(@{BallisticSkill})" data-i18n="ABBREVIATE-BALLISTIC-SKILL">BS</option>
+										<option value="(@{Strength})" data-i18n="ABBREVIATE-STRENGTH">S</option>
+										<option value="(@{Toughness})" data-i18n="ABBREVIATE-TOUGHNESS">T</option>
+										<option value="(@{Initiative})" data-i18n="ABBREVIATE-INITIATIVE" selected="selected">I</option>
+										<option value="(@{Agility})" data-i18n="ABBREVIATE-AGILITY">Ag</option>
+										<option value="(@{Dexterity})" data-i18n="ABBREVIATE-DEXTERITY">Dex</option>
+										<option value="(@{Intelligence})" data-i18n="ABBREVIATE-INTELLIGENCE">Int</option>
+										<option value="(@{WillPower})" data-i18n="ABBREVIATE-WILL-POWER">Wp</option>
+										<option value="(@{Fellowship})" data-i18n="ABBREVIATE-FELLOWSHIP">Fel</option>
+									</select>
+								</div>
+            					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+            						<input class="sheet-center" type="number" name="attr_PerceptionSpecializationAdv" value="0"/>
+            					</div>
+            					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+            						<input class="sheet-center" type="number" name="attr_PerceptionSpecializationMisc" value="0"/>
+            					</div>
+            					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+            						<input class="sheet-center" type="number" name="attr_PerceptionSpecialization" value="@{PerceptionSpecializationChar}+@{PerceptionSpecializationAdv}+@{PerceptionSpecializationMisc}" disabled="true"/>
+            					</div>
+								<input type="checkbox" name="attr_roll_type" class="sheet-hidden sheet-hider" value="1" checked="checked"/>
+            					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+            						<button type="roll" class="sheet-roll" name="roll_PerceptionSpecialization" value="@{Whisper} &{template:WF4e} {{title=@{PerceptionSpecializationName}}} {{skill=^{PERCEPTION}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{PerceptionSpecializationChar}+@{PerceptionSpecializationAdv}+@{PerceptionSpecializationMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
+            					</div>
+								<input type="checkbox" name="attr_roll_type" class="sheet-hidden sheet-hider" value="2"/>
+            					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+            						<button type="roll" class="sheet-roll" name="roll_PerceptionSpecialization" value="@{Whisper} &{template:WF4e} {{title=@{PerceptionSpecializationName}}} {{skill=^{PERCEPTION}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{PerceptionSpecializationChar}+@{PerceptionSpecializationAdv}+@{PerceptionSpecializationMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
+            					</div>
+								<div class="sheet-col-1-100">
+									<select class="sheet-select-no-arrow sheet-pictos" name="attr_roll_type">
+										<option value="1" selected="selected" class="sheet-pictos"></option>
+										<option value="2" class="sheet-pictos">!</option>
+									</select>
+        						</div>
+            				</div>
+            			</fieldset>
+            		</div>
+            	</div>
 				<!-- Pronostic Int -->
 				<div class="sheet-row">
 					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
@@ -4159,26 +4210,26 @@
     				<div class="sheet-row">
     					<div class="sheet-col-1-4 sheet-pad-r-sm sheet-vert-middle">
     						<select class="sheet-select-no-arrow-center" name="attr_ComenChar">
-								<option value="COMEN01-DESC1" data-i18n="COMEN01-NAME1">ComenName01</option>
-								<option value="COMEN02-DESC1" data-i18n="COMEN02-NAME1">ComenName02</option>
-								<option value="COMEN03-DESC1" data-i18n="COMEN03-NAME1">ComenName03</option>
-								<option value="COMEN04-DESC1" data-i18n="COMEN04-NAME1">ComenName04</option>
-								<option value="COMEN05-DESC1" data-i18n="COMEN05-NAME1">ComenName05</option>
-								<option value="COMEN06-DESC1" data-i18n="COMEN06-NAME1">ComenName06</option>
-								<option value="COMEN07-DESC1" data-i18n="COMEN07-NAME1">ComenName07</option>
-								<option value="COMEN08-DESC1" data-i18n="COMEN08-NAME1">ComenName08</option>
-								<option value="COMEN09-DESC1" data-i18n="COMEN09-NAME1">ComenName09</option>
-								<option value="COMEN10-DESC1" data-i18n="COMEN10-NAME1">ComenName10</option>
-								<option value="COMEN11-DESC1" data-i18n="COMEN11-NAME1">ComenName11</option>
-								<option value="COMEN12-DESC1" data-i18n="COMEN12-NAME1">ComenName12</option>
-								<option value="COMEN13-DESC1" data-i18n="COMEN13-NAME1">ComenName13</option>
-								<option value="COMEN14-DESC1" data-i18n="COMEN14-NAME1">ComenName14</option>
-								<option value="COMEN15-DESC1" data-i18n="COMEN15-NAME1">ComenName15</option>
-								<option value="COMEN16-DESC1" data-i18n="COMEN16-NAME1">ComenName16</option>
-								<option value="COMEN17-DESC1" data-i18n="COMEN17-NAME1">ComenName17</option>
-								<option value="COMEN18-DESC1" data-i18n="COMEN18-NAME1">ComenName18</option>
-								<option value="COMEN19-DESC1" data-i18n="COMEN19-NAME1">ComenName19</option>
-								<option value="COMEN20-DESC1" data-i18n="COMEN20-NAME1">ComenName20</option>
+								<option value="COMEN01-DESC2" data-i18n="COMEN01-NAME1">ComenName01</option>
+								<option value="COMEN02-DESC2" data-i18n="COMEN02-NAME1">ComenName02</option>
+								<option value="COMEN03-DESC2" data-i18n="COMEN03-NAME1">ComenName03</option>
+								<option value="COMEN04-DESC2" data-i18n="COMEN04-NAME1">ComenName04</option>
+								<option value="COMEN05-DESC2" data-i18n="COMEN05-NAME1">ComenName05</option>
+								<option value="COMEN06-DESC2" data-i18n="COMEN06-NAME1">ComenName06</option>
+								<option value="COMEN07-DESC2" data-i18n="COMEN07-NAME1">ComenName07</option>
+								<option value="COMEN08-DESC2" data-i18n="COMEN08-NAME1">ComenName08</option>
+								<option value="COMEN09-DESC2" data-i18n="COMEN09-NAME1">ComenName09</option>
+								<option value="COMEN10-DESC2" data-i18n="COMEN10-NAME1">ComenName10</option>
+								<option value="COMEN11-DESC2" data-i18n="COMEN11-NAME1">ComenName11</option>
+								<option value="COMEN12-DESC2" data-i18n="COMEN12-NAME1">ComenName12</option>
+								<option value="COMEN13-DESC2" data-i18n="COMEN13-NAME1">ComenName13</option>
+								<option value="COMEN14-DESC2" data-i18n="COMEN14-NAME1">ComenName14</option>
+								<option value="COMEN15-DESC2" data-i18n="COMEN15-NAME1">ComenName15</option>
+								<option value="COMEN16-DESC2" data-i18n="COMEN16-NAME1">ComenName16</option>
+								<option value="COMEN17-DESC2" data-i18n="COMEN17-NAME1">ComenName17</option>
+								<option value="COMEN18-DESC2" data-i18n="COMEN18-NAME1">ComenName18</option>
+								<option value="COMEN19-DESC2" data-i18n="COMEN19-NAME1">ComenName19</option>
+								<option value="COMEN20-DESC2" data-i18n="COMEN20-NAME1">ComenName20</option>
 							</select>
     					</div>
     	 				<div class="sheet-col-3-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
@@ -11573,7 +11624,7 @@ on('sheet:opened change:totalwounds', function (event) {
 						<div class="sheet-row"><div class="sheet-img-spacer-sm"></div></div>
 						<div class="sheet-col-2-5 sheet-vert-middle">
 							<div class="sheet-texttest sheet-center">
-								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{cophyroll}}</div>
+								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{comenroll}}</div>
 							</div>
 						</div>
 						<div class="sheet-col-3-5 sheet-vert-middle">
@@ -11587,13 +11638,12 @@ on('sheet:opened change:totalwounds', function (event) {
 						<div class="sheet-row"><div class="sheet-img-spacer-sm"></div></div>
 						<div class="sheet-col-2-5 sheet-vert-middle">
 							<div class="sheet-texttest sheet-center">
-								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{cophyroll}}</div>
+								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{comenroll}}</div>
 							</div>
 						</div>
 						<div class="sheet-col-3-5 sheet-vert-middle">
 						<div class="sheet-col-9-10 sheet-pad-t-md" data-i18n="COMEN02-EFCT1">None</div>
 						<div class="sheet-col-9-10" data-i18n="COMEN02-EFCT2">None</div>
-						<div class="sheet-col-9-10" data-i18n="COMEN02-EFCT3">None</div>
 						</div>
 					{{/rollBetween() comenroll 6 10}}
 					{{#rollBetween() comenroll 11 15}}
@@ -11602,11 +11652,12 @@ on('sheet:opened change:totalwounds', function (event) {
 						<div class="sheet-row"><div class="sheet-img-spacer-sm"></div></div>
 						<div class="sheet-col-2-5 sheet-vert-middle">
 							<div class="sheet-texttest sheet-center">
-								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{cophyroll}}</div>
+								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{comenroll}}</div>
 							</div>
 						</div>
 						<div class="sheet-col-3-5 sheet-vert-middle">
 						<div class="sheet-col-9-10 sheet-pad-t-md" data-i18n="COMEN03-EFCT1">None</div>
+						<div class="sheet-col-9-10" data-i18n="COMEN03-EFCT2">None</div>
 						</div>
 					{{/rollBetween() comenroll 11 15}}
 					{{#rollBetween() comenroll 16 20}}
@@ -11615,7 +11666,7 @@ on('sheet:opened change:totalwounds', function (event) {
 						<div class="sheet-row"><div class="sheet-img-spacer-sm"></div></div>
 						<div class="sheet-col-2-5 sheet-vert-middle">
 							<div class="sheet-texttest sheet-center">
-								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{cophyroll}}</div>
+								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{comenroll}}</div>
 							</div>
 						</div>
 						<div class="sheet-col-3-5 sheet-vert-middle">
@@ -11629,7 +11680,7 @@ on('sheet:opened change:totalwounds', function (event) {
 						<div class="sheet-row"><div class="sheet-img-spacer-sm"></div></div>
 						<div class="sheet-col-2-5 sheet-vert-middle">
 							<div class="sheet-texttest sheet-center">
-								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{cophyroll}}</div>
+								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{comenroll}}</div>
 							</div>
 						</div>
 						<div class="sheet-col-3-5 sheet-vert-middle">
@@ -11643,11 +11694,12 @@ on('sheet:opened change:totalwounds', function (event) {
 						<div class="sheet-row"><div class="sheet-img-spacer-sm"></div></div>
 						<div class="sheet-col-2-5 sheet-vert-middle">
 							<div class="sheet-texttest sheet-center">
-								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{cophyroll}}</div>
+								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{comenroll}}</div>
 							</div>
 						</div>
 						<div class="sheet-col-3-5 sheet-vert-middle">
 						<div class="sheet-col-9-10 sheet-pad-t-md" data-i18n="COMEN06-EFCT1">None</div>
+						<div class="sheet-col-9-10" data-i18n="COMEN06-EFCT2">None</div>
 						</div>
 					{{/rollBetween() comenroll 26 30}}
 					{{#rollBetween() comenroll 31 35}}
@@ -11656,11 +11708,12 @@ on('sheet:opened change:totalwounds', function (event) {
 						<div class="sheet-row"><div class="sheet-img-spacer-sm"></div></div>
 						<div class="sheet-col-2-5 sheet-vert-middle">
 							<div class="sheet-texttest sheet-center">
-								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{cophyroll}}</div>
+								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{comenroll}}</div>
 							</div>
 						</div>
 						<div class="sheet-col-3-5 sheet-vert-middle">
 						<div class="sheet-col-9-10 sheet-pad-t-md" data-i18n="COMEN07-EFCT1">None</div>
+						<div class="sheet-col-9-10" data-i18n="COMEN07-EFCT2">None</div>
 						</div>
 					{{/rollBetween() comenroll 31 35}}
 					{{#rollBetween() comenroll 36 40}}
@@ -11669,7 +11722,7 @@ on('sheet:opened change:totalwounds', function (event) {
 						<div class="sheet-row"><div class="sheet-img-spacer-sm"></div></div>
 						<div class="sheet-col-2-5 sheet-vert-middle">
 							<div class="sheet-texttest sheet-center">
-								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{cophyroll}}</div>
+								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{comenroll}}</div>
 							</div>
 						</div>
 						<div class="sheet-col-3-5 sheet-vert-middle">
@@ -11683,11 +11736,12 @@ on('sheet:opened change:totalwounds', function (event) {
 						<div class="sheet-row"><div class="sheet-img-spacer-sm"></div></div>
 						<div class="sheet-col-2-5 sheet-vert-middle">
 							<div class="sheet-texttest sheet-center">
-								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{cophyroll}}</div>
+								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{comenroll}}</div>
 							</div>
 						</div>
 						<div class="sheet-col-3-5 sheet-vert-middle">
 						<div class="sheet-col-9-10 sheet-pad-t-md" data-i18n="COMEN09-EFCT1">None</div>
+						<div class="sheet-col-9-10" data-i18n="COMEN09-EFCT2">None</div>
 						</div>
 					{{/rollBetween() comenroll 41 45}}
 					{{#rollBetween() comenroll 46 50}}
@@ -11696,11 +11750,12 @@ on('sheet:opened change:totalwounds', function (event) {
 						<div class="sheet-row"><div class="sheet-img-spacer-sm"></div></div>
 						<div class="sheet-col-2-5 sheet-vert-middle">
 							<div class="sheet-texttest sheet-center">
-								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{cophyroll}}</div>
+								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{comenroll}}</div>
 							</div>
 						</div>
 						<div class="sheet-col-3-5 sheet-vert-middle">
 						<div class="sheet-col-9-10 sheet-pad-t-md" data-i18n="COMEN10-EFCT1">None</div>
+						<div class="sheet-col-9-10" data-i18n="COMEN10-EFCT2">None</div>
 						</div>
 					{{/rollBetween() comenroll 46 50}}
 					{{#rollBetween() comenroll 51 55}}
@@ -11709,11 +11764,12 @@ on('sheet:opened change:totalwounds', function (event) {
 						<div class="sheet-row"><div class="sheet-img-spacer-sm"></div></div>
 						<div class="sheet-col-2-5 sheet-vert-middle">
 							<div class="sheet-texttest sheet-center">
-								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{cophyroll}}</div>
+								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{comenroll}}</div>
 							</div>
 						</div>
 						<div class="sheet-col-3-5 sheet-vert-middle">
 						<div class="sheet-col-9-10 sheet-pad-t-md" data-i18n="COMEN11-EFCT1">None</div>
+						<div class="sheet-col-9-10" data-i18n="COMEN11-EFCT2">None</div>
 						</div>
 					{{/rollBetween() comenroll 51 55}}
 					{{#rollBetween() comenroll 56 60}}
@@ -11722,7 +11778,7 @@ on('sheet:opened change:totalwounds', function (event) {
 						<div class="sheet-row"><div class="sheet-img-spacer-sm"></div></div>
 						<div class="sheet-col-2-5 sheet-vert-middle">
 							<div class="sheet-texttest sheet-center">
-								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{cophyroll}}</div>
+								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{comenroll}}</div>
 							</div>
 						</div>
 						<div class="sheet-col-3-5 sheet-vert-middle">
@@ -11736,11 +11792,12 @@ on('sheet:opened change:totalwounds', function (event) {
 						<div class="sheet-row"><div class="sheet-img-spacer-sm"></div></div>
 						<div class="sheet-col-2-5 sheet-vert-middle">
 							<div class="sheet-texttest sheet-center">
-								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{cophyroll}}</div>
+								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{comenroll}}</div>
 							</div>
 						</div>
 						<div class="sheet-col-3-5 sheet-vert-middle">
 						<div class="sheet-col-9-10 sheet-pad-t-md" data-i18n="COMEN13-EFCT1">None</div>
+						<div class="sheet-col-9-10" data-i18n="COMEN13-EFCT2">None</div>
 						</div>
 					{{/rollBetween() comenroll 61 65}}
 					{{#rollBetween() comenroll 66 70}}
@@ -11749,7 +11806,7 @@ on('sheet:opened change:totalwounds', function (event) {
 						<div class="sheet-row"><div class="sheet-img-spacer-sm"></div></div>
 						<div class="sheet-col-2-5 sheet-vert-middle">
 							<div class="sheet-texttest sheet-center">
-								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{cophyroll}}</div>
+								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{comenroll}}</div>
 							</div>
 						</div>
 						<div class="sheet-col-3-5 sheet-vert-middle">
@@ -11763,7 +11820,7 @@ on('sheet:opened change:totalwounds', function (event) {
 						<div class="sheet-row"><div class="sheet-img-spacer-sm"></div></div>
 						<div class="sheet-col-2-5 sheet-vert-middle">
 							<div class="sheet-texttest sheet-center">
-								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{cophyroll}}</div>
+								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{comenroll}}</div>
 							</div>
 						</div>
 						<div class="sheet-col-3-5 sheet-vert-middle">
@@ -11777,11 +11834,12 @@ on('sheet:opened change:totalwounds', function (event) {
 						<div class="sheet-row"><div class="sheet-img-spacer-sm"></div></div>
 						<div class="sheet-col-2-5 sheet-vert-middle">
 							<div class="sheet-texttest sheet-center">
-								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{cophyroll}}</div>
+								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{comenroll}}</div>
 							</div>
 						</div>
 						<div class="sheet-col-3-5 sheet-vert-middle">
 						<div class="sheet-col-9-10 sheet-pad-t-md" data-i18n="COMEN16-EFCT1">None</div>
+						<div class="sheet-col-9-10" data-i18n="COMEN16-EFCT2">None</div>
 						</div>
 					{{/rollBetween() comenroll 76 80}}
 					{{#rollBetween() comenroll 81 85}}
@@ -11790,7 +11848,7 @@ on('sheet:opened change:totalwounds', function (event) {
 						<div class="sheet-row"><div class="sheet-img-spacer-sm"></div></div>
 						<div class="sheet-col-2-5 sheet-vert-middle">
 							<div class="sheet-texttest sheet-center">
-								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{cophyroll}}</div>
+								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{comenroll}}</div>
 							</div>
 						</div>
 						<div class="sheet-col-3-5 sheet-vert-middle">
@@ -11804,7 +11862,7 @@ on('sheet:opened change:totalwounds', function (event) {
 						<div class="sheet-row"><div class="sheet-img-spacer-sm"></div></div>
 						<div class="sheet-col-2-5 sheet-vert-middle">
 							<div class="sheet-texttest sheet-center">
-								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{cophyroll}}</div>
+								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{comenroll}}</div>
 							</div>
 						</div>
 						<div class="sheet-col-3-5 sheet-vert-middle">
@@ -11818,7 +11876,7 @@ on('sheet:opened change:totalwounds', function (event) {
 						<div class="sheet-row"><div class="sheet-img-spacer-sm"></div></div>
 						<div class="sheet-col-2-5 sheet-vert-middle">
 							<div class="sheet-texttest sheet-center">
-								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{cophyroll}}</div>
+								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{comenroll}}</div>
 							</div>
 						</div>
 						<div class="sheet-col-3-5 sheet-vert-middle">
@@ -11832,7 +11890,7 @@ on('sheet:opened change:totalwounds', function (event) {
 						<div class="sheet-row"><div class="sheet-img-spacer-sm"></div></div>
 						<div class="sheet-col-2-5 sheet-vert-middle">
 							<div class="sheet-texttest sheet-center">
-								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{cophyroll}}</div>
+								<div class="sheet-rolltest sheet-smaller-letter-spacing sheet-rt-value">{{comenroll}}</div>
 							</div>
 						</div>
 						<div class="sheet-col-3-5 sheet-vert-middle">
