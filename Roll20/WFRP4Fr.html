@@ -26,7 +26,24 @@
 			<div class="sheet-col-1-2 sheet-charmenu sheet-header-info">
 				<div class="sheet-wrap-box sheet-pad-md">
 					<div class="sheet-row">
-						<div class="sheet-col-2-5 sheet-pad-r-sm">
+						<div class="sheet-col-1-5 sheet-pad-r-sm">
+							<div class="sheet-pc-version">
+					        	<select class="sheet-select-no-arrow-center" name="attr_classe">
+									<option value="Citadin" data-i18n="CITADIN">Citadin</option>
+									<option value="Courtisan" data-i18n="COURTISAN">Courtisan</option>
+									<option value="Guerrier" data-i18n="GUERRIER">Guerrier</option>
+									<option value="Itinérant" data-i18n="ITINERANT">Itinérant</option>
+									<option value="Lettré" data-i18n="LETTRE">Lettré </option>
+									<option value="Riverain" data-i18n="RIVERAIN">Riverain</option>
+									<option value="Roublard" data-i18n="ROUBLARD">Roublard</option>
+									<option value="Rural" data-i18n="RURAL">Rural</option>
+								</select>
+								<div class="sheet-wrap-box-label sheet-center">
+									<span data-i18n="CLASSE">Classe</span>
+								</div>
+							</div>
+						</div>
+						<div class="sheet-col-1-5 sheet-pad-r-sm">
 							<div class="sheet-pc-version">
 								<input class="sheet-center" type="text" name="attr_career"/>
 								<div class="sheet-wrap-box-label sheet-center">
@@ -41,7 +58,11 @@
 							</div>
 						</div>
 						<div class="sheet-col-1-5 sheet-pad-r-sm sheet-center">
-							<input class="sheet-center" type="text" name="attr_status"/>
+					        	<select class="sheet-select-no-arrow-center" name="attr_status">
+									<option value="Bronze" data-i18n="BRONZE">Bronze</option>
+									<option value="Argent" data-i18n="SILVER">Argent</option>
+									<option value="Or" data-i18n="GOLD">Or</option>
+								</select>
 							<div class="sheet-wrap-box-label sheet-center">
 								<span data-i18n="STATUS">Status</span>
 							</div>
@@ -57,31 +78,23 @@
 					    <div class="sheet-col-1-5 sheet-vert-middle sheet-pad-r-sm sheet-wrap-box-label" style="margin-top:3px">
 					        <select class="sheet-select-no-arrow-center" name="attr_Race">
 								<option value="Human" data-i18n="HUMAN">Human</option>
-								<option value="Elf" data-i18n="ELF">Elf</option>
 								<option value="Dwarf" data-i18n="DWARF">Dwarf</option>
 								<option value="Halfling" data-i18n="HALFLING">Halfling</option>
 								<option value="Gnome" data-i18n="GNOME">Gnome</option>
+								<option value="ElfH" data-i18n="ELFH">Haut Elfe </option>
+								<option value="ElfS" data-i18n="ELFS">Elfe Sylvain</option>
 							</select>
 						    <div class="sheet-wrap-box-label sheet-center">
 								<span data-i18n="RACE">Race</span>
 							</div>
 						</div>
 					    <div class="sheet-col-1-5 sheet-vert-middle sheet-pad-r-sm sheet-wrap-box-label" style="margin-top:3px">
-					        <select class="sheet-select-no-arrow-center" name="attr_Religion">
-								<option value="MANAAN" data-i18n="MANAAN">Manaan</option>
-								<option value="MORR" data-i18n="MORR">Morr</option>
-								<option value="MYRMIDIA" data-i18n="MYRMIDIA">Myrmidia</option>
-								<option value="RANALD" data-i18n="RANALD">Ranald</option>
-								<option value="RHYA" data-i18n="RHYA">Rhya</option>
-								<option value="SHALLYA" data-i18n="SHALLYA">Shallya</option>
-								<option value="SIGMAR" data-i18n="SIGMAR">Sigmar</option>
-								<option value="TAAL" data-i18n="TAAL">Taal</option>
-								<option value="ULRIC" data-i18n="ULRIC">Ulric</option>
-								<option value="VERANA" data-i18n="VERANA">Verana</option>
-								<option value="HERETIC" data-i18n="HERETIC">Hérétique</option>
+					        <select class="sheet-select-no-arrow-center" name="attr_Gender">
+								<option value="MALE" data-i18n="MALE">Male</option>
+								<option value="FEMALE" data-i18n="FEMALE">Femelle</option>
 							</select>
 						    <div class="sheet-wrap-box-label sheet-center">
-								<span data-i18n="RELIGION">Religion</span>
+								<span data-i18n="GENDER">Genre</span>
 							</div>
 						</div>
 						<div class="sheet-col-1-5 sheet-vert-middle sheet-relative sheet-pad-r-sm">
@@ -182,8 +195,8 @@
 				</div>
 				<span class="sheet-spacer"></span>
 				<div class="sheet-row">
-					<div class="sheet-col-3-20 sheet-pad-r-sm sheet-pad-t-sm">
-						<span data-i18n="STARTING">Starting</span>
+					<div class="sheet-col-3-20 sheet-right sheet-pad-r-sm sheet-pad-t-sm">
+						<span class="sheet-span-none" data-i18n="STARTING">Starting</span>
 					</div>
 					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
 						<input class="sheet-center" type="number" name="attr_WeaponSkillStart" value="0"/>
@@ -217,8 +230,8 @@
 					</div>
 				</div>
 				<div class="sheet-row">
-					<div class="sheet-col-3-20 sheet-pad-t-xsm sheet-pad-r-sm  sheet-vert-middle">
-						<span data-i18n="TALENTS">Talents</span>
+					<div class="sheet-col-3-20 sheet-right sheet-pad-t-xsm sheet-pad-r-sm sheet-vert-middle">
+						<span class="sheet-span-none" data-i18n="TALENT">Talent</span>
 					</div>
 					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
 						<input class="sheet-center" type="number" name="attr_WeaponSkillTalents" value="0"/>
@@ -252,7 +265,7 @@
 					</div>
 				</div>
 				<div class="sheet-row">
-					<div class="sheet-col-3-20 sheet-pad-t-xsm sheet-pad-r-sm sheet-vert-middle">
+					<div class="sheet-col-3-20 sheet-right sheet-pad-t-xsm sheet-pad-r-sm sheet-vert-middle">
 						<span data-i18n="CHAREER">Career</span>
 					</div>
 					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm sheet-pad-b-md sheet-pad-t-sm">
@@ -287,8 +300,8 @@
 					</div>
 				</div>
 				<div class="sheet-row">
-					<div class="sheet-col-3-20 sheet-pad-t-xsm sheet-pad-r-sm sheet-vert-middle">
-					  <span data-i18n="ADVANCE">Advance</span>
+					<div class="sheet-col-3-20 sheet-right sheet-pad-t-xsm sheet-pad-r-sm sheet-vert-middle">
+					  <span class="sheet-span-none" data-i18n="ADVANCE">Advance</span>
 					</div>
 					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
 					  <input class="sheet-center" type="number" name="attr_WeaponSkillAdv" value="0"/>
@@ -322,8 +335,8 @@
 					</div>
 				</div>
 				<div class="sheet-row">
-					<div class="sheet-col-3-20 sheet-pad-t-xsm sheet-pad-r-sm sheet-vert-middle">
-					  <span data-i18n="MODIFIER">Modifier</span>
+					<div class="sheet-col-3-20 sheet-right sheet-pad-t-xsm sheet-pad-r-sm sheet-vert-middle">
+					  <span class="sheet-span-none" data-i18n="MODIFIER">Modifier</span>
 					</div>
 					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
 					  <input class="sheet-center" type="number" name="attr_WeaponSkillMod" value="0"/>
@@ -357,8 +370,8 @@
 					</div>
 				</div>
 				<div class="sheet-row">
-					<div class="sheet-col-3-20 sheet-pad-t-xsm sheet-pad-r-sm sheet-vert-middle">
-						<span data-i18n="CURRENT">Current</span>
+					<div class="sheet-col-3-20 sheet-right sheet-pad-t-xsm sheet-pad-r-sm sheet-vert-middle">
+						<span class="sheet-span-none" data-i18n="CURRENT">Current</span>
 					</div>
 					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
 						<input class="sheet-center" type="number" name="attr_WeaponSkill" value="@{WeaponSkillStart}+@{WeaponSkillTalents}+@{WeaponSkillAdv}+@{WeaponSkillMod}" disabled="true"/>
@@ -486,8 +499,8 @@
 				</div>
 				<span class="sheet-spacer"></span>
 				<div class="sheet-row">
-					<div class="sheet-col-3-20 sheet-pad-t-xsm sheet-pad-r-sm">
-						<span data-i18n="STARTING">Starting</span>
+					<div class="sheet-col-3-20 sheet-right sheet-pad-t-xsm sheet-pad-r-sm">
+						<span class="sheet-span-none" data-i18n="STARTING">Starting</span>
 					</div>
 					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
 						<input class="sheet-center" type="number" name="attr_WeaponSkillBonusStart" value="floor((@{WeaponSkillStart}+@{WeaponSkillTalents}+@{WeaponSkillAdv}+@{WeaponSkillMod})/10)" disabled="true"/>
@@ -521,8 +534,8 @@
 					</div>
 				</div>
 				<div class="sheet-row">
-					<div class="sheet-col-3-20 sheet-pad-t-xsm sheet-pad-r-sm">
-						<span data-i18n="MODIFIER">Modifier</span>
+					<div class="sheet-col-3-20 sheet-right sheet-pad-t-xsm sheet-pad-r-sm">
+						<span class="sheet-span-none" data-i18n="MODIFIER">Modifier</span>
 					</div>
 					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
 						<input class="sheet-center" type="number" name="attr_WeaponSkillBonusMod" value="0"/>
@@ -556,8 +569,8 @@
 					</div>
 				</div>
 				<div class="sheet-row">
-					<div class="sheet-col-3-20 sheet-pad-t-xsm sheet-pad-r-sm">
-						<span data-i18n="CURRENT">Current</span>
+					<div class="sheet-col-3-20 sheet-right sheet-pad-t-xsm sheet-pad-r-sm">
+						<span class="sheet-span-none" data-i18n="CURRENT">Current</span>
 					</div>
 					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
 						<input class="sheet-center" type="number" name="attr_WeaponSkillBonus" value="@{WeaponSkillBonusStart}+@{WeaponSkillBonusMod}" disabled="true"/>
@@ -590,7 +603,6 @@
 						<input class="sheet-center" type="number" name="attr_FellowshipBonus" value="@{FellowshipBonusStart}+@{FellowshipBonusMod}" disabled="true"/>
 					</div>
 				</div>
-                <!-- Specialization Skills -->
 				<span class="sheet-spacer"></span>
             </div>
 			<div class="sheet-col-1-2 sheet-vert-top">
@@ -710,6 +722,70 @@
             						</div>
         						</div>
         					</div>
+						</div>
+					</div>
+					<div class="sheet-row">
+						<div class="sheet-col-1-4 sheet-pad-r-md sheet-mar-t-sm">
+							<div class="sheet-col-1">
+								<h4 class="sheet-center">
+		    						<span data-i18n="ADVANTAGE">Avantage</span>
+		    					</h4>
+							</div>	
+							<div class="sheet-row">
+		    		    	 	<div class="sheet-col-1 sheet-sub-header">
+		    		    			<div class="sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="ADVANTAGEB">Combat</div>
+		    		    		</div>
+							</div>
+							<div class="sheet-row">
+		    					<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
+		    						<input class="sheet-center" type="number" name="attr_Advantage" value="0">
+		    					</div>
+							</div>
+						</div>
+						<div class="sheet-col-1-4 sheet-pad-r-md">
+							<div class="sheet-col-1">
+    							<h4 class="sheet-center">
+    								<span data-i18n="CHANNELLING">Focalisation</span>
+    							</h4>
+    						</div>
+    						<div class="sheet-row sheet-sub-header">
+    						   	<div class="sheet-col-1 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="RESERVE">Réserve</div>
+    						   </div>
+							<div class="sheet-row">
+    						   	<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
+    						   		<input class="sheet-center" type="number" name="attr_FocaRes" value="0">
+    						   	</div>
+    						   </div>
+						</div>
+						<div class="sheet-col-1-4 sheet-pad-r-md">
+            				<div class="sheet-col-1">
+            					<h4 class="sheet-center">
+            						<span data-i18n="CORRUPTION">Corruption</span>
+            					</h4>
+            				</div>
+            		       	<div class="sheet-row sheet-sub-header">
+            		       		<div class="sheet-col-1 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="ABBREVIATE-CORRUPTION">PdC</div>
+            		       	</div>
+            				<div class="sheet-row">
+            		   			<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
+            		   				<input class="sheet-center" type="number" name="attr_Corruption" value="0">
+            		   			</div>
+            				</div>
+        				</div>
+						<div class="sheet-col-1-4">
+							<div class="sheet-col-1">
+    							<h4 class="sheet-center">
+    								<span data-i18n="SIN">Péché</span>
+    							</h4>
+    						</div>
+    						<div class="sheet-row sheet-sub-header">
+    					   		<div class="sheet-col-1 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="PDP">PdP</div>
+    					   	</div>
+							<div class="sheet-row">
+    					   		<div class="sheet-col-1 sheet-center sheet-pad-r-sm">
+    					   			<input class="sheet-center" type="number" name="attr_Sin" value="0">
+    					   		</div>
+    					   	</div>
 						</div>
 					</div>
 				</div>
@@ -2125,10 +2201,6 @@
 						<button type="roll" class="sheet-roll" name="roll_OurdoorSurvival" value="@{Whisper} &{template:WF4e} {{title=^{OUTDOOR-SURVIVAL}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{OutdoorSurvivalChar}+@{OurdoorSurvivalAdv}+@{OurdoorSurvivalMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
 					</div>
 				</div>
-				<!-- Image Dés -->
-				<div class="sheet-row">
-					<div class="sheet-img-dice2"></div>
-				</div>
 			</div>
 			<!-- END  Aptitudes de base -->
 			<!-- START Aptitudes avancées -->
@@ -2153,7 +2225,7 @@
 				<!-- Artisanats & Commerces Dex (++) -->
 				<div class="sheet-row sheet-skill-header">
 					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle"><span>&nbsp;</span></div>
-    				<div class="sheet-col-3-8 sheet-vert-middle">
+    				<div class="sheet-col-3-8 sheet-pad-t-sm sheet-vert-middle">
     					<span data-i18n="TRADE" class="sheet-italic">Trade</span>
     				</div>
 					<div class="sheet-row">
@@ -2255,7 +2327,7 @@
 				<!-- Dressage Int  (++) -->
 				<div class="sheet-row sheet-skill-header">
 					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle"><span>&nbsp;</span></div>
-    				<div class="sheet-col-3-8 sheet-vert-middle">
+    				<div class="sheet-col-3-8 sheet-pad-t-sm sheet-vert-middle">
     					<span data-i18n="ANIMAL-TRAINING" class="sheet-italic">Animal Training</span>
     				</div>
 					<div class="sheet-row">
@@ -2474,7 +2546,7 @@
 				<!-- Langues et Langages Int (++) -->
 				<div class="sheet-row sheet-skill-header">
 					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle"><span>&nbsp;</span></div>
-    				<div class="sheet-col-3-8 sheet-vert-middle">
+    				<div class="sheet-col-3-8 sheet-pad-t-sm sheet-vert-middle">
     					<span data-i18n="LANGUAGE" class="sheet-italic">Language</span>
     				</div>
 					<div class="sheet-row">
@@ -2533,7 +2605,7 @@
 				<!-- Musique & Jeu Dex (++) -->
 				<div class="sheet-row sheet-skill-header">
 					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle"><span>&nbsp;</span></div>
-    				<div class="sheet-col-3-8 sheet-vert-middle">
+    				<div class="sheet-col-3-8 sheet-pad-t-sm sheet-vert-middle">
     					<span data-i18n="PLAY" class="sheet-italic">Play</span>
     				</div>
 					<div class="sheet-row">
@@ -2635,7 +2707,7 @@
 				<!-- Navigation Agi (++) -->
 				<div class="sheet-row sheet-skill-header">
 					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle"><span>&nbsp;</span></div>
-    				<div class="sheet-col-3-8 sheet-vert-middle">
+    				<div class="sheet-col-3-8 sheet-pad-t-sm sheet-vert-middle">
     					<span data-i18n="SAIL" class="sheet-italic">Sail</span>
     				</div>
 					<div class="sheet-row">
@@ -2866,7 +2938,7 @@
 				<!-- Représentations & Interprétations Agi (++) -->
 				<div class="sheet-row sheet-skill-header">
 					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle"><span>&nbsp;</span></div>
-    				<div class="sheet-col-3-8 sheet-vert-middle">
+    				<div class="sheet-col-3-8 sheet-pad-t-sm sheet-vert-middle">
     					<span data-i18n="PERFORM" class="sheet-italic">Perform</span>
     				</div>
 					<div class="sheet-row">
@@ -2925,7 +2997,7 @@
 				<!-- Savoirs & Traditions Int (++) -->
 				<div class="sheet-row sheet-skill-header">
 					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle"><span>&nbsp;</span></div>
-    				<div class="sheet-col-3-8 sheet-vert-middle">
+    				<div class="sheet-col-3-8 sheet-pad-t-sm sheet-vert-middle">
     					<span data-i18n="LORE" class="sheet-italic">Lore</span>
     				</div>
 					<div class="sheet-row">
@@ -2984,7 +3056,7 @@
 				<!-- Signes Secrets Int (++) -->
 				<div class="sheet-row sheet-skill-header">
 					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle"><span>&nbsp;</span></div>
-    				<div class="sheet-col-3-8 sheet-vert-middle">
+    				<div class="sheet-col-3-8 sheet-pad-t-sm sheet-vert-middle">
     					<span data-i18n="SECRET-SIGNS" class="sheet-italic">Secret Signs</span>
     				</div>
 					<div class="sheet-row">
@@ -3125,6 +3197,11 @@
 					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<input type="checkbox" name="attr_AnimalCareTaken" value="1"/>
 					</div>
+				</div>
+				<!-- Image Dés -->
+				<span class="sheet-spacer"></span>
+				<div class="sheet-row">
+					<div class="sheet-img-dice2"></div>
 				</div>
 			</div>
 			<!-- END Aptitudes avancées -->
@@ -6622,7 +6699,19 @@
 							<span data-i18n="RELIGION">Religion</span>
 						</h4>
 						<div class="sheet-center sheet-sub-header">
-							<span class="sheet-col-1 sheet-center sheet-small-label sheet-vert-middle" name="attr_Religion" data-i18n-dynamic></span>
+							<select class="sheet-select-no-arrow-center" name="attr_Religion">
+								<option value="MANAAN" data-i18n="MANAAN">Manaan</option>
+								<option value="MORR" data-i18n="MORR">Morr</option>
+								<option value="MYRMIDIA" data-i18n="MYRMIDIA">Myrmidia</option>
+								<option value="RANALD" data-i18n="RANALD">Ranald</option>
+								<option value="RHYA" data-i18n="RHYA">Rhya</option>
+								<option value="SHALLYA" data-i18n="SHALLYA">Shallya</option>
+								<option value="SIGMAR" data-i18n="SIGMAR">Sigmar</option>
+								<option value="TAAL" data-i18n="TAAL">Taal</option>
+								<option value="ULRIC" data-i18n="ULRIC">Ulric</option>
+								<option value="VERANA" data-i18n="VERANA">Verana</option>
+								<option value="HERETIC" data-i18n="HERETIC">Hérétique</option>
+							</select>
 						</div>
 						<textarea name="attr_Reli1" class="sheet-ReliArea1"></textarea>
 					</div>

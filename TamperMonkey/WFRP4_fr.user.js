@@ -7,7 +7,7 @@
 // @include       https://app.roll20.net/editor*
 // @include       https://app.roll20.net/campaigns/chatarchive*
 // @run-at        document-start
-// @version       2019.10.18.01
+// @version       2019.10.24.01
 // @license       GPL-3.0-or-later
 // ==/UserScript==
 (function() {var css =`
@@ -18,6 +18,10 @@
     -webkit-animation: none;
     text-shadow: none;
     border-bottom: 1px solid #c549de !important
+}
+
+.sheet-span-none {
+    top: 0px;
 }
 
 :focus {

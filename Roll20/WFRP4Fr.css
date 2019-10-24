@@ -156,7 +156,6 @@ button[type=roll] span {
 	font-size: 80%;
 	line-height: 100%;
 	font-weight: bold;
-	margin-top: 1px;
 }
 .sheet-wrap-box-title {
 	font-size: 9px;
@@ -468,9 +467,8 @@ button[type=roll] span {
 }
 .sheet-header-info input[type=text],
 .sheet-header-info input[type=number] {
-	margin-top: 5px;
-	margin-bottom: 0 !important;
-	padding: 2px 2px 0 2px;
+	margin-top: 4px;
+	margin-bottom: 2px !important;
 	background-color: transparent !important;
 }
 .sheet-dnd-image-wrapper img {
