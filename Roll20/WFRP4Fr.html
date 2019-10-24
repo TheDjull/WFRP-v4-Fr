@@ -1150,46 +1150,6 @@
 						<button type="roll" class="sheet-roll" name="roll_Gossip" value="@{Whisper} &{template:WF4e} {{title=^{GOSSIP}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{GossipChar}+@{GossipAdv}+@{GossipMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
 					</div>
 				</div>
-				<!-- Corruption Soc -->
-				<div class="sheet-row">
-					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
-						<input type="checkbox" name="attr_BriberyCareer" value="1"/>
-					</div>
-					<div class="sheet-col-4-9 sheet-pad-r-sm sheet-vert-middle">
-						<span data-i18n="BRIBERY">Bribery</span>
-					</div>
-					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
-						<select class="sheet-select-no-arrow-center" name="attr_BriberyChar">
-							<option value="(@{WeaponSkill})" data-i18n="ABBREVIATE-WEAPON-SKILL">WS</option>
-							<option value="(@{BallisticSkill})" data-i18n="ABBREVIATE-BALLISTIC-SKILL">BS</option>
-							<option value="(@{Strength})" data-i18n="ABBREVIATE-STRENGTH">S</option>
-							<option value="(@{Toughness})" data-i18n="ABBREVIATE-TOUGHNESS">T</option>
-							<option value="(@{Initiative})" data-i18n="ABBREVIATE-INITIATIVE">I</option>
-							<option value="(@{Agility})" data-i18n="ABBREVIATE-AGILITY">Ag</option>
-							<option value="(@{Dexterity})" data-i18n="ABBREVIATE-DEXTERITY">Dex</option>
-							<option value="(@{Intelligence})" data-i18n="ABBREVIATE-INTELLIGENCE">Int</option>
-							<option value="(@{WillPower})" data-i18n="ABBREVIATE-WILL-POWER">Wp</option>
-							<option value="(@{Fellowship})" data-i18n="ABBREVIATE-FELLOWSHIP" selected="selected">Fel</option>
-						</select>
-					</div>
-					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
-						<input class="sheet-center" type="number" name="attr_BriberyAdv" value="0"/>
-					</div>
-					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
-						<input class="sheet-center" type="number" name="attr_BriberyMisc" value="0"/>
-					</div>
-					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
-						<input class="sheet-center" type="number" name="attr_Bribery" value="@{BriberyChar}+@{BriberyAdv}+@{BriberyMisc}" disabled="true"/>
-					</div>
-					<input type="checkbox" name="attr_roll_type" class="sheet-hidden sheet-hider" value="1" checked="checked"/>
-					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
-						<button type="roll" class="sheet-roll" name="roll_Bribery" value="@{Whisper} &{template:WF4e} {{title=^{BRIBERY}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{BriberyChar}+@{BriberyAdv}+@{BriberyMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
-					</div>
-					<input type="checkbox" name="attr_roll_type" class="sheet-hidden sheet-hider" value="2"/>
-					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
-						<button type="roll" class="sheet-roll" name="roll_Bribery" value="@{Whisper} &{template:WF4e} {{title=^{BRIBERY}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{BriberyChar}+@{BriberyAdv}+@{BriberyMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
-					</div>
-				</div>
 				<!-- Discrétion Agi (++) -->
 				<div class="sheet-skill-header">
     				<div class="sheet-row">
@@ -2083,6 +2043,46 @@
 					<input type="checkbox" name="attr_roll_type" class="sheet-hidden sheet-hider" value="2"/>
 					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
 						<button type="roll" class="sheet-roll" name="roll_Charm" value="@{Whisper} &{template:WF4e} {{title=^{CHARM}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{CharmChar}+@{CharmAdv}+@{CharmMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
+					</div>
+				</div>
+				<!-- Subornation Soc -->
+				<div class="sheet-row">
+					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+						<input type="checkbox" name="attr_SubornationCareer" value="1"/>
+					</div>
+					<div class="sheet-col-4-9 sheet-pad-r-sm sheet-vert-middle">
+						<span data-i18n="SUBORNATION">Subornation</span>
+					</div>
+					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+						<select class="sheet-select-no-arrow-center" name="attr_SubornationChar">
+							<option value="(@{WeaponSkill})" data-i18n="ABBREVIATE-WEAPON-SKILL">WS</option>
+							<option value="(@{BallisticSkill})" data-i18n="ABBREVIATE-BALLISTIC-SKILL">BS</option>
+							<option value="(@{Strength})" data-i18n="ABBREVIATE-STRENGTH">S</option>
+							<option value="(@{Toughness})" data-i18n="ABBREVIATE-TOUGHNESS">T</option>
+							<option value="(@{Initiative})" data-i18n="ABBREVIATE-INITIATIVE">I</option>
+							<option value="(@{Agility})" data-i18n="ABBREVIATE-AGILITY">Ag</option>
+							<option value="(@{Dexterity})" data-i18n="ABBREVIATE-DEXTERITY">Dex</option>
+							<option value="(@{Intelligence})" data-i18n="ABBREVIATE-INTELLIGENCE">Int</option>
+							<option value="(@{WillPower})" data-i18n="ABBREVIATE-WILL-POWER">Wp</option>
+							<option value="(@{Fellowship})" data-i18n="ABBREVIATE-FELLOWSHIP" selected="selected">Fel</option>
+						</select>
+					</div>
+					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+						<input class="sheet-center" type="number" name="attr_SubornationAdv" value="0"/>
+					</div>
+					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+						<input class="sheet-center" type="number" name="attr_SubornationMisc" value="0"/>
+					</div>
+					<div class="sheet-col-9-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+						<input class="sheet-center" type="number" name="attr_Subornation" value="@{SubornationChar}+@{SubornationAdv}+@{SubornationMisc}" disabled="true"/>
+					</div>
+					<input type="checkbox" name="attr_roll_type" class="sheet-hidden sheet-hider" value="1" checked="checked"/>
+					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+						<button type="roll" class="sheet-roll" name="roll_Subornation" value="@{Whisper} &{template:WF4e} {{title=^{SUBORNATION}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{test=[[1d100]]}} {{target=[[@{SubornationChar}+@{SubornationAdv}+@{SubornationMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
+					</div>
+					<input type="checkbox" name="attr_roll_type" class="sheet-hidden sheet-hider" value="2"/>
+					<div class="sheet-col-7-100 sheet-center sheet-pad-r-sm sheet-vert-middle">
+						<button type="roll" class="sheet-roll" name="roll_Subornation" value="@{Whisper} &{template:WF4e} {{title=^{SUBORNATION}}} {{skill=^{BASIC-SKILL}}} {{character_name=@{character_name}}} {{test=[[0d0+?{@{translation_rollbasic}|0}]]}} {{target=[[@{SubornationChar}+@{SubornationAdv}+@{SubornationMisc}+?{@{translation_modifier}|0}]]}} {{skilltest=true}}"></button>
 					</div>
 				</div>
 				<!-- Survie Int -->
@@ -11343,6 +11343,7 @@ on('sheet:opened change:totalwounds', function (event) {
 						</div>
 						<div class="sheet-col-3-5 sheet-vert-middle">
 						<div class="sheet-col-9-10 sheet-pad-t-md" data-i18n="COPHY01-EFCT1">None</div>
+						<div class="sheet-col-9-10" data-i18n="COPHY01-EFCT2">None</div>
 						</div>
 					{{/rollBetween() cophyroll 1 5}}
 					{{#rollBetween() cophyroll 6 10}}
@@ -11357,7 +11358,6 @@ on('sheet:opened change:totalwounds', function (event) {
 						<div class="sheet-col-3-5 sheet-vert-middle">
 						<div class="sheet-col-9-10 sheet-pad-t-md" data-i18n="COPHY02-EFCT1">None</div>
 						<div class="sheet-col-9-10" data-i18n="COPHY02-EFCT2">None</div>
-						<div class="sheet-col-9-10" data-i18n="COPHY02-EFCT3">None</div>
 						</div>
 					{{/rollBetween() cophyroll 6 10}}
 					{{#rollBetween() cophyroll 11 15}}
@@ -11371,6 +11371,7 @@ on('sheet:opened change:totalwounds', function (event) {
 						</div>
 						<div class="sheet-col-3-5 sheet-vert-middle">
 						<div class="sheet-col-9-10 sheet-pad-t-md" data-i18n="COPHY03-EFCT1">None</div>
+						<div class="sheet-col-9-10" data-i18n="COPHY03-EFCT2">None</div>
 						</div>
 					{{/rollBetween() cophyroll 11 15}}
 					{{#rollBetween() cophyroll 16 20}}
@@ -11497,7 +11498,6 @@ on('sheet:opened change:totalwounds', function (event) {
 						<div class="sheet-col-3-5 sheet-vert-middle">
 						<div class="sheet-col-9-10 sheet-pad-t-md" data-i18n="COPHY12-EFCT1">None</div>
 						<div class="sheet-col-9-10" data-i18n="COPHY12-EFCT2">None</div>
-						<div class="sheet-col-9-10" data-i18n="COPHY12-EFCT3">None</div>
 						</div>
 					{{/rollBetween() cophyroll 56 60}}
 					{{#rollBetween() cophyroll 61 65}}
@@ -11539,6 +11539,7 @@ on('sheet:opened change:totalwounds', function (event) {
 						</div>
 						<div class="sheet-col-3-5 sheet-vert-middle">
 						<div class="sheet-col-9-10 sheet-pad-t-md" data-i18n="COPHY15-EFCT1">None</div>
+						<div class="sheet-col-9-10" data-i18n="COPHY15-EFCT2">None</div>
 						</div>
 					{{/rollBetween() cophyroll 71 75}}
 					{{#rollBetween() cophyroll 76 80}}
@@ -11608,6 +11609,7 @@ on('sheet:opened change:totalwounds', function (event) {
 						</div>
 						<div class="sheet-col-3-5 sheet-vert-middle">
 						<div class="sheet-col-9-10 sheet-pad-t-md" data-i18n="COPHY20-EFCT1">None</div>
+						<div class="sheet-col-9-10" data-i18n="COPHY20-EFCT2">None</div>
 						</div>
 					{{/rollBetween() cophyroll 96 100}}
 						<div class="sheet-row">
