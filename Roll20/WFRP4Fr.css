@@ -1,3 +1,91 @@
+/* === ROUND CHECKBOX === */
+
+/* Customize the label (the container) */
+.sheet-roundbox {
+	display: block;
+	position: relative;
+	cursor: pointer;
+	font-size: 22px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.sheet-roundbox input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+/* Create a custom checkbox */
+.sheet-checkmarkatt {
+	position: absolute;
+    top: 2px;
+    left: 33%;
+    height: 12px;
+    width: 12px;
+    background-color: #dedede;
+    border: #999 1px solid;
+    border-radius: 50%;
+}
+
+.sheet-checkmarkapt {
+	position: absolute;
+    top: -2px;
+    left: 33%;
+    height: 12px;
+    width: 12px;
+    background-color: #dedede;
+    border: #999 1px solid;
+    border-radius: 50%;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.sheet-checkmarkatt:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+.sheet-checkmarkapt:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+
+/* Show the checkmark when checked */
+.sheet-roundbox input:checked ~ .sheet-checkmarkapt:after {
+	display: block;
+}
+
+.sheet-roundbox input:checked ~ .sheet-checkmarkatt:after {
+	display: block;
+}
+
+/* Style the checkmark/indicator */
+.sheet-roundbox .sheet-checkmarkatt:after {
+	top: 2px;
+	left: 2px;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: hsl(44, 58%, 22%) !important;
+}
+
+.sheet-roundbox .sheet-checkmarkapt:after {
+	top: 2px;
+	left: 2px;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: hsl(44, 58%, 22%) !important;
+}
+
 /* === BODY === */
 *, .sheet-rolltemplate-WF4e * {
 	box-sizing: border-box;
