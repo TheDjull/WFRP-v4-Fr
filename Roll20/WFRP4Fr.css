@@ -1201,6 +1201,7 @@ input[type=text] {
     color: #444;
 	box-shadow: none;
 	padding: 2px 0px 0px 0px;
+	white-space: nowrap;
 }
 
 select,
@@ -3686,9 +3687,25 @@ input[disabled].sheet-passive-skill-score {
 	width: 53.5%;
 }
 
+.sheet-col-1-100,
+.sheet-rolltemplate-WF4e .sheet-col-1-100 {
+	width: 1%;
+}
+.sheet-col-2-100,
+.sheet-rolltemplate-WF4e .sheet-col-4-100 {
+	width: 2%;
+}
+.sheet-col-3-100,
+.sheet-rolltemplate-WF4e .sheet-col-3-100 {
+	width: 3%;
+}
 .sheet-col-4-100,
 .sheet-rolltemplate-WF4e .sheet-col-4-100 {
 	width: 4%;
+}
+.sheet-col-5-100,
+.sheet-rolltemplate-WF4e .sheet-col-5-100 {
+	width: 5%;
 }
 .sheet-col-6-100,
 .sheet-rolltemplate-WF4e .sheet-col-6-100 {
@@ -3706,6 +3723,10 @@ input[disabled].sheet-passive-skill-score {
 .sheet-rolltemplate-WF4e .sheet-col-9-100 {
 	width: 9%;
 }
+.sheet-col-10-100,
+.sheet-rolltemplate-WF4e .sheet-col-10-100 {
+	width: 10%;
+}
 .sheet-col-11-100,
 .sheet-rolltemplate-WF4e .sheet-col-11-100 {
 	width: 11%;
@@ -3721,6 +3742,10 @@ input[disabled].sheet-passive-skill-score {
 .sheet-col-14-100,
 .sheet-rolltemplate-WF4e .sheet-col-14-100 {
 	width: 14%;
+}
+.sheet-col-15-100,
+.sheet-rolltemplate-WF4e .sheet-col-15-100 {
+	width: 15%;
 }
 .sheet-col-16-100,
 .sheet-rolltemplate-WF4e .sheet-col-16-100 {
@@ -3738,6 +3763,18 @@ input[disabled].sheet-passive-skill-score {
 .sheet-rolltemplate-WF4e .sheet-col-19-100 {
 	width: 19%;
 }
+.sheet-col-20-100,
+.sheet-rolltemplate-WF4e .sheet-col-20-100 {
+	width: 20%;
+}
+.sheet-col-21-100,
+.sheet-rolltemplate-WF4e .sheet-col-21-100 {
+	width: 21%;
+}
+.sheet-col-22-100,
+.sheet-rolltemplate-WF4e .sheet-col-22-100 {
+	width: 22%;
+}
 .sheet-col-23-100,
 .sheet-rolltemplate-WF4e .sheet-col-23-100 {
 	width: 23%;
@@ -3745,6 +3782,10 @@ input[disabled].sheet-passive-skill-score {
 .sheet-col-24-100,
 .sheet-rolltemplate-WF4e .sheet-col-24-100 {
 	width: 24%;
+}
+.sheet-col-25-100,
+.sheet-rolltemplate-WF4e .sheet-col-25-100 {
+	width: 25%;
 }
 .sheet-col-26-100,
 .sheet-rolltemplate-WF4e .sheet-col-26-100 {
@@ -3762,6 +3803,10 @@ input[disabled].sheet-passive-skill-score {
 .sheet-rolltemplate-WF4e .sheet-col-29-100 {
 	width: 29%;
 }
+.sheet-col-30-100,
+.sheet-rolltemplate-WF4e .sheet-col-30-100 {
+	width: 30%;
+}
 .sheet-col-31-100,
 .sheet-rolltemplate-WF4e .sheet-col-31-100 {
 	width: 31%;
@@ -3769,6 +3814,14 @@ input[disabled].sheet-passive-skill-score {
 .sheet-col-32-100,
 .sheet-rolltemplate-WF4e .sheet-col-32-100 {
 	width: 32%;
+}
+.sheet-col-33-100,
+.sheet-rolltemplate-WF4e .sheet-col-33-100 {
+	width: 33%;
+}
+.sheet-col-34-100,
+.sheet-rolltemplate-WF4e .sheet-col-34-100 {
+	width: 34%;
 }
 .sheet-col-35-100,
 .sheet-rolltemplate-WF4e .sheet-col-35-100 {
@@ -3782,12 +3835,62 @@ input[disabled].sheet-passive-skill-score {
 .sheet-rolltemplate-WF4e .sheet-col-37-100 {
 	width: 37%;
 }
-
+.sheet-col-38-100,
+.sheet-rolltemplate-WF4e .sheet-col-38-100 {
+	width: 38%;
+}
+.sheet-col-39-100,
+.sheet-rolltemplate-WF4e .sheet-col-39-100 {
+	width: 39%;
+}
+.sheet-col-40-100,
+.sheet-rolltemplate-WF4e .sheet-col-40-100 {
+	width: 40%;
+}
+.sheet-col-41-100,
+.sheet-rolltemplate-WF4e .sheet-col-41-100 {
+	width: 41%;
+}
+.sheet-col-42-100,
+.sheet-rolltemplate-WF4e .sheet-col-42-100 {
+	width: 42%;
+}
+.sheet-col-43-100,
+.sheet-rolltemplate-WF4e .sheet-col-43-100 {
+	width: 43%;
+}
+.sheet-col-44-100,
+.sheet-rolltemplate-WF4e .sheet-col-44-100 {
+	width: 44%;
+}
+.sheet-col-45-100,
+.sheet-rolltemplate-WF4e .sheet-col-45-100 {
+	width: 45%;
+}
+.sheet-col-46-100,
+.sheet-rolltemplate-WF4e .sheet-col-46-100 {
+	width: 46%;
+}
+.sheet-col-47-100,
+.sheet-rolltemplate-WF4e .sheet-col-47-100 {
+	width: 47%;
+}
+.sheet-col-48-100,
+.sheet-rolltemplate-WF4e .sheet-col-48-100 {
+	width: 48%;
+}
+.sheet-col-49-100,
+.sheet-rolltemplate-WF4e .sheet-col-49-100 {
+	width: 49%;
+}
+.sheet-col-50-100,
+.sheet-rolltemplate-WF4e .sheet-col-50-100 {
+	width: 50%;
+}
 .sheet-col-63-200,
 .sheet-rolltemplate-WF4e .sheet-col-63-200 {
 	width: 31.5%;
 }
-
 .sheet-col-25-39,
 .sheet-rolltemplate-WF4e .sheet-col-25-49 {
 	width: 39%;
