@@ -18,7 +18,7 @@ Suivre les étapes ci dessous (en cliquant sur les liens) :
 *[Caslon Antique](https://github.com/TheDjull/WFRP-v4-Fr/blob/master/Roll20/Fonts/Caslon%20Antique.zip)
 
 Etape Optionnelle mais conseillée pour une immersion auditive :
-* Créer un compte gratuit pour [Synrinscape Online](https://www.syrinscape.com/account/register/).
+* Créer un compte gratuit [Synrinscape](https://www.syrinscape.com/account/register/).
 * Télécharger et installer [Synrinscape Online](https://syrinscape-us.s3.amazonaws.com/files/syrinscape-1.4.5-20190820-win-online.exe?AWSAccessKeyId=AKIAJSXNAADVPFUCLQQA&Signature=S4cVKMrajPT9Nv6I44luBZ%2B%2By8M%3D&Expires=1573409624).
 
  #### Vous êtes enfin prêt à rejoindre le Vieux Continent !!
