@@ -6237,7 +6237,7 @@
 						</h4>
 						<div class="sheet-center sheet-sub-header">
 							<select class="sheet-select-no-arrow-center" name="attr_MagicDom">
-								<option value="MMINOR" data-i18n="NONE">Aucun</option>
+								<option value="NONE" data-i18n="NONE">Aucun</option>
 							<optgroup label="Magie Elementaire">
 								<option value="MMINOR" data-i18n="MMINOR">Mineure</option>
 								<option value="MARCANA" data-i18n="MARCANA">Arcane</option>
@@ -7010,14 +7010,14 @@
 	<div class="sheet-section-bible">
 		<div class="sheet-row">
 			<div class="sheet-col-1-2 sheet-pad-r-md">
-				<div class="sheet-col-1-2 sheet-pad-r-md">
+				<div class="sheet-col-1-2 sheet-pad-r-sm">
 					<div class="sheet-col-1">
 						<h4 class="sheet-center">
 							<span data-i18n="RELIGION">Religion</span>
 						</h4>
 						<div class="sheet-center sheet-sub-header">
 							<select class="sheet-select-no-arrow-center" name="attr_Religion">
-								<option value="MMINOR" data-i18n="NONE">Aucun</option>
+								<option value="NONE" data-i18n="NONE">Aucun</option>
 							<optgroup label="panthéon de l'Empire">
 								<option value="MANAAN" data-i18n="MANAAN">Manaan</option>
 								<option value="MORR" data-i18n="MORR">Morr</option>
@@ -7072,35 +7072,12 @@
 				<div class="sheet-col-25-49 sheet-vert-top">
 					<div class="sheet-col-1">
 						<h4 class="sheet-center">
-							<span data-i18n="TALENTS">Talents</span>
+							<span data-i18n="COMMANDS">Commandements</span>
 						</h4>
 						<div class="sheet-row sheet-sub-header">
-                    		<div class="sheet-col-1 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="PRAY">Prière</div>
-                    	</div>
-						<div class="sheet-col-1 sheet-pad-b-md">
-							<div class="sheet-row sheet-pad-b-sm">
-								<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
-									<input type="checkbox" name="attr_M16Taken" value="1">
-								</div>
-								<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
-									<span data-i18n="BENI">Béni</span>
-								</div>
-							</div>
-							<div class="sheet-row sheet-pad-b-sm">
-								<div class="sheet-col-1-4 sheet-center sheet-pad-r-sm sheet-vert-middle">
-									<input type="checkbox" name="attr_M17Taken" value="1">
-								</div>
-								<div class="sheet-col-3-4 sheet-pad-r-sm sheet-vert-middle">
-									<span data-i18n="INVOCATION">Invocation</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="sheet-col-1">
-						<h4 class="sheet-center">
-							<span data-i18n="PENITENCES">Pénitences</span>
-						</h4>
-						<textarea name="attr_Reli2" class="sheet-ReliArea2"></textarea>
+    					    <div class="sheet-col-1 sheet-center sheet-small-label sheet-vert-middle sheet-pad-r-sm" data-i18n="RESPECT">à Respecter</div>
+    					</div>
+						<textarea name="attr_Reli2" class="sheet-ReliArea1"></textarea>
 					</div>
 				</div>
 			</div>
@@ -7252,9 +7229,6 @@
 			</div>
 		</div>
 		<span class="sheet-spacer"></span>
-		<!-- TAB SELECT -->		
-		<input type="checkbox" class="sheet-hidden sheet-hider" name="attr_M16Taken" value="1">
-		<input type="checkbox" class="sheet-hidden sheet-hider" name="attr_M17Taken" value="1">
 		<!-- SPELL TAB SELECT -->
 		<input type="radio" name="attr_spellpagetab" class="sheet-tab-spell-page sheet-tab-spell16" value="Bénédiction"/>
 		<span class="sheet-tab-spell-page sheet-tab-spell16">
