@@ -404,34 +404,34 @@
 						<span class="sheet-span-none" data-i18n="CURRENT">Current</span>
 					</div>
 					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<input class="sheet-center" type="number" name="attr_WeaponSkill" value="@{WeaponSkillStart}+@{WeaponSkillTalents}+@{WeaponSkillAdv}+@{WeaponSkillMod}" disabled="true"/>
+						<input class="sheet-center" type="number" name="attr_WeaponSkill" readonly=""/>
 					</div>
 					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<input class="sheet-center" type="number" name="attr_BallisticSkill" value="@{BallisticSkillStart}+@{BallisticSkillTalents}+@{BallisticSkillAdv}+@{BallisticSkillMod}" disabled="true"/>
+						<input class="sheet-center" type="number" name="attr_BallisticSkill" readonly=""/>
 					</div>
 					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<input class="sheet-center" type="number" name="attr_Strength" value="@{StrengthStart}+@{StrengthTalents}+@{StrengthAdv}+@{StrengthMod}" disabled="true"/>
+						<input class="sheet-center" type="number" name="attr_Strength" readonly=""/>
 					</div>
 					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<input class="sheet-center" type="number" name="attr_Toughness" value="@{ToughnessStart}+@{ToughnessTalents}+@{ToughnessAdv}+@{ToughnessMod}" disabled="true"/>
+						<input class="sheet-center" type="number" name="attr_Toughness" readonly=""/>
 					</div>
 					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<input class="sheet-center" type="number" name="attr_Initiative" value="@{InitiativeStart}+@{InitiativeTalents}+@{InitiativeAdv}+@{InitiativeMod}" disabled="true"/>
+						<input class="sheet-center" type="number" name="attr_Initiative" readonly=""/>
 					</div>
 					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<input class="sheet-center" type="number" name="attr_Agility" value="@{AgilityStart}+@{AgilityTalents}+@{AgilityAdv}+@{AgilityMod}" disabled="true"/>
+						<input class="sheet-center" type="number" name="attr_Agility" readonly=""/>
 					</div>
 					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<input class="sheet-center" type="number" name="attr_Dexterity" value="@{DexterityStart}+@{DexterityTalents}+@{DexterityAdv}+@{DexterityMod}" disabled="true"/>
+						<input class="sheet-center" type="number" name="attr_Dexterity" readonly=""/>
 					</div>
 					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<input class="sheet-center" type="number" name="attr_Intelligence" value="@{IntelligenceStart}+@{IntelligenceTalents}+@{IntelligenceAdv}+@{IntelligenceMod}" disabled="true"/>
+						<input class="sheet-center" type="number" name="attr_Intelligence" readonly=""/>
 					</div>
 					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<input class="sheet-center" type="number" name="attr_WillPower" value="@{WillPowerStart}+@{WillPowerTalents}+@{WillPowerAdv}+@{WillPowerMod}" disabled="true"/>
+						<input class="sheet-center" type="number" name="attr_WillPower" readonly=""/>
 					</div>
 					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<input class="sheet-center" type="number" name="attr_Fellowship" value="@{FellowshipStart}+@{FellowshipTalents}+@{FellowshipAdv}+@{FellowshipMod}" disabled="true"/>
+						<input class="sheet-center" type="number" name="attr_Fellowship" readonly=""/>
 					</div>
 				</div>
 				<span class="sheet-spacer"></span>
@@ -533,34 +533,34 @@
 						<span class="sheet-span-none" data-i18n="STARTING">Starting</span>
 					</div>
 					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<input class="sheet-center" type="number" name="attr_WeaponSkillBonusStart" value="floor((@{WeaponSkillStart}+@{WeaponSkillTalents}+@{WeaponSkillAdv}+@{WeaponSkillMod})/10)" disabled="true"/>
+						<input class="sheet-center" type="number" name="attr_WeaponSkillBonusStart" value="floor((@{WeaponSkill})/10)" disabled="true"/>
 					</div>
 					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<input class="sheet-center" type="number" name="attr_BallisticSkillBonusStart" value="floor((@{BallisticSkillStart}+@{BallisticSkillTalents}+@{BallisticSkillAdv}+@{BallisticSkillMod})/10)" disabled="true"/>
+						<input class="sheet-center" type="number" name="attr_BallisticSkillBonusStart" value="floor((@{BallisticSkill})/10)" disabled="true"/>
 					</div>
 					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<input class="sheet-center" type="number" name="attr_StrengthBonusStart" value="floor((@{StrengthStart}+@{StrengthTalents}+@{StrengthAdv}+@{StrengthMod})/10)" disabled="true"/>
+						<input class="sheet-center" type="number" name="attr_StrengthBonusStart" value="floor((@{Strength})/10)" disabled="true"/>
 					</div>
 					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<input class="sheet-center" type="number" name="attr_ToughnessBonusStart" value="floor((@{ToughnessStart}+@{ToughnessTalents}+@{ToughnessAdv}+@{ToughnessMod})/10)" disabled="true"/>
+						<input class="sheet-center" type="number" name="attr_ToughnessBonusStart" value="floor((@{Toughness})/10)" disabled="true"/>
 					</div>
 					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<input class="sheet-center" type="number" name="attr_InitiativeBonusStart" value="floor((@{InitiativeStart}+@{InitiativeTalents}+@{InitiativeAdv}+@{InitiativeMod})/10)" disabled="true"/>
+						<input class="sheet-center" type="number" name="attr_InitiativeBonusStart" value="floor((@{Initiative})/10)" disabled="true"/>
 					</div>
 					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<input class="sheet-center" type="number" name="attr_AgilityBonusStart" value="floor((@{AgilityStart}+@{AgilityTalents}+@{AgilityAdv}+@{AgilityMod})/10)" disabled="true"/>
+						<input class="sheet-center" type="number" name="attr_AgilityBonusStart" value="floor((@{Agility})/10)" disabled="true"/>
 					</div>
 					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<input class="sheet-center" type="number" name="attr_DexterityBonusStart" value="floor((@{DexterityStart}+@{DexterityTalents}+@{DexterityAdv}+@{DexterityMod})/10)" disabled="true"/>
+						<input class="sheet-center" type="number" name="attr_DexterityBonusStart" value="floor((@{Dexterity})/10)" disabled="true"/>
 					</div>
 					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<input class="sheet-center" type="number" name="attr_IntelligenceBonusStart" value="floor((@{IntelligenceStart}+@{IntelligenceTalents}+@{IntelligenceAdv}+@{IntelligenceMod})/10)" disabled="true"/>
+						<input class="sheet-center" type="number" name="attr_IntelligenceBonusStart" value="floor((@{Intelligence})/10)" disabled="true"/>
 					</div>
 					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<input class="sheet-center" type="number" name="attr_WillPowerBonusStart" value="floor((@{WillPowerStart}+@{WillPowerTalents}+@{WillPowerAdv}+@{WillPowerMod})/10)" disabled="true"/>
+						<input class="sheet-center" type="number" name="attr_WillPowerBonusStart" value="floor((@{WillPower})/10)" disabled="true"/>
 					</div>
 					<div class="sheet-col-1-12 sheet-center sheet-pad-r-sm">
-						<input class="sheet-center" type="number" name="attr_FellowshipBonusStart" value="floor((@{FellowshipStart}+@{FellowshipTalents}+@{FellowshipAdv}+@{FellowshipMod})/10)" disabled="true"/>
+						<input class="sheet-center" type="number" name="attr_FellowshipBonusStart" value="floor((@{Fellowship})/10)" disabled="true"/>
 					</div>
 				</div>
 				<div class="sheet-row">
@@ -8355,6 +8355,296 @@ on('sheet:opened change:race change:EmpetreAdv change:ATerreAdv change:Inconscie
         }
         setAttrs({
 			Movement: movement
+        });
+    });
+});
+
+// CC stat
+on('sheet:opened change:WeaponSkillStart change:WeaponSkillTalents change:WeaponSkillAdv change:WeaponSkillMod change:AssourdiAdv change:AveugleAdv change:EmpetreAdv change:HemorragieAdv change:EnflammeAdv change:EmpoissonneAdv change:ExtenueAdv change:AssommeAdv change:AssommeAdv change:BriseAdv change:SurprisAdv change:ATerreAdv change:InconscientAdv', function () {
+    getAttrs(['WeaponSkillStart', 'WeaponSkillTalents', 'WeaponSkillAdv', 'WeaponSkillMod', 'AssourdiAdv', 'AveugleAdv', 'EmpetreAdv', 'HemorragieAdv', 'EnflammeAdv', 'EmpoissonneAdv', 'ExtenueAdv', 'AssommeAdv', 'AssourdiAdv', 'BriseAdv', 'SurprisAdv', 'ATerreAdv', 'InconscientAdv'], function (v) {
+		const wSs = +v.WeaponSkillStart || 0;
+		const wSt = +v.WeaponSkillTalents || 0;
+		const wSa = +v.WeaponSkillAdv || 0;
+		const wSm = +v.WeaponSkillMod || 0;
+        const aSd = +v.AssourdiAdv || 0;
+        const aVg = +v.AveugleAdv || 0;
+        const eMp = +v.EmpetreAdv || 0;
+        const hEm = +v.HemorragieAdv || 0;
+        const eNf = +v.EnflammeAdv || 0;
+        const eMn = +v.EmpoissonneAdv || 0;
+        const eXt = +v.ExtenueAdv || 0;
+        const aSm = +v.AssommeAdv || 0;
+        const bRi = +v.BriseAdv || 0;
+        const sUr = +v.SurprisAdv || 0;
+        const aTr = +v.ATerreAdv || 0;
+        const iNc = +v.InconscientAdv || 0;
+		let weaponskill = ((wSs+wSt+wSa+wSm)-(10*aSd)-(5*aVg)-(5*eMp)-(0*hEm)-(0*eNf)-(5*eMn)-(5*eXt)-(10*aSm)-(10*bRi)-(30*sUr)-(20*aTr))*(1-iNc);
+		 if(weaponskill < 0) {
+            weaponskill = 0
+        }
+        setAttrs({
+			WeaponSkill: weaponskill
+        });
+    });
+});
+
+// CT stat
+on('sheet:opened change:BallisticSkillStart change:BallisticSkillTalents change:BallisticSkillAdv change:BallisticSkillMod change:AssourdiAdv change:AveugleAdv change:EmpetreAdv change:HemorragieAdv change:EnflammeAdv change:EmpoissonneAdv change:ExtenueAdv change:AssommeAdv change:AssommeAdv change:BriseAdv change:SurprisAdv change:ATerreAdv change:InconscientAdv', function () {
+    getAttrs(['BallisticSkillStart', 'BallisticSkillTalents', 'BallisticSkillAdv', 'BallisticSkillMod', 'AssourdiAdv', 'AveugleAdv', 'EmpetreAdv', 'HemorragieAdv', 'EnflammeAdv', 'EmpoissonneAdv', 'ExtenueAdv', 'AssommeAdv', 'AssourdiAdv', 'BriseAdv', 'SurprisAdv', 'ATerreAdv', 'InconscientAdv'], function (v) {
+		const bSs = +v.BallisticSkillStart || 0;
+		const bSt = +v.BallisticSkillTalents || 0;
+		const bSa = +v.BallisticSkillAdv || 0;
+		const bSm = +v.BallisticSkillMod || 0;
+        const aSd = +v.AssourdiAdv || 0;
+        const aVg = +v.AveugleAdv || 0;
+        const eMp = +v.EmpetreAdv || 0;
+        const hEm = +v.HemorragieAdv || 0;
+        const eNf = +v.EnflammeAdv || 0;
+        const eMn = +v.EmpoissonneAdv || 0;
+        const eXt = +v.ExtenueAdv || 0;
+        const aSm = +v.AssommeAdv || 0;
+        const bRi = +v.BriseAdv || 0;
+        const sUr = +v.SurprisAdv || 0;
+        const aTr = +v.ATerreAdv || 0;
+        const iNc = +v.InconscientAdv || 0;
+		let ballisticskill = ((bSs+bSt+bSa+bSm)-(5*aSd)-(10*aVg)-(5*eMp)-(0*hEm)-(0*eNf)-(5*eMn)-(5*eXt)-(10*aSm)-(10*bRi)-(30*sUr)-(20*aTr))*(1-iNc);
+		 if(ballisticskill < 0) {
+            ballisticskill = 0
+        }
+        setAttrs({
+			BallisticSkill: ballisticskill
+        });
+    });
+});
+
+// For stat
+on('sheet:opened change:StrengthStart change:StrengthTalents change:StrengthAdv change:StrengthMod change:AssourdiAdv change:AveugleAdv change:EmpetreAdv change:HemorragieAdv change:EnflammeAdv change:EmpoissonneAdv change:ExtenueAdv change:AssommeAdv change:AssommeAdv change:BriseAdv change:SurprisAdv change:ATerreAdv change:InconscientAdv', function () {
+    getAttrs(['StrengthStart', 'StrengthTalents', 'StrengthAdv', 'StrengthMod', 'AssourdiAdv', 'AveugleAdv', 'EmpetreAdv', 'HemorragieAdv', 'EnflammeAdv', 'EmpoissonneAdv', 'ExtenueAdv', 'AssommeAdv', 'AssourdiAdv', 'BriseAdv', 'SurprisAdv', 'ATerreAdv', 'InconscientAdv'], function (v) {
+		const sTs = +v.StrengthStart || 0;
+		const sTt = +v.StrengthTalents || 0;
+		const sTa = +v.StrengthAdv || 0;
+		const sTm = +v.StrengthMod || 0;
+        const aSd = +v.AssourdiAdv || 0;
+        const aVg = +v.AveugleAdv || 0;
+        const eMp = +v.EmpetreAdv || 0;
+        const hEm = +v.HemorragieAdv || 0;
+        const eNf = +v.EnflammeAdv || 0;
+        const eMn = +v.EmpoissonneAdv || 0;
+        const eXt = +v.ExtenueAdv || 0;
+        const aSm = +v.AssommeAdv || 0;
+        const bRi = +v.BriseAdv || 0;
+        const sUr = +v.SurprisAdv || 0;
+        const aTr = +v.ATerreAdv || 0;
+        const iNc = +v.InconscientAdv || 0;
+		let strength = ((sTs+sTt+sTa+sTm)-(0*aSd)-(0*aVg)-(5*eMp)-(0*hEm)-(0*eNf)-(5*eMn)-(5*eXt)-(0*aSm)-(10*bRi)-(0*sUr)-(10*aTr))*(1-iNc);
+		 if(strength < 0) {
+            strength = 0
+        }
+        setAttrs({
+			Strength: strength
+        });
+    });
+});
+
+// End stat
+on('sheet:opened change:ToughnessStart change:ToughnessTalents change:ToughnessAdv change:ToughnessMod change:AssourdiAdv change:AveugleAdv change:EmpetreAdv change:HemorragieAdv change:EnflammeAdv change:EmpoissonneAdv change:ExtenueAdv change:AssommeAdv change:AssommeAdv change:BriseAdv change:SurprisAdv change:ATerreAdv change:InconscientAdv', function () {
+    getAttrs(['ToughnessStart', 'ToughnessTalents', 'ToughnessAdv', 'ToughnessMod', 'AssourdiAdv', 'AveugleAdv', 'EmpetreAdv', 'HemorragieAdv', 'EnflammeAdv', 'EmpoissonneAdv', 'ExtenueAdv', 'AssommeAdv', 'AssourdiAdv', 'BriseAdv', 'SurprisAdv', 'ATerreAdv', 'InconscientAdv'], function (v) {
+		const tHs = +v.ToughnessStart || 0;
+		const tHt = +v.ToughnessTalents || 0;
+		const tHa = +v.ToughnessAdv || 0;
+		const tHm = +v.ToughnessMod || 0;
+        const aSd = +v.AssourdiAdv || 0;
+        const aVg = +v.AveugleAdv || 0;
+        const eMp = +v.EmpetreAdv || 0;
+        const hEm = +v.HemorragieAdv || 0;
+        const eNf = +v.EnflammeAdv || 0;
+        const eMn = +v.EmpoissonneAdv || 0;
+        const eXt = +v.ExtenueAdv || 0;
+        const aSm = +v.AssommeAdv || 0;
+        const bRi = +v.BriseAdv || 0;
+        const sUr = +v.SurprisAdv || 0;
+        const aTr = +v.ATerreAdv || 0;
+        const iNc = +v.InconscientAdv || 0;
+		let toughness = ((tHs+tHt+tHa+tHm)-(0*aSd)-(0*aVg)-(5*eMp)-(5*hEm)-(5*eNf)-(5*eMn)-(5*eXt)-(0*aSm)-(5*bRi)-(0*sUr)-(10*aTr))*(1-iNc);
+		 if(toughness < 0) {
+            toughness = 0
+        }
+        setAttrs({
+			Toughness: toughness
+        });
+    });
+});
+
+// Ini stat
+on('sheet:opened change:InitiativeStart change:InitiativeTalents change:InitiativeAdv change:InitiativeMod change:AssourdiAdv change:AveugleAdv change:EmpetreAdv change:HemorragieAdv change:EnflammeAdv change:EmpoissonneAdv change:ExtenueAdv change:AssommeAdv change:AssommeAdv change:BriseAdv change:SurprisAdv change:ATerreAdv change:InconscientAdv', function () {
+    getAttrs(['InitiativeStart', 'InitiativeTalents', 'InitiativeAdv', 'InitiativeMod', 'AssourdiAdv', 'AveugleAdv', 'EmpetreAdv', 'HemorragieAdv', 'EnflammeAdv', 'EmpoissonneAdv', 'ExtenueAdv', 'AssommeAdv', 'AssourdiAdv', 'BriseAdv', 'SurprisAdv', 'ATerreAdv', 'InconscientAdv'], function (v) {
+		const iNs = +v.InitiativeStart || 0;
+		const iNt = +v.InitiativeTalents || 0;
+		const iNa = +v.InitiativeAdv || 0;
+		const iNm = +v.InitiativeMod || 0;
+        const aSd = +v.AssourdiAdv || 0;
+        const aVg = +v.AveugleAdv || 0;
+        const eMp = +v.EmpetreAdv || 0;
+        const hEm = +v.HemorragieAdv || 0;
+        const eNf = +v.EnflammeAdv || 0;
+        const eMn = +v.EmpoissonneAdv || 0;
+        const eXt = +v.ExtenueAdv || 0;
+        const aSm = +v.AssommeAdv || 0;
+        const bRi = +v.BriseAdv || 0;
+        const sUr = +v.SurprisAdv || 0;
+        const aTr = +v.ATerreAdv || 0;
+        const iNc = +v.InconscientAdv || 0;
+		let initiative = ((iNs+iNt+iNa+iNm)-(10*aSd)-(10*aVg)-(5*eMp)-(0*hEm)-(0*eNf)-(5*eMn)-(5*eXt)-(10*aSm)-(10*bRi)-(30*sUr)-(20*aTr))*(1-iNc);
+		 if(initiative < 0) {
+            initiative = 0
+        }
+        setAttrs({
+			Initiative: initiative
+        });
+    });
+});
+
+// Agi stat
+on('sheet:opened change:AgilityStart change:AgilityTalents change:AgilityAdv change:AgilityMod change:AssourdiAdv change:AveugleAdv change:EmpetreAdv change:HemorragieAdv change:EnflammeAdv change:EmpoissonneAdv change:ExtenueAdv change:AssommeAdv change:AssommeAdv change:BriseAdv change:SurprisAdv change:ATerreAdv change:InconscientAdv', function () {
+    getAttrs(['AgilityStart', 'AgilityTalents', 'AgilityAdv', 'AgilityMod', 'AssourdiAdv', 'AveugleAdv', 'EmpetreAdv', 'HemorragieAdv', 'EnflammeAdv', 'EmpoissonneAdv', 'ExtenueAdv', 'AssommeAdv', 'AssourdiAdv', 'BriseAdv', 'SurprisAdv', 'ATerreAdv', 'InconscientAdv'], function (v) {
+		const aGs = +v.AgilityStart || 0;
+		const aGt = +v.AgilityTalents || 0;
+		const aGa = +v.AgilityAdv || 0;
+		const aGm = +v.AgilityMod || 0;
+        const aSd = +v.AssourdiAdv || 0;
+        const aVg = +v.AveugleAdv || 0;
+        const eMp = +v.EmpetreAdv || 0;
+        const hEm = +v.HemorragieAdv || 0;
+        const eNf = +v.EnflammeAdv || 0;
+        const eMn = +v.EmpoissonneAdv || 0;
+        const eXt = +v.ExtenueAdv || 0;
+        const aSm = +v.AssommeAdv || 0;
+        const bRi = +v.BriseAdv || 0;
+        const sUr = +v.SurprisAdv || 0;
+        const aTr = +v.ATerreAdv || 0;
+        const iNc = +v.InconscientAdv || 0;
+		let agility = ((aGs+aGt+aGa+aGm)-(10*aSd)-(5*aVg)-(5*eMp)-(0*hEm)-(0*eNf)-(5*eMn)-(5*eXt)-(10*aSm)-(0*bRi)-(30*sUr)-(20*aTr))*(1-iNc);
+		 if(agility < 0) {
+            agility = 0
+        }
+        setAttrs({
+			Agility: agility
+        });
+    });
+});
+
+// Dex stat
+on('sheet:opened change:DexterityStart change:DexterityTalents change:DexterityAdv change:DexterityMod change:AssourdiAdv change:AveugleAdv change:EmpetreAdv change:HemorragieAdv change:EnflammeAdv change:EmpoissonneAdv change:ExtenueAdv change:AssommeAdv change:AssommeAdv change:BriseAdv change:SurprisAdv change:ATerreAdv change:InconscientAdv', function () {
+    getAttrs(['DexterityStart', 'DexterityTalents', 'DexterityAdv', 'DexterityMod', 'AssourdiAdv', 'AveugleAdv', 'EmpetreAdv', 'HemorragieAdv', 'EnflammeAdv', 'EmpoissonneAdv', 'ExtenueAdv', 'AssommeAdv', 'AssourdiAdv', 'BriseAdv', 'SurprisAdv', 'ATerreAdv', 'InconscientAdv'], function (v) {
+		const dXs = +v.DexterityStart || 0;
+		const dXt = +v.DexterityTalents || 0;
+		const dXa = +v.DexterityAdv || 0;
+		const dXm = +v.DexterityMod || 0;
+        const aSd = +v.AssourdiAdv || 0;
+        const aVg = +v.AveugleAdv || 0;
+        const eMp = +v.EmpetreAdv || 0;
+        const hEm = +v.HemorragieAdv || 0;
+        const eNf = +v.EnflammeAdv || 0;
+        const eMn = +v.EmpoissonneAdv || 0;
+        const eXt = +v.ExtenueAdv || 0;
+        const aSm = +v.AssommeAdv || 0;
+        const bRi = +v.BriseAdv || 0;
+        const sUr = +v.SurprisAdv || 0;
+        const aTr = +v.ATerreAdv || 0;
+        const iNc = +v.InconscientAdv || 0;
+		let dexterity = ((dXs+dXt+dXa+dXm)-(5*aSd)-(10*aVg)-(5*eMp)-(0*hEm)-(0*eNf)-(5*eMn)-(5*eXt)-(10*aSm)-(10*bRi)-(0*sUr)-(20*aTr))*(1-iNc);
+		 if(dexterity < 0) {
+            dexterity = 0
+        }
+        setAttrs({
+			Dexterity: dexterity
+        });
+    });
+});
+
+// Int stat
+on('sheet:opened change:IntelligenceStart change:IntelligenceTalents change:IntelligenceAdv change:IntelligenceMod change:AssourdiAdv change:AveugleAdv change:EmpetreAdv change:HemorragieAdv change:EnflammeAdv change:EmpoissonneAdv change:ExtenueAdv change:AssommeAdv change:AssommeAdv change:BriseAdv change:SurprisAdv change:ATerreAdv change:InconscientAdv', function () {
+    getAttrs(['IntelligenceStart', 'IntelligenceTalents', 'IntelligenceAdv', 'IntelligenceMod', 'AssourdiAdv', 'AveugleAdv', 'EmpetreAdv', 'HemorragieAdv', 'EnflammeAdv', 'EmpoissonneAdv', 'ExtenueAdv', 'AssommeAdv', 'AssourdiAdv', 'BriseAdv', 'SurprisAdv', 'ATerreAdv', 'InconscientAdv'], function (v) {
+		const iTs = +v.IntelligenceStart || 0;
+		const iTt = +v.IntelligenceTalents || 0;
+		const iTa = +v.IntelligenceAdv || 0;
+		const iTm = +v.IntelligenceMod || 0;
+        const aSd = +v.AssourdiAdv || 0;
+        const aVg = +v.AveugleAdv || 0;
+        const eMp = +v.EmpetreAdv || 0;
+        const hEm = +v.HemorragieAdv || 0;
+        const eNf = +v.EnflammeAdv || 0;
+        const eMn = +v.EmpoissonneAdv || 0;
+        const eXt = +v.ExtenueAdv || 0;
+        const aSm = +v.AssommeAdv || 0;
+        const bRi = +v.BriseAdv || 0;
+        const sUr = +v.SurprisAdv || 0;
+        const aTr = +v.ATerreAdv || 0;
+        const iNc = +v.InconscientAdv || 0;
+		let intelligence = ((iTs+iTt+iTa+iTm)-(0*aSd)-(0*aVg)-(5*eMp)-(0*hEm)-(0*eNf)-(5*eMn)-(5*eXt)-(10*aSm)-(10*bRi)-(0*sUr)-(20*aTr))*(1-iNc);
+		 if(intelligence < 0) {
+            intelligence = 0
+        }
+        setAttrs({
+			Intelligence: intelligence
+        });
+    });
+});
+
+// Vol stat
+on('sheet:opened change:WillPowerStart change:WillPowerTalents change:WillPowerAdv change:WillPowerMod change:AssourdiAdv change:AveugleAdv change:EmpetreAdv change:HemorragieAdv change:EnflammeAdv change:EmpoissonneAdv change:ExtenueAdv change:AssommeAdv change:AssommeAdv change:BriseAdv change:SurprisAdv change:ATerreAdv change:InconscientAdv', function () {
+    getAttrs(['WillPowerStart', 'WillPowerTalents', 'WillPowerAdv', 'WillPowerMod', 'AssourdiAdv', 'AveugleAdv', 'EmpetreAdv', 'HemorragieAdv', 'EnflammeAdv', 'EmpoissonneAdv', 'ExtenueAdv', 'AssommeAdv', 'AssourdiAdv', 'BriseAdv', 'SurprisAdv', 'ATerreAdv', 'InconscientAdv'], function (v) {
+		const wPs = +v.WillPowerStart || 0;
+		const wPt = +v.WillPowerTalents || 0;
+		const wPa = +v.WillPowerAdv || 0;
+		const wPm = +v.WillPowerMod || 0;
+        const aSd = +v.AssourdiAdv || 0;
+        const aVg = +v.AveugleAdv || 0;
+        const eMp = +v.EmpetreAdv || 0;
+        const hEm = +v.HemorragieAdv || 0;
+        const eNf = +v.EnflammeAdv || 0;
+        const eMn = +v.EmpoissonneAdv || 0;
+        const eXt = +v.ExtenueAdv || 0;
+        const aSm = +v.AssommeAdv || 0;
+        const bRi = +v.BriseAdv || 0;
+        const sUr = +v.SurprisAdv || 0;
+        const aTr = +v.ATerreAdv || 0;
+        const iNc = +v.InconscientAdv || 0;
+		let willpower = ((wPs+wPt+wPa+wPm)-(0*aSd)-(0*aVg)-(5*eMp)-(0*hEm)-(0*eNf)-(5*eMn)-(5*eXt)-(10*aSm)-(10*bRi)-(30*sUr)-(20*aTr))*(1-iNc);
+		 if(willpower < 0) {
+            willpower = 0
+        }
+        setAttrs({
+			WillPower: willpower
+        });
+    });
+});
+
+// Soc stat
+on('sheet:opened change:FellowshipStart change:FellowshipTalents change:FellowshipAdv change:FellowshipMod change:AssourdiAdv change:AveugleAdv change:EmpetreAdv change:HemorragieAdv change:EnflammeAdv change:EmpoissonneAdv change:ExtenueAdv change:AssommeAdv change:AssommeAdv change:BriseAdv change:SurprisAdv change:ATerreAdv change:InconscientAdv', function () {
+    getAttrs(['FellowshipStart', 'FellowshipTalents', 'FellowshipAdv', 'FellowshipMod', 'AssourdiAdv', 'AveugleAdv', 'EmpetreAdv', 'HemorragieAdv', 'EnflammeAdv', 'EmpoissonneAdv', 'ExtenueAdv', 'AssommeAdv', 'AssourdiAdv', 'BriseAdv', 'SurprisAdv', 'ATerreAdv', 'InconscientAdv'], function (v) {
+		const fLs = +v.FellowshipStart || 0;
+		const fLt = +v.FellowshipTalents || 0;
+		const fLa = +v.FellowshipAdv || 0;
+		const fLm = +v.FellowshipMod || 0;
+        const aSd = +v.AssourdiAdv || 0;
+        const aVg = +v.AveugleAdv || 0;
+        const eMp = +v.EmpetreAdv || 0;
+        const hEm = +v.HemorragieAdv || 0;
+        const eNf = +v.EnflammeAdv || 0;
+        const eMn = +v.EmpoissonneAdv || 0;
+        const eXt = +v.ExtenueAdv || 0;
+        const aSm = +v.AssommeAdv || 0;
+        const bRi = +v.BriseAdv || 0;
+        const sUr = +v.SurprisAdv || 0;
+        const aTr = +v.ATerreAdv || 0;
+        const iNc = +v.InconscientAdv || 0;
+		let fellowship = ((fLs+fLt+fLa+fLm)-(5*aSd)-(5*aVg)-(0*eMp)-(0*hEm)-(0*eNf)-(5*eMn)-(5*eXt)-(10*aSm)-(10*bRi)-(0*sUr)-(0*aTr))*(1-iNc);
+		 if(fellowship < 0) {
+            fellowship = 0
+        }
+        setAttrs({
+			Fellowship: fellowship
         });
     });
 });
