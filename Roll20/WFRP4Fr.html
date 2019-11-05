@@ -8323,7 +8323,7 @@ on('sheet:opened change:race change:EmpetreAdv change:ATerreAdv change:Inconscie
 		else if (race === 'elfh' || race === 'elfs') {
             var mV = 5
         }
-		let movement = Math.floor(mV-(mV*iA)-eA-((mV*aA)/2));
+		let movement = Math.floor(mV-(mV*iA)-eA-((mV*aA)/3));
 		 if(movement < 0) {
             movement = 0
         }
@@ -8352,7 +8352,7 @@ on('sheet:opened change:WeaponSkillStart change:WeaponSkillTalents change:Weapon
         const sUr = +v.SurprisAdv || 0;
         const aTr = +v.ATerreAdv || 0;
         const iNc = +v.InconscientAdv || 0;
-		let weaponskill = ((wSs+wSt+wSa+wSm)-(10*aSd)-(5*aVg)-(5*eMp)-(0*hEm)-(0*eNf)-(5*eMn)-(5*eXt)-(10*aSm)-(10*bRi)-(30*sUr)-(20*aTr))*(1-iNc);
+		let weaponskill = ((wSs+wSt+wSa+wSm)-(10*aSd)-(5*aVg)-(5*eMp)-(0*hEm)-(0*eNf)-(5*eMn)-(3*eXt)-(10*aSm)-(10*bRi)-(30*sUr)-(20*aTr))*(1-iNc);
 		 if(weaponskill < 0) {
             weaponskill = 0
         }
@@ -8381,7 +8381,7 @@ on('sheet:opened change:BallisticSkillStart change:BallisticSkillTalents change:
         const sUr = +v.SurprisAdv || 0;
         const aTr = +v.ATerreAdv || 0;
         const iNc = +v.InconscientAdv || 0;
-		let ballisticskill = ((bSs+bSt+bSa+bSm)-(5*aSd)-(10*aVg)-(5*eMp)-(0*hEm)-(0*eNf)-(5*eMn)-(5*eXt)-(10*aSm)-(10*bRi)-(30*sUr)-(20*aTr))*(1-iNc);
+		let ballisticskill = ((bSs+bSt+bSa+bSm)-(5*aSd)-(10*aVg)-(5*eMp)-(0*hEm)-(0*eNf)-(5*eMn)-(3*eXt)-(10*aSm)-(10*bRi)-(30*sUr)-(20*aTr))*(1-iNc);
 		 if(ballisticskill < 0) {
             ballisticskill = 0
         }
@@ -8410,7 +8410,7 @@ on('sheet:opened change:StrengthStart change:StrengthTalents change:StrengthAdv 
         const sUr = +v.SurprisAdv || 0;
         const aTr = +v.ATerreAdv || 0;
         const iNc = +v.InconscientAdv || 0;
-		let strength = ((sTs+sTt+sTa+sTm)-(0*aSd)-(0*aVg)-(5*eMp)-(0*hEm)-(0*eNf)-(5*eMn)-(5*eXt)-(0*aSm)-(10*bRi)-(0*sUr)-(10*aTr))*(1-iNc);
+		let strength = ((sTs+sTt+sTa+sTm)-(0*aSd)-(0*aVg)-(0*eMp)-(0*hEm)-(0*eNf)-(5*eMn)-(3*eXt)-(0*aSm)-(10*bRi)-(0*sUr)-(10*aTr))*(1-iNc);
 		 if(strength < 0) {
             strength = 0
         }
@@ -8439,7 +8439,7 @@ on('sheet:opened change:ToughnessStart change:ToughnessTalents change:ToughnessA
         const sUr = +v.SurprisAdv || 0;
         const aTr = +v.ATerreAdv || 0;
         const iNc = +v.InconscientAdv || 0;
-		let toughness = ((tHs+tHt+tHa+tHm)-(0*aSd)-(0*aVg)-(5*eMp)-(5*hEm)-(5*eNf)-(5*eMn)-(5*eXt)-(0*aSm)-(5*bRi)-(0*sUr)-(10*aTr))*(1-iNc);
+		let toughness = ((tHs+tHt+tHa+tHm)-(0*aSd)-(0*aVg)-(5*eMp)-(5*hEm)-(5*eNf)-(5*eMn)-(3*eXt)-(0*aSm)-(5*bRi)-(0*sUr)-(10*aTr))*(1-iNc);
 		 if(toughness < 0) {
             toughness = 0
         }
@@ -8468,7 +8468,7 @@ on('sheet:opened change:InitiativeStart change:InitiativeTalents change:Initiati
         const sUr = +v.SurprisAdv || 0;
         const aTr = +v.ATerreAdv || 0;
         const iNc = +v.InconscientAdv || 0;
-		let initiative = ((iNs+iNt+iNa+iNm)-(10*aSd)-(10*aVg)-(5*eMp)-(0*hEm)-(0*eNf)-(5*eMn)-(5*eXt)-(10*aSm)-(10*bRi)-(30*sUr)-(20*aTr))*(1-iNc);
+		let initiative = ((iNs+iNt+iNa+iNm)-(10*aSd)-(10*aVg)-(5*eMp)-(0*hEm)-(0*eNf)-(5*eMn)-(3*eXt)-(10*aSm)-(10*bRi)-(30*sUr)-(20*aTr))*(1-iNc);
 		 if(initiative < 0) {
             initiative = 0
         }
@@ -8497,7 +8497,7 @@ on('sheet:opened change:AgilityStart change:AgilityTalents change:AgilityAdv cha
         const sUr = +v.SurprisAdv || 0;
         const aTr = +v.ATerreAdv || 0;
         const iNc = +v.InconscientAdv || 0;
-		let agility = ((aGs+aGt+aGa+aGm)-(10*aSd)-(5*aVg)-(5*eMp)-(0*hEm)-(0*eNf)-(5*eMn)-(5*eXt)-(10*aSm)-(0*bRi)-(30*sUr)-(20*aTr))*(1-iNc);
+		let agility = ((aGs+aGt+aGa+aGm)-(10*aSd)-(5*aVg)-(5*eMp)-(0*hEm)-(0*eNf)-(5*eMn)-(3*eXt)-(10*aSm)-(0*bRi)-(30*sUr)-(20*aTr))*(1-iNc);
 		 if(agility < 0) {
             agility = 0
         }
@@ -8526,7 +8526,7 @@ on('sheet:opened change:DexterityStart change:DexterityTalents change:DexterityA
         const sUr = +v.SurprisAdv || 0;
         const aTr = +v.ATerreAdv || 0;
         const iNc = +v.InconscientAdv || 0;
-		let dexterity = ((dXs+dXt+dXa+dXm)-(5*aSd)-(10*aVg)-(5*eMp)-(0*hEm)-(0*eNf)-(5*eMn)-(5*eXt)-(10*aSm)-(10*bRi)-(0*sUr)-(20*aTr))*(1-iNc);
+		let dexterity = ((dXs+dXt+dXa+dXm)-(5*aSd)-(10*aVg)-(5*eMp)-(0*hEm)-(0*eNf)-(5*eMn)-(3*eXt)-(10*aSm)-(10*bRi)-(0*sUr)-(20*aTr))*(1-iNc);
 		 if(dexterity < 0) {
             dexterity = 0
         }
@@ -8555,7 +8555,7 @@ on('sheet:opened change:IntelligenceStart change:IntelligenceTalents change:Inte
         const sUr = +v.SurprisAdv || 0;
         const aTr = +v.ATerreAdv || 0;
         const iNc = +v.InconscientAdv || 0;
-		let intelligence = ((iTs+iTt+iTa+iTm)-(0*aSd)-(0*aVg)-(5*eMp)-(0*hEm)-(0*eNf)-(5*eMn)-(5*eXt)-(10*aSm)-(10*bRi)-(0*sUr)-(20*aTr))*(1-iNc);
+		let intelligence = ((iTs+iTt+iTa+iTm)-(0*aSd)-(0*aVg)-(5*eMp)-(0*hEm)-(0*eNf)-(5*eMn)-(3*eXt)-(10*aSm)-(10*bRi)-(0*sUr)-(20*aTr))*(1-iNc);
 		 if(intelligence < 0) {
             intelligence = 0
         }
@@ -8584,7 +8584,7 @@ on('sheet:opened change:WillPowerStart change:WillPowerTalents change:WillPowerA
         const sUr = +v.SurprisAdv || 0;
         const aTr = +v.ATerreAdv || 0;
         const iNc = +v.InconscientAdv || 0;
-		let willpower = ((wPs+wPt+wPa+wPm)-(0*aSd)-(0*aVg)-(5*eMp)-(0*hEm)-(0*eNf)-(5*eMn)-(5*eXt)-(10*aSm)-(10*bRi)-(30*sUr)-(20*aTr))*(1-iNc);
+		let willpower = ((wPs+wPt+wPa+wPm)-(0*aSd)-(0*aVg)-(5*eMp)-(0*hEm)-(0*eNf)-(5*eMn)-(3*eXt)-(10*aSm)-(10*bRi)-(30*sUr)-(20*aTr))*(1-iNc);
 		 if(willpower < 0) {
             willpower = 0
         }
@@ -8613,7 +8613,7 @@ on('sheet:opened change:FellowshipStart change:FellowshipTalents change:Fellowsh
         const sUr = +v.SurprisAdv || 0;
         const aTr = +v.ATerreAdv || 0;
         const iNc = +v.InconscientAdv || 0;
-		let fellowship = ((fLs+fLt+fLa+fLm)-(5*aSd)-(5*aVg)-(0*eMp)-(0*hEm)-(0*eNf)-(5*eMn)-(5*eXt)-(10*aSm)-(10*bRi)-(0*sUr)-(0*aTr))*(1-iNc);
+		let fellowship = ((fLs+fLt+fLa+fLm)-(5*aSd)-(5*aVg)-(0*eMp)-(0*hEm)-(0*eNf)-(5*eMn)-(3*eXt)-(10*aSm)-(10*bRi)-(0*sUr)-(0*aTr))*(1-iNc);
 		 if(fellowship < 0) {
             fellowship = 0
         }
