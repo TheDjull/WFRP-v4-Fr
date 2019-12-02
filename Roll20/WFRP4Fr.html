@@ -5239,14 +5239,14 @@
             			</div>
             			<div class="sheet-col-1-8 sheet-center sheet-pad-r-sm">
 							<select class="sheet-select-no-arrow-center" name="attr_AmmoDam">
-								<option value="0" data-i18n="AMMO1">Ammo</option>
-								<option value="0" data-i18n="AMMO2">Ammo</option>
-								<option value="1" data-i18n="AMMO3">Ammo</option>
-								<option value="1" data-i18n="AMMO4">Ammo</option>
-								<option value="0" data-i18n="AMMO5">Ammo</option>
-								<option value="1" data-i18n="AMMO6">Ammo</option>
-								<option value="0" data-i18n="AMMO7">Ammo</option>
-								<option value="0" data-i18n="AMMO8">Ammo</option>
+								<option data-i18n="AMMO1">Ammo</option>
+								<option data-i18n="AMMO2">Ammo</option>
+								<option data-i18n="AMMO3">Ammo</option>
+								<option data-i18n="AMMO4">Ammo</option>
+								<option data-i18n="AMMO5">Ammo</option>
+								<option data-i18n="AMMO6">Ammo</option>
+								<option data-i18n="AMMO7">Ammo</option>
+								<option data-i18n="AMMO8">Ammo</option>
 							</select>
             		    </div>
             			<div class="sheet-col-1-25 sheet-center sheet-pad-r-sm">
@@ -5259,7 +5259,7 @@
             				<textarea class="sheet-center sheet-xs-textarea" name="attr_RangedQualities"></textarea>
             			</div>
             			<div class="sheet-col-1-25 sheet-center sheet-pad-r-sm">
-            				<button type="roll" class="sheet-roll" name="roll_RangedAttack" value="@{Whisper} &{template:WF4e} {{title=@{RangedWeaponName}}} {{character_name=@{character_name}}} {{attacktype=^{SRANGED}}} {{test=[[1d100]]}} {{target=[[@{DistChar}+(@{Advantage}*10)+?{@{translation_modifier}|0}]]}} {{attacktest=true}} {{hitlocation=true}} {{impale=[[[[1d10]]*@{RangedImpale}]]}} {{qualities=@{RangedQualities}}} {{damage=[[@{RangedStrengthBonus}+@{RangedDamage}+@{AmmoDam}]]}}"></button>
+            				<button type="roll" class="sheet-roll" name="roll_RangedAttack" value="@{Whisper} &{template:WF4e} {{title=@{RangedWeaponName}}} {{character_name=@{character_name}}} {{attacktype=^{SRANGED}}} {{test=[[1d100]]}} {{target=[[@{DistChar}+(@{Advantage}*10)+?{@{translation_modifier}|0}]]}} {{attacktest=true}} {{hitlocation=true}} {{impale=[[[[1d10]]*@{RangedImpale}]]}} {{qualities=@{RangedQualities}}} {{damage=[[@{RangedStrengthBonus}+@{RangedDamage}]]}}"></button>
             			</div>
             			<div class="sheet-col-4-100 sheet-pad-r-sm sheet-center">
             				<input class="sheet-center" type="checkbox" name="attr_RangedImpale" value="1"/>
