@@ -7,10 +7,37 @@
 // @include       https://app.roll20.net/editor*
 // @include       https://app.roll20.net/campaigns/chatarchive*
 // @run-at        document-start
-// @version       2019.10.24.01
+// @version       2019.12.5.01
 // @license       GPL-3.0-or-later
 // ==/UserScript==
 (function() {var css =`
+
+.note-editor table {
+    border: 0px solid #ddd;
+    background-color: transparent;
+    border: 0px !important;
+}
+
+.note-editor table>thead>tr>th,
+.note-editor table>tbody>tr>th,
+.note-editor table>tfoot>tr>th,
+.note-editor table>thead>tr>td,
+.note-editor table>tbody>tr>td,
+.note-editor table>tfoot>tr>td {
+    border: 0px solid #ddd;
+}
+
+.note-editor table>thead>tr>th,
+.note-editor table>tbody>tr>th,
+.note-editor table>tfoot>tr>th,
+.note-editor table>thead>tr>td,
+.note-editor table>tbody>tr>td,
+.note-editor table>tfoot>tr>td {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 0px solid #ddd;
+}
 
 #rightsidebar li.alertify a {
     background-color: rgba(0,0,0,0.05);
@@ -2092,7 +2119,7 @@ border-color: #111 !important;
 
 #containerdiv,
 .redactor_box, .redactor_editor, .redactor_editor:focus, div[contenteditable], div[contenteditable]:focus {
-	background: #1a1a1a !important;
+	background: transparent !important;
 }
 
 .charactereditor .defaulttoken {
